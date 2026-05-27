@@ -239,11 +239,11 @@ function renderUnitDetail() {
   ["cover", "description", "kakunin", "hatten"].forEach(sec => {
     const btn = document.querySelector(`[data-reading="${sec}"]`);
     if (!btn) return;
-    const has = quizData.pages.some(p => p.type === sec);
-    btn.disabled = !has;
-    const count = quizData.pages.filter(p => p.type === sec).length;
+    const matchingPages = quizData.pages.filter(p =>
+      p.type === sec || (p.containsSections && p.containsSections.includes(sec)));
+    btn.disabled = matchingPages.length === 0;
     const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
-    btn.textContent = `${baseLabel} (${count}p)`;
+    btn.textContent = `${baseLabel} (${matchingPages.length}p)`;
   });
 
   // ページ一覧（クイズ可能なページのみ）
@@ -347,7 +347,8 @@ function getPageLabel(page) {
 // 閲覧モード
 // ==============================
 function startReading(section) {
-  readingPages = quizData.pages.filter(p => p.type === section);
+  readingPages = quizData.pages.filter(p =>
+    p.type === section || (p.containsSections && p.containsSections.includes(section)));
   if (readingPages.length === 0) return;
   currentReadingSection = section;
   readingIndex = 0;
