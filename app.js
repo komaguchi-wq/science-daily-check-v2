@@ -1,0 +1,1037 @@
+// ==============================
+// SAPIX理科 v2
+// ==============================
+
+// --- 状態管理 ---
+let currentUser = null;
+let categoriesList = [];
+let currentCategory = null;
+let unitsList = [];
+let currentUnit = null;
+let quizData = null;
+let activePages = [];
+let currentPageIndex = 0;
+let currentRegionIndex = 0;
+let sessionResults = {};
+let answerRevealed = false;
+let imageCache = {};
+let currentMode = "all";
+let pendingAnswers = {};
+let idleTimer = null;
+const IDLE_TIMEOUT = 10000;
+
+// 閲覧モード
+let readingPages = [];
+let readingIndex = 0;
+let currentReadingSection = null;
+
+// Phase 1: クイズ対象は pointcheck と dailystep のみ
+// kakunin/hatten はPhase 2でクイズ化予定
+const QUIZ_TYPES = new Set(["pointcheck", "dailystep"]);
+const READING_TYPES = new Set(["cover", "description", "kakunin", "hatten"]);
+
+const SECTION_LABELS = {
+  cover: "表紙",
+  description: "説明文",
+  kakunin: "確認問題",
+  hatten: "発展問題",
+  pointcheck: "ポイントチェック",
+  dailystep: "デイリーステップ",
+};
+
+// Google Sheets バックアップ用（v2は別キーで管理）
+let SHEETS_API_URL = localStorage.getItem("science-v2-sheets-api-url") || "";
+
+// --- トラッキングデータ ---
+function getTracking() {
+  const key = `tracking-v2-${currentUser}`;
+  try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; }
+}
+
+function setTracking(data) {
+  localStorage.setItem(`tracking-v2-${currentUser}`, JSON.stringify(data));
+}
+
+function getRegionTracking(unitId, pageId, regionIdx) {
+  const tracking = getTracking();
+  const unitData = tracking[unitId] || {};
+  return unitData[`${pageId}-${regionIdx}`] || { attempts: 0, correct: 0 };
+}
+
+function recordAnswer(unitId, pageId, regionIdx, isCorrect) {
+  const tracking = getTracking();
+  if (!tracking[unitId]) tracking[unitId] = {};
+  const key = `${pageId}-${regionIdx}`;
+  if (!tracking[unitId][key]) tracking[unitId][key] = { attempts: 0, correct: 0 };
+  tracking[unitId][key].attempts++;
+  if (isCorrect) tracking[unitId][key].correct++;
+  setTracking(tracking);
+  backupToSheets();
+}
+
+function getAccuracy(unitId, pageId, regionIdx) {
+  const t = getRegionTracking(unitId, pageId, regionIdx);
+  if (t.attempts === 0) return null;
+  return t.correct / t.attempts;
+}
+
+function getUnitStats(unitId) {
+  const tracking = getTracking();
+  const unitData = tracking[unitId] || {};
+  let totalAttempts = 0, totalCorrect = 0, totalQuestions = 0;
+  for (const key in unitData) {
+    totalQuestions++;
+    totalAttempts += unitData[key].attempts;
+    totalCorrect += unitData[key].correct;
+  }
+  return { totalQuestions, totalAttempts, totalCorrect };
+}
+
+// --- Google Sheets ---
+async function backupToSheets() {
+  if (!SHEETS_API_URL) return;
+  try {
+    const tracking = getTracking();
+    await fetch(SHEETS_API_URL, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user: currentUser,
+        timestamp: new Date().toISOString(),
+        data: tracking,
+      }),
+    });
+  } catch (e) { console.warn("Sheets backup failed:", e); }
+}
+
+async function restoreFromSheets() {
+  if (!SHEETS_API_URL) { alert("URLが設定されていません"); return; }
+  if (!confirm("スプレッドシートから復元しますか？")) return;
+  try {
+    const url = SHEETS_API_URL + "?user=" + encodeURIComponent(currentUser);
+    const res = await fetch(url);
+    const json = await res.json();
+    if (json.status !== "ok" || !json.data) { alert("データなし"); return; }
+    const current = getTracking();
+    for (const u in json.data) {
+      if (!current[u]) current[u] = {};
+      for (const k in json.data[u]) current[u][k] = json.data[u][k];
+    }
+    setTracking(current);
+    alert("復元しました");
+    renderUnits();
+  } catch (e) { alert("失敗: " + e.message); }
+}
+
+function openSettings() {
+  document.getElementById("settings-url").value = SHEETS_API_URL;
+  showScreen("screen-settings");
+}
+
+function saveSettings() {
+  const url = document.getElementById("settings-url").value.trim();
+  SHEETS_API_URL = url;
+  localStorage.setItem("science-v2-sheets-api-url", url);
+  alert("保存しました");
+}
+
+function closeSettings() {
+  renderCategories();
+  showScreen("screen-categories");
+}
+
+// --- 画面切り替え ---
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+// ==============================
+// ユーザー選択
+// ==============================
+function selectUser(user) {
+  currentUser = user;
+  sessionStorage.setItem("current-user-v2", user);
+  document.getElementById("header-user-name").textContent = user;
+  loadCategories();
+}
+
+// ==============================
+// カテゴリ一覧
+// ==============================
+async function loadCategories() {
+  const res = await fetch("categories.json");
+  categoriesList = await res.json();
+  renderCategories();
+  showScreen("screen-categories");
+}
+
+function renderCategories() {
+  const list = document.getElementById("category-list");
+  list.innerHTML = "";
+  categoriesList.forEach(cat => {
+    const card = document.createElement("div");
+    card.className = "unit-card";
+    card.innerHTML = `
+      <div class="unit-card-info">
+        <div class="unit-card-title">${cat.icon} ${cat.name}</div>
+        <div class="unit-card-subtitle">${cat.description}</div>
+      </div>`;
+    card.addEventListener("click", () => openCategory(cat));
+    list.appendChild(card);
+  });
+}
+
+async function openCategory(cat) {
+  currentCategory = cat;
+  document.getElementById("units-header-title").textContent = cat.name;
+  const res = await fetch(`categories/${cat.id}/units.json`);
+  unitsList = await res.json();
+  renderUnits();
+  showScreen("screen-units");
+}
+
+// ==============================
+// 単元一覧
+// ==============================
+function renderUnits() {
+  const list = document.getElementById("unit-list");
+  list.innerHTML = "";
+  unitsList.forEach(unit => {
+    const card = document.createElement("div");
+    card.className = "unit-card";
+    const stats = getUnitStats(unit.id);
+    const accuracy = stats.totalAttempts > 0
+      ? Math.round((stats.totalCorrect / stats.totalAttempts) * 100) + "%"
+      : "---";
+    card.innerHTML = `
+      <div class="unit-card-info">
+        <div class="unit-card-title">${unit.id} ${unit.title}</div>
+        <div class="unit-card-subtitle">${unit.subject}</div>
+      </div>
+      <div class="unit-card-stats">
+        <div class="unit-card-accuracy">${accuracy}</div>
+        <div class="unit-card-detail">${stats.totalCorrect}/${stats.totalAttempts}</div>
+      </div>`;
+    card.addEventListener("click", () => openUnit(unit));
+    list.appendChild(card);
+  });
+}
+
+// ==============================
+// 単元詳細
+// ==============================
+async function openUnit(unit) {
+  currentUnit = unit;
+  document.getElementById("unit-detail-title").textContent = `${unit.id} ${unit.title}`;
+  const res = await fetch(`categories/${currentCategory.id}/units/${unit.id}/quiz-data.json`);
+  quizData = await res.json();
+  renderUnitDetail();
+  showScreen("screen-unit-detail");
+}
+
+function getQuizPages() {
+  return quizData.pages.filter(p => QUIZ_TYPES.has(p.type) && p.regions.length > 0);
+}
+
+function renderUnitDetail() {
+  // 閲覧モードボタンの有効/無効
+  ["cover", "description", "kakunin", "hatten"].forEach(sec => {
+    const btn = document.querySelector(`[data-reading="${sec}"]`);
+    if (!btn) return;
+    const has = quizData.pages.some(p => p.type === sec);
+    btn.disabled = !has;
+    const count = quizData.pages.filter(p => p.type === sec).length;
+    const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
+    btn.textContent = `${baseLabel} (${count}p)`;
+  });
+
+  // ページ一覧（クイズ可能なページのみ）
+  const list = document.getElementById("unit-page-list");
+  list.innerHTML = "";
+  getQuizPages().forEach((page) => {
+    const card = document.createElement("div");
+    card.className = "page-card";
+    const regionCount = page.regions.length;
+    let attempted = 0, correctCount = 0;
+    page.regions.forEach((_, ri) => {
+      const t = getRegionTracking(currentUnit.id, page.id, ri);
+      if (t.attempts > 0) {
+        attempted++;
+        if (t.correct / t.attempts >= 1) correctCount++;
+      }
+    });
+    let badge = "";
+    if (attempted === 0) badge = `<span class="badge badge-new">未回答</span>`;
+    else if (correctCount === regionCount) badge = `<span class="badge badge-perfect">全問正解</span>`;
+    else badge = `<span class="badge badge-in-progress">${Math.round(correctCount/regionCount*100)}%</span>`;
+    const label = getPageLabel(page);
+    const imgPath = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.imageMasked || page.image}`;
+    card.innerHTML = `
+      <div class="page-card-thumb"><img src="${imgPath}" loading="lazy" alt="${label}"></div>
+      <div class="page-card-title">${label}</div>
+      <div class="page-card-info">${regionCount}問</div>
+      ${badge}`;
+    card.addEventListener("click", () => {
+      currentMode = "all";
+      activePages = getQuizPages();
+      const idx = activePages.indexOf(page);
+      startQuiz(idx);
+    });
+    list.appendChild(card);
+  });
+
+  renderAccuracyTable();
+  updateModeButtons();
+}
+
+function renderAccuracyTable() {
+  const wrapper = document.getElementById("accuracy-table-wrapper");
+  let rows = "";
+  let qNum = 0;
+  getQuizPages().forEach(page => {
+    page.regions.forEach((_, ri) => {
+      qNum++;
+      const t = getRegionTracking(currentUnit.id, page.id, ri);
+      let accText, accClass;
+      if (t.attempts === 0) { accText = "未回答"; accClass = "acc-none"; }
+      else {
+        const pct = Math.round((t.correct / t.attempts) * 100);
+        accText = `${t.correct}/${t.attempts} (${pct}%)`;
+        if (pct === 100) accClass = "acc-perfect";
+        else if (pct >= 67) accClass = "acc-good";
+        else if (pct > 0) accClass = "acc-bad";
+        else accClass = "acc-zero";
+      }
+      rows += `<tr><td>${qNum}</td><td>${getPageLabel(page)}</td><td class="${accClass}">${accText}</td></tr>`;
+    });
+  });
+  wrapper.innerHTML = `<table class="accuracy-table"><thead><tr><th>#</th><th>ページ</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function updateModeButtons() {
+  const allPages = getQuizPages();
+  let totalAll = 0, countUnanswered = 0;
+  let countBelow50 = 0, countBelow67 = 0, countBelow99 = 0;
+  allPages.forEach(page => {
+    page.regions.forEach((_, ri) => {
+      totalAll++;
+      const acc = getAccuracy(currentUnit.id, page.id, ri);
+      if (acc === null) countUnanswered++;
+      if (acc !== null && acc <= 0.5) countBelow50++;
+      if (acc !== null && acc <= 0.67) countBelow67++;
+      if (acc !== null && acc < 1.0) countBelow99++;
+    });
+  });
+  const setBtn = (mode, count) => {
+    const btn = document.querySelector(`[data-mode="${mode}"]`);
+    if (!btn) return;
+    const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
+    btn.textContent = `${baseLabel} (${count}問)`;
+    btn.disabled = count === 0;
+  };
+  setBtn("continue", countUnanswered);
+  setBtn("all", totalAll);
+  setBtn("below50", countBelow50);
+  setBtn("below67", countBelow67);
+  setBtn("below99", countBelow99);
+  setBtn("unanswered", countUnanswered);
+}
+
+function getPageLabel(page) {
+  const sec = SECTION_LABELS[page.type] || page.type;
+  return `${sec} p${page.id}`;
+}
+
+// ==============================
+// 閲覧モード
+// ==============================
+function startReading(section) {
+  readingPages = quizData.pages.filter(p => p.type === section);
+  if (readingPages.length === 0) return;
+  currentReadingSection = section;
+  readingIndex = 0;
+  showScreen("screen-reading");
+  renderReading();
+}
+
+function renderReading() {
+  const page = readingPages[readingIndex];
+  document.getElementById("reading-title").textContent =
+    `${SECTION_LABELS[currentReadingSection]} (${currentUnit.id} ${currentUnit.title})`;
+  document.getElementById("reading-page-info").textContent = `p${page.id}`;
+  document.getElementById("reading-indicator").textContent =
+    `${readingIndex + 1} / ${readingPages.length}`;
+  document.getElementById("btn-reading-prev").disabled = readingIndex === 0;
+  document.getElementById("btn-reading-next").disabled = readingIndex === readingPages.length - 1;
+  const img = document.getElementById("reading-image");
+  img.src = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.image}`;
+}
+
+// ==============================
+// クイズモード
+// ==============================
+function isTargetRegion(pageId, regionIdx) {
+  if (currentMode === "all") return true;
+  const acc = getAccuracy(currentUnit.id, pageId, regionIdx);
+  if (currentMode === "continue" || currentMode === "unanswered") return acc === null;
+  if (currentMode === "below50") return acc !== null && acc <= 0.5;
+  if (currentMode === "below67") return acc !== null && acc <= 0.67;
+  if (currentMode === "below99") return acc !== null && acc < 1.0;
+  return true;
+}
+
+function startWithMode(mode) {
+  currentMode = mode;
+  const allPages = getQuizPages();
+  if (mode === "all") {
+    activePages = allPages; sessionResults = {}; startQuiz(0);
+  } else if (mode === "continue") {
+    activePages = allPages; sessionResults = {};
+    let foundPage = 0, foundRegion = 0, found = false;
+    for (let pi = 0; pi < activePages.length && !found; pi++) {
+      for (let ri = 0; ri < activePages[pi].regions.length; ri++) {
+        if (getAccuracy(currentUnit.id, activePages[pi].id, ri) === null) {
+          foundPage = pi; foundRegion = ri; found = true; break;
+        }
+      }
+    }
+    currentRegionIndex = foundRegion;
+    startQuiz(foundPage);
+  } else if (mode === "unanswered") {
+    activePages = allPages.filter(p =>
+      p.regions.some((_, ri) => getAccuracy(currentUnit.id, p.id, ri) === null));
+    sessionResults = {};
+    if (activePages.length > 0) startQuiz(0);
+  } else {
+    const threshold = mode === "below50" ? 0.5 : mode === "below67" ? 0.67 : 0.99;
+    activePages = allPages.filter(p =>
+      p.regions.some((_, ri) => {
+        const a = getAccuracy(currentUnit.id, p.id, ri);
+        return a !== null && a <= threshold;
+      }));
+    sessionResults = {};
+    if (activePages.length > 0) startQuiz(0);
+  }
+}
+
+function startQuiz(pageIdx) {
+  currentPageIndex = pageIdx;
+  if (currentRegionIndex === undefined || currentRegionIndex === 0) {
+    currentRegionIndex = findFirstUnansweredInSession(activePages[pageIdx]);
+  }
+  answerRevealed = false;
+  showScreen("screen-quiz");
+  renderQuiz();
+}
+
+function isAnswered(key) {
+  return sessionResults[key] || pendingAnswers[key];
+}
+
+function findFirstUnansweredInSession(page) {
+  for (let i = 0; i < page.regions.length; i++) {
+    if (!isAnswered(`${page.id}-${i}`) && isTargetRegion(page.id, i)) return i;
+  }
+  return 0;
+}
+
+function findNextUnansweredInSession(page, fromIndex) {
+  for (let i = fromIndex + 1; i < page.regions.length; i++) {
+    if (!isAnswered(`${page.id}-${i}`) && isTargetRegion(page.id, i)) return i;
+  }
+  for (let i = 0; i < fromIndex; i++) {
+    if (!isAnswered(`${page.id}-${i}`) && isTargetRegion(page.id, i)) return i;
+  }
+  return -1;
+}
+
+async function renderQuiz() {
+  const page = activePages[currentPageIndex];
+  const canvas = document.getElementById("quiz-canvas");
+  const ctx = canvas.getContext("2d");
+  document.getElementById("quiz-title").textContent = getPageLabel(page);
+  document.getElementById("quiz-page-info").textContent =
+    `${currentRegionIndex + 1} / ${page.regions.length}問`;
+  document.getElementById("page-indicator").textContent =
+    `p${currentPageIndex + 1} / ${activePages.length}ページ`;
+  document.getElementById("btn-prev-page").disabled = currentPageIndex === 0;
+  document.getElementById("btn-next-page").disabled = currentPageIndex === activePages.length - 1;
+
+  const targetCount = page.regions.filter((_, i) => isTargetRegion(page.id, i)).length;
+  const answeredCount = page.regions.filter((_, i) =>
+    isAnswered(`${page.id}-${i}`) && isTargetRegion(page.id, i)).length;
+  document.getElementById("progress-fill").style.width =
+    targetCount > 0 ? `${(answeredCount / targetCount) * 100}%` : "0%";
+
+  const imgBase = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
+  const origImg = await loadImage(imgBase + page.image);
+  const maskImg = await loadImage(imgBase + page.imageMasked);
+
+  canvas.width = page.width;
+  canvas.height = page.height;
+  const wrapper = document.getElementById("canvas-wrapper");
+  const scaleW = (wrapper.clientWidth - 8) / page.width;
+  const scaleH = (wrapper.clientHeight - 8) / page.height;
+  const scale = Math.min(scaleW, scaleH);
+  canvas.style.width = Math.floor(page.width * scale) + "px";
+  canvas.style.height = Math.floor(page.height * scale) + "px";
+
+  ctx.drawImage(maskImg, 0, 0);
+
+  page.regions.forEach((region, i) => {
+    const key = `${page.id}-${i}`;
+    const target = isTargetRegion(page.id, i);
+    const committed = sessionResults[key];
+    const pending = pendingAnswers[key];
+    if (committed || pending || !target) {
+      const pad = 4;
+      const sx = Math.max(0, region.x - pad);
+      const sy = Math.max(0, region.y - pad);
+      const sw = Math.min(page.width - sx, region.w + pad * 2);
+      const sh = Math.min(page.height - sy, region.h + pad * 2);
+      ctx.drawImage(origImg, sx, sy, sw, sh, sx, sy, sw, sh);
+      enhanceOrangeRegion(ctx, sx, sy, sw, sh);
+      if (committed) drawResultMark(ctx, region, committed);
+      else if (pending) drawPendingMark(ctx, region, pending);
+    }
+  });
+
+  if (currentRegionIndex < page.regions.length) {
+    const region = page.regions[currentRegionIndex];
+    const key = `${page.id}-${currentRegionIndex}`;
+    if (!isAnswered(key)) {
+      const pad = 6;
+      ctx.strokeStyle = "#e8a040";
+      ctx.lineWidth = 3;
+      ctx.strokeRect(region.x - pad, region.y - pad, region.w + pad * 2, region.h + pad * 2);
+    }
+  }
+
+  updateControlVisibility();
+}
+
+function drawResultMark(ctx, region, result) {
+  const pad = 4;
+  ctx.strokeStyle = result === "correct" ? "rgba(52,199,89,0.6)" : "rgba(255,59,48,0.6)";
+  ctx.lineWidth = 2;
+  ctx.strokeRect(region.x - pad, region.y - pad, region.w + pad * 2, region.h + pad * 2);
+}
+
+function drawPendingMark(ctx, region, result) {
+  const pad = 4;
+  ctx.strokeStyle = result === "correct" ? "rgba(52,199,89,0.7)" : "rgba(255,59,48,0.7)";
+  ctx.lineWidth = 2;
+  ctx.setLineDash([6, 4]);
+  ctx.strokeRect(region.x - pad, region.y - pad, region.w + pad * 2, region.h + pad * 2);
+  ctx.setLineDash([]);
+}
+
+function updateControlVisibility() {
+  const page = activePages[currentPageIndex];
+  const key = `${page.id}-${currentRegionIndex}`;
+  const revealRow = document.getElementById("reveal-row");
+  const judgeRow = document.getElementById("judge-row");
+  revealRow.classList.add("hidden");
+  judgeRow.classList.add("hidden");
+  if (!isTargetRegion(page.id, currentRegionIndex)) revealRow.classList.remove("hidden");
+  else if (pendingAnswers[key]) { judgeRow.classList.remove("hidden"); updatePendingVisual(); }
+  else if (sessionResults[key]) revealRow.classList.remove("hidden");
+  else if (answerRevealed) { judgeRow.classList.remove("hidden"); updatePendingVisual(); }
+  else revealRow.classList.remove("hidden");
+}
+
+function enhanceOrangeRegion(ctx, sx, sy, sw, sh) {
+  const imageData = ctx.getImageData(sx, sy, sw, sh);
+  const d = imageData.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const r = d[i], g = d[i+1], b = d[i+2];
+    if (r > g && g > b && (r - b) > 15) {
+      d[i]   = Math.min(255, Math.round(r * 1.6 - (g + b) * 0.15));
+      d[i+1] = Math.min(255, Math.round(g * 0.6));
+      d[i+2] = Math.min(255, Math.round(b * 0.4));
+    }
+  }
+  ctx.putImageData(imageData, sx, sy);
+}
+
+async function revealAnswer() {
+  resetIdleTimer();
+  const page = activePages[currentPageIndex];
+  const region = page.regions[currentRegionIndex];
+  const canvas = document.getElementById("quiz-canvas");
+  const ctx = canvas.getContext("2d");
+  const origImg = await loadImage(`categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.image}`);
+  const pad = 4;
+  const sx = Math.max(0, region.x - pad);
+  const sy = Math.max(0, region.y - pad);
+  const sw = Math.min(page.width - sx, region.w + pad * 2);
+  const sh = Math.min(page.height - sy, region.h + pad * 2);
+  ctx.drawImage(origImg, sx, sy, sw, sh, sx, sy, sw, sh);
+  enhanceOrangeRegion(ctx, sx, sy, sw, sh);
+  ctx.strokeStyle = "#e8a040";
+  ctx.lineWidth = 3;
+  ctx.strokeRect(sx - 2, sy - 2, sw + 4, sh + 4);
+  answerRevealed = true;
+  updateControlVisibility();
+}
+
+// 仮選択
+function resetIdleTimer() {
+  if (idleTimer) clearTimeout(idleTimer);
+  if (Object.keys(pendingAnswers).length > 0)
+    idleTimer = setTimeout(commitAllPending, IDLE_TIMEOUT);
+}
+
+function commitAllPending() {
+  if (idleTimer) { clearTimeout(idleTimer); idleTimer = null; }
+  const keys = Object.keys(pendingAnswers);
+  if (keys.length === 0) return;
+  for (const key of keys) {
+    const result = pendingAnswers[key];
+    sessionResults[key] = result;
+    const lastDash = key.lastIndexOf('-');
+    const pageId = parseInt(key.substring(0, lastDash));
+    const regionIndex = parseInt(key.substring(lastDash + 1));
+    recordAnswer(currentUnit.id, pageId, regionIndex, result === "correct");
+  }
+  pendingAnswers = {};
+  updatePendingVisual();
+  renderQuiz();
+}
+
+function updatePendingVisual() {
+  const page = activePages[currentPageIndex];
+  const key = `${page.id}-${currentRegionIndex}`;
+  const pending = pendingAnswers[key];
+  const btnC = document.getElementById("btn-correct");
+  const btnI = document.getElementById("btn-incorrect");
+  if (pending) {
+    const isCorrect = pending === "correct";
+    btnC.classList.toggle("pending", isCorrect);
+    btnI.classList.toggle("pending", !isCorrect);
+    btnC.classList.toggle("pending-dim", !isCorrect);
+    btnI.classList.toggle("pending-dim", isCorrect);
+  } else {
+    btnC.classList.remove("pending", "pending-dim");
+    btnI.classList.remove("pending", "pending-dim");
+  }
+}
+
+function judgeAnswer(isCorrect) {
+  const page = activePages[currentPageIndex];
+  const key = `${page.id}-${currentRegionIndex}`;
+  pendingAnswers[key] = isCorrect ? "correct" : "wrong";
+  updatePendingVisual();
+  resetIdleTimer();
+  answerRevealed = false;
+  const nextIdx = findNextUnansweredInSession(page, currentRegionIndex);
+  if (nextIdx !== -1) {
+    currentRegionIndex = nextIdx;
+    renderQuiz();
+  } else {
+    if (currentPageIndex < activePages.length - 1) {
+      currentPageIndex++;
+      currentRegionIndex = findFirstUnansweredInSession(activePages[currentPageIndex]);
+      renderQuiz();
+    } else {
+      commitAllPending();
+      showResults();
+    }
+  }
+}
+
+function showResults() {
+  commitAllPending();
+  let correct = 0, answered = 0;
+  // 全アクティブページの集計
+  activePages.forEach(page => {
+    page.regions.forEach((_, i) => {
+      if (!isTargetRegion(page.id, i)) return;
+      const key = `${page.id}-${i}`;
+      if (sessionResults[key]) {
+        answered++;
+        if (sessionResults[key] === "correct") correct++;
+      }
+    });
+  });
+  const percent = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+  document.getElementById("score-correct").textContent = correct;
+  document.getElementById("score-total").textContent = answered;
+  document.getElementById("score-percent").textContent = percent + "%";
+  let emoji = "📚";
+  if (percent === 100) emoji = "🎉";
+  else if (percent >= 80) emoji = "👍";
+  else if (percent >= 50) emoji = "💪";
+  document.getElementById("score-emoji").textContent = emoji;
+  const hasWrong = activePages.some(p => p.regions.some((_, i) =>
+    sessionResults[`${p.id}-${i}`] === "wrong" && isTargetRegion(p.id, i)));
+  document.getElementById("btn-retry-wrong").disabled = !hasWrong;
+  showScreen("screen-results");
+}
+
+// 印刷
+async function printCurrentPage() {
+  if (!activePages || activePages.length === 0) return;
+  const page = activePages[currentPageIndex];
+  if (!page) return;
+  const isFiltered = ["below50", "below67", "below99"].includes(currentMode);
+  const origPath = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.image}`;
+  const maskPath = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.imageMasked}`;
+  let baseImage;
+  try {
+    baseImage = isFiltered
+      ? await renderFilteredPrintCanvas(page, origPath, maskPath)
+      : await loadImage(maskPath);
+  } catch (e) { alert("画像の読み込みに失敗しました"); return; }
+  const crop = getVisibleSourceRegion(baseImage.width, baseImage.height);
+  const cc = document.createElement("canvas");
+  cc.width = crop.w; cc.height = crop.h;
+  cc.getContext("2d").drawImage(baseImage, crop.x, crop.y, crop.w, crop.h, 0, 0, crop.w, crop.h);
+  const dataURL = cc.toDataURL("image/png");
+  const pageSize = crop.h > crop.w ? "A4 portrait" : "B4 landscape";
+  openPrintIframe(`${currentUnit.title} - ${getPageLabel(page)}`, pageSize, dataURL);
+}
+
+function openPrintIframe(titleText, pageSize, dataURL) {
+  const iframe = document.createElement("iframe");
+  Object.assign(iframe.style, {
+    position: "fixed", right: 0, bottom: 0, width: 0, height: 0, border: 0, visibility: "hidden"
+  });
+  document.body.appendChild(iframe);
+  let cleaned = false;
+  const cleanup = () => { if (cleaned) return; cleaned = true; setTimeout(() => iframe.remove(), 500); };
+  const idoc = iframe.contentDocument || iframe.contentWindow.document;
+  idoc.open();
+  idoc.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${titleText}</title><style>
+    @page { size: ${pageSize}; margin: 5mm; }
+    *{box-sizing:border-box;} html,body{margin:0;padding:0;width:100%;height:100%;background:#fff;}
+    img{display:block;width:100%;height:100%;object-fit:contain;}
+    </style></head><body><img src="${dataURL}" onload="setTimeout(()=>{try{window.focus();window.print();}catch(e){}}, 300)"></body></html>`);
+  idoc.close();
+  try { iframe.contentWindow.addEventListener("afterprint", cleanup); } catch (e) {}
+  setTimeout(cleanup, 60000);
+}
+
+async function renderFilteredPrintCanvas(page, origPath, maskPath) {
+  const off = document.createElement("canvas");
+  off.width = page.width; off.height = page.height;
+  const oCtx = off.getContext("2d");
+  const origImg = await loadImage(origPath);
+  const maskImg = await loadImage(maskPath);
+  oCtx.drawImage(maskImg, 0, 0);
+  for (let i = 0; i < page.regions.length; i++) {
+    if (isTargetRegion(page.id, i)) continue;
+    const r = page.regions[i];
+    const pad = 4;
+    oCtx.drawImage(origImg, r.x - pad, r.y - pad, r.w + pad*2, r.h + pad*2,
+                            r.x - pad, r.y - pad, r.w + pad*2, r.h + pad*2);
+  }
+  oCtx.strokeStyle = "#ff8c00"; oCtx.lineWidth = 5;
+  for (let i = 0; i < page.regions.length; i++) {
+    if (!isTargetRegion(page.id, i)) continue;
+    const r = page.regions[i];
+    oCtx.strokeRect(r.x - 3, r.y - 3, r.w + 6, r.h + 6);
+  }
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.src = off.toDataURL("image/png");
+  });
+}
+
+function getVisibleSourceRegion(srcW, srcH) {
+  const canvas = document.getElementById("quiz-canvas");
+  const wrapper = document.getElementById("canvas-wrapper");
+  if (!canvas || !wrapper) return { x: 0, y: 0, w: srcW, h: srcH };
+  const cssW = canvas.offsetWidth || canvas.width;
+  const cssH = canvas.offsetHeight || canvas.height;
+  const scaleX = srcW / cssW;
+  const scaleY = srcH / cssH;
+  const cr = canvas.getBoundingClientRect();
+  const wr = wrapper.getBoundingClientRect();
+  const visL = Math.max(cr.left, wr.left);
+  const visT = Math.max(cr.top, wr.top);
+  const visR = Math.min(cr.right, wr.right);
+  const visB = Math.min(cr.bottom, wr.bottom);
+  if (visR <= visL || visB <= visT) return { x: 0, y: 0, w: srcW, h: srcH };
+  return {
+    x: Math.max(0, Math.round((visL - cr.left) * scaleX)),
+    y: Math.max(0, Math.round((visT - cr.top) * scaleY)),
+    w: Math.min(srcW, Math.round((visR - visL) * scaleX)),
+    h: Math.min(srcH, Math.round((visB - visT) * scaleY)),
+  };
+}
+
+function loadImage(src) {
+  if (imageCache[src]) return Promise.resolve(imageCache[src]);
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => { imageCache[src] = img; resolve(img); };
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+// ==============================
+// イベントリスナー
+// ==============================
+function setupEventListeners() {
+  document.querySelectorAll(".btn-user").forEach(btn =>
+    btn.addEventListener("click", () => selectUser(btn.dataset.user)));
+  document.getElementById("btn-switch-user").addEventListener("click", () => {
+    currentUser = null;
+    sessionStorage.removeItem("current-user-v2");
+    showScreen("screen-user");
+  });
+  document.getElementById("btn-settings").addEventListener("click", openSettings);
+  document.getElementById("btn-save-settings").addEventListener("click", saveSettings);
+  document.getElementById("btn-restore").addEventListener("click", restoreFromSheets);
+  document.getElementById("btn-close-settings").addEventListener("click", closeSettings);
+  document.getElementById("btn-back-categories").addEventListener("click", () => {
+    renderCategories(); showScreen("screen-categories");
+  });
+  document.getElementById("btn-back-units").addEventListener("click", () => {
+    renderUnits(); showScreen("screen-units");
+  });
+
+  // 閲覧モード
+  document.querySelectorAll("[data-reading]").forEach(btn =>
+    btn.addEventListener("click", () => startReading(btn.dataset.reading)));
+  document.getElementById("btn-back-reading").addEventListener("click", () => {
+    showScreen("screen-unit-detail");
+  });
+  document.getElementById("btn-reading-prev").addEventListener("click", () => {
+    if (readingIndex > 0) { readingIndex--; renderReading(); }
+  });
+  document.getElementById("btn-reading-next").addEventListener("click", () => {
+    if (readingIndex < readingPages.length - 1) { readingIndex++; renderReading(); }
+  });
+
+  // クイズモード
+  document.querySelectorAll("[data-mode]").forEach(btn =>
+    btn.addEventListener("click", () => startWithMode(btn.dataset.mode)));
+  document.getElementById("btn-reveal").addEventListener("click", revealAnswer);
+  document.getElementById("btn-correct").addEventListener("click", () => judgeAnswer(true));
+  document.getElementById("btn-incorrect").addEventListener("click", () => judgeAnswer(false));
+  document.getElementById("btn-undo").addEventListener("click", () => {
+    const pendingKeys = Object.keys(pendingAnswers);
+    if (pendingKeys.length > 0) {
+      const lastKey = pendingKeys[pendingKeys.length - 1];
+      const dashIdx = lastKey.lastIndexOf("-");
+      const targetPageId = lastKey.slice(0, dashIdx);
+      const targetRegionIdx = parseInt(lastKey.slice(dashIdx + 1), 10);
+      const targetPageIdx = activePages.findIndex(p => String(p.id) === targetPageId);
+      if (targetPageIdx !== -1) {
+        currentPageIndex = targetPageIdx;
+        currentRegionIndex = targetRegionIdx;
+      }
+      delete pendingAnswers[lastKey];
+      answerRevealed = false;
+      updatePendingVisual();
+      resetIdleTimer();
+      renderQuiz();
+      return;
+    }
+    if (currentRegionIndex > 0) {
+      currentRegionIndex--;
+      answerRevealed = false;
+      renderQuiz();
+    }
+  });
+  document.getElementById("btn-prev-page").addEventListener("click", () => {
+    resetIdleTimer();
+    if (currentPageIndex > 0) {
+      currentPageIndex--;
+      currentRegionIndex = findFirstUnansweredInSession(activePages[currentPageIndex]);
+      answerRevealed = false;
+      renderQuiz();
+    }
+  });
+  document.getElementById("btn-next-page").addEventListener("click", () => {
+    resetIdleTimer();
+    if (currentPageIndex < activePages.length - 1) {
+      currentPageIndex++;
+      currentRegionIndex = findFirstUnansweredInSession(activePages[currentPageIndex]);
+      answerRevealed = false;
+      renderQuiz();
+    }
+  });
+  document.getElementById("btn-back-detail").addEventListener("click", () => {
+    commitAllPending();
+    answerRevealed = false;
+    renderUnitDetail();
+    showScreen("screen-unit-detail");
+  });
+  document.getElementById("print-btn").addEventListener("click", printCurrentPage);
+
+  document.addEventListener("visibilitychange", () => { if (document.hidden) commitAllPending(); });
+  window.addEventListener("beforeunload", () => commitAllPending());
+
+  document.getElementById("btn-results").addEventListener("click", showResults);
+  document.getElementById("btn-retry-wrong").addEventListener("click", () => {
+    activePages.forEach(page => {
+      page.regions.forEach((_, i) => {
+        const key = `${page.id}-${i}`;
+        if (sessionResults[key] === "wrong") delete sessionResults[key];
+      });
+    });
+    currentPageIndex = 0;
+    currentRegionIndex = findFirstUnansweredInSession(activePages[0]);
+    answerRevealed = false;
+    showScreen("screen-quiz");
+    renderQuiz();
+  });
+  document.getElementById("btn-back-unit-detail").addEventListener("click", () => {
+    renderUnitDetail(); showScreen("screen-unit-detail");
+  });
+  document.getElementById("btn-back-from-results").addEventListener("click", () => {
+    showScreen("screen-quiz"); renderQuiz();
+  });
+  document.getElementById("quiz-canvas").addEventListener("click", () => {
+    const page = activePages[currentPageIndex];
+    if (!answerRevealed && isTargetRegion(page.id, currentRegionIndex)) revealAnswer();
+  });
+}
+
+// ==============================
+// 起動
+// ==============================
+function init() {
+  setupEventListeners();
+  const savedUser = sessionStorage.getItem("current-user-v2");
+  if (savedUser) selectUser(savedUser);
+}
+
+init();
+
+// ==============================
+// Pinch-zoom for canvas-wrapper / reading-wrapper
+// ==============================
+function attachPinchZoom(wrapperId, contentSelector) {
+  const wrapper = document.getElementById(wrapperId);
+  if (!wrapper) return;
+  let scale = 1, minScale = 1, maxScale = 4;
+  let startDist = 0, startScale = 1;
+  let isPinching = false;
+  let baseWidth = 0;
+  let panStartX = 0, panStartY = 0;
+  let panScrollL = 0, panScrollT = 0;
+  let isPanning = false;
+
+  function getContent() {
+    return wrapper.querySelector(contentSelector);
+  }
+
+  function getBaseWidth() {
+    const cvs = getContent();
+    if (!cvs) return 0;
+    if (scale === 1) baseWidth = cvs.getBoundingClientRect().width;
+    return baseWidth;
+  }
+
+  function applyZoom(midXClient, midYClient) {
+    const cvs = getContent();
+    if (!cvs) return;
+    const bw = getBaseWidth() || wrapper.clientWidth;
+    const newW = bw * scale;
+    const prevScrollLeft = wrapper.scrollLeft;
+    const prevScrollTop = wrapper.scrollTop;
+    const wRect = wrapper.getBoundingClientRect();
+    const canvasX = prevScrollLeft + midXClient - wRect.left;
+    const canvasY = prevScrollTop + midYClient - wRect.top;
+    const ratioX = canvasX / (cvs.offsetWidth || 1);
+    const ratioY = canvasY / (cvs.offsetHeight || 1);
+    cvs.style.width = newW + 'px';
+    cvs.style.maxWidth = 'none';
+    cvs.style.maxHeight = 'none';
+    cvs.style.height = 'auto';
+    const newCanvasX = ratioX * cvs.offsetWidth;
+    const newCanvasY = ratioY * cvs.offsetHeight;
+    wrapper.scrollLeft = newCanvasX - (midXClient - wRect.left);
+    wrapper.scrollTop = newCanvasY - (midYClient - wRect.top);
+  }
+
+  function resetZoom() {
+    const cvs = getContent();
+    if (!cvs) return;
+    scale = 1;
+    const wW = wrapper.clientWidth - 8;
+    const wH = wrapper.clientHeight - 8;
+    const cW = cvs.naturalWidth || cvs.width || 1;
+    const cH = cvs.naturalHeight || cvs.height || 1;
+    const fitScale = Math.min(wW / cW, wH / cH);
+    const fitW = Math.floor(cW * fitScale);
+    cvs.style.width = fitW + 'px';
+    cvs.style.maxWidth = 'none';
+    cvs.style.maxHeight = 'none';
+    cvs.style.height = 'auto';
+    baseWidth = fitW;
+  }
+
+  function getDist(t1, t2) {
+    const dx = t1.clientX - t2.clientX, dy = t1.clientY - t2.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  wrapper.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      isPinching = true; isPanning = false;
+      startDist = getDist(e.touches[0], e.touches[1]);
+      startScale = scale;
+      if (scale === 1) getBaseWidth();
+    } else if (e.touches.length === 1) {
+      isPanning = true;
+      panStartX = e.touches[0].clientX;
+      panStartY = e.touches[0].clientY;
+      panScrollL = wrapper.scrollLeft;
+      panScrollT = wrapper.scrollTop;
+    }
+  }, { passive: true });
+
+  wrapper.addEventListener('touchmove', e => {
+    if (isPinching && e.touches.length === 2) {
+      e.preventDefault();
+      const dist = getDist(e.touches[0], e.touches[1]);
+      scale = Math.min(maxScale, Math.max(minScale, startScale * (dist / startDist)));
+      const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      applyZoom(midX, midY);
+    } else if (isPanning && e.touches.length === 1) {
+      e.preventDefault();
+      const dx = panStartX - e.touches[0].clientX;
+      const dy = panStartY - e.touches[0].clientY;
+      wrapper.scrollLeft = panScrollL + dx;
+      wrapper.scrollTop = panScrollT + dy;
+    }
+  }, { passive: false });
+
+  wrapper.addEventListener('touchend', e => {
+    if (isPinching && e.touches.length < 2) {
+      isPinching = false;
+      if (scale <= 1.05) resetZoom();
+    }
+    if (e.touches.length === 0) isPanning = false;
+  }, { passive: true });
+
+  let lastTap = 0;
+  wrapper.addEventListener('touchend', e => {
+    if (e.touches.length > 0) return;
+    const now = Date.now();
+    if (now - lastTap < 300 && scale > 1) {
+      resetZoom();
+      wrapper.scrollTop = 0;
+    }
+    lastTap = now;
+  }, { passive: true });
+
+  // ページ切替・画像変更時にリセット
+  const cvs = getContent();
+  if (cvs) {
+    const observer = new MutationObserver(() => { if (scale > 1) resetZoom(); });
+    observer.observe(cvs, { attributes: true, attributeFilter: ['width', 'height', 'src'] });
+  }
+}
+
+attachPinchZoom('canvas-wrapper', '#quiz-canvas');
+attachPinchZoom('reading-wrapper', '#reading-image');
