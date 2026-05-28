@@ -28,9 +28,8 @@ let currentReadingSection = null;
 // セクション
 let currentSection = null;
 
-// Phase 1: クイズ対象は pointcheck と dailystep のみ
-// kakunin/hatten/description はPhase 2 でクイズ化予定（現状は閲覧のみ）
-const QUIZ_TYPES = new Set(["pointcheck", "dailystep"]);
+// クイズ対象セクション（kakunin/hatten はPhase 2で小問セル単位のクイズ化）
+const QUIZ_TYPES = new Set(["pointcheck", "dailystep", "kakunin", "hatten"]);
 // セクション表示順
 const SECTION_ORDER = ["description", "kakunin", "hatten", "pointcheck", "dailystep"];
 
