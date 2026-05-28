@@ -198,9 +198,82 @@ body {
   color: #86868b;
 }
 
-/* 単元詳細画面 */
-#screen-unit-detail {
+/* 単元詳細・セクション詳細画面 */
+#screen-unit-detail, #screen-section-detail {
   overflow-y: auto;
+}
+
+/* セクションカードリスト */
+.section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 6px solid #007aff;
+}
+.section-card.section-reading-only { border-left-color: #f5b955; }
+.section-card.section-disabled { opacity: 0.55; cursor: default; }
+.section-card:not(.section-disabled):active { transform: scale(0.98); }
+
+.section-card-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+.section-card-body { flex: 1; min-width: 0; }
+.section-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.section-card-meta {
+  font-size: 12px;
+  color: #86868b;
+  margin-bottom: 8px;
+}
+.section-card-progress {
+  height: 6px;
+  background: #e8e8ed;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.section-card-progress-fill {
+  height: 100%;
+  background: #34c759;
+  transition: width 0.3s;
+}
+.section-card-stats {
+  text-align: right;
+  flex-shrink: 0;
+}
+.section-card-stats-main {
+  font-size: 18px;
+  font-weight: 700;
+  color: #34c759;
+}
+.section-card-stats-sub {
+  font-size: 11px;
+  color: #86868b;
+}
+.section-card-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #fff4e0;
+  color: #b76b00;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 .unit-detail-body {

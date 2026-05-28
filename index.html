@@ -47,33 +47,38 @@
     </header>
     <div class="unit-detail-body">
       <div class="mode-section">
-        <h2 class="section-title">教材を読む</h2>
-        <div class="mode-buttons" id="reading-mode-buttons">
-          <button class="btn btn-reading btn-large" data-reading="description">📝 説明文</button>
-          <button class="btn btn-reading btn-large" data-reading="kakunin">✏️ 確認問題</button>
-          <button class="btn btn-reading btn-large" data-reading="hatten">🚀 発展問題</button>
-          <button class="btn btn-reading btn-large" data-reading="pointcheck">✨ ポイントチェック</button>
-          <button class="btn btn-reading btn-large" data-reading="dailystep">📋 デイリーステップ</button>
-        </div>
+        <h2 class="section-title">学習する</h2>
+        <div class="section-list" id="section-card-list"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- セクション詳細画面（モード選択 + ページ一覧 + 正答率） -->
+  <div id="screen-section-detail" class="screen">
+    <header class="header">
+      <button class="btn-icon" id="btn-back-section">←</button>
+      <h1 class="header-title" id="section-detail-title"></h1>
+    </header>
+    <div class="unit-detail-body">
       <div class="mode-section">
-        <h2 class="section-title">クイズで解く（ポイントチェック・デイリーステップ）</h2>
+        <h2 class="section-title">学習モード</h2>
         <div class="mode-buttons">
-          <button class="btn btn-primary btn-large" data-mode="continue">続きから再開</button>
-          <button class="btn btn-secondary btn-large" data-mode="all">全問を解く</button>
-          <button class="btn btn-secondary btn-large" data-mode="below50">正答率 50% 以下を解く</button>
-          <button class="btn btn-secondary btn-large" data-mode="below67">正答率 67% 以下を解く</button>
-          <button class="btn btn-secondary btn-large" data-mode="below99">正答率 99% 以下を解く</button>
-          <button class="btn btn-secondary btn-large" data-mode="unanswered">未回答問題を解く</button>
+          <button class="btn btn-reading btn-large" data-section-mode="reading">📖 順番に読む</button>
+          <button class="btn btn-primary btn-large" data-section-mode="continue">続きから再開</button>
+          <button class="btn btn-secondary btn-large" data-section-mode="all">全問を解く</button>
+          <button class="btn btn-secondary btn-large" data-section-mode="below50">正答率 50% 以下を解く</button>
+          <button class="btn btn-secondary btn-large" data-section-mode="below67">正答率 67% 以下を解く</button>
+          <button class="btn btn-secondary btn-large" data-section-mode="below99">正答率 99% 以下を解く</button>
+          <button class="btn btn-secondary btn-large" data-section-mode="unanswered">未回答問題を解く</button>
         </div>
       </div>
       <div class="accuracy-section">
         <h2 class="section-title">問題別正答率</h2>
-        <div class="accuracy-table-wrapper" id="accuracy-table-wrapper"></div>
+        <div class="accuracy-table-wrapper" id="section-accuracy-wrapper"></div>
       </div>
       <div class="page-section">
         <h2 class="section-title">ページ一覧</h2>
-        <div class="page-list" id="unit-page-list"></div>
+        <div class="page-list" id="section-page-list"></div>
       </div>
     </div>
   </div>

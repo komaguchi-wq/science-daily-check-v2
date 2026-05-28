@@ -25,19 +25,26 @@ let readingPages = [];
 let readingIndex = 0;
 let currentReadingSection = null;
 
-// Phase 1: クイズ対象は pointcheck と dailystep のみ
-// kakunin/hatten はPhase 2でクイズ化予定
-const QUIZ_TYPES = new Set(["pointcheck", "dailystep"]);
-const READING_TYPES = new Set(["cover", "description", "kakunin", "hatten"]);
+// セクション
+let currentSection = null;
 
-const SECTION_LABELS = {
-  cover: "表紙",
-  description: "説明文",
-  kakunin: "確認問題",
-  hatten: "発展問題",
-  pointcheck: "ポイントチェック",
-  dailystep: "デイリーステップ",
+// Phase 1: クイズ対象は pointcheck と dailystep のみ
+// kakunin/hatten/description はPhase 2 でクイズ化予定（現状は閲覧のみ）
+const QUIZ_TYPES = new Set(["pointcheck", "dailystep"]);
+// セクション表示順
+const SECTION_ORDER = ["description", "kakunin", "hatten", "pointcheck", "dailystep"];
+
+const SECTION_META = {
+  description: { label: "説明文", icon: "📝" },
+  kakunin: { label: "確認問題", icon: "✏️" },
+  hatten: { label: "発展問題", icon: "🚀" },
+  pointcheck: { label: "ポイントチェック", icon: "✨" },
+  dailystep: { label: "デイリーステップ", icon: "📋" },
 };
+// 旧コードとの互換性
+const SECTION_LABELS = Object.fromEntries(
+  Object.entries(SECTION_META).map(([k, v]) => [k, v.label])
+);
 
 // Google Sheets バックアップ用（v2は別キーで管理）
 let SHEETS_API_URL = localStorage.getItem("science-v2-sheets-api-url") || "";
@@ -230,26 +237,129 @@ async function openUnit(unit) {
   showScreen("screen-unit-detail");
 }
 
-function getQuizPages() {
-  return quizData.pages.filter(p => QUIZ_TYPES.has(p.type) && p.regions.length > 0);
+// セクションごとのページ集合（containsSections も考慮）
+function getSectionPages(section) {
+  return quizData.pages.filter(p =>
+    p.type === section || (p.containsSections && p.containsSections.includes(section)));
+}
+
+// セクションの統計情報
+// 戻り値: { totalPages, totalRegions, attempted, perfectCount, goodCount(67%以上達成), accuracyAvg }
+function getSectionStats(section) {
+  const pages = getSectionPages(section);
+  let totalRegions = 0, attempted = 0, totalCorrect = 0, totalAttempts = 0;
+  let goodCount = 0; // 67%以上の正答率を達成した問数
+  pages.forEach(p => {
+    p.regions.forEach((_, ri) => {
+      totalRegions++;
+      const t = getRegionTracking(currentUnit.id, p.id, ri);
+      if (t.attempts > 0) {
+        attempted++;
+        totalAttempts += t.attempts;
+        totalCorrect += t.correct;
+        if (t.correct / t.attempts >= 0.67) goodCount++;
+      }
+    });
+  });
+  return { totalPages: pages.length, totalRegions, attempted, goodCount, totalAttempts, totalCorrect };
 }
 
 function renderUnitDetail() {
-  // 閲覧モードボタンの有効/無効
-  ["description", "kakunin", "hatten", "pointcheck", "dailystep"].forEach(sec => {
-    const btn = document.querySelector(`[data-reading="${sec}"]`);
-    if (!btn) return;
-    const matchingPages = quizData.pages.filter(p =>
-      p.type === sec || (p.containsSections && p.containsSections.includes(sec)));
-    btn.disabled = matchingPages.length === 0;
-    const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
-    btn.textContent = `${baseLabel} (${matchingPages.length}p)`;
-  });
-
-  // ページ一覧（クイズ可能なページのみ）
-  const list = document.getElementById("unit-page-list");
+  const list = document.getElementById("section-card-list");
   list.innerHTML = "";
-  getQuizPages().forEach((page) => {
+
+  SECTION_ORDER.forEach(sec => {
+    const pages = getSectionPages(sec);
+    if (pages.length === 0) return;
+    const meta = SECTION_META[sec];
+    const stats = getSectionStats(sec);
+    const isQuizable = QUIZ_TYPES.has(sec) && stats.totalRegions > 0;
+    const progress = stats.totalRegions > 0
+      ? Math.round((stats.goodCount / stats.totalRegions) * 100)
+      : 0;
+
+    const card = document.createElement("div");
+    card.className = "section-card";
+    if (!isQuizable) card.classList.add("section-reading-only");
+
+    const badge = isQuizable
+      ? ""
+      : `<span class="section-card-badge">閲覧のみ</span>`;
+    const statsHTML = isQuizable
+      ? `<div class="section-card-stats">
+           <div class="section-card-stats-main">${stats.goodCount}/${stats.totalRegions}</div>
+           <div class="section-card-stats-sub">67%↑ 達成 (${progress}%)</div>
+         </div>`
+      : `<div class="section-card-stats">
+           <div class="section-card-stats-main" style="color:#86868b">${pages.length}p</div>
+           <div class="section-card-stats-sub">ページ</div>
+         </div>`;
+
+    card.innerHTML = `
+      <div class="section-card-icon">${meta.icon}</div>
+      <div class="section-card-body">
+        <div class="section-card-title">${meta.label}${badge}</div>
+        <div class="section-card-meta">${pages.length}ページ${isQuizable ? ` ・ 全${stats.totalRegions}問` : ""}</div>
+        <div class="section-card-progress">
+          <div class="section-card-progress-fill" style="width: ${progress}%;"></div>
+        </div>
+      </div>
+      ${statsHTML}
+    `;
+
+    card.addEventListener("click", () => openSection(sec));
+    list.appendChild(card);
+  });
+}
+
+function openSection(section) {
+  currentSection = section;
+  const meta = SECTION_META[section];
+  document.getElementById("section-detail-title").textContent =
+    `${meta.icon} ${meta.label}`;
+  renderSectionDetail();
+  showScreen("screen-section-detail");
+}
+
+function renderSectionDetail() {
+  // モードボタンの有効/無効
+  const isQuizable = QUIZ_TYPES.has(currentSection);
+  const pages = getSectionPages(currentSection);
+  const stats = getSectionStats(currentSection);
+
+  // 「順番に読む」は常に有効
+  document.querySelector('[data-section-mode="reading"]').disabled = pages.length === 0;
+
+  // クイズ系モード
+  let countUnanswered = 0, countBelow50 = 0, countBelow67 = 0, countBelow99 = 0, totalAll = 0;
+  pages.forEach(page => {
+    page.regions.forEach((_, ri) => {
+      totalAll++;
+      const acc = getAccuracy(currentUnit.id, page.id, ri);
+      if (acc === null) countUnanswered++;
+      if (acc !== null && acc <= 0.5) countBelow50++;
+      if (acc !== null && acc <= 0.67) countBelow67++;
+      if (acc !== null && acc < 1.0) countBelow99++;
+    });
+  });
+  const setBtn = (mode, count) => {
+    const btn = document.querySelector(`[data-section-mode="${mode}"]`);
+    if (!btn) return;
+    const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
+    btn.textContent = `${baseLabel} (${count}問)`;
+    btn.disabled = !isQuizable || count === 0;
+  };
+  setBtn("continue", countUnanswered);
+  setBtn("all", totalAll);
+  setBtn("below50", countBelow50);
+  setBtn("below67", countBelow67);
+  setBtn("below99", countBelow99);
+  setBtn("unanswered", countUnanswered);
+
+  // ページ一覧
+  const list = document.getElementById("section-page-list");
+  list.innerHTML = "";
+  pages.forEach((page) => {
     const card = document.createElement("div");
     card.className = "page-card";
     const regionCount = page.regions.length;
@@ -262,80 +372,66 @@ function renderUnitDetail() {
       }
     });
     let badge = "";
-    if (attempted === 0) badge = `<span class="badge badge-new">未回答</span>`;
-    else if (correctCount === regionCount) badge = `<span class="badge badge-perfect">全問正解</span>`;
-    else badge = `<span class="badge badge-in-progress">${Math.round(correctCount/regionCount*100)}%</span>`;
+    if (regionCount === 0) {
+      badge = `<span class="badge badge-new">閲覧</span>`;
+    } else if (attempted === 0) {
+      badge = `<span class="badge badge-new">未回答</span>`;
+    } else if (correctCount === regionCount) {
+      badge = `<span class="badge badge-perfect">全問正解</span>`;
+    } else {
+      badge = `<span class="badge badge-in-progress">${Math.round(correctCount/regionCount*100)}%</span>`;
+    }
     const label = getPageLabel(page);
     const imgPath = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.imageMasked || page.image}`;
     card.innerHTML = `
       <div class="page-card-thumb"><img src="${imgPath}" loading="lazy" alt="${label}"></div>
       <div class="page-card-title">${label}</div>
-      <div class="page-card-info">${regionCount}問</div>
+      <div class="page-card-info">${regionCount > 0 ? regionCount + "問" : "閲覧"}</div>
       ${badge}`;
     card.addEventListener("click", () => {
-      currentMode = "all";
-      activePages = getQuizPages();
-      const idx = activePages.indexOf(page);
-      startQuiz(idx);
+      if (regionCount > 0 && isQuizable) {
+        currentMode = "all";
+        activePages = pages.filter(p => p.regions.length > 0);
+        const idx = activePages.indexOf(page);
+        if (idx >= 0) startQuiz(idx);
+      } else {
+        // 閲覧モード
+        readingPages = pages;
+        readingIndex = pages.indexOf(page);
+        currentReadingSection = currentSection;
+        showScreen("screen-reading");
+        renderReading();
+      }
     });
     list.appendChild(card);
   });
 
-  renderAccuracyTable();
-  updateModeButtons();
-}
-
-function renderAccuracyTable() {
-  const wrapper = document.getElementById("accuracy-table-wrapper");
-  let rows = "";
-  let qNum = 0;
-  getQuizPages().forEach(page => {
-    page.regions.forEach((_, ri) => {
-      qNum++;
-      const t = getRegionTracking(currentUnit.id, page.id, ri);
-      let accText, accClass;
-      if (t.attempts === 0) { accText = "未回答"; accClass = "acc-none"; }
-      else {
-        const pct = Math.round((t.correct / t.attempts) * 100);
-        accText = `${t.correct}/${t.attempts} (${pct}%)`;
-        if (pct === 100) accClass = "acc-perfect";
-        else if (pct >= 67) accClass = "acc-good";
-        else if (pct > 0) accClass = "acc-bad";
-        else accClass = "acc-zero";
-      }
-      rows += `<tr><td>${qNum}</td><td>${getPageLabel(page)}</td><td class="${accClass}">${accText}</td></tr>`;
+  // 正答率テーブル（クイズ可セクションのみ表示）
+  const accWrapper = document.getElementById("section-accuracy-wrapper");
+  if (!isQuizable || stats.totalRegions === 0) {
+    accWrapper.innerHTML = `<p style="color:#86868b;font-size:13px;">このセクションは閲覧のみです（Phase 2 でクイズ化予定）</p>`;
+  } else {
+    let rows = "";
+    let qNum = 0;
+    pages.forEach(page => {
+      page.regions.forEach((_, ri) => {
+        qNum++;
+        const t = getRegionTracking(currentUnit.id, page.id, ri);
+        let accText, accClass;
+        if (t.attempts === 0) { accText = "未回答"; accClass = "acc-none"; }
+        else {
+          const pct = Math.round((t.correct / t.attempts) * 100);
+          accText = `${t.correct}/${t.attempts} (${pct}%)`;
+          if (pct === 100) accClass = "acc-perfect";
+          else if (pct >= 67) accClass = "acc-good";
+          else if (pct > 0) accClass = "acc-bad";
+          else accClass = "acc-zero";
+        }
+        rows += `<tr><td>${qNum}</td><td>${getPageLabel(page)}</td><td class="${accClass}">${accText}</td></tr>`;
+      });
     });
-  });
-  wrapper.innerHTML = `<table class="accuracy-table"><thead><tr><th>#</th><th>ページ</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table>`;
-}
-
-function updateModeButtons() {
-  const allPages = getQuizPages();
-  let totalAll = 0, countUnanswered = 0;
-  let countBelow50 = 0, countBelow67 = 0, countBelow99 = 0;
-  allPages.forEach(page => {
-    page.regions.forEach((_, ri) => {
-      totalAll++;
-      const acc = getAccuracy(currentUnit.id, page.id, ri);
-      if (acc === null) countUnanswered++;
-      if (acc !== null && acc <= 0.5) countBelow50++;
-      if (acc !== null && acc <= 0.67) countBelow67++;
-      if (acc !== null && acc < 1.0) countBelow99++;
-    });
-  });
-  const setBtn = (mode, count) => {
-    const btn = document.querySelector(`[data-mode="${mode}"]`);
-    if (!btn) return;
-    const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
-    btn.textContent = `${baseLabel} (${count}問)`;
-    btn.disabled = count === 0;
-  };
-  setBtn("continue", countUnanswered);
-  setBtn("all", totalAll);
-  setBtn("below50", countBelow50);
-  setBtn("below67", countBelow67);
-  setBtn("below99", countBelow99);
-  setBtn("unanswered", countUnanswered);
+    accWrapper.innerHTML = `<table class="accuracy-table"><thead><tr><th>#</th><th>ページ</th><th>正答率</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
 }
 
 function getPageLabel(page) {
@@ -347,8 +443,7 @@ function getPageLabel(page) {
 // 閲覧モード
 // ==============================
 function startReading(section) {
-  readingPages = quizData.pages.filter(p =>
-    p.type === section || (p.containsSections && p.containsSections.includes(section)));
+  readingPages = getSectionPages(section);
   if (readingPages.length === 0) return;
   currentReadingSection = section;
   readingIndex = 0;
@@ -383,8 +478,14 @@ function isTargetRegion(pageId, regionIdx) {
 }
 
 function startWithMode(mode) {
+  if (mode === "reading") {
+    startReading(currentSection);
+    return;
+  }
   currentMode = mode;
-  const allPages = getQuizPages();
+  // currentSection の pages のうち regions があるもの
+  const allPages = getSectionPages(currentSection).filter(p => p.regions.length > 0);
+  if (allPages.length === 0) return;
   if (mode === "all") {
     activePages = allPages; sessionResults = {}; startQuiz(0);
   } else if (mode === "continue") {
@@ -796,11 +897,20 @@ function setupEventListeners() {
     renderUnits(); showScreen("screen-units");
   });
 
-  // 閲覧モード
-  document.querySelectorAll("[data-reading]").forEach(btn =>
-    btn.addEventListener("click", () => startReading(btn.dataset.reading)));
-  document.getElementById("btn-back-reading").addEventListener("click", () => {
+  // セクション詳細から戻る
+  document.getElementById("btn-back-section").addEventListener("click", () => {
+    renderUnitDetail();
     showScreen("screen-unit-detail");
+  });
+
+  // 閲覧モード（ページめくり）
+  document.getElementById("btn-back-reading").addEventListener("click", () => {
+    if (currentSection) {
+      renderSectionDetail();
+      showScreen("screen-section-detail");
+    } else {
+      showScreen("screen-unit-detail");
+    }
   });
   document.getElementById("btn-reading-prev").addEventListener("click", () => {
     if (readingIndex > 0) { readingIndex--; renderReading(); }
@@ -809,9 +919,9 @@ function setupEventListeners() {
     if (readingIndex < readingPages.length - 1) { readingIndex++; renderReading(); }
   });
 
-  // クイズモード
-  document.querySelectorAll("[data-mode]").forEach(btn =>
-    btn.addEventListener("click", () => startWithMode(btn.dataset.mode)));
+  // セクション詳細のモード選択（reading + quiz modes）
+  document.querySelectorAll("[data-section-mode]").forEach(btn =>
+    btn.addEventListener("click", () => startWithMode(btn.dataset.sectionMode)));
   document.getElementById("btn-reveal").addEventListener("click", revealAnswer);
   document.getElementById("btn-correct").addEventListener("click", () => judgeAnswer(true));
   document.getElementById("btn-incorrect").addEventListener("click", () => judgeAnswer(false));
@@ -861,8 +971,13 @@ function setupEventListeners() {
   document.getElementById("btn-back-detail").addEventListener("click", () => {
     commitAllPending();
     answerRevealed = false;
-    renderUnitDetail();
-    showScreen("screen-unit-detail");
+    if (currentSection) {
+      renderSectionDetail();
+      showScreen("screen-section-detail");
+    } else {
+      renderUnitDetail();
+      showScreen("screen-unit-detail");
+    }
   });
   document.getElementById("print-btn").addEventListener("click", printCurrentPage);
 
@@ -884,7 +999,13 @@ function setupEventListeners() {
     renderQuiz();
   });
   document.getElementById("btn-back-unit-detail").addEventListener("click", () => {
-    renderUnitDetail(); showScreen("screen-unit-detail");
+    if (currentSection) {
+      renderSectionDetail();
+      showScreen("screen-section-detail");
+    } else {
+      renderUnitDetail();
+      showScreen("screen-unit-detail");
+    }
   });
   document.getElementById("btn-back-from-results").addEventListener("click", () => {
     showScreen("screen-quiz"); renderQuiz();
