@@ -236,7 +236,7 @@ function getQuizPages() {
 
 function renderUnitDetail() {
   // 閲覧モードボタンの有効/無効
-  ["cover", "description", "kakunin", "hatten"].forEach(sec => {
+  ["description", "kakunin", "hatten", "pointcheck", "dailystep"].forEach(sec => {
     const btn = document.querySelector(`[data-reading="${sec}"]`);
     if (!btn) return;
     const matchingPages = quizData.pages.filter(p =>
