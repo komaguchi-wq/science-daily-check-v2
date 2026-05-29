@@ -973,14 +973,16 @@ function openPrintIframeMulti(titleText, pageSize, dataURLs) {
   let cleaned = false;
   const cleanup = () => { if (cleaned) return; cleaned = true; setTimeout(() => iframe.remove(), 500); };
   const idoc = iframe.contentDocument || iframe.contentWindow.document;
+  // 各画像を1ページ枠(.pg)に入れ object-fit:contain で B4 1枚に収める（溢れ＝空白ページ防止）
   const imgsHTML = dataURLs.map((u, i) =>
-    `<img src="${u}" class="${i < dataURLs.length - 1 ? 'pb' : ''}">`).join("");
+    `<div class="pg${i < dataURLs.length - 1 ? ' pb' : ''}"><img src="${u}"></div>`).join("");
   idoc.open();
   idoc.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${titleText}</title><style>
     @page { size: ${pageSize}; margin: 5mm; }
     *{box-sizing:border-box;} html,body{margin:0;padding:0;background:#fff;}
-    img{display:block;width:100%;height:auto;}
-    img.pb{page-break-after:always;}
+    .pg{width:100%;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .pg.pb{page-break-after:always;}
+    .pg img{max-width:100%;max-height:100%;display:block;}
     </style></head><body onload="setTimeout(function(){try{window.focus();window.print();}catch(e){}},400)">${imgsHTML}</body></html>`);
   idoc.close();
   try { iframe.contentWindow.addEventListener("afterprint", cleanup); } catch (e) {}

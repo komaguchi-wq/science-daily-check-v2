@@ -308,12 +308,15 @@ body {
 
 .btn-print {
   flex: 0 0 auto;
-  min-width: 64px;
+  width: 150px;
   background: #eef3ff;
   color: #2b59c3;
   border: 2px solid #9db8f0;
-  font-size: 20px;
-  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 10px;
+  white-space: normal;
+  line-height: 1.25;
 }
 .btn-print:hover:not(:disabled) { background: #dde8ff; }
 
