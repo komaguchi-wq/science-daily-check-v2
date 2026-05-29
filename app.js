@@ -435,7 +435,7 @@ function renderSectionDetail() {
   // 正答率テーブル（クイズ可セクションのみ表示）
   const accWrapper = document.getElementById("section-accuracy-wrapper");
   if (!isQuizable || stats.totalRegions === 0) {
-    accWrapper.innerHTML = `<p style="color:#86868b;font-size:13px;">このセクションは閲覧のみです（Phase 2 でクイズ化予定）</p>`;
+    accWrapper.innerHTML = `<p style="color:#86868b;font-size:13px;">このセクションは閲覧のみです</p>`;
   } else {
     let rows = "";
     let qNum = 0;
