@@ -488,6 +488,17 @@ function renderReading() {
   document.getElementById("btn-reading-next").disabled = readingIndex === readingPages.length - 1;
   const img = document.getElementById("reading-image");
   img.src = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.image}`;
+  const hasExpl = Array.isArray(page.explanationImages) && page.explanationImages.length > 0;
+  document.getElementById("btn-explain-reading").classList.toggle("hidden", !hasExpl);
+}
+
+function openExplanationReading() {
+  const page = readingPages[readingIndex];
+  if (!page || !Array.isArray(page.explanationImages) || page.explanationImages.length === 0) return;
+  explainImages = page.explanationImages;
+  explainIndex = 0;
+  document.getElementById("explain-overlay").classList.remove("hidden");
+  renderExplanation();
 }
 
 // ==============================
@@ -1065,6 +1076,7 @@ function setupEventListeners() {
   document.getElementById("btn-reading-next").addEventListener("click", () => {
     if (readingIndex < readingPages.length - 1) { readingIndex++; renderReading(); }
   });
+  document.getElementById("btn-explain-reading").addEventListener("click", openExplanationReading);
 
   // セクション詳細のモード選択（reading + quiz modes）
   document.querySelectorAll("[data-section-mode]").forEach(btn =>
