@@ -640,6 +640,46 @@ function updateControlVisibility() {
   else if (sessionResults[key]) revealRow.classList.remove("hidden");
   else if (answerRevealed) { judgeRow.classList.remove("hidden"); updatePendingVisual(); }
   else revealRow.classList.remove("hidden");
+
+  // 解説ボタン: 当該ページに解説画像があれば両rowで表示
+  const hasExpl = Array.isArray(page.explanationImages) && page.explanationImages.length > 0;
+  document.getElementById("btn-explain-reveal").classList.toggle("hidden", !hasExpl);
+  document.getElementById("btn-explain-judge").classList.toggle("hidden", !hasExpl);
+}
+
+// ==============================
+// 解説オーバーレイ
+// ==============================
+let explainImages = [];
+let explainIndex = 0;
+
+function openExplanation() {
+  const page = activePages[currentPageIndex];
+  if (!page || !Array.isArray(page.explanationImages) || page.explanationImages.length === 0) return;
+  explainImages = page.explanationImages;
+  explainIndex = 0;
+  document.getElementById("explain-overlay").classList.remove("hidden");
+  renderExplanation();
+}
+
+function renderExplanation() {
+  const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
+  const img = document.getElementById("explain-img");
+  img.style.transform = "";
+  img.src = base + explainImages[explainIndex];
+  document.getElementById("explain-viewport").scrollTop = 0;
+  const multi = explainImages.length > 1;
+  document.getElementById("explain-nav").classList.toggle("hidden", !multi);
+  document.getElementById("explain-indicator").textContent =
+    multi ? `${explainIndex + 1} / ${explainImages.length}枚` : "";
+  document.getElementById("explain-page-indicator").textContent =
+    `${explainIndex + 1} / ${explainImages.length}`;
+  document.getElementById("explain-prev").disabled = explainIndex === 0;
+  document.getElementById("explain-next").disabled = explainIndex === explainImages.length - 1;
+}
+
+function closeExplanation() {
+  document.getElementById("explain-overlay").classList.add("hidden");
 }
 
 function enhanceOrangeRegion(ctx, sx, sy, sw, sh) {
@@ -924,6 +964,18 @@ function setupEventListeners() {
   document.getElementById("btn-reveal").addEventListener("click", revealAnswer);
   document.getElementById("btn-correct").addEventListener("click", () => judgeAnswer(true));
   document.getElementById("btn-incorrect").addEventListener("click", () => judgeAnswer(false));
+  document.getElementById("btn-explain-reveal").addEventListener("click", openExplanation);
+  document.getElementById("btn-explain-judge").addEventListener("click", openExplanation);
+  document.getElementById("explain-close").addEventListener("click", closeExplanation);
+  document.getElementById("explain-prev").addEventListener("click", () => {
+    if (explainIndex > 0) { explainIndex--; renderExplanation(); }
+  });
+  document.getElementById("explain-next").addEventListener("click", () => {
+    if (explainIndex < explainImages.length - 1) { explainIndex++; renderExplanation(); }
+  });
+  document.getElementById("explain-overlay").addEventListener("click", (e) => {
+    if (e.target.id === "explain-overlay") closeExplanation();
+  });
   document.getElementById("btn-undo").addEventListener("click", () => {
     const pendingKeys = Object.keys(pendingAnswers);
     if (pendingKeys.length > 0) {
@@ -1156,3 +1208,4 @@ function attachPinchZoom(wrapperId, contentSelector) {
 
 attachPinchZoom('canvas-wrapper', '#quiz-canvas');
 attachPinchZoom('reading-wrapper', '#reading-image');
+attachPinchZoom('explain-viewport', '#explain-img');
