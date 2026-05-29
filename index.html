@@ -63,13 +63,34 @@
       <div class="mode-section">
         <h2 class="section-title">学習モード</h2>
         <div class="mode-buttons">
-          <button class="btn btn-reading btn-large" data-section-mode="reading">📖 順番に読む</button>
-          <button class="btn btn-primary btn-large" data-section-mode="continue">続きから再開</button>
-          <button class="btn btn-secondary btn-large" data-section-mode="all">全問を解く</button>
-          <button class="btn btn-secondary btn-large" data-section-mode="below50">正答率 50% 以下を解く</button>
-          <button class="btn btn-secondary btn-large" data-section-mode="below67">正答率 67% 以下を解く</button>
-          <button class="btn btn-secondary btn-large" data-section-mode="below99">正答率 99% 以下を解く</button>
-          <button class="btn btn-secondary btn-large" data-section-mode="unanswered">未回答問題を解く</button>
+          <div class="mode-row" data-mode-row="continue">
+            <button class="btn btn-primary btn-large" data-section-mode="continue">続きから再開</button>
+            <button class="btn btn-print btn-large" data-print-mode="continue" title="続きからを印刷">🖨</button>
+          </div>
+          <div class="mode-row" data-mode-row="all">
+            <button class="btn btn-secondary btn-large" data-section-mode="all">全問を解く</button>
+            <button class="btn btn-print btn-large" data-print-mode="all" title="全問を印刷">🖨</button>
+          </div>
+          <div class="mode-row" data-mode-row="below50">
+            <button class="btn btn-secondary btn-large" data-section-mode="below50">正答率 50% 以下を解く</button>
+            <button class="btn btn-print btn-large" data-print-mode="below50" title="正答率50%以下を印刷">🖨</button>
+          </div>
+          <div class="mode-row" data-mode-row="below67">
+            <button class="btn btn-secondary btn-large" data-section-mode="below67">正答率 67% 以下を解く</button>
+            <button class="btn btn-print btn-large" data-print-mode="below67" title="正答率67%以下を印刷">🖨</button>
+          </div>
+          <div class="mode-row" data-mode-row="below99">
+            <button class="btn btn-secondary btn-large" data-section-mode="below99">正答率 99% 以下を解く</button>
+            <button class="btn btn-print btn-large" data-print-mode="below99" title="正答率99%以下を印刷">🖨</button>
+          </div>
+          <div class="mode-row" data-mode-row="unanswered">
+            <button class="btn btn-secondary btn-large" data-section-mode="unanswered">未回答問題を解く</button>
+            <button class="btn btn-print btn-large" data-print-mode="unanswered" title="未回答問題を印刷">🖨</button>
+          </div>
+          <div class="mode-row" data-mode-row="reading">
+            <button class="btn btn-reading btn-large" data-section-mode="reading">📖 順番に読む</button>
+            <button class="btn btn-print btn-large" data-print-mode="reading" title="全ページを印刷">🖨</button>
+          </div>
         </div>
       </div>
       <div class="accuracy-section">
@@ -89,6 +110,7 @@
       <button class="btn-icon" id="btn-back-reading">←</button>
       <span class="header-title" id="reading-title"></span>
       <span class="header-page" id="reading-page-info"></span>
+      <button id="reading-print-btn" title="このページを印刷">🖨 印刷</button>
     </header>
     <div class="canvas-wrapper" id="reading-wrapper">
       <img id="reading-image" alt="">

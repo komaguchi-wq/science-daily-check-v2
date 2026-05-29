@@ -93,6 +93,21 @@ function getUnitStats(unitId) {
   return { totalQuestions, totalAttempts, totalCorrect };
 }
 
+// 単元カード用: 単元全体の 回答済み数 / 全問数 と 67%以上達成数（単元内表示と合致）
+// 全問数は units.json の totalRegions（quiz-data未ロードでも使える）
+function getUnitProgress(unit) {
+  const unitData = getTracking()[unit.id] || {};
+  let attempted = 0, goodCount = 0;
+  for (const key in unitData) {
+    const t = unitData[key];
+    if (t && t.attempts > 0) {
+      attempted++;
+      if (t.correct / t.attempts >= 0.67) goodCount++;
+    }
+  }
+  return { total: unit.totalRegions || 0, attempted, goodCount };
+}
+
 // --- Google Sheets ---
 async function backupToSheets() {
   if (!SHEETS_API_URL) return;
@@ -206,9 +221,10 @@ function renderUnits() {
   unitsList.forEach(unit => {
     const card = document.createElement("div");
     card.className = "unit-card";
-    const stats = getUnitStats(unit.id);
-    const accuracy = stats.totalAttempts > 0
-      ? Math.round((stats.totalCorrect / stats.totalAttempts) * 100) + "%"
+    // 単元内の表示（67%以上達成 / 全問数）と合致させる
+    const prog = getUnitProgress(unit);
+    const accuracy = prog.total > 0
+      ? Math.round((prog.goodCount / prog.total) * 100) + "%"
       : "---";
     card.innerHTML = `
       <div class="unit-card-info">
@@ -217,7 +233,7 @@ function renderUnits() {
       </div>
       <div class="unit-card-stats">
         <div class="unit-card-accuracy">${accuracy}</div>
-        <div class="unit-card-detail">${stats.totalCorrect}/${stats.totalAttempts}</div>
+        <div class="unit-card-detail">${prog.attempted}/${prog.total}</div>
       </div>`;
     card.addEventListener("click", () => openUnit(unit));
     list.appendChild(card);
@@ -326,10 +342,18 @@ function renderSectionDetail() {
   const pages = getSectionPages(currentSection);
   const stats = getSectionStats(currentSection);
 
-  // 「順番に読む」は常に有効
-  document.querySelector('[data-section-mode="reading"]').disabled = pages.length === 0;
+  // モード行の表示: 非クイズ(説明文等)はクイズ系を隠し「順番に読む」だけ表示
+  document.querySelectorAll('.mode-row').forEach(row => {
+    const m = row.dataset.modeRow;
+    row.classList.toggle('hidden', m !== 'reading' && !isQuizable);
+  });
 
-  // クイズ系モード
+  // 「順番に読む」とその印刷は常に有効（ページがあれば）
+  const readingOk = pages.length > 0;
+  document.querySelector('[data-section-mode="reading"]').disabled = !readingOk;
+  document.querySelector('[data-print-mode="reading"]').disabled = !readingOk;
+
+  // クイズ系モード件数
   let countUnanswered = 0, countBelow50 = 0, countBelow67 = 0, countBelow99 = 0, totalAll = 0;
   pages.forEach(page => {
     page.regions.forEach((_, ri) => {
@@ -343,10 +367,13 @@ function renderSectionDetail() {
   });
   const setBtn = (mode, count) => {
     const btn = document.querySelector(`[data-section-mode="${mode}"]`);
-    if (!btn) return;
-    const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
-    btn.textContent = `${baseLabel} (${count}問)`;
-    btn.disabled = !isQuizable || count === 0;
+    const pbtn = document.querySelector(`[data-print-mode="${mode}"]`);
+    if (btn) {
+      const baseLabel = btn.textContent.replace(/\s*\(.*\)$/, "");
+      btn.textContent = `${baseLabel} (${count}問)`;
+      btn.disabled = !isQuizable || count === 0;
+    }
+    if (pbtn) pbtn.disabled = !isQuizable || count === 0;
   };
   setBtn("continue", countUnanswered);
   setBtn("all", totalAll);
@@ -466,14 +493,18 @@ function renderReading() {
 // ==============================
 // クイズモード
 // ==============================
-function isTargetRegion(pageId, regionIdx) {
-  if (currentMode === "all") return true;
+function isTargetForMode(pageId, regionIdx, mode) {
+  if (mode === "all") return true;
   const acc = getAccuracy(currentUnit.id, pageId, regionIdx);
-  if (currentMode === "continue" || currentMode === "unanswered") return acc === null;
-  if (currentMode === "below50") return acc !== null && acc <= 0.5;
-  if (currentMode === "below67") return acc !== null && acc <= 0.67;
-  if (currentMode === "below99") return acc !== null && acc < 1.0;
+  if (mode === "continue" || mode === "unanswered") return acc === null;
+  if (mode === "below50") return acc !== null && acc <= 0.5;
+  if (mode === "below67") return acc !== null && acc <= 0.67;
+  if (mode === "below99") return acc !== null && acc < 1.0;
   return true;
+}
+
+function isTargetRegion(pageId, regionIdx) {
+  return isTargetForMode(pageId, regionIdx, currentMode);
 }
 
 function startWithMode(mode) {
@@ -854,7 +885,7 @@ function openPrintIframe(titleText, pageSize, dataURL) {
   setTimeout(cleanup, 60000);
 }
 
-async function renderFilteredPrintCanvas(page, origPath, maskPath) {
+async function renderFilteredPrintCanvas(page, origPath, maskPath, mode = currentMode) {
   const off = document.createElement("canvas");
   off.width = page.width; off.height = page.height;
   const oCtx = off.getContext("2d");
@@ -862,7 +893,7 @@ async function renderFilteredPrintCanvas(page, origPath, maskPath) {
   const maskImg = await loadImage(maskPath);
   oCtx.drawImage(maskImg, 0, 0);
   for (let i = 0; i < page.regions.length; i++) {
-    if (isTargetRegion(page.id, i)) continue;
+    if (isTargetForMode(page.id, i, mode)) continue;
     const r = page.regions[i];
     const pad = 4;
     oCtx.drawImage(origImg, r.x - pad, r.y - pad, r.w + pad*2, r.h + pad*2,
@@ -870,7 +901,7 @@ async function renderFilteredPrintCanvas(page, origPath, maskPath) {
   }
   oCtx.strokeStyle = "#ff8c00"; oCtx.lineWidth = 5;
   for (let i = 0; i < page.regions.length; i++) {
-    if (!isTargetRegion(page.id, i)) continue;
+    if (!isTargetForMode(page.id, i, mode)) continue;
     const r = page.regions[i];
     oCtx.strokeRect(r.x - 3, r.y - 3, r.w + 6, r.h + 6);
   }
@@ -879,6 +910,81 @@ async function renderFilteredPrintCanvas(page, origPath, maskPath) {
     img.onload = () => resolve(img);
     img.src = off.toDataURL("image/png");
   });
+}
+
+// 閲覧ページ（説明文・表紙など）の印刷
+async function printReadingPage() {
+  const page = readingPages[readingIndex];
+  if (!page) return;
+  const imgPath = `categories/${currentCategory.id}/units/${currentUnit.id}/images/${page.image}`;
+  let baseImage;
+  try { baseImage = await loadImage(imgPath); }
+  catch (e) { alert("画像の読み込みに失敗しました"); return; }
+  const cc = document.createElement("canvas");
+  cc.width = baseImage.width; cc.height = baseImage.height;
+  cc.getContext("2d").drawImage(baseImage, 0, 0);
+  const pageSize = baseImage.width > baseImage.height ? "B4 landscape" : "A4 portrait";
+  openPrintIframe(`${currentUnit.title} - ${getPageLabel(page)}`, pageSize, cc.toDataURL("image/jpeg", 0.92));
+}
+
+// セクションの対象ページを一括印刷（モード別）
+async function bulkPrint(mode) {
+  const allPages = getSectionPages(currentSection);
+  let targetPages, kind;
+  if (mode === "reading") {
+    targetPages = allPages;          // 全ページ（解答表示の image）
+    kind = "image";
+  } else {
+    // 対象region（このモード）を1つ以上持つページ
+    targetPages = allPages.filter(p => p.regions.length > 0 &&
+      p.regions.some((_, ri) => isTargetForMode(p.id, ri, mode)));
+    kind = ["below50", "below67", "below99"].includes(mode) ? "filtered" : "masked";
+  }
+  if (targetPages.length === 0) { alert("対象ページがありません"); return; }
+
+  const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
+  const dataURLs = [];
+  for (const page of targetPages) {
+    let img;
+    if (kind === "image") {
+      img = await loadImage(base + page.image);
+    } else if (kind === "filtered") {
+      img = await renderFilteredPrintCanvas(page, base + page.image, base + page.imageMasked, mode);
+    } else {
+      img = await loadImage(base + (page.imageMasked || page.image));
+    }
+    const cc = document.createElement("canvas");
+    cc.width = img.width; cc.height = img.height;
+    cc.getContext("2d").drawImage(img, 0, 0);
+    dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
+  }
+  const p0 = targetPages[0];
+  const pageSize = p0.width > p0.height ? "B4 landscape" : "A4 portrait";
+  const meta = SECTION_META[currentSection];
+  openPrintIframeMulti(`${currentUnit.title} - ${meta.label}（${targetPages.length}枚）`, pageSize, dataURLs);
+}
+
+function openPrintIframeMulti(titleText, pageSize, dataURLs) {
+  const iframe = document.createElement("iframe");
+  Object.assign(iframe.style, {
+    position: "fixed", right: 0, bottom: 0, width: 0, height: 0, border: 0, visibility: "hidden"
+  });
+  document.body.appendChild(iframe);
+  let cleaned = false;
+  const cleanup = () => { if (cleaned) return; cleaned = true; setTimeout(() => iframe.remove(), 500); };
+  const idoc = iframe.contentDocument || iframe.contentWindow.document;
+  const imgsHTML = dataURLs.map((u, i) =>
+    `<img src="${u}" class="${i < dataURLs.length - 1 ? 'pb' : ''}">`).join("");
+  idoc.open();
+  idoc.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${titleText}</title><style>
+    @page { size: ${pageSize}; margin: 5mm; }
+    *{box-sizing:border-box;} html,body{margin:0;padding:0;background:#fff;}
+    img{display:block;width:100%;height:auto;}
+    img.pb{page-break-after:always;}
+    </style></head><body onload="setTimeout(function(){try{window.focus();window.print();}catch(e){}},400)">${imgsHTML}</body></html>`);
+  idoc.close();
+  try { iframe.contentWindow.addEventListener("afterprint", cleanup); } catch (e) {}
+  setTimeout(cleanup, 120000);
 }
 
 function getVisibleSourceRegion(srcW, srcH) {
@@ -961,6 +1067,10 @@ function setupEventListeners() {
   // セクション詳細のモード選択（reading + quiz modes）
   document.querySelectorAll("[data-section-mode]").forEach(btn =>
     btn.addEventListener("click", () => startWithMode(btn.dataset.sectionMode)));
+  // セクション詳細の一括印刷
+  document.querySelectorAll("[data-print-mode]").forEach(btn =>
+    btn.addEventListener("click", () => bulkPrint(btn.dataset.printMode)));
+  document.getElementById("reading-print-btn").addEventListener("click", printReadingPage);
   document.getElementById("btn-reveal").addEventListener("click", revealAnswer);
   document.getElementById("btn-correct").addEventListener("click", () => judgeAnswer(true));
   document.getElementById("btn-incorrect").addEventListener("click", () => judgeAnswer(false));

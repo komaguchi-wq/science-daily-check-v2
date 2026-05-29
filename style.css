@@ -299,6 +299,35 @@ body {
   gap: 8px;
 }
 
+.mode-row {
+  display: flex;
+  gap: 8px;
+}
+.mode-row > [data-section-mode] { flex: 1; }
+.mode-row.hidden { display: none; }
+
+.btn-print {
+  flex: 0 0 auto;
+  min-width: 64px;
+  background: #eef3ff;
+  color: #2b59c3;
+  border: 2px solid #9db8f0;
+  font-size: 20px;
+  padding: 0 14px;
+}
+.btn-print:hover:not(:disabled) { background: #dde8ff; }
+
+#reading-print-btn {
+  background: none;
+  border: none;
+  color: #007aff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+#reading-print-btn:hover { background: #f5f5f7; border-radius: 6px; }
+
 .accuracy-section {
   margin-bottom: 24px;
 }
