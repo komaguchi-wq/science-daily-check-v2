@@ -79,15 +79,110 @@
       "src_phys_page": 6,
       "width": 4206,
       "height": 3006,
-      "image": "page_06.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_06_answer.jpg",
+      "regions": [
+        {
+          "x": 225,
+          "y": 2410,
+          "w": 299,
+          "h": 136
+        },
+        {
+          "x": 534,
+          "y": 2410,
+          "w": 304,
+          "h": 136
+        },
+        {
+          "x": 845,
+          "y": 2410,
+          "w": 309,
+          "h": 136
+        },
+        {
+          "x": 1164,
+          "y": 2410,
+          "w": 304,
+          "h": 136
+        },
+        {
+          "x": 1477,
+          "y": 2410,
+          "w": 307,
+          "h": 136
+        },
+        {
+          "x": 1793,
+          "y": 2407,
+          "w": 307,
+          "h": 136
+        },
+        {
+          "x": 228,
+          "y": 2555,
+          "w": 1713,
+          "h": 139
+        },
+        {
+          "x": 228,
+          "y": 2702,
+          "w": 1556,
+          "h": 139
+        },
+        {
+          "x": 2162,
+          "y": 1194,
+          "w": 628,
+          "h": 185
+        },
+        {
+          "x": 2797,
+          "y": 1194,
+          "w": 417,
+          "h": 185
+        },
+        {
+          "x": 3224,
+          "y": 1194,
+          "w": 417,
+          "h": 181
+        },
+        {
+          "x": 3650,
+          "y": 1194,
+          "w": 420,
+          "h": 185
+        },
+        {
+          "x": 2226,
+          "y": 2653,
+          "w": 711,
+          "h": 181
+        },
+        {
+          "x": 3004,
+          "y": 2653,
+          "w": 349,
+          "h": 181
+        },
+        {
+          "x": 3362,
+          "y": 2653,
+          "w": 356,
+          "h": 181
+        },
+        {
+          "x": 3725,
+          "y": 2653,
+          "w": 353,
+          "h": 181
+        }
+      ],
+      "imageMasked": "page_06_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_06_expl_1.jpg",
+        "page_06_expl_2.jpg",
+        "page_06_expl_3.jpg"
       ]
     },
     {
@@ -100,15 +195,117 @@
       "src_phys_page": 7,
       "width": 4209,
       "height": 3006,
-      "image": "page_07.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_07_answer.jpg",
+      "regions": [
+        {
+          "x": 133,
+          "y": 1250,
+          "w": 470,
+          "h": 173
+        },
+        {
+          "x": 611,
+          "y": 1250,
+          "w": 470,
+          "h": 173
+        },
+        {
+          "x": 1090,
+          "y": 1250,
+          "w": 470,
+          "h": 173
+        },
+        {
+          "x": 1567,
+          "y": 1250,
+          "w": 473,
+          "h": 173
+        },
+        {
+          "x": 130,
+          "y": 2649,
+          "w": 471,
+          "h": 204
+        },
+        {
+          "x": 610,
+          "y": 2653,
+          "w": 471,
+          "h": 204
+        },
+        {
+          "x": 1089,
+          "y": 2653,
+          "w": 471,
+          "h": 204
+        },
+        {
+          "x": 1567,
+          "y": 2653,
+          "w": 471,
+          "h": 204
+        },
+        {
+          "x": 2110,
+          "y": 878,
+          "w": 469,
+          "h": 211
+        },
+        {
+          "x": 2586,
+          "y": 878,
+          "w": 481,
+          "h": 207
+        },
+        {
+          "x": 3076,
+          "y": 873,
+          "w": 478,
+          "h": 211
+        },
+        {
+          "x": 3561,
+          "y": 873,
+          "w": 481,
+          "h": 207
+        },
+        {
+          "x": 2106,
+          "y": 2694,
+          "w": 379,
+          "h": 174
+        },
+        {
+          "x": 2492,
+          "y": 2694,
+          "w": 379,
+          "h": 174
+        },
+        {
+          "x": 2880,
+          "y": 2694,
+          "w": 382,
+          "h": 174
+        },
+        {
+          "x": 3269,
+          "y": 2694,
+          "w": 382,
+          "h": 174
+        },
+        {
+          "x": 3660,
+          "y": 2694,
+          "w": 382,
+          "h": 174
+        }
+      ],
+      "imageMasked": "page_07_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_07_expl_1.jpg",
+        "page_07_expl_2.jpg",
+        "page_07_expl_3.jpg",
+        "page_07_expl_4.jpg"
       ]
     },
     {
@@ -121,15 +318,79 @@
       "src_phys_page": 8,
       "width": 4200,
       "height": 3006,
-      "image": "page_08.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_08_answer.jpg",
+      "regions": [
+        {
+          "x": 221,
+          "y": 2413,
+          "w": 875,
+          "h": 137
+        },
+        {
+          "x": 1167,
+          "y": 2413,
+          "w": 431,
+          "h": 137
+        },
+        {
+          "x": 1666,
+          "y": 2413,
+          "w": 428,
+          "h": 137
+        },
+        {
+          "x": 221,
+          "y": 2558,
+          "w": 433,
+          "h": 137
+        },
+        {
+          "x": 722,
+          "y": 2558,
+          "w": 635,
+          "h": 137
+        },
+        {
+          "x": 221,
+          "y": 2706,
+          "w": 433,
+          "h": 137
+        },
+        {
+          "x": 661,
+          "y": 2706,
+          "w": 435,
+          "h": 137
+        },
+        {
+          "x": 2223,
+          "y": 2650,
+          "w": 412,
+          "h": 176
+        },
+        {
+          "x": 2702,
+          "y": 2654,
+          "w": 412,
+          "h": 176
+        },
+        {
+          "x": 3181,
+          "y": 2654,
+          "w": 412,
+          "h": 176
+        },
+        {
+          "x": 3661,
+          "y": 2658,
+          "w": 409,
+          "h": 176
+        }
+      ],
+      "imageMasked": "page_08_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_08_expl_1.jpg",
+        "page_08_expl_2.jpg"
       ]
     },
     {
@@ -142,15 +403,61 @@
       "src_phys_page": 9,
       "width": 4218,
       "height": 3006,
-      "image": "page_09.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_09_answer.jpg",
+      "regions": [
+        {
+          "x": 194,
+          "y": 2694,
+          "w": 435,
+          "h": 168
+        },
+        {
+          "x": 638,
+          "y": 2690,
+          "w": 442,
+          "h": 168
+        },
+        {
+          "x": 1150,
+          "y": 2686,
+          "w": 442,
+          "h": 172
+        },
+        {
+          "x": 1601,
+          "y": 2683,
+          "w": 446,
+          "h": 172
+        },
+        {
+          "x": 2179,
+          "y": 2690,
+          "w": 414,
+          "h": 173
+        },
+        {
+          "x": 2661,
+          "y": 2686,
+          "w": 416,
+          "h": 176
+        },
+        {
+          "x": 3145,
+          "y": 2686,
+          "w": 419,
+          "h": 176
+        },
+        {
+          "x": 3571,
+          "y": 2686,
+          "w": 421,
+          "h": 176
+        }
+      ],
+      "imageMasked": "page_09_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_09_expl_1.jpg",
+        "page_09_expl_2.jpg"
       ]
     },
     {
@@ -163,15 +470,61 @@
       "src_phys_page": 10,
       "width": 4215,
       "height": 3006,
-      "image": "page_10.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_10_answer.jpg",
+      "regions": [
+        {
+          "x": 224,
+          "y": 2553,
+          "w": 418,
+          "h": 146
+        },
+        {
+          "x": 652,
+          "y": 2553,
+          "w": 423,
+          "h": 146
+        },
+        {
+          "x": 224,
+          "y": 2711,
+          "w": 850,
+          "h": 146
+        },
+        {
+          "x": 1143,
+          "y": 2711,
+          "w": 420,
+          "h": 146
+        },
+        {
+          "x": 2220,
+          "y": 2672,
+          "w": 442,
+          "h": 174
+        },
+        {
+          "x": 2669,
+          "y": 2672,
+          "w": 444,
+          "h": 174
+        },
+        {
+          "x": 3122,
+          "y": 2672,
+          "w": 439,
+          "h": 174
+        },
+        {
+          "x": 3629,
+          "y": 2672,
+          "w": 442,
+          "h": 174
+        }
+      ],
+      "imageMasked": "page_10_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_10_expl_1.jpg",
+        "page_10_expl_2.jpg"
       ]
     },
     {
@@ -184,15 +537,42 @@
       "src_phys_page": 11,
       "width": 4224,
       "height": 3006,
-      "image": "page_11.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_11_answer.jpg",
+      "regions": [
+        {
+          "x": 2187,
+          "y": 2449,
+          "w": 475,
+          "h": 134
+        },
+        {
+          "x": 2731,
+          "y": 2452,
+          "w": 296,
+          "h": 134
+        },
+        {
+          "x": 3096,
+          "y": 2452,
+          "w": 296,
+          "h": 134
+        },
+        {
+          "x": 3460,
+          "y": 2454,
+          "w": 596,
+          "h": 134
+        },
+        {
+          "x": 2187,
+          "y": 2592,
+          "w": 1868,
+          "h": 286
+        }
+      ],
+      "imageMasked": "page_11_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_11_expl_1.jpg"
       ]
     },
     {
@@ -205,15 +585,48 @@
       "src_phys_page": 12,
       "width": 4215,
       "height": 3006,
-      "image": "page_12.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_12_answer.jpg",
+      "regions": [
+        {
+          "x": 2222,
+          "y": 2421,
+          "w": 1327,
+          "h": 280
+        },
+        {
+          "x": 2281,
+          "y": 2444,
+          "w": 1205,
+          "h": 108
+        },
+        {
+          "x": 2222,
+          "y": 2713,
+          "w": 409,
+          "h": 136
+        },
+        {
+          "x": 2638,
+          "y": 2713,
+          "w": 421,
+          "h": 136
+        },
+        {
+          "x": 3068,
+          "y": 2713,
+          "w": 295,
+          "h": 136
+        },
+        {
+          "x": 3372,
+          "y": 2713,
+          "w": 297,
+          "h": 136
+        }
+      ],
+      "imageMasked": "page_12_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_12_expl_1.jpg"
       ]
     },
     {
@@ -226,15 +639,61 @@
       "src_phys_page": 13,
       "width": 4224,
       "height": 3006,
-      "image": "page_13.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_13_answer.jpg",
+      "regions": [
+        {
+          "x": 208,
+          "y": 2703,
+          "w": 409,
+          "h": 178
+        },
+        {
+          "x": 684,
+          "y": 2707,
+          "w": 411,
+          "h": 178
+        },
+        {
+          "x": 1162,
+          "y": 2707,
+          "w": 413,
+          "h": 178
+        },
+        {
+          "x": 1643,
+          "y": 2707,
+          "w": 416,
+          "h": 178
+        },
+        {
+          "x": 2187,
+          "y": 2702,
+          "w": 415,
+          "h": 173
+        },
+        {
+          "x": 2673,
+          "y": 2699,
+          "w": 417,
+          "h": 177
+        },
+        {
+          "x": 3160,
+          "y": 2699,
+          "w": 412,
+          "h": 177
+        },
+        {
+          "x": 3643,
+          "y": 2699,
+          "w": 415,
+          "h": 173
+        }
+      ],
+      "imageMasked": "page_13_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_13_expl_1.jpg",
+        "page_13_expl_2.jpg"
       ]
     },
     {
@@ -247,15 +706,42 @@
       "src_phys_page": 14,
       "width": 4215,
       "height": 3006,
-      "image": "page_14.jpg",
-      "regions": [],
-      "imageMasked": null,
+      "image": "page_14_answer.jpg",
+      "regions": [
+        {
+          "x": 2217,
+          "y": 2191,
+          "w": 291,
+          "h": 126
+        },
+        {
+          "x": 2578,
+          "y": 2191,
+          "w": 293,
+          "h": 126
+        },
+        {
+          "x": 2942,
+          "y": 2191,
+          "w": 898,
+          "h": 667
+        },
+        {
+          "x": 2217,
+          "y": 2327,
+          "w": 291,
+          "h": 126
+        },
+        {
+          "x": 2578,
+          "y": 2327,
+          "w": 293,
+          "h": 126
+        }
+      ],
+      "imageMasked": "page_14_qmasked.jpg",
       "explanationImages": [
-        "expl_ans_p05.jpg",
-        "expl_ans_p06.jpg",
-        "expl_ans_p07.jpg",
-        "expl_ans_p08.jpg",
-        "expl_ans_p09.jpg"
+        "page_14_expl_1.jpg"
       ]
     },
     {
