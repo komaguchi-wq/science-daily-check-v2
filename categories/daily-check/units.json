@@ -11,7 +11,7 @@
     "title": "てこ",
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 28,
-    "totalRegions": 346
+    "totalRegions": 333
   },
   {
     "id": "630-11",
@@ -25,7 +25,7 @@
     "title": "中和計算",
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 24,
-    "totalRegions": 299
+    "totalRegions": 297
   },
   {
     "id": "630-13",
@@ -33,5 +33,12 @@
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 30,
     "totalRegions": 447
+  },
+  {
+    "id": "H63-02",
+    "title": "太陽",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 30,
+    "totalRegions": 508
   }
 ]
