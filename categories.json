@@ -4,5 +4,17 @@
     "name": "デイリーサピックス",
     "icon": "🌟",
     "description": "630-XX 6年デイリーサピックス理科"
+  },
+  {
+    "id": "weekly-sapix",
+    "name": "Weekly SapiX",
+    "icon": "📘",
+    "description": "Weekly SapiX 理科"
+  },
+  {
+    "id": "coreplus",
+    "name": "コアプラス",
+    "icon": "📗",
+    "description": "コアプラス全範囲のピンク文字穴埋め問題"
   }
 ]

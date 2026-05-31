@@ -29,9 +29,9 @@ let currentReadingSection = null;
 let currentSection = null;
 
 // クイズ対象セクション（kakunin/hatten はPhase 2で小問セル単位のクイズ化）
-const QUIZ_TYPES = new Set(["pointcheck", "dailystep", "kakunin", "hatten"]);
+const QUIZ_TYPES = new Set(["pointcheck", "dailystep", "kakunin", "hatten", "weekly", "coreplus"]);
 // セクション表示順
-const SECTION_ORDER = ["description", "kakunin", "hatten", "pointcheck", "dailystep"];
+const SECTION_ORDER = ["description", "kakunin", "hatten", "pointcheck", "dailystep", "weekly", "coreplus"];
 
 const SECTION_META = {
   description: { label: "説明文", icon: "📝" },
@@ -39,6 +39,8 @@ const SECTION_META = {
   hatten: { label: "発展問題", icon: "🚀" },
   pointcheck: { label: "ポイントチェック", icon: "✨" },
   dailystep: { label: "デイリーステップ", icon: "📋" },
+  weekly: { label: "Weekly SapiX", icon: "📘" },
+  coreplus: { label: "コアプラス", icon: "📗" },
 };
 // 旧コードとの互換性
 const SECTION_LABELS = Object.fromEntries(

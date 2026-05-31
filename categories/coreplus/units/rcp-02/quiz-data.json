@@ -1,0 +1,170 @@
+{
+  "id": "rcp-02",
+  "title": "第I部 身のまわりの理科 第2節 星",
+  "category": "coreplus",
+  "pages": [
+    {
+      "id": 1,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 8,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_01.jpg",
+      "imageMasked": "page_01_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 2,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 9,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_02.jpg",
+      "imageMasked": "page_02_masked.jpg",
+      "regions": [
+        {
+          "x": 926,
+          "y": 147,
+          "w": 576,
+          "h": 33
+        },
+        {
+          "x": 926,
+          "y": 609,
+          "w": 576,
+          "h": 32
+        },
+        {
+          "x": 926,
+          "y": 769,
+          "w": 576,
+          "h": 33
+        },
+        {
+          "x": 926,
+          "y": 862,
+          "w": 576,
+          "h": 32
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 10,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_03.jpg",
+      "imageMasked": "page_03_masked.jpg",
+      "regions": [
+        {
+          "x": 1035,
+          "y": 200,
+          "w": 467,
+          "h": 32
+        },
+        {
+          "x": 1035,
+          "y": 238,
+          "w": 467,
+          "h": 36
+        },
+        {
+          "x": 1035,
+          "y": 963,
+          "w": 467,
+          "h": 35
+        },
+        {
+          "x": 1035,
+          "y": 1126,
+          "w": 467,
+          "h": 30
+        },
+        {
+          "x": 1035,
+          "y": 1242,
+          "w": 467,
+          "h": 35
+        },
+        {
+          "x": 1035,
+          "y": 1554,
+          "w": 467,
+          "h": 31
+        },
+        {
+          "x": 1035,
+          "y": 1591,
+          "w": 467,
+          "h": 35
+        },
+        {
+          "x": 1035,
+          "y": 1688,
+          "w": 467,
+          "h": 29
+        },
+        {
+          "x": 1035,
+          "y": 1723,
+          "w": 467,
+          "h": 37
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 11,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_04.jpg",
+      "imageMasked": "page_04_masked.jpg",
+      "regions": [
+        {
+          "x": 986,
+          "y": 146,
+          "w": 516,
+          "h": 78
+        },
+        {
+          "x": 986,
+          "y": 552,
+          "w": 516,
+          "h": 33
+        },
+        {
+          "x": 986,
+          "y": 847,
+          "w": 516,
+          "h": 34
+        },
+        {
+          "x": 986,
+          "y": 887,
+          "w": 516,
+          "h": 33
+        },
+        {
+          "x": 986,
+          "y": 1547,
+          "w": 516,
+          "h": 34
+        }
+      ]
+    }
+  ],
+  "sectionBreakdown": {
+    "coreplus": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

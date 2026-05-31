@@ -1,0 +1,786 @@
+{
+  "id": "rcp-27",
+  "title": "第IV部 巻末解説",
+  "category": "coreplus",
+  "pages": [
+    {
+      "id": 1,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 193,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_01.jpg",
+      "imageMasked": "page_01_masked.jpg",
+      "regions": [
+        {
+          "x": 1003,
+          "y": 1706,
+          "w": 499,
+          "h": 29
+        },
+        {
+          "x": 1003,
+          "y": 1780,
+          "w": 499,
+          "h": 22
+        },
+        {
+          "x": 1003,
+          "y": 1808,
+          "w": 499,
+          "h": 40
+        },
+        {
+          "x": 1003,
+          "y": 1896,
+          "w": 499,
+          "h": 45
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 194,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_02.jpg",
+      "imageMasked": "page_02_masked.jpg",
+      "regions": [
+        {
+          "x": 1014,
+          "y": 161,
+          "w": 488,
+          "h": 33
+        },
+        {
+          "x": 1014,
+          "y": 200,
+          "w": 488,
+          "h": 30
+        },
+        {
+          "x": 1014,
+          "y": 238,
+          "w": 488,
+          "h": 33
+        },
+        {
+          "x": 1014,
+          "y": 846,
+          "w": 488,
+          "h": 73
+        },
+        {
+          "x": 1014,
+          "y": 925,
+          "w": 488,
+          "h": 32
+        },
+        {
+          "x": 1014,
+          "y": 963,
+          "w": 488,
+          "h": 34
+        },
+        {
+          "x": 1014,
+          "y": 1136,
+          "w": 488,
+          "h": 39
+        },
+        {
+          "x": 1014,
+          "y": 1475,
+          "w": 488,
+          "h": 35
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 195,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_03.jpg",
+      "imageMasked": "page_03_masked.jpg",
+      "regions": [
+        {
+          "x": 1020,
+          "y": 1408,
+          "w": 482,
+          "h": 30
+        },
+        {
+          "x": 1020,
+          "y": 1886,
+          "w": 482,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 196,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_04.jpg",
+      "imageMasked": "page_04_masked.jpg",
+      "regions": [
+        {
+          "x": 1071,
+          "y": 152,
+          "w": 431,
+          "h": 33
+        },
+        {
+          "x": 1071,
+          "y": 193,
+          "w": 431,
+          "h": 30
+        },
+        {
+          "x": 1071,
+          "y": 231,
+          "w": 431,
+          "h": 30
+        },
+        {
+          "x": 1071,
+          "y": 270,
+          "w": 431,
+          "h": 27
+        },
+        {
+          "x": 1071,
+          "y": 303,
+          "w": 431,
+          "h": 16
+        },
+        {
+          "x": 1071,
+          "y": 325,
+          "w": 431,
+          "h": 11
+        },
+        {
+          "x": 1071,
+          "y": 342,
+          "w": 431,
+          "h": 33
+        },
+        {
+          "x": 1071,
+          "y": 381,
+          "w": 431,
+          "h": 32
+        },
+        {
+          "x": 1071,
+          "y": 419,
+          "w": 431,
+          "h": 34
+        },
+        {
+          "x": 1071,
+          "y": 1079,
+          "w": 431,
+          "h": 62
+        },
+        {
+          "x": 1071,
+          "y": 1147,
+          "w": 431,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 197,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_05.jpg",
+      "imageMasked": "page_05_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 1726,
+          "w": 660,
+          "h": 34
+        },
+        {
+          "x": 842,
+          "y": 1766,
+          "w": 660,
+          "h": 45
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 198,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_06.jpg",
+      "imageMasked": "page_06_masked.jpg",
+      "regions": [
+        {
+          "x": 1018,
+          "y": 201,
+          "w": 484,
+          "h": 621
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 199,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_07.jpg",
+      "imageMasked": "page_07_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 8,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 200,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_08.jpg",
+      "imageMasked": "page_08_masked.jpg",
+      "regions": [
+        {
+          "x": 1018,
+          "y": 305,
+          "w": 484,
+          "h": 32
+        },
+        {
+          "x": 1018,
+          "y": 348,
+          "w": 484,
+          "h": 28
+        },
+        {
+          "x": 1018,
+          "y": 382,
+          "w": 484,
+          "h": 21
+        },
+        {
+          "x": 1018,
+          "y": 421,
+          "w": 484,
+          "h": 33
+        },
+        {
+          "x": 1018,
+          "y": 1035,
+          "w": 484,
+          "h": 35
+        },
+        {
+          "x": 1018,
+          "y": 1328,
+          "w": 484,
+          "h": 33
+        },
+        {
+          "x": 1018,
+          "y": 1367,
+          "w": 484,
+          "h": 23
+        },
+        {
+          "x": 1018,
+          "y": 1396,
+          "w": 484,
+          "h": 51
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 201,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_09.jpg",
+      "imageMasked": "page_09_masked.jpg",
+      "regions": [
+        {
+          "x": 1084,
+          "y": 1601,
+          "w": 418,
+          "h": 41
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 202,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_10.jpg",
+      "imageMasked": "page_10_masked.jpg",
+      "regions": [
+        {
+          "x": 1022,
+          "y": 148,
+          "w": 480,
+          "h": 33
+        },
+        {
+          "x": 1022,
+          "y": 982,
+          "w": 480,
+          "h": 70
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 203,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_11.jpg",
+      "imageMasked": "page_11_masked.jpg",
+      "regions": [
+        {
+          "x": 979,
+          "y": 748,
+          "w": 523,
+          "h": 42
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 204,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_12.jpg",
+      "imageMasked": "page_12_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 13,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 205,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_13.jpg",
+      "imageMasked": "page_13_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 14,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 206,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_14.jpg",
+      "imageMasked": "page_14_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 15,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 207,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_15.jpg",
+      "imageMasked": "page_15_masked.jpg",
+      "regions": [
+        {
+          "x": 907,
+          "y": 203,
+          "w": 595,
+          "h": 76
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 208,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_16.jpg",
+      "imageMasked": "page_16_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 17,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 209,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_17.jpg",
+      "imageMasked": "page_17_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 18,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 210,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_18.jpg",
+      "imageMasked": "page_18_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 19,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 211,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_19.jpg",
+      "imageMasked": "page_19_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 203,
+          "w": 660,
+          "h": 35
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 212,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_20.jpg",
+      "imageMasked": "page_20_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 21,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 213,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_21.jpg",
+      "imageMasked": "page_21_masked.jpg",
+      "regions": [
+        {
+          "x": 932,
+          "y": 229,
+          "w": 570,
+          "h": 46
+        },
+        {
+          "x": 932,
+          "y": 459,
+          "w": 570,
+          "h": 38
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 214,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_22.jpg",
+      "imageMasked": "page_22_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 23,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 215,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_23.jpg",
+      "imageMasked": "page_23_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 207,
+          "w": 660,
+          "h": 71
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 216,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_24.jpg",
+      "imageMasked": "page_24_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 25,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 217,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_25.jpg",
+      "imageMasked": "page_25_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 26,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 218,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_26.jpg",
+      "imageMasked": "page_26_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 27,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 219,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_27.jpg",
+      "imageMasked": "page_27_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 209,
+          "w": 660,
+          "h": 72
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 220,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_28.jpg",
+      "imageMasked": "page_28_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 29,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 221,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_29.jpg",
+      "imageMasked": "page_29_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 238,
+          "w": 660,
+          "h": 47
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 222,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_30.jpg",
+      "imageMasked": "page_30_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 31,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 223,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_31.jpg",
+      "imageMasked": "page_31_masked.jpg",
+      "regions": [
+        {
+          "x": 854,
+          "y": 147,
+          "w": 648,
+          "h": 40
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 224,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_32.jpg",
+      "imageMasked": "page_32_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 33,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 225,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_33.jpg",
+      "imageMasked": "page_33_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 202,
+          "w": 660,
+          "h": 36
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 226,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_34.jpg",
+      "imageMasked": "page_34_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 35,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 227,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_35.jpg",
+      "imageMasked": "page_35_masked.jpg",
+      "regions": [
+        {
+          "x": 842,
+          "y": 171,
+          "w": 660,
+          "h": 40
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 228,
+      "width": 1532,
+      "height": 2171,
+      "image": "page_36.jpg",
+      "imageMasked": "page_36_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 37,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 229,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_37.jpg",
+      "imageMasked": "page_37_masked.jpg",
+      "regions": []
+    },
+    {
+      "id": 38,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 230,
+      "width": 1532,
+      "height": 2169,
+      "image": "page_38.jpg",
+      "imageMasked": "page_38_masked.jpg",
+      "regions": []
+    }
+  ],
+  "sectionBreakdown": {
+    "coreplus": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ]
+  }
+}

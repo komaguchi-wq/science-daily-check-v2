@@ -1,0 +1,191 @@
+[
+  {
+    "id": "rcp-01",
+    "title": "第I部 身のまわりの理科 第1節 月と惑星",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 25
+  },
+  {
+    "id": "rcp-02",
+    "title": "第I部 身のまわりの理科 第2節 星",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 18
+  },
+  {
+    "id": "rcp-03",
+    "title": "第I部 身のまわりの理科 第3節 川と地層",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 42
+  },
+  {
+    "id": "rcp-04",
+    "title": "第I部 身のまわりの理科 第4節 火山と化石",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 72
+  },
+  {
+    "id": "rcp-05",
+    "title": "第I部 身のまわりの理科 第5節 気象と太陽",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 62
+  },
+  {
+    "id": "rcp-06",
+    "title": "第I部 身のまわりの理科 第6節 無セキツイ動物",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 77
+  },
+  {
+    "id": "rcp-07",
+    "title": "第I部 身のまわりの理科 第7節 メダカとプランクトン",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 28
+  },
+  {
+    "id": "rcp-08",
+    "title": "第I部 身のまわりの理科 第8節 セキツイ動物",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 38
+  },
+  {
+    "id": "rcp-09",
+    "title": "第I部 身のまわりの理科 第9節 種子と発芽",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 17
+  },
+  {
+    "id": "rcp-10",
+    "title": "第I部 身のまわりの理科 第10節 花と受粉",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 19
+  },
+  {
+    "id": "rcp-11",
+    "title": "第II部 第1章 化学 第1節 状態変化・熱の移動",
+    "subject": "理科",
+    "pageCount": 7,
+    "totalRegions": 57
+  },
+  {
+    "id": "rcp-12",
+    "title": "第II部 第1章 化学 第2節 酸素・二酸化炭素・物の燃え方",
+    "subject": "理科",
+    "pageCount": 7,
+    "totalRegions": 95
+  },
+  {
+    "id": "rcp-13",
+    "title": "第II部 第1章 化学 第3節 溶解度・水溶液",
+    "subject": "理科",
+    "pageCount": 5,
+    "totalRegions": 59
+  },
+  {
+    "id": "rcp-14",
+    "title": "第II部 第2章 地学 第1節 天体",
+    "subject": "理科",
+    "pageCount": 15,
+    "totalRegions": 191
+  },
+  {
+    "id": "rcp-15",
+    "title": "第II部 第2章 地学 第2節 地層・岩石・火山",
+    "subject": "理科",
+    "pageCount": 9,
+    "totalRegions": 89
+  },
+  {
+    "id": "rcp-16",
+    "title": "第II部 第2章 地学 第3節 気象",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 113
+  },
+  {
+    "id": "rcp-17",
+    "title": "第II部 第3章 物理 第1節 力学",
+    "subject": "理科",
+    "pageCount": 14,
+    "totalRegions": 136
+  },
+  {
+    "id": "rcp-18",
+    "title": "第II部 第3章 物理 第2節 電磁気",
+    "subject": "理科",
+    "pageCount": 7,
+    "totalRegions": 71
+  },
+  {
+    "id": "rcp-19",
+    "title": "第II部 第3章 物理 第3節 光・音",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 88
+  },
+  {
+    "id": "rcp-20",
+    "title": "第II部 第4章 生物 第1節 植物",
+    "subject": "理科",
+    "pageCount": 9,
+    "totalRegions": 153
+  },
+  {
+    "id": "rcp-21",
+    "title": "第II部 第4章 生物 第2節 動物",
+    "subject": "理科",
+    "pageCount": 10,
+    "totalRegions": 164
+  },
+  {
+    "id": "rcp-22",
+    "title": "第II部 第4章 生物 第3節 人体",
+    "subject": "理科",
+    "pageCount": 11,
+    "totalRegions": 171
+  },
+  {
+    "id": "rcp-23",
+    "title": "第II部 第4章 生物 第4節 環境",
+    "subject": "理科",
+    "pageCount": 11,
+    "totalRegions": 126
+  },
+  {
+    "id": "rcp-24",
+    "title": "第II部 第5章 環境 第1節 環境",
+    "subject": "理科",
+    "pageCount": 5,
+    "totalRegions": 60
+  },
+  {
+    "id": "rcp-25",
+    "title": "第III部 計算理科 第1節 計算問題",
+    "subject": "理科",
+    "pageCount": 14,
+    "totalRegions": 79
+  },
+  {
+    "id": "rcp-26",
+    "title": "第III部 計算理科 第2節 中和",
+    "subject": "理科",
+    "pageCount": 5,
+    "totalRegions": 28
+  },
+  {
+    "id": "rcp-27",
+    "title": "第IV部 巻末解説",
+    "subject": "理科",
+    "pageCount": 38,
+    "totalRegions": 50
+  }
+]
