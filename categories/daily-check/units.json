@@ -32,7 +32,7 @@
     "title": "光②",
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 30,
-    "totalRegions": 364
+    "totalRegions": 363
   },
   {
     "id": "630-06",
@@ -40,27 +40,6 @@
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 30,
     "totalRegions": 458
-  },
-  {
-    "id": "H63-01",
-    "title": "電気のはたらき",
-    "subject": "6年理科 デイリーサピックス",
-    "pageCount": 30,
-    "totalRegions": 573
-  },
-  {
-    "id": "H63-02",
-    "title": "太陽",
-    "subject": "6年理科 デイリーサピックス",
-    "pageCount": 30,
-    "totalRegions": 508
-  },
-  {
-    "id": "H63-03",
-    "title": "月",
-    "subject": "6年理科 デイリーサピックス",
-    "pageCount": 30,
-    "totalRegions": 509
   },
   {
     "id": "630-08",
@@ -103,5 +82,26 @@
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 30,
     "totalRegions": 447
+  },
+  {
+    "id": "H63-01",
+    "title": "電気のはたらき",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 30,
+    "totalRegions": 573
+  },
+  {
+    "id": "H63-02",
+    "title": "太陽",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 30,
+    "totalRegions": 508
+  },
+  {
+    "id": "H63-03",
+    "title": "月",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 30,
+    "totalRegions": 509
   }
 ]
