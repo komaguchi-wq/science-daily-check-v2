@@ -1067,7 +1067,9 @@ function setupEventListeners() {
     try { window.print(); } catch (e) { console.warn("print err", e); }
   });
   document.getElementById("print-overlay-close").addEventListener("click", _closePrintOverlay);
-  window.addEventListener("afterprint", _closePrintOverlay);
+  // ★ afterprint で自動クローズしない: iPad では印刷プレビュー進入直後に
+  //   afterprint が誤発火することがあり、画像が消えて白紙化する。
+  //   閉じるは必ずユーザーの「閉じる」ボタン操作のみ。
   document.getElementById("btn-back-categories").addEventListener("click", () => {
     renderCategories(); showScreen("screen-categories");
   });
