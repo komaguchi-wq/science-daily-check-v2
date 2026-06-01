@@ -913,15 +913,23 @@ function _closePrintOverlay() {
 function _openPrintOverlay(titleText, dataURLs) {
   const ov = document.getElementById("print-overlay");
   const body = document.getElementById("print-overlay-body");
-  const title = document.getElementById("print-overlay-title");
   if (!ov || !body) return;
   _resetPrintOverlay();
-  if (title) title.textContent = titleText || "印刷プレビュー";
   const urls = Array.isArray(dataURLs) ? dataURLs : [dataURLs];
   _printActiveBlobURLs = urls.map(_dataURLtoBlobURL);
   body.innerHTML = _printActiveBlobURLs
-    .map(u => `<div class="pg"><img src="${u}"></div>`).join("");
-  ov.classList.add("active");
+    .map(u => `<div class="pg"><img class="pi" src="${u}"></div>`).join("");
+  // 画像が decode 完了したら自動で print() 呼び出し（オーバーレイUI不要）
+  const imgs = Array.from(body.querySelectorAll("img.pi"));
+  const waits = imgs.map(im => im.decode
+    ? im.decode().catch(() => {})
+    : new Promise(r => { im.onload = r; im.onerror = r; if (im.complete) r(); }));
+  Promise.all(waits).then(() => {
+    requestAnimationFrame(() => {
+      try { window.print(); } catch (e) { console.warn("print err", e); }
+      // 印刷ダイアログ閉じた後の cleanup は次回印刷時 _resetPrintOverlay で自動
+    });
+  });
 }
 
 // 互換のため旧関数名は新方式へリダイレクト
@@ -1060,16 +1068,7 @@ function setupEventListeners() {
   document.getElementById("btn-save-settings").addEventListener("click", saveSettings);
   document.getElementById("btn-restore").addEventListener("click", restoreFromSheets);
   document.getElementById("btn-close-settings").addEventListener("click", closeSettings);
-
-  // プリントオーバーレイ: 「プリント」ボタンを押した瞬間に同期 print() を呼ぶ
-  // （setTimeout 等で遅延させると iOS「自動印刷禁止」警告が出る）
-  document.getElementById("print-overlay-print").addEventListener("click", () => {
-    try { window.print(); } catch (e) { console.warn("print err", e); }
-  });
-  document.getElementById("print-overlay-close").addEventListener("click", _closePrintOverlay);
-  // ★ afterprint で自動クローズしない: iPad では印刷プレビュー進入直後に
-  //   afterprint が誤発火することがあり、画像が消えて白紙化する。
-  //   閉じるは必ずユーザーの「閉じる」ボタン操作のみ。
+  // ※ プリントは _openPrintOverlay 内で画像 decode 後に自動 window.print() 呼び出し
   document.getElementById("btn-back-categories").addEventListener("click", () => {
     renderCategories(); showScreen("screen-categories");
   });
