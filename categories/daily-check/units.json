@@ -1,5 +1,12 @@
 [
   {
+    "id": "630-01",
+    "title": "気体と水溶液の性質",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 31,
+    "totalRegions": 403
+  },
+  {
     "id": "630-08",
     "title": "人体",
     "subject": "6年理科 デイリーサピックス",
@@ -11,7 +18,7 @@
     "title": "てこ",
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 28,
-    "totalRegions": 333
+    "totalRegions": 346
   },
   {
     "id": "630-10",
@@ -40,6 +47,13 @@
     "subject": "6年理科 デイリーサピックス",
     "pageCount": 30,
     "totalRegions": 447
+  },
+  {
+    "id": "H63-01",
+    "title": "電気のはたらき",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 30,
+    "totalRegions": 573
   },
   {
     "id": "H63-02",
