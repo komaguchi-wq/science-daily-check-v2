@@ -4,6 +4,97 @@
     "title": "WS-01 水の三態と熱 / 知識の総完成 第1回 植物①",
     "subject": "理科",
     "pageCount": 8,
-    "totalRegions": 122
+    "totalRegions": 124
+  },
+  {
+    "id": "WS-02",
+    "title": "WS-02 植物のつくり / 知識の総完成 第2回 植物②",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 147
+  },
+  {
+    "id": "WS-03",
+    "title": "WS-03 花と受粉 / 知識の総完成 第3回 植物③",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 161
+  },
+  {
+    "id": "WS-04",
+    "title": "WS-04 岩石 / 知識の総完成 第4回 植物④",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 111
+  },
+  {
+    "id": "WS-05",
+    "title": "WS-05 人体（分化） / 知識の総完成 第5回 動物① 人体①",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 183
+  },
+  {
+    "id": "WS-06",
+    "title": "WS-06 動物の分類 / 知識の総完成 第6回 動物② 人体②",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 89
+  },
+  {
+    "id": "WS-07",
+    "title": "WS-07 電流と方位磁針 / 知識の総完成 第7回 動物③",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 200
+  },
+  {
+    "id": "WS-08",
+    "title": "WS-08 星の知識 / 知識の総完成 第8回 動物④ 食物連鎖",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 157
+  },
+  {
+    "id": "WS-09",
+    "title": "WS-09 気体の発生計算・金属の燃焼計算 / 知識の総完成 第9回 化学① 水溶液",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 154
+  },
+  {
+    "id": "WS-10",
+    "title": "WS-10 てこ / 知識の総完成 第10回 化学② 気体",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 183
+  },
+  {
+    "id": "WS-11",
+    "title": "WS-11 ろうそくと燃焼 / 知識の総完成 第11回 化学③ 燃焼",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 177
+  },
+  {
+    "id": "WS-12",
+    "title": "WS-12 濃度 / 知識の総完成 第12回 化学④ 熱",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 157
+  },
+  {
+    "id": "WS-13",
+    "title": "WS-13 WS-12の復習 / 知識の総完成 第13回 地学① 星と月",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 281
+  },
+  {
+    "id": "WS-14",
+    "title": "WS-14 音 / 知識の総完成 第14回 地学② 太陽",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 181
   }
 ]
