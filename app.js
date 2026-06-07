@@ -676,15 +676,18 @@ function renderWsPages() {
   updateWsTargetBanners();
 }
 
-// 指定の問題ページ(idx)に乗っている対象小問のラベル一覧
-function wsTargetLabelsForPage(idx) {
-  if (!wsmFilteredIds) return [];
-  const labels = [];
+// 指定ページ(idx)の対象問題を短い1行テキストに。
+// 同じ大問はまとめて "X2-(1),(2),(3)" と省略。複数大問は "　/　" 区切り。
+function wsTargetTextForPage(idx, idsSet) {
+  if (!idsSet) return "";
+  const parts = [];
   quizData.xyz.daimons.forEach(dm => {
     if (dm.qpage !== idx) return;
-    dm.questions.forEach(q => { if (wsmFilteredIds.has(q.id)) labels.push(q.id); });
+    const subs = dm.questions.filter(q => idsSet.has(q.id));
+    if (!subs.length) return;
+    parts.push(`${dm.id}-${subs.map(q => q.label).join(",")}`);
   });
-  return labels;
+  return parts.length ? "対象 " + parts.join("　/　") : "";
 }
 
 function updateWsTargetBanners() {
@@ -692,8 +695,8 @@ function updateWsTargetBanners() {
     const idx = parseInt(pageEl.dataset.idx);
     const banner = pageEl.querySelector(".wsm-target-banner");
     if (!banner) return;
-    const labels = wsTargetLabelsForPage(idx);
-    if (labels.length) { banner.textContent = "対象: " + labels.join("　"); banner.style.display = ""; }
+    const txt = wsTargetTextForPage(idx, wsmFilteredIds);
+    if (txt) { banner.textContent = txt; banner.style.display = ""; }
     else { banner.style.display = "none"; banner.textContent = ""; }
   });
 }
@@ -716,36 +719,27 @@ function setWsTab(showAnswer) {
   document.getElementById("wsm-pages").scrollTop = 0;
 }
 
-// 対象問題ラベルを赤文字でページ上部に焼き込む（印刷用）
-function drawWsTargetText(ctx, labels, W, H) {
-  const fontSize = Math.round(W * 0.012);
+// 対象問題テキストを赤文字でページ上部に焼き込む（印刷用）。必ず1行（収まらなければ縮小）。
+function drawWsTargetText(ctx, text, W, H) {
+  if (!text) return;
+  let fontSize = Math.round(W * 0.012);
+  const minFont = Math.round(W * 0.007);
+  const maxTextW = W * 0.94;
   ctx.font = `bold ${fontSize}px sans-serif`;
-  const text = "対象: " + labels.join("　　");
-  const maxWidth = W * 0.95;
-  const lines = wsWrapText(ctx, text, maxWidth);
-  const lineHeight = fontSize * 1.3;
+  while (ctx.measureText(text).width > maxTextW && fontSize > minFont) {
+    fontSize -= 2;
+    ctx.font = `bold ${fontSize}px sans-serif`;
+  }
   const padding = fontSize * 0.45;
-  const boxH = lines.length * lineHeight + padding * 2;
-  const boxW = Math.min(W * 0.95, Math.max(...lines.map(l => ctx.measureText(l).width)) + padding * 2);
+  const boxH = fontSize * 1.25 + padding * 2;
+  const boxW = Math.min(W * 0.96, ctx.measureText(text).width + padding * 2);
   const x = W * 0.02, y = H * 0.006;
   ctx.fillStyle = "rgba(255,255,255,0.92)";
   ctx.fillRect(x, y, boxW, boxH);
-  ctx.strokeStyle = "#ff3b30"; ctx.lineWidth = 3;
+  ctx.strokeStyle = "#ff3b30"; ctx.lineWidth = 2;
   ctx.strokeRect(x, y, boxW, boxH);
   ctx.fillStyle = "#ff3b30"; ctx.textBaseline = "top";
-  for (let i = 0; i < lines.length; i++) ctx.fillText(lines[i], x + padding, y + padding + i * lineHeight);
-}
-
-function wsWrapText(ctx, text, maxWidth) {
-  const words = text.split("　　");
-  const lines = []; let cur = words[0] || "";
-  for (let i = 1; i < words.length; i++) {
-    const test = cur + "　　" + words[i];
-    if (ctx.measureText(test).width > maxWidth) { lines.push(cur); cur = words[i]; }
-    else cur = test;
-  }
-  lines.push(cur);
-  return lines;
+  ctx.fillText(text, x + padding, y + padding);
 }
 
 // モード別に問題ページを印刷（対象小問を赤文字で焼き込む）
@@ -763,14 +757,7 @@ async function printWsMode(mode) {
     cc.width = img.width; cc.height = img.height;
     const ctx = cc.getContext("2d");
     ctx.drawImage(img, 0, 0);
-    if (ids) {
-      const labels = [];
-      xyz.daimons.forEach(dm => {
-        if (dm.qpage !== i) return;
-        dm.questions.forEach(q => { if (ids.has(q.id)) labels.push(q.id); });
-      });
-      if (labels.length) drawWsTargetText(ctx, labels, cc.width, cc.height);
-    }
+    if (ids) drawWsTargetText(ctx, wsTargetTextForPage(i, ids), cc.width, cc.height);
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }

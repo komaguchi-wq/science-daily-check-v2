@@ -808,6 +808,9 @@ body {
   padding: 5px 9px;
   margin-bottom: 5px;
   line-height: 1.4;
+  white-space: nowrap;       /* 2行に折り返さない（問題文への被りを最小化） */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 @media (min-width: 768px) {
   .wsm-target-banner { font-size: 15px; }
