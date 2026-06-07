@@ -746,7 +746,7 @@ body {
 }
 /* 正誤表: 大問ごとにグループ化、小問単位で○✕。高さが出たらこの中だけスクロール */
 .wsm-table {
-  max-height: 34vh;
+  max-height: 21vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -797,31 +797,32 @@ body {
 .wsm-sub:has(.ng.selected) .ok:not(.selected) { opacity: 0.3; }
 .wsm-sub.ws-dim { opacity: 0.3; }
 
-/* 対象問題の赤文字バナー（フィルタ選択時に問題ページ上部に表示） */
+/* 対象問題の赤文字バナー（フィルタ選択時に問題ページ上部に表示・問題文に被らない小さめ） */
 .wsm-target-banner {
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 700;
   color: #ff3b30;
   background: #fff3f2;
-  border: 2px solid #ff3b30;
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin-bottom: 6px;
-  line-height: 1.5;
-  letter-spacing: 0.5px;
+  border: 1px solid #ff3b30;
+  border-radius: 6px;
+  padding: 5px 9px;
+  margin-bottom: 5px;
+  line-height: 1.4;
 }
 @media (min-width: 768px) {
-  .wsm-target-banner { font-size: 22px; }
+  .wsm-target-banner { font-size: 15px; }
 }
 
 .wsm-pages {
   flex: 1 1 0;
   min-height: 0;
-  overflow-y: auto;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   background: #e8e8ed;
   padding: 10px;
+  touch-action: none; /* ピンチズーム/パンを自前処理（canvas-wrapper等と同様） */
 }
+#wsm-pages-inner { width: 100%; transform-origin: 0 0; }
 .wsm-page { margin-bottom: 14px; }
 .wsm-page-label {
   font-size: 12px; color: #6e6e73; font-weight: 600;

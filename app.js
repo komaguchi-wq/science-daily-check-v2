@@ -660,7 +660,7 @@ function commitXyz() {
 function renderWsPages() {
   const xyz = quizData.xyz;
   const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
-  const el = document.getElementById("wsm-pages");
+  const el = document.getElementById("wsm-pages-inner");
   const q = xyz.questionPages.map((p, i) =>
     `<div class="wsm-page" data-pt="q" data-idx="${i}">
        <div class="wsm-page-label">問題 ${i + 1} / ${xyz.questionPages.length}</div>
@@ -718,7 +718,7 @@ function setWsTab(showAnswer) {
 
 // 対象問題ラベルを赤文字でページ上部に焼き込む（印刷用）
 function drawWsTargetText(ctx, labels, W, H) {
-  const fontSize = Math.round(W * 0.018);
+  const fontSize = Math.round(W * 0.012);
   ctx.font = `bold ${fontSize}px sans-serif`;
   const text = "対象: " + labels.join("　　");
   const maxWidth = W * 0.95;
@@ -1576,7 +1576,7 @@ init();
 // ==============================
 // Pinch-zoom for canvas-wrapper / reading-wrapper
 // ==============================
-function attachPinchZoom(wrapperId, contentSelector) {
+function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
   const wrapper = document.getElementById(wrapperId);
   if (!wrapper) return;
   let scale = 1, minScale = 1, maxScale = 4;
@@ -1624,6 +1624,15 @@ function attachPinchZoom(wrapperId, contentSelector) {
     const cvs = getContent();
     if (!cvs) return;
     scale = 1;
+    if (fit === "container") {
+      // 複数画像を縦に積んだコンテナ: 幅100%にフィット（高さは内容なり）
+      cvs.style.width = "100%";
+      cvs.style.maxWidth = "none";
+      cvs.style.maxHeight = "none";
+      cvs.style.height = "auto";
+      baseWidth = cvs.getBoundingClientRect().width || (wrapper.clientWidth - 20);
+      return;
+    }
     const wW = wrapper.clientWidth - 8;
     const wH = wrapper.clientHeight - 8;
     const cW = cvs.naturalWidth || cvs.width || 1;
@@ -1696,11 +1705,18 @@ function attachPinchZoom(wrapperId, contentSelector) {
   // ページ切替・画像変更時にリセット
   const cvs = getContent();
   if (cvs) {
-    const observer = new MutationObserver(() => { if (scale > 1) resetZoom(); });
-    observer.observe(cvs, { attributes: true, attributeFilter: ['width', 'height', 'src'] });
+    if (fit === "container") {
+      // 子(ページ画像)が差し替わったらズームを戻す
+      const observer = new MutationObserver(() => resetZoom());
+      observer.observe(cvs, { childList: true });
+    } else {
+      const observer = new MutationObserver(() => { if (scale > 1) resetZoom(); });
+      observer.observe(cvs, { attributes: true, attributeFilter: ['width', 'height', 'src'] });
+    }
   }
 }
 
 attachPinchZoom('canvas-wrapper', '#quiz-canvas');
 attachPinchZoom('reading-wrapper', '#reading-image');
 attachPinchZoom('explain-viewport', '#explain-img');
+attachPinchZoom('wsm-pages', '#wsm-pages-inner', 'container');
