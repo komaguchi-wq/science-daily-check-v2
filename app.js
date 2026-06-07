@@ -604,10 +604,12 @@ function renderXyzTable() {
       }
       const dim = wsmFilteredIds && !wsmFilteredIds.has(q.id) ? "ws-dim" : "";
       const idEsc = q.id.replace(/'/g, "\\'");
+      const cnt = t.attempts > 0 ? `${t.correct}/${t.attempts}` : "";
       return `<span class="wsm-sub ${tint} ${dim}" data-qid="${q.id}">
         <span class="wsm-sub-label">${q.label}</span>
         <button class="wsm-qc-btn ok ${pend === "correct" ? "selected" : ""}" onclick="markXyz('${idEsc}', true)">○</button>
         <button class="wsm-qc-btn ng ${pend === "wrong" ? "selected" : ""}" onclick="markXyz('${idEsc}', false)">✕</button>
+        <span class="wsm-sub-count">${cnt}</span>
       </span>`;
     }).join("");
     return `<div class="wsm-daimon">

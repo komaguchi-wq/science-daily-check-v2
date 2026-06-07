@@ -763,18 +763,22 @@ body {
 .wsm-sub {
   display: flex; align-items: center; gap: 3px;
   border: 1px solid #e0e0e0; border-radius: 8px;
-  padding: 3px 5px 3px 6px; background: #fff;
+  padding: 2px 5px 2px 6px; background: #fff;
 }
 .wsm-sub.sub-perfect { background: #eafaef; border-color: #b6e7c4; }
 .wsm-sub.sub-mid { background: #fff6e6; border-color: #f3d9a6; }
 .wsm-sub.sub-low { background: #fdeceb; border-color: #f3bdb8; }
 .wsm-sub-label { font-size: 12px; font-weight: 700; min-width: 26px; color: #444; }
+.wsm-sub-count {
+  font-size: 10px; color: #86868b; font-weight: 600;
+  min-width: 22px; text-align: center;
+}
 .wsm-qc-btn {
-  width: 30px; height: 28px;
+  width: 30px; height: 17px;
   border: 1.5px solid #e0e0e0;
-  border-radius: 7px;
+  border-radius: 6px;
   background: #fff;
-  font-size: 15px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   cursor: pointer;
   padding: 0;
   display: flex; align-items: center; justify-content: center;
