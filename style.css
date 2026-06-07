@@ -820,10 +820,12 @@ body {
   flex: 1 1 0;
   min-height: 0;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
   background: #e8e8ed;
   padding: 10px;
-  touch-action: none; /* ピンチズーム/パンを自前処理（canvas-wrapper等と同様） */
+  /* ピンチズーム/パンを自前処理（canvas-wrapper等と同様）。
+     ★-webkit-overflow-scrolling:touch は付けない（iOSの慣性スクロール層が
+       2本指ピンチを奪い、1本指がゴムで枠外まで動く原因になる） */
+  touch-action: none;
 }
 #wsm-pages-inner { width: 100%; transform-origin: 0 0; }
 .wsm-page { margin-bottom: 14px; }
