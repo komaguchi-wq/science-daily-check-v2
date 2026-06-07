@@ -88,6 +88,7 @@ function getUnitStats(unitId) {
   const unitData = tracking[unitId] || {};
   let totalAttempts = 0, totalCorrect = 0, totalQuestions = 0;
   for (const key in unitData) {
+    if (key.startsWith("xyz-")) continue; // X/Y/Z問題は知識の集計に含めない
     totalQuestions++;
     totalAttempts += unitData[key].attempts;
     totalCorrect += unitData[key].correct;
@@ -101,6 +102,7 @@ function getUnitProgress(unit) {
   const unitData = getTracking()[unit.id] || {};
   let attempted = 0, goodCount = 0;
   for (const key in unitData) {
+    if (key.startsWith("xyz-")) continue; // X/Y/Z問題は単元一覧の進捗に含めない
     const t = unitData[key];
     if (t && t.attempts > 0) {
       attempted++;
@@ -285,6 +287,35 @@ function renderUnitDetail() {
   const list = document.getElementById("section-card-list");
   list.innerHTML = "";
 
+  // X・Y・Z問題（デイリーサポート方式）カード（quiz-data.json に xyz があれば先頭に表示）
+  if (quizData.xyz && Array.isArray(quizData.xyz.daimons) && quizData.xyz.daimons.length > 0) {
+    const xyz = quizData.xyz;
+    let good = 0;
+    xyz.daimons.forEach(id => {
+      const t = getXyzTracking(currentUnit.id, id);
+      if (t.attempts > 0 && t.correct / t.attempts >= 0.67) good++;
+    });
+    const total = xyz.daimons.length;
+    const progress = total > 0 ? Math.round(good / total * 100) : 0;
+    const card = document.createElement("div");
+    card.className = "section-card";
+    card.innerHTML = `
+      <div class="section-card-icon">🧪</div>
+      <div class="section-card-body">
+        <div class="section-card-title">${xyz.label || "X・Y・Z問題"}</div>
+        <div class="section-card-meta">問題${xyz.questionPages.length}ページ ・ 全${total}問</div>
+        <div class="section-card-progress">
+          <div class="section-card-progress-fill" style="width: ${progress}%;"></div>
+        </div>
+      </div>
+      <div class="section-card-stats">
+        <div class="section-card-stats-main">${good}/${total}</div>
+        <div class="section-card-stats-sub">67%↑ 達成 (${progress}%)</div>
+      </div>`;
+    card.addEventListener("click", openWsMondai);
+    list.appendChild(card);
+  }
+
   SECTION_ORDER.forEach(sec => {
     const pages = getSectionPages(sec);
     if (pages.length === 0) return;
@@ -465,6 +496,134 @@ function renderSectionDetail() {
 function getPageLabel(page) {
   const sec = SECTION_LABELS[page.type] || page.type;
   return `${sec} p${page.id}`;
+}
+
+// ==============================
+// X・Y・Z問題（デイリーサポート方式: 問題/解答タブ + 正誤表 + 印刷）
+// ==============================
+let wsmShowingAnswer = false;
+let pendingXyz = {};       // {daimonId: "correct"|"wrong"} 仮選択
+let xyzIdleTimer = null;
+
+function getXyzTracking(unitId, daimonId) {
+  const t = getTracking()[unitId] || {};
+  return t[`xyz-${daimonId}`] || { attempts: 0, correct: 0 };
+}
+
+function recordXyzAnswer(unitId, daimonId, isCorrect) {
+  const tracking = getTracking();
+  if (!tracking[unitId]) tracking[unitId] = {};
+  const key = `xyz-${daimonId}`;
+  if (!tracking[unitId][key]) tracking[unitId][key] = { attempts: 0, correct: 0 };
+  tracking[unitId][key].attempts++;
+  if (isCorrect) tracking[unitId][key].correct++;
+  setTracking(tracking);
+  backupToSheets();
+}
+
+function openWsMondai() {
+  wsmShowingAnswer = false;
+  pendingXyz = {};
+  document.getElementById("wsmondai-title").textContent = `${currentUnit.id} X・Y・Z問題`;
+  renderXyzTable();
+  renderWsPages();
+  updateWsTabUI();
+  showScreen("screen-wsmondai");
+  document.getElementById("wsm-pages").scrollTop = 0;
+}
+
+function renderXyzTable() {
+  const xyz = quizData.xyz;
+  const el = document.getElementById("wsm-table");
+  if (!xyz) { el.innerHTML = ""; return; }
+  el.innerHTML = xyz.daimons.map(id => {
+    const t = getXyzTracking(currentUnit.id, id);
+    const pend = pendingXyz[id];
+    const rate = t.attempts > 0 ? Math.round(t.correct / t.attempts * 100) : -1;
+    const rateText = rate < 0 ? "未" : rate + "%";
+    const rateCls = rate < 0 ? "rate-none" : rate >= 80 ? "rate-high" : rate >= 50 ? "rate-mid" : "rate-low";
+    const att = t.attempts > 0 ? `<span class="wsm-qc-att">(${t.correct}/${t.attempts})</span>` : "";
+    return `<div class="wsm-qc" data-did="${id}">
+      <span class="wsm-qc-name">${id}</span>
+      <span class="wsm-qc-rate ${rateCls}">${rateText}${att}</span>
+      <span class="wsm-qc-ans">
+        <button class="wsm-qc-btn ok ${pend === "correct" ? "selected" : ""}" onclick="markXyz('${id}', true)">○</button>
+        <button class="wsm-qc-btn ng ${pend === "wrong" ? "selected" : ""}" onclick="markXyz('${id}', false)">✕</button>
+      </span>
+    </div>`;
+  }).join("");
+}
+
+function markXyz(daimonId, isCorrect) {
+  pendingXyz[daimonId] = isCorrect ? "correct" : "wrong";
+  renderXyzTable();
+  resetXyzIdle();
+}
+
+function resetXyzIdle() {
+  if (xyzIdleTimer) clearTimeout(xyzIdleTimer);
+  if (Object.keys(pendingXyz).length > 0) xyzIdleTimer = setTimeout(commitXyz, IDLE_TIMEOUT);
+}
+
+function commitXyz() {
+  if (xyzIdleTimer) { clearTimeout(xyzIdleTimer); xyzIdleTimer = null; }
+  const ids = Object.keys(pendingXyz);
+  if (ids.length === 0) return;
+  for (const id of ids) {
+    recordXyzAnswer(currentUnit.id, id, pendingXyz[id] === "correct");
+    delete pendingXyz[id];
+  }
+  const scr = document.getElementById("screen-wsmondai");
+  if (scr && scr.classList.contains("active")) renderXyzTable();
+}
+
+function renderWsPages() {
+  const xyz = quizData.xyz;
+  const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
+  const el = document.getElementById("wsm-pages");
+  const q = xyz.questionPages.map((p, i) =>
+    `<div class="wsm-page" data-pt="q"><div class="wsm-page-label">問題 ${i + 1} / ${xyz.questionPages.length}</div><img src="${base}${p}" loading="lazy" alt="問題${i + 1}"></div>`).join("");
+  const a = xyz.answerPages.map((p, i) =>
+    `<div class="wsm-page" data-pt="a" style="display:none"><div class="wsm-page-label">解答 ${i + 1} / ${xyz.answerPages.length}</div><img src="${base}${p}" loading="lazy" alt="解答${i + 1}"></div>`).join("");
+  el.innerHTML = q + a;
+  applyWsTabVisibility();
+}
+
+function applyWsTabVisibility() {
+  document.querySelectorAll('#wsm-pages .wsm-page[data-pt="q"]').forEach(e => e.style.display = wsmShowingAnswer ? "none" : "");
+  document.querySelectorAll('#wsm-pages .wsm-page[data-pt="a"]').forEach(e => e.style.display = wsmShowingAnswer ? "" : "none");
+}
+
+function updateWsTabUI() {
+  document.getElementById("wsm-tab-q").classList.toggle("active", !wsmShowingAnswer);
+  document.getElementById("wsm-tab-a").classList.toggle("active", wsmShowingAnswer);
+}
+
+function setWsTab(showAnswer) {
+  if (wsmShowingAnswer === showAnswer) return;
+  wsmShowingAnswer = showAnswer;
+  applyWsTabVisibility();
+  updateWsTabUI();
+  document.getElementById("wsm-pages").scrollTop = 0;
+}
+
+async function wsmPrint() {
+  commitXyz();
+  const xyz = quizData.xyz;
+  if (!xyz) return;
+  const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
+  const pages = wsmShowingAnswer ? xyz.answerPages : xyz.questionPages;
+  const dataURLs = [];
+  for (const p of pages) {
+    let img;
+    try { img = await loadImage(base + p); } catch (e) { continue; }
+    const cc = document.createElement("canvas");
+    cc.width = img.width; cc.height = img.height;
+    cc.getContext("2d").drawImage(img, 0, 0);
+    dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
+  }
+  if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
+  _openPrintOverlay(`${currentUnit.id} X・Y・Z${wsmShowingAnswer ? "解答" : "問題"}`, dataURLs);
 }
 
 // ==============================
@@ -1082,6 +1241,16 @@ function setupEventListeners() {
     showScreen("screen-unit-detail");
   });
 
+  // X・Y・Z問題（デイリーサポート方式）
+  document.getElementById("btn-back-wsmondai").addEventListener("click", () => {
+    commitXyz();
+    renderUnitDetail();
+    showScreen("screen-unit-detail");
+  });
+  document.getElementById("wsm-tab-q").addEventListener("click", () => setWsTab(false));
+  document.getElementById("wsm-tab-a").addEventListener("click", () => setWsTab(true));
+  document.getElementById("wsm-print-btn").addEventListener("click", wsmPrint);
+
   // 閲覧モード（ページめくり）
   document.getElementById("btn-back-reading").addEventListener("click", () => {
     if (currentSection) {
@@ -1177,8 +1346,8 @@ function setupEventListeners() {
   });
   document.getElementById("print-btn").addEventListener("click", printCurrentPage);
 
-  document.addEventListener("visibilitychange", () => { if (document.hidden) commitAllPending(); });
-  window.addEventListener("beforeunload", () => commitAllPending());
+  document.addEventListener("visibilitychange", () => { if (document.hidden) { commitAllPending(); commitXyz(); } });
+  window.addEventListener("beforeunload", () => { commitAllPending(); commitXyz(); });
 
   document.getElementById("btn-results").addEventListener("click", showResults);
   document.getElementById("btn-retry-wrong").addEventListener("click", () => {

@@ -698,6 +698,118 @@ body {
   .app-title { font-size: 32px; }
 }
 
+/* ===== X・Y・Z問題（デイリーサポート方式）===== */
+#screen-wsmondai { overflow: hidden; }
+#wsm-print-btn {
+  background: none; border: none; color: #007aff;
+  font-size: 14px; cursor: pointer; padding: 4px 10px; white-space: nowrap;
+}
+#wsm-print-btn:hover { background: #f5f5f7; border-radius: 6px; }
+
+.wsm-fixed-top {
+  flex-shrink: 0;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 12px;
+}
+.wsm-tabbar {
+  display: flex;
+  background: #e8e8ed;
+  border-radius: 10px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+.wsm-tab {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 9px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #6e6e73;
+}
+.wsm-tab.active {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  color: #007aff;
+}
+#wsm-tab-a.active { color: #ff9500; }
+
+.wsm-table-title {
+  font-size: 12px;
+  color: #86868b;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.wsm-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+.wsm-qc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 5px 8px;
+}
+.wsm-qc-name { font-size: 15px; font-weight: 700; min-width: 26px; }
+.wsm-qc-rate { font-size: 11px; font-weight: 600; flex: 1; white-space: nowrap; }
+.wsm-qc-att { color: #86868b; font-size: 10px; margin-left: 2px; }
+.wsm-qc-rate.rate-none { color: #c7c7cc; }
+.wsm-qc-rate.rate-high { color: #34c759; }
+.wsm-qc-rate.rate-mid { color: #ff9500; }
+.wsm-qc-rate.rate-low { color: #ff3b30; }
+.wsm-qc-ans { display: flex; gap: 4px; }
+.wsm-qc-btn {
+  width: 34px; height: 30px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.wsm-qc-btn:active { opacity: 0.7; }
+.wsm-qc-btn.ok { color: #34c759; }
+.wsm-qc-btn.ng { color: #ff3b30; }
+.wsm-qc-btn.ok.selected {
+  border-color: #34c759; background: #c8f7d0; border-width: 3px;
+}
+.wsm-qc-btn.ng.selected {
+  border-color: #ff3b30; background: #ffd4d1; border-width: 3px;
+}
+.wsm-qc-ans:has(.ok.selected) .ng:not(.selected),
+.wsm-qc-ans:has(.ng.selected) .ok:not(.selected) { opacity: 0.3; }
+
+.wsm-pages {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #e8e8ed;
+  padding: 10px;
+}
+.wsm-page { margin-bottom: 14px; }
+.wsm-page-label {
+  font-size: 12px; color: #6e6e73; font-weight: 600;
+  margin-bottom: 4px; padding-left: 2px;
+}
+.wsm-page img {
+  width: 100%; height: auto; display: block;
+  background: #fff; border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+@media (min-width: 768px) {
+  .wsm-table { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+  .wsm-page img { max-width: 1200px; margin: 0 auto; }
+}
+
 /* ===== プリントオーバーレイ（iPad対応）===== */
 /* 画面上は完全に不可視（オフスクリーン）。@media print で印刷対象になる */
 #print-overlay {

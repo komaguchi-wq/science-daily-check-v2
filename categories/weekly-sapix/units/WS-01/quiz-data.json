@@ -871,5 +871,33 @@
       7,
       8
     ]
+  },
+  "xyz": {
+    "label": "X・Y・Z問題",
+    "questionPages": [
+      "xyz_q_01.jpg",
+      "xyz_q_02.jpg",
+      "xyz_q_03.jpg",
+      "xyz_q_04.jpg",
+      "xyz_q_05.jpg",
+      "xyz_q_06.jpg",
+      "xyz_q_07.jpg"
+    ],
+    "answerPages": [
+      "xyz_a_01.jpg",
+      "xyz_a_02.jpg",
+      "xyz_a_03.jpg",
+      "xyz_a_04.jpg"
+    ],
+    "daimons": [
+      "X1",
+      "X2",
+      "X3",
+      "Y1",
+      "Y2",
+      "Z1",
+      "Z2",
+      "Z3"
+    ]
   }
 }

@@ -53,6 +53,24 @@
     </div>
   </div>
 
+  <!-- X・Y・Z問題画面（デイリーサポート方式: 問題/解答タブ + 正誤表 + 印刷） -->
+  <div id="screen-wsmondai" class="screen">
+    <header class="header">
+      <button class="btn-icon" id="btn-back-wsmondai">←</button>
+      <h1 class="header-title" id="wsmondai-title">X・Y・Z問題</h1>
+      <button id="wsm-print-btn" title="表示中のタブを印刷">🖨 印刷</button>
+    </header>
+    <div class="wsm-fixed-top">
+      <div class="wsm-tabbar">
+        <button class="wsm-tab active" id="wsm-tab-q">問題</button>
+        <button class="wsm-tab" id="wsm-tab-a">解答</button>
+      </div>
+      <div class="wsm-table-title">正誤表（大問ごとに ○ / ✕）</div>
+      <div class="wsm-table" id="wsm-table"></div>
+    </div>
+    <div class="wsm-pages" id="wsm-pages"></div>
+  </div>
+
   <!-- セクション詳細画面（モード選択 + ページ一覧 + 正答率） -->
   <div id="screen-section-detail" class="screen">
     <header class="header">
