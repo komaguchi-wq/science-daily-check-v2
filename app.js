@@ -290,12 +290,12 @@ function renderUnitDetail() {
   // X・Y・Z問題（デイリーサポート方式）カード（quiz-data.json に xyz があれば先頭に表示）
   if (quizData.xyz && Array.isArray(quizData.xyz.daimons) && quizData.xyz.daimons.length > 0) {
     const xyz = quizData.xyz;
-    let good = 0;
-    xyz.daimons.forEach(id => {
-      const t = getXyzTracking(currentUnit.id, id);
+    let good = 0, total = 0;
+    xyz.daimons.forEach(dm => dm.questions.forEach(q => {
+      total++;
+      const t = getXyzTracking(currentUnit.id, q.id);
       if (t.attempts > 0 && t.correct / t.attempts >= 0.67) good++;
-    });
-    const total = xyz.daimons.length;
+    }));
     const progress = total > 0 ? Math.round(good / total * 100) : 0;
     const card = document.createElement("div");
     card.className = "section-card";
@@ -536,26 +536,33 @@ function renderXyzTable() {
   const xyz = quizData.xyz;
   const el = document.getElementById("wsm-table");
   if (!xyz) { el.innerHTML = ""; return; }
-  el.innerHTML = xyz.daimons.map(id => {
-    const t = getXyzTracking(currentUnit.id, id);
-    const pend = pendingXyz[id];
-    const rate = t.attempts > 0 ? Math.round(t.correct / t.attempts * 100) : -1;
-    const rateText = rate < 0 ? "未" : rate + "%";
-    const rateCls = rate < 0 ? "rate-none" : rate >= 80 ? "rate-high" : rate >= 50 ? "rate-mid" : "rate-low";
-    const att = t.attempts > 0 ? `<span class="wsm-qc-att">(${t.correct}/${t.attempts})</span>` : "";
-    return `<div class="wsm-qc" data-did="${id}">
-      <span class="wsm-qc-name">${id}</span>
-      <span class="wsm-qc-rate ${rateCls}">${rateText}${att}</span>
-      <span class="wsm-qc-ans">
-        <button class="wsm-qc-btn ok ${pend === "correct" ? "selected" : ""}" onclick="markXyz('${id}', true)">○</button>
-        <button class="wsm-qc-btn ng ${pend === "wrong" ? "selected" : ""}" onclick="markXyz('${id}', false)">✕</button>
-      </span>
+  const prevScroll = el.scrollTop;
+  el.innerHTML = xyz.daimons.map(dm => {
+    const subs = dm.questions.map(q => {
+      const t = getXyzTracking(currentUnit.id, q.id);
+      const pend = pendingXyz[q.id];
+      let tint = "";
+      if (t.attempts > 0) {
+        const acc = t.correct / t.attempts;
+        tint = acc >= 0.999 ? "sub-perfect" : acc >= 0.5 ? "sub-mid" : "sub-low";
+      }
+      const idEsc = q.id.replace(/'/g, "\\'");
+      return `<span class="wsm-sub ${tint}" data-qid="${q.id}">
+        <span class="wsm-sub-label">${q.label}</span>
+        <button class="wsm-qc-btn ok ${pend === "correct" ? "selected" : ""}" onclick="markXyz('${idEsc}', true)">○</button>
+        <button class="wsm-qc-btn ng ${pend === "wrong" ? "selected" : ""}" onclick="markXyz('${idEsc}', false)">✕</button>
+      </span>`;
+    }).join("");
+    return `<div class="wsm-daimon">
+      <div class="wsm-daimon-head">${dm.id}</div>
+      <div class="wsm-sub-row">${subs}</div>
     </div>`;
   }).join("");
+  el.scrollTop = prevScroll;
 }
 
-function markXyz(daimonId, isCorrect) {
-  pendingXyz[daimonId] = isCorrect ? "correct" : "wrong";
+function markXyz(subId, isCorrect) {
+  pendingXyz[subId] = isCorrect ? "correct" : "wrong";
   renderXyzTable();
   resetXyzIdle();
 }
