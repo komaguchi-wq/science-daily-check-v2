@@ -39,13 +39,27 @@ const SECTION_META = {
   hatten: { label: "発展問題", icon: "🚀" },
   pointcheck: { label: "ポイントチェック", icon: "✨" },
   dailystep: { label: "デイリーステップ", icon: "📋" },
-  weekly: { label: "Weekly SapiX", icon: "📘" },
+  weekly: { label: "知識の総完成", icon: "📘" },
   coreplus: { label: "コアプラス", icon: "📗" },
 };
 // 旧コードとの互換性
 const SECTION_LABELS = Object.fromEntries(
   Object.entries(SECTION_META).map(([k, v]) => [k, v.label])
 );
+
+// weekly(知識の総完成)はユニットごとに1ページ目タイトル(「知識の総完成 第N回 …」)が異なる。
+// units.json の title は「(テーマ) / 知識の総完成 第N回 …」形式なので "/" 以降を採用する。
+function weeklyKnowledgeLabel() {
+  const t = (currentUnit && currentUnit.title) || "";
+  const i = t.indexOf("/");
+  if (i >= 0) return t.slice(i + 1).trim();
+  return SECTION_META.weekly.label;
+}
+// セクションの表示名（weekly は単元固有の知識タイトルを使う）
+function sectionDisplayLabel(sec) {
+  if (sec === "weekly") return weeklyKnowledgeLabel();
+  return (SECTION_META[sec] && SECTION_META[sec].label) || sec;
+}
 
 // Google Sheets バックアップ用（v2は別キーで管理）
 let SHEETS_API_URL = localStorage.getItem("science-v2-sheets-api-url") || "";
@@ -346,7 +360,7 @@ function renderUnitDetail() {
     card.innerHTML = `
       <div class="section-card-icon">${meta.icon}</div>
       <div class="section-card-body">
-        <div class="section-card-title">${meta.label}${badge}</div>
+        <div class="section-card-title">${sectionDisplayLabel(sec)}${badge}</div>
         <div class="section-card-meta">${pages.length}ページ${isQuizable ? ` ・ 全${stats.totalRegions}問` : ""}</div>
         <div class="section-card-progress">
           <div class="section-card-progress-fill" style="width: ${progress}%;"></div>
@@ -364,7 +378,7 @@ function openSection(section) {
   currentSection = section;
   const meta = SECTION_META[section];
   document.getElementById("section-detail-title").textContent =
-    `${meta.icon} ${meta.label}`;
+    `${meta.icon} ${sectionDisplayLabel(section)}`;
   renderSectionDetail();
   showScreen("screen-section-detail");
 }
@@ -798,7 +812,7 @@ function startReading(section) {
 function renderReading() {
   const page = readingPages[readingIndex];
   document.getElementById("reading-title").textContent =
-    `${SECTION_LABELS[currentReadingSection]} (${currentUnit.id} ${currentUnit.title})`;
+    `${sectionDisplayLabel(currentReadingSection)} (${currentUnit.id} ${currentUnit.title})`;
   document.getElementById("reading-page-info").textContent = `p${page.id}`;
   document.getElementById("reading-indicator").textContent =
     `${readingIndex + 1} / ${readingPages.length}`;
