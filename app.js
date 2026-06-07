@@ -312,7 +312,7 @@ function renderUnitDetail() {
         <div class="section-card-stats-main">${good}/${total}</div>
         <div class="section-card-stats-sub">67%↑ 達成 (${progress}%)</div>
       </div>`;
-    card.addEventListener("click", openWsMondai);
+    card.addEventListener("click", openWsMode);
     list.appendChild(card);
   }
 
@@ -502,18 +502,29 @@ function getPageLabel(page) {
 // X・Y・Z問題（デイリーサポート方式: 問題/解答タブ + 正誤表 + 印刷）
 // ==============================
 let wsmShowingAnswer = false;
-let pendingXyz = {};       // {daimonId: "correct"|"wrong"} 仮選択
+let pendingXyz = {};       // {subId: "correct"|"wrong"} 仮選択
 let xyzIdleTimer = null;
+let wsmFilter = "all";     // all | below50 | below67 | below99 | unanswered
+let wsmFilteredIds = null; // Set of target 小問id（all のとき null）
 
-function getXyzTracking(unitId, daimonId) {
+const WS_MODE_LABELS = {
+  all: "全問", below50: "正答率50%以下", below67: "正答率67%以下",
+  below99: "正答率99%以下", unanswered: "未回答",
+};
+const WS_MODE_BASE = {
+  all: "全問を解く", below50: "正答率 50% 以下を解く", below67: "正答率 67% 以下を解く",
+  below99: "正答率 99% 以下を解く", unanswered: "未回答問題を解く",
+};
+
+function getXyzTracking(unitId, subId) {
   const t = getTracking()[unitId] || {};
-  return t[`xyz-${daimonId}`] || { attempts: 0, correct: 0 };
+  return t[`xyz-${subId}`] || { attempts: 0, correct: 0 };
 }
 
-function recordXyzAnswer(unitId, daimonId, isCorrect) {
+function recordXyzAnswer(unitId, subId, isCorrect) {
   const tracking = getTracking();
   if (!tracking[unitId]) tracking[unitId] = {};
-  const key = `xyz-${daimonId}`;
+  const key = `xyz-${subId}`;
   if (!tracking[unitId][key]) tracking[unitId][key] = { attempts: 0, correct: 0 };
   tracking[unitId][key].attempts++;
   if (isCorrect) tracking[unitId][key].correct++;
@@ -521,7 +532,52 @@ function recordXyzAnswer(unitId, daimonId, isCorrect) {
   backupToSheets();
 }
 
-function openWsMondai() {
+// 各小問が指定モードの対象か
+function xyzSubMatchesMode(subId, mode) {
+  const t = getXyzTracking(currentUnit.id, subId);
+  const pct = t.attempts ? Math.round(t.correct / t.attempts * 100) : null;
+  if (mode === "unanswered") return t.attempts === 0;
+  if (mode === "below50") return pct === null || pct <= 50;
+  if (mode === "below67") return pct === null || pct <= 67;
+  if (mode === "below99") return pct === null || pct <= 99;
+  return true; // all
+}
+
+function computeWsFilterIds(mode) {
+  if (mode === "all") return null;
+  const ids = new Set();
+  quizData.xyz.daimons.forEach(dm => dm.questions.forEach(q => {
+    if (xyzSubMatchesMode(q.id, mode)) ids.add(q.id);
+  }));
+  return ids;
+}
+
+// ----- モード選択画面 -----
+function openWsMode() {
+  commitXyz();
+  renderWsMode();
+  showScreen("screen-wsmode");
+}
+
+function renderWsMode() {
+  const xyz = quizData.xyz;
+  document.getElementById("wsmode-title").textContent = `${currentUnit.id} X・Y・Z問題`;
+  const counts = { all: 0, below50: 0, below67: 0, below99: 0, unanswered: 0 };
+  xyz.daimons.forEach(dm => dm.questions.forEach(q => {
+    for (const m of Object.keys(counts)) if (xyzSubMatchesMode(q.id, m)) counts[m]++;
+  }));
+  for (const mode of Object.keys(WS_MODE_BASE)) {
+    const btn = document.querySelector(`[data-ws-mode="${mode}"]`);
+    const pbtn = document.querySelector(`[data-ws-print="${mode}"]`);
+    if (btn) { btn.textContent = `${WS_MODE_BASE[mode]} (${counts[mode]}問)`; btn.disabled = counts[mode] === 0; }
+    if (pbtn) pbtn.disabled = counts[mode] === 0;
+  }
+}
+
+// ----- 問題画面（タブ + 正誤表 + ページ）-----
+function startWsMode(mode) {
+  wsmFilter = mode;
+  wsmFilteredIds = computeWsFilterIds(mode);
   wsmShowingAnswer = false;
   pendingXyz = {};
   document.getElementById("wsmondai-title").textContent = `${currentUnit.id} X・Y・Z問題`;
@@ -546,8 +602,9 @@ function renderXyzTable() {
         const acc = t.correct / t.attempts;
         tint = acc >= 0.999 ? "sub-perfect" : acc >= 0.5 ? "sub-mid" : "sub-low";
       }
+      const dim = wsmFilteredIds && !wsmFilteredIds.has(q.id) ? "ws-dim" : "";
       const idEsc = q.id.replace(/'/g, "\\'");
-      return `<span class="wsm-sub ${tint}" data-qid="${q.id}">
+      return `<span class="wsm-sub ${tint} ${dim}" data-qid="${q.id}">
         <span class="wsm-sub-label">${q.label}</span>
         <button class="wsm-qc-btn ok ${pend === "correct" ? "selected" : ""}" onclick="markXyz('${idEsc}', true)">○</button>
         <button class="wsm-qc-btn ng ${pend === "wrong" ? "selected" : ""}" onclick="markXyz('${idEsc}', false)">✕</button>
@@ -589,11 +646,40 @@ function renderWsPages() {
   const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
   const el = document.getElementById("wsm-pages");
   const q = xyz.questionPages.map((p, i) =>
-    `<div class="wsm-page" data-pt="q"><div class="wsm-page-label">問題 ${i + 1} / ${xyz.questionPages.length}</div><img src="${base}${p}" loading="lazy" alt="問題${i + 1}"></div>`).join("");
+    `<div class="wsm-page" data-pt="q" data-idx="${i}">
+       <div class="wsm-page-label">問題 ${i + 1} / ${xyz.questionPages.length}</div>
+       <div class="wsm-target-banner" style="display:none"></div>
+       <img src="${base}${p}" loading="lazy" alt="問題${i + 1}">
+     </div>`).join("");
   const a = xyz.answerPages.map((p, i) =>
-    `<div class="wsm-page" data-pt="a" style="display:none"><div class="wsm-page-label">解答 ${i + 1} / ${xyz.answerPages.length}</div><img src="${base}${p}" loading="lazy" alt="解答${i + 1}"></div>`).join("");
+    `<div class="wsm-page" data-pt="a" style="display:none">
+       <div class="wsm-page-label">解答 ${i + 1} / ${xyz.answerPages.length}</div>
+       <img src="${base}${p}" loading="lazy" alt="解答${i + 1}"></div>`).join("");
   el.innerHTML = q + a;
   applyWsTabVisibility();
+  updateWsTargetBanners();
+}
+
+// 指定の問題ページ(idx)に乗っている対象小問のラベル一覧
+function wsTargetLabelsForPage(idx) {
+  if (!wsmFilteredIds) return [];
+  const labels = [];
+  quizData.xyz.daimons.forEach(dm => {
+    if (dm.qpage !== idx) return;
+    dm.questions.forEach(q => { if (wsmFilteredIds.has(q.id)) labels.push(q.id); });
+  });
+  return labels;
+}
+
+function updateWsTargetBanners() {
+  document.querySelectorAll('#wsm-pages .wsm-page[data-pt="q"]').forEach(pageEl => {
+    const idx = parseInt(pageEl.dataset.idx);
+    const banner = pageEl.querySelector(".wsm-target-banner");
+    if (!banner) return;
+    const labels = wsTargetLabelsForPage(idx);
+    if (labels.length) { banner.textContent = "対象: " + labels.join("　"); banner.style.display = ""; }
+    else { banner.style.display = "none"; banner.textContent = ""; }
+  });
 }
 
 function applyWsTabVisibility() {
@@ -614,14 +700,76 @@ function setWsTab(showAnswer) {
   document.getElementById("wsm-pages").scrollTop = 0;
 }
 
+// 対象問題ラベルを赤文字でページ上部に焼き込む（印刷用）
+function drawWsTargetText(ctx, labels, W, H) {
+  const fontSize = Math.round(W * 0.018);
+  ctx.font = `bold ${fontSize}px sans-serif`;
+  const text = "対象: " + labels.join("　　");
+  const maxWidth = W * 0.95;
+  const lines = wsWrapText(ctx, text, maxWidth);
+  const lineHeight = fontSize * 1.3;
+  const padding = fontSize * 0.45;
+  const boxH = lines.length * lineHeight + padding * 2;
+  const boxW = Math.min(W * 0.95, Math.max(...lines.map(l => ctx.measureText(l).width)) + padding * 2);
+  const x = W * 0.02, y = H * 0.006;
+  ctx.fillStyle = "rgba(255,255,255,0.92)";
+  ctx.fillRect(x, y, boxW, boxH);
+  ctx.strokeStyle = "#ff3b30"; ctx.lineWidth = 3;
+  ctx.strokeRect(x, y, boxW, boxH);
+  ctx.fillStyle = "#ff3b30"; ctx.textBaseline = "top";
+  for (let i = 0; i < lines.length; i++) ctx.fillText(lines[i], x + padding, y + padding + i * lineHeight);
+}
+
+function wsWrapText(ctx, text, maxWidth) {
+  const words = text.split("　　");
+  const lines = []; let cur = words[0] || "";
+  for (let i = 1; i < words.length; i++) {
+    const test = cur + "　　" + words[i];
+    if (ctx.measureText(test).width > maxWidth) { lines.push(cur); cur = words[i]; }
+    else cur = test;
+  }
+  lines.push(cur);
+  return lines;
+}
+
+// モード別に問題ページを印刷（対象小問を赤文字で焼き込む）
+async function printWsMode(mode) {
+  commitXyz();
+  const xyz = quizData.xyz;
+  if (!xyz) return;
+  const ids = computeWsFilterIds(mode);
+  const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
+  const dataURLs = [];
+  for (let i = 0; i < xyz.questionPages.length; i++) {
+    let img;
+    try { img = await loadImage(base + xyz.questionPages[i]); } catch (e) { continue; }
+    const cc = document.createElement("canvas");
+    cc.width = img.width; cc.height = img.height;
+    const ctx = cc.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    if (ids) {
+      const labels = [];
+      xyz.daimons.forEach(dm => {
+        if (dm.qpage !== i) return;
+        dm.questions.forEach(q => { if (ids.has(q.id)) labels.push(q.id); });
+      });
+      if (labels.length) drawWsTargetText(ctx, labels, cc.width, cc.height);
+    }
+    dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
+  }
+  if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
+  _openPrintOverlay(`${currentUnit.id} X・Y・Z問題（${WS_MODE_LABELS[mode]}）`, dataURLs);
+}
+
+// 問題画面ヘッダーの印刷: 表示中タブを印刷（問題タブは現フィルタの赤文字付き）
 async function wsmPrint() {
   commitXyz();
   const xyz = quizData.xyz;
   if (!xyz) return;
+  if (!wsmShowingAnswer) { return printWsMode(wsmFilter || "all"); }
   const base = `categories/${currentCategory.id}/units/${currentUnit.id}/images/`;
-  const pages = wsmShowingAnswer ? xyz.answerPages : xyz.questionPages;
   const dataURLs = [];
-  for (const p of pages) {
+  for (const p of xyz.answerPages) {
     let img;
     try { img = await loadImage(base + p); } catch (e) { continue; }
     const cc = document.createElement("canvas");
@@ -630,7 +778,7 @@ async function wsmPrint() {
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
-  _openPrintOverlay(`${currentUnit.id} X・Y・Z${wsmShowingAnswer ? "解答" : "問題"}`, dataURLs);
+  _openPrintOverlay(`${currentUnit.id} X・Y・Z解答`, dataURLs);
 }
 
 // ==============================
@@ -1249,10 +1397,20 @@ function setupEventListeners() {
   });
 
   // X・Y・Z問題（デイリーサポート方式）
-  document.getElementById("btn-back-wsmondai").addEventListener("click", () => {
-    commitXyz();
+  // モード選択画面
+  document.getElementById("btn-back-wsmode").addEventListener("click", () => {
     renderUnitDetail();
     showScreen("screen-unit-detail");
+  });
+  document.querySelectorAll("[data-ws-mode]").forEach(btn =>
+    btn.addEventListener("click", () => startWsMode(btn.dataset.wsMode)));
+  document.querySelectorAll("[data-ws-print]").forEach(btn =>
+    btn.addEventListener("click", () => printWsMode(btn.dataset.wsPrint)));
+  // 問題画面
+  document.getElementById("btn-back-wsmondai").addEventListener("click", () => {
+    commitXyz();
+    renderWsMode();
+    showScreen("screen-wsmode");
   });
   document.getElementById("wsm-tab-q").addEventListener("click", () => setWsTab(false));
   document.getElementById("wsm-tab-a").addEventListener("click", () => setWsTab(true));

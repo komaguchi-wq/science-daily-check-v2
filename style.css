@@ -199,7 +199,7 @@ body {
 }
 
 /* 単元詳細・セクション詳細画面 */
-#screen-unit-detail, #screen-section-detail {
+#screen-unit-detail, #screen-section-detail, #screen-wsmode {
   overflow-y: auto;
 }
 
@@ -790,6 +790,24 @@ body {
 }
 .wsm-sub:has(.ok.selected) .ng:not(.selected),
 .wsm-sub:has(.ng.selected) .ok:not(.selected) { opacity: 0.3; }
+.wsm-sub.ws-dim { opacity: 0.3; }
+
+/* 対象問題の赤文字バナー（フィルタ選択時に問題ページ上部に表示） */
+.wsm-target-banner {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ff3b30;
+  background: #fff3f2;
+  border: 2px solid #ff3b30;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+@media (min-width: 768px) {
+  .wsm-target-banner { font-size: 22px; }
+}
 
 .wsm-pages {
   flex: 1 1 0;
