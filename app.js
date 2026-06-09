@@ -62,7 +62,7 @@ function sectionDisplayLabel(sec) {
 }
 
 // Google Sheets バックアップ用（v2は別キーで管理）
-let SHEETS_API_URL = localStorage.getItem("science-v2-sheets-api-url") || "";
+let SHEETS_API_URL = localStorage.getItem("science-v2-sheets-api-url") || "https://script.google.com/macros/s/AKfycbyRkTnCNsqMFnmjgbql4WCaFmb5Kr6YC2NCAgou9cmMEofZOp5GyBm8Cun6Cc0AgvLo/exec";
 
 // --- トラッキングデータ ---
 function getTracking() {
