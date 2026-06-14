@@ -86,6 +86,24 @@ body {
   color: #007aff;
 }
 
+.btn-portal-top {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #007aff;
+  background: #eaf2ff;
+  border: 1px solid #cfe0ff;
+  border-radius: 999px;
+  padding: 5px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-portal-top:active { background: #d6e6ff; }
+
 #print-btn {
   background: none;
   border: none;
