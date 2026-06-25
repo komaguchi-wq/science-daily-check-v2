@@ -286,6 +286,7 @@ function showScreen(id) {
 function selectUser(user) {
   currentUser = user;
   sessionStorage.setItem("current-user-v2", user);
+  try { localStorage.setItem('study-user', user); } catch(e) {}
   document.getElementById("header-user-name").textContent = user;
   migrateLegacyTrackingToEvents();
   loadCategories();
@@ -1499,6 +1500,7 @@ function setupEventListeners() {
   document.getElementById("btn-switch-user").addEventListener("click", () => {
     currentUser = null;
     sessionStorage.removeItem("current-user-v2");
+    try { localStorage.removeItem('study-user'); } catch(e) {}
     showScreen("screen-user");
   });
   document.getElementById("btn-settings").addEventListener("click", openSettings);
@@ -1682,7 +1684,10 @@ function setupEventListeners() {
 // ==============================
 function init() {
   setupEventListeners();
-  const savedUser = sessionStorage.getItem("current-user-v2");
+  let savedUser = localStorage.getItem('study-user');
+  if (savedUser !== 'さと' && savedUser !== 'ぱぱ') {
+    savedUser = sessionStorage.getItem("current-user-v2");
+  }
   if (savedUser) selectUser(savedUser);
 }
 
