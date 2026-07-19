@@ -1,191 +1,546 @@
 [
-  {
-    "id": "rcp-01",
-    "title": "第I部 身のまわりの理科 第1節 月と惑星",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 25
+ {
+  "id": "rcp-01",
+  "title": "第I部 身のまわりの理科 第1節 月と惑星",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 25,
+  "sectionRegions": {
+   "coreplus": 25
   },
-  {
-    "id": "rcp-02",
-    "title": "第I部 身のまわりの理科 第2節 星",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 18
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-03",
-    "title": "第I部 身のまわりの理科 第3節 川と地層",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 42
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-02",
+  "title": "第I部 身のまわりの理科 第2節 星",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 18,
+  "sectionRegions": {
+   "coreplus": 18
   },
-  {
-    "id": "rcp-04",
-    "title": "第I部 身のまわりの理科 第4節 火山と化石",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 72
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-05",
-    "title": "第I部 身のまわりの理科 第5節 気象と太陽",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 62
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-03",
+  "title": "第I部 身のまわりの理科 第3節 川と地層",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 42,
+  "sectionRegions": {
+   "coreplus": 42
   },
-  {
-    "id": "rcp-06",
-    "title": "第I部 身のまわりの理科 第6節 無セキツイ動物",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 77
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-07",
-    "title": "第I部 身のまわりの理科 第7節 メダカとプランクトン",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 28
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-04",
+  "title": "第I部 身のまわりの理科 第4節 火山と化石",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 72,
+  "sectionRegions": {
+   "coreplus": 72
   },
-  {
-    "id": "rcp-08",
-    "title": "第I部 身のまわりの理科 第8節 セキツイ動物",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 38
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-09",
-    "title": "第I部 身のまわりの理科 第9節 種子と発芽",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 17
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-05",
+  "title": "第I部 身のまわりの理科 第5節 気象と太陽",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 62,
+  "sectionRegions": {
+   "coreplus": 62
   },
-  {
-    "id": "rcp-10",
-    "title": "第I部 身のまわりの理科 第10節 花と受粉",
-    "subject": "理科",
-    "pageCount": 4,
-    "totalRegions": 19
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-11",
-    "title": "第II部 第1章 化学 第1節 状態変化・熱の移動",
-    "subject": "理科",
-    "pageCount": 7,
-    "totalRegions": 57
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-06",
+  "title": "第I部 身のまわりの理科 第6節 無セキツイ動物",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 77,
+  "sectionRegions": {
+   "coreplus": 77
   },
-  {
-    "id": "rcp-12",
-    "title": "第II部 第1章 化学 第2節 酸素・二酸化炭素・物の燃え方",
-    "subject": "理科",
-    "pageCount": 7,
-    "totalRegions": 95
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-13",
-    "title": "第II部 第1章 化学 第3節 溶解度・水溶液",
-    "subject": "理科",
-    "pageCount": 5,
-    "totalRegions": 59
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-07",
+  "title": "第I部 身のまわりの理科 第7節 メダカとプランクトン",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 28,
+  "sectionRegions": {
+   "coreplus": 28
   },
-  {
-    "id": "rcp-14",
-    "title": "第II部 第2章 地学 第1節 天体",
-    "subject": "理科",
-    "pageCount": 15,
-    "totalRegions": 191
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-15",
-    "title": "第II部 第2章 地学 第2節 地層・岩石・火山",
-    "subject": "理科",
-    "pageCount": 9,
-    "totalRegions": 89
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-08",
+  "title": "第I部 身のまわりの理科 第8節 セキツイ動物",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 38,
+  "sectionRegions": {
+   "coreplus": 38
   },
-  {
-    "id": "rcp-16",
-    "title": "第II部 第2章 地学 第3節 気象",
-    "subject": "理科",
-    "pageCount": 8,
-    "totalRegions": 113
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-17",
-    "title": "第II部 第3章 物理 第1節 力学",
-    "subject": "理科",
-    "pageCount": 14,
-    "totalRegions": 136
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-09",
+  "title": "第I部 身のまわりの理科 第9節 種子と発芽",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 17,
+  "sectionRegions": {
+   "coreplus": 17
   },
-  {
-    "id": "rcp-18",
-    "title": "第II部 第3章 物理 第2節 電磁気",
-    "subject": "理科",
-    "pageCount": 7,
-    "totalRegions": 71
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-19",
-    "title": "第II部 第3章 物理 第3節 光・音",
-    "subject": "理科",
-    "pageCount": 8,
-    "totalRegions": 88
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-10",
+  "title": "第I部 身のまわりの理科 第10節 花と受粉",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 19,
+  "sectionRegions": {
+   "coreplus": 19
   },
-  {
-    "id": "rcp-20",
-    "title": "第II部 第4章 生物 第1節 植物",
-    "subject": "理科",
-    "pageCount": 9,
-    "totalRegions": 153
+  "sectionPages": {
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus"
   },
-  {
-    "id": "rcp-21",
-    "title": "第II部 第4章 生物 第2節 動物",
-    "subject": "理科",
-    "pageCount": 10,
-    "totalRegions": 164
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-11",
+  "title": "第II部 第1章 化学 第1節 状態変化・熱の移動",
+  "subject": "理科",
+  "pageCount": 7,
+  "totalRegions": 57,
+  "sectionRegions": {
+   "coreplus": 57
   },
-  {
-    "id": "rcp-22",
-    "title": "第II部 第4章 生物 第3節 人体",
-    "subject": "理科",
-    "pageCount": 11,
-    "totalRegions": 171
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus"
   },
-  {
-    "id": "rcp-23",
-    "title": "第II部 第4章 生物 第4節 環境",
-    "subject": "理科",
-    "pageCount": 11,
-    "totalRegions": 126
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-12",
+  "title": "第II部 第1章 化学 第2節 酸素・二酸化炭素・物の燃え方",
+  "subject": "理科",
+  "pageCount": 7,
+  "totalRegions": 95,
+  "sectionRegions": {
+   "coreplus": 95
   },
-  {
-    "id": "rcp-24",
-    "title": "第II部 第5章 環境 第1節 環境",
-    "subject": "理科",
-    "pageCount": 5,
-    "totalRegions": 60
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus"
   },
-  {
-    "id": "rcp-25",
-    "title": "第III部 計算理科 第1節 計算問題",
-    "subject": "理科",
-    "pageCount": 14,
-    "totalRegions": 79
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-13",
+  "title": "第II部 第1章 化学 第3節 溶解度・水溶液",
+  "subject": "理科",
+  "pageCount": 5,
+  "totalRegions": 59,
+  "sectionRegions": {
+   "coreplus": 59
   },
-  {
-    "id": "rcp-26",
-    "title": "第III部 計算理科 第2節 中和",
-    "subject": "理科",
-    "pageCount": 5,
-    "totalRegions": 28
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus"
   },
-  {
-    "id": "rcp-27",
-    "title": "第IV部 巻末解説",
-    "subject": "理科",
-    "pageCount": 38,
-    "totalRegions": 50
-  }
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-14",
+  "title": "第II部 第2章 地学 第1節 天体",
+  "subject": "理科",
+  "pageCount": 15,
+  "totalRegions": 191,
+  "sectionRegions": {
+   "coreplus": 191
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus",
+   "11": "coreplus",
+   "12": "coreplus",
+   "13": "coreplus",
+   "14": "coreplus",
+   "15": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-15",
+  "title": "第II部 第2章 地学 第2節 地層・岩石・火山",
+  "subject": "理科",
+  "pageCount": 9,
+  "totalRegions": 89,
+  "sectionRegions": {
+   "coreplus": 89
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-16",
+  "title": "第II部 第2章 地学 第3節 気象",
+  "subject": "理科",
+  "pageCount": 8,
+  "totalRegions": 113,
+  "sectionRegions": {
+   "coreplus": 113
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-17",
+  "title": "第II部 第3章 物理 第1節 力学",
+  "subject": "理科",
+  "pageCount": 14,
+  "totalRegions": 136,
+  "sectionRegions": {
+   "coreplus": 136
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus",
+   "11": "coreplus",
+   "12": "coreplus",
+   "13": "coreplus",
+   "14": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-18",
+  "title": "第II部 第3章 物理 第2節 電磁気",
+  "subject": "理科",
+  "pageCount": 7,
+  "totalRegions": 71,
+  "sectionRegions": {
+   "coreplus": 71
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-19",
+  "title": "第II部 第3章 物理 第3節 光・音",
+  "subject": "理科",
+  "pageCount": 8,
+  "totalRegions": 88,
+  "sectionRegions": {
+   "coreplus": 88
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-20",
+  "title": "第II部 第4章 生物 第1節 植物",
+  "subject": "理科",
+  "pageCount": 9,
+  "totalRegions": 153,
+  "sectionRegions": {
+   "coreplus": 153
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-21",
+  "title": "第II部 第4章 生物 第2節 動物",
+  "subject": "理科",
+  "pageCount": 10,
+  "totalRegions": 164,
+  "sectionRegions": {
+   "coreplus": 164
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-22",
+  "title": "第II部 第4章 生物 第3節 人体",
+  "subject": "理科",
+  "pageCount": 11,
+  "totalRegions": 171,
+  "sectionRegions": {
+   "coreplus": 171
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus",
+   "11": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-23",
+  "title": "第II部 第4章 生物 第4節 環境",
+  "subject": "理科",
+  "pageCount": 11,
+  "totalRegions": 126,
+  "sectionRegions": {
+   "coreplus": 126
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus",
+   "11": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-24",
+  "title": "第II部 第5章 環境 第1節 環境",
+  "subject": "理科",
+  "pageCount": 5,
+  "totalRegions": 60,
+  "sectionRegions": {
+   "coreplus": 60
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "5": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-25",
+  "title": "第III部 計算理科 第1節 計算問題",
+  "subject": "理科",
+  "pageCount": 14,
+  "totalRegions": 79,
+  "sectionRegions": {
+   "coreplus": 79
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "7": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus",
+   "11": "coreplus",
+   "12": "coreplus",
+   "13": "coreplus",
+   "14": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-26",
+  "title": "第III部 計算理科 第2節 中和",
+  "subject": "理科",
+  "pageCount": 5,
+  "totalRegions": 28,
+  "sectionRegions": {
+   "coreplus": 28
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus"
+  },
+  "xyzCount": 0
+ },
+ {
+  "id": "rcp-27",
+  "title": "第IV部 巻末解説",
+  "subject": "理科",
+  "pageCount": 38,
+  "totalRegions": 50,
+  "sectionRegions": {
+   "coreplus": 50
+  },
+  "sectionPages": {
+   "1": "coreplus",
+   "2": "coreplus",
+   "3": "coreplus",
+   "4": "coreplus",
+   "5": "coreplus",
+   "6": "coreplus",
+   "8": "coreplus",
+   "9": "coreplus",
+   "10": "coreplus",
+   "11": "coreplus",
+   "15": "coreplus",
+   "19": "coreplus",
+   "21": "coreplus",
+   "23": "coreplus",
+   "27": "coreplus",
+   "29": "coreplus",
+   "31": "coreplus",
+   "33": "coreplus",
+   "35": "coreplus"
+  },
+  "xyzCount": 0
+ }
 ]
