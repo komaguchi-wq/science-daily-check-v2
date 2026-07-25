@@ -896,5 +896,40 @@
    "28": "dailystep"
   },
   "xyzCount": 0
+ },
+ {
+  "id": "N63-02",
+  "title": "気体の発生",
+  "subject": "6年理科 デイリーサピックス",
+  "pageCount": 26,
+  "totalRegions": 445,
+  "sectionRegions": {
+   "kakunin": 203,
+   "hatten": 16,
+   "pointcheck": 141,
+   "dailystep": 85
+  },
+  "sectionPages": {
+   "8": "kakunin",
+   "9": "kakunin",
+   "10": "kakunin",
+   "11": "kakunin",
+   "12": "kakunin",
+   "13": "kakunin",
+   "14": "kakunin",
+   "15": "hatten",
+   "16": "hatten",
+   "17": "pointcheck",
+   "18": "pointcheck",
+   "19": "pointcheck",
+   "20": "pointcheck",
+   "21": "dailystep",
+   "22": "dailystep",
+   "23": "dailystep",
+   "24": "dailystep",
+   "25": "dailystep",
+   "26": "dailystep"
+  },
+  "xyzCount": 0
  }
 ]
