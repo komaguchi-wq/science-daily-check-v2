@@ -123,6 +123,15 @@ function getUnitProgress(unit) {
   const total = filtered
     ? UNIT_CARD_SECTIONS.reduce((a, s) => a + (sr[s] || 0), 0)
     : (unit.totalRegions || 0);
+  // xyz(正誤表)のみの単元（夏期デイリートレーニング等）: xyz 進捗で表示
+  if (total === 0 && unit.xyzCount > 0) {
+    const unitData = getTracking()[unit.id] || {};
+    let att = 0;
+    for (const key in unitData) {
+      if (key.startsWith("xyz-") && unitData[key] && unitData[key].attempts > 0) att++;
+    }
+    return { total: unit.xyzCount, attempted: Math.min(att, unit.xyzCount) };
+  }
   const pageSections = unit.sectionPages || {};
   const unitData = getTracking()[unit.id] || {};
   let attempted = 0;
@@ -701,9 +710,13 @@ function openWsMode() {
   showScreen("screen-wsmode");
 }
 
+function wsmLabel() {
+  return (quizData && quizData.xyz && quizData.xyz.label) || "X・Y・Z問題";
+}
+
 function renderWsMode() {
   const xyz = quizData.xyz;
-  document.getElementById("wsmode-title").textContent = `${currentUnit.id} X・Y・Z問題`;
+  document.getElementById("wsmode-title").textContent = `${currentUnit.id} ${wsmLabel()}`;
   const counts = { all: 0, below50: 0, below67: 0, below99: 0, unanswered: 0 };
   xyz.daimons.forEach(dm => dm.questions.forEach(q => {
     for (const m of Object.keys(counts)) if (xyzSubMatchesMode(q.id, m)) counts[m]++;
@@ -722,7 +735,7 @@ function startWsMode(mode) {
   wsmFilteredIds = computeWsFilterIds(mode);
   wsmShowingAnswer = false;
   pendingXyz = {};
-  document.getElementById("wsmondai-title").textContent = `${currentUnit.id} X・Y・Z問題`;
+  document.getElementById("wsmondai-title").textContent = `${currentUnit.id} ${wsmLabel()}`;
   renderXyzTable();
   renderWsPages();
   updateWsTabUI();
@@ -889,7 +902,7 @@ async function printWsMode(mode) {
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
-  _openPrintOverlay(`${currentUnit.id} X・Y・Z問題（${WS_MODE_LABELS[mode]}）`, dataURLs);
+  _openPrintOverlay(`${currentUnit.id} ${wsmLabel()}（${WS_MODE_LABELS[mode]}）`, dataURLs);
 }
 
 // 問題画面ヘッダーの印刷: 表示中タブを印刷（問題タブは現フィルタの赤文字付き）
