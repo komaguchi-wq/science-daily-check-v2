@@ -963,5 +963,36 @@
       "24": "dailystep"
     },
     "xyzCount": 0
+  },
+  {
+    "id": "N63-04",
+    "title": "月総合",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 26,
+    "totalRegions": 231,
+    "sectionRegions": {
+      "kakunin": 89,
+      "pointcheck": 74,
+      "dailystep": 68
+    },
+    "sectionPages": {
+      "9": "kakunin",
+      "10": "kakunin",
+      "11": "kakunin",
+      "12": "kakunin",
+      "13": "kakunin",
+      "14": "kakunin",
+      "15": "kakunin",
+      "16": "kakunin",
+      "19": "pointcheck",
+      "20": "pointcheck",
+      "21": "dailystep",
+      "22": "dailystep",
+      "23": "dailystep",
+      "24": "dailystep",
+      "25": "dailystep",
+      "26": "dailystep"
+    },
+    "xyzCount": 0
   }
 ]
