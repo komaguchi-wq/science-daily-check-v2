@@ -1100,5 +1100,41 @@
    "26": "dailystep"
   },
   "xyzCount": 0
+ },
+ {
+  "id": "N63-08",
+  "title": "光総合（凸レンズ）",
+  "subject": "6年理科 デイリーサピックス",
+  "pageCount": 28,
+  "totalRegions": 251,
+  "sectionRegions": {
+   "kakunin": 68,
+   "hatten": 20,
+   "pointcheck": 98,
+   "dailystep": 65
+  },
+  "sectionPages": {
+   "8": "kakunin",
+   "9": "kakunin",
+   "10": "kakunin",
+   "11": "kakunin",
+   "12": "kakunin",
+   "13": "kakunin",
+   "14": "kakunin",
+   "15": "hatten",
+   "16": "hatten",
+   "17": "hatten",
+   "19": "pointcheck",
+   "20": "pointcheck",
+   "21": "pointcheck",
+   "22": "pointcheck",
+   "23": "dailystep",
+   "24": "dailystep",
+   "25": "dailystep",
+   "26": "dailystep",
+   "27": "dailystep",
+   "28": "dailystep"
+  },
+  "xyzCount": 0
  }
 ]
