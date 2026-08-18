@@ -1,0 +1,154 @@
+{
+ "id": "単元別確認テストNS-01",
+ "title": "電気",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "単元別確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg",
+   "rs_a_05.jpg",
+   "rs_a_06.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "ML01問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML01問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML01問1-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "ML01問1-(3)X",
+      "label": "(3)X"
+     },
+     {
+      "id": "ML01問1-(3)Y",
+      "label": "(3)Y"
+     }
+    ]
+   },
+   {
+    "id": "ML01問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML01問2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML01問2-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "ML01問3",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML01問3-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML01問3-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "ML01問4",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML01問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML01問4-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH01問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH01問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH01問1-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH01問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH01問2-X",
+      "label": "X"
+     },
+     {
+      "id": "MH01問2-Y",
+      "label": "Y"
+     },
+     {
+      "id": "MH01問2-Z",
+      "label": "Z"
+     }
+    ]
+   },
+   {
+    "id": "MH01問3",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH01問3-X",
+      "label": "X"
+     },
+     {
+      "id": "MH01問3-Y",
+      "label": "Y"
+     },
+     {
+      "id": "MH01問3-Z",
+      "label": "Z"
+     }
+    ]
+   },
+   {
+    "id": "MH01問4",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH01問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH01問4-(2)",
+      "label": "(2)"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/単元別確認テストNS-01/"
+}
