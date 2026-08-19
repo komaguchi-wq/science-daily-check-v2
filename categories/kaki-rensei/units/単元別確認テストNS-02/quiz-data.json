@@ -1,0 +1,154 @@
+{
+ "id": "単元別確認テストNS-02",
+ "title": "てこ",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "単元別確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg",
+   "rs_a_05.jpg",
+   "rs_a_06.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "ML02問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML02問1-(1)A",
+      "label": "(1)A"
+     },
+     {
+      "id": "ML02問1-(1)B",
+      "label": "(1)B"
+     },
+     {
+      "id": "ML02問1-(2)A",
+      "label": "(2)A"
+     },
+     {
+      "id": "ML02問1-(2)B",
+      "label": "(2)B"
+     }
+    ]
+   },
+   {
+    "id": "ML02問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML02問2-X",
+      "label": "X"
+     },
+     {
+      "id": "ML02問2-Y",
+      "label": "Y"
+     }
+    ]
+   },
+   {
+    "id": "ML02問3",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML02問3-ばねばかり",
+      "label": "ばねばかり"
+     },
+     {
+      "id": "ML02問3-支点",
+      "label": "支点"
+     }
+    ]
+   },
+   {
+    "id": "ML02問4",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML02問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML02問4-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH02問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH02問1-X",
+      "label": "X"
+     },
+     {
+      "id": "MH02問1-Y",
+      "label": "Y"
+     }
+    ]
+   },
+   {
+    "id": "MH02問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH02問2-位置",
+      "label": "位置"
+     },
+     {
+      "id": "MH02問2-力",
+      "label": "力"
+     }
+    ]
+   },
+   {
+    "id": "MH02問3",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH02問3-A",
+      "label": "A"
+     },
+     {
+      "id": "MH02問3-B",
+      "label": "B"
+     },
+     {
+      "id": "MH02問3-C",
+      "label": "C"
+     },
+     {
+      "id": "MH02問3-D",
+      "label": "D"
+     }
+    ]
+   },
+   {
+    "id": "MH02問4",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH02問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH02問4-(2)",
+      "label": "(2)"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/単元別確認テストNS-02/"
+}

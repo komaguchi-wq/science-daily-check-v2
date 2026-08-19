@@ -1,0 +1,152 @@
+{
+ "id": "理科確認テスト計算理科L　てこ",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "てこ③問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "てこ③問1-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ③問1-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "てこ③問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "てこ③問2-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ③問2-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "てこ④問1",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "てこ④問1-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ④問1-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "てこ④問2",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "てこ④問2-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ④問2-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "てこ⑦問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "てこ⑦問1-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ⑦問1-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "てこ⑦問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "てこ⑦問2-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ⑦問2-②",
+      "label": "②"
+     },
+     {
+      "id": "てこ⑦問2-③",
+      "label": "③"
+     },
+     {
+      "id": "てこ⑦問2-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "てこ⑧問1",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "てこ⑧問1-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ⑧問1-②A",
+      "label": "②A"
+     },
+     {
+      "id": "てこ⑧問1-②B",
+      "label": "②B"
+     }
+    ]
+   },
+   {
+    "id": "てこ⑧問2",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "てこ⑧問2-①",
+      "label": "①"
+     },
+     {
+      "id": "てこ⑧問2-②A",
+      "label": "②A"
+     },
+     {
+      "id": "てこ⑧問2-②B",
+      "label": "②B"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/理科確認テスト計算理科L　てこ/"
+}
