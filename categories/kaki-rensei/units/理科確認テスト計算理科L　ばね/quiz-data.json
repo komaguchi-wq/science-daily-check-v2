@@ -1,0 +1,140 @@
+{
+ "id": "理科確認テスト計算理科L　ばね",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "ばね①問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ばね①問1-①",
+      "label": "①"
+     },
+     {
+      "id": "ばね①問1-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "ばね①問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ばね①問2-①",
+      "label": "①"
+     },
+     {
+      "id": "ばね①問2-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "ばね③問1",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ばね③問1-A",
+      "label": "A"
+     },
+     {
+      "id": "ばね③問1-B",
+      "label": "B"
+     }
+    ]
+   },
+   {
+    "id": "ばね③問2",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ばね③問2-B",
+      "label": "B"
+     },
+     {
+      "id": "ばね③問2-おもり",
+      "label": "おもり"
+     }
+    ]
+   },
+   {
+    "id": "ばね④問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "ばね④問1-①",
+      "label": "①"
+     },
+     {
+      "id": "ばね④問1-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "ばね④問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "ばね④問2-①",
+      "label": "①"
+     },
+     {
+      "id": "ばね④問2-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "ばね⑧問1",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "ばね⑧問1-①",
+      "label": "①"
+     },
+     {
+      "id": "ばね⑧問1-②",
+      "label": "②"
+     },
+     {
+      "id": "ばね⑧問1-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "ばね⑧問2",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "ばね⑧問2-①",
+      "label": "①"
+     },
+     {
+      "id": "ばね⑧問2-②",
+      "label": "②"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/理科確認テスト計算理科L　ばね/"
+}
