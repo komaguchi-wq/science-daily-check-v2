@@ -148,6 +148,30 @@ function getUnitProgress(unit) {
   return { total, attempted: Math.min(attempted, total) };
 }
 
+// 正誤表(xyz)のみの単元か（夏期集中志望校錬成特訓・夏期デイリートレーニング等）。
+// units.json の totalRegions=0 かつ xyzCount>0 で判定（quiz-data.json を読まずに単元一覧で使う）
+function isXyzOnlyUnit(unit) {
+  return !(unit.totalRegions > 0) && unit.xyzCount > 0;
+}
+
+// 正誤表(xyz)のみ単元の単元カード用統計
+// 戻り値: { total, attempted(解いた), good(正答率67%以上), low(解いたが67%未満), unanswered }
+function getXyzUnitStats(unit) {
+  const total = unit.xyzCount || 0;
+  const unitData = getTracking()[unit.id] || {};
+  let attempted = 0, good = 0;
+  for (const key in unitData) {
+    if (!key.startsWith("xyz-")) continue;
+    const t = unitData[key];
+    if (!t || !(t.attempts > 0)) continue;
+    attempted++;
+    if (t.correct / t.attempts >= 0.67) good++;
+  }
+  attempted = Math.min(attempted, total);
+  good = Math.min(good, attempted);
+  return { total, attempted, good, low: attempted - good, unanswered: total - attempted };
+}
+
 // --- イベントログ方式バックアップ（社会v2と同じ堅牢方式：オフラインキュー＋起動時自動復元マージ）---
 function eventsKey() { return `science-events-v2-${currentUser}`; }
 function cursorKey() { return `science-cursor-v2-${currentUser}`; }
@@ -375,6 +399,34 @@ function renderUnits() {
   unitsList.forEach(unit => {
     const card = document.createElement("div");
     card.className = "unit-card";
+    // 正誤表のみ単元: 単元カードに正誤グラフ＋完了%を直接表示（単元詳細を経由せずモード選択へ）
+    if (isXyzOnlyUnit(unit)) {
+      const st = getXyzUnitStats(unit);
+      const pct = (n) => st.total > 0 ? (n / st.total * 100) : 0;
+      const donePct = Math.round(pct(st.attempted));
+      card.classList.add("unit-card-xyz");
+      card.innerHTML = `
+        <div class="unit-card-info">
+          <div class="unit-card-title">${unit.id} ${unit.title}</div>
+          <div class="unit-card-subtitle">${unit.subject} ・ 全${st.total}問</div>
+          <div class="unit-card-bar" title="緑=正答率67%以上 / 橙=67%未満 / 灰=未回答">
+            <div class="unit-card-bar-good" style="width:${pct(st.good)}%"></div>
+            <div class="unit-card-bar-low" style="width:${pct(st.low)}%"></div>
+          </div>
+          <div class="unit-card-legend">
+            <span class="lg-good">○ ${st.good}</span>
+            <span class="lg-low">△ ${st.low}</span>
+            <span class="lg-none">未 ${st.unanswered}</span>
+          </div>
+        </div>
+        <div class="unit-card-stats">
+          <div class="unit-card-accuracy">${donePct}%</div>
+          <div class="unit-card-detail">完了 ${st.attempted}/${st.total}</div>
+        </div>`;
+      card.addEventListener("click", () => openUnit(unit));
+      list.appendChild(card);
+      return;
+    }
     // 解いた問数 / 対象問数（確認＋発展＋デイリーステップ）の達成率
     const prog = getUnitProgress(unit);
     const accuracy = prog.total > 0
@@ -402,6 +454,11 @@ async function openUnit(unit) {
   document.getElementById("unit-detail-title").textContent = `${unit.id} ${unit.title}`;
   const res = await fetch(`categories/${currentCategory.id}/units/${unit.id}/quiz-data.json`);
   quizData = await res.json();
+  // 正誤表(xyz)のみの単元は単元詳細（カード1枚）を飛ばしてモード選択へ直行
+  const xyzOnly = (!quizData.pages || quizData.pages.length === 0)
+    && quizData.xyz && Array.isArray(quizData.xyz.daimons) && quizData.xyz.daimons.length > 0;
+  wsmDirect = !!xyzOnly;
+  if (xyzOnly) { openWsMode(); return; }
   renderUnitDetail();
   showScreen("screen-unit-detail");
 }
@@ -654,6 +711,7 @@ function getPageLabel(page) {
 let wsmShowingAnswer = false;
 let pendingXyz = {};       // {subId: "correct"|"wrong"} 仮選択
 let xyzIdleTimer = null;
+let wsmDirect = false; // 単元一覧からモード選択へ直行した（戻るは単元一覧へ）
 let wsmFilter = "all";     // all | below50 | below67 | below99 | unanswered
 let wsmFilteredIds = null; // Set of target 小問id（all のとき null）
 
@@ -1583,6 +1641,7 @@ function setupEventListeners() {
   // X・Y・Z問題（デイリーサポート方式）
   // モード選択画面
   document.getElementById("btn-back-wsmode").addEventListener("click", () => {
+    if (wsmDirect) { renderUnits(); showScreen("screen-units"); return; }
     renderUnitDetail();
     showScreen("screen-unit-detail");
   });
