@@ -1,0 +1,466 @@
+{
+ "id": "NS-04",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "X・Y・Z問題",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg",
+   "rs_q_05.jpg",
+   "rs_q_06.jpg",
+   "rs_q_07.jpg",
+   "rs_q_08.jpg",
+   "rs_q_09.jpg",
+   "rs_q_10.jpg",
+   "rs_q_11.jpg",
+   "rs_q_12.jpg",
+   "rs_q_13.jpg",
+   "rs_q_14.jpg",
+   "rs_q_15.jpg",
+   "rs_q_16.jpg",
+   "rs_q_17.jpg",
+   "rs_q_18.jpg",
+   "rs_q_19.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg",
+   "rs_a_05.jpg",
+   "rs_a_06.jpg",
+   "rs_a_07.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "X1",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "X1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "X1-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "X1-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "X1-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "X1-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "X1-(6)",
+      "label": "(6)"
+     }
+    ]
+   },
+   {
+    "id": "X2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "X2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "X2-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "X2-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "X2-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "X2-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "X2-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "X2-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "X2-(8)",
+      "label": "(8)"
+     },
+     {
+      "id": "X2-(9)",
+      "label": "(9)"
+     }
+    ]
+   },
+   {
+    "id": "X3",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "X3-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "X3-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "X3-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "X3-(4)",
+      "label": "(4)"
+     }
+    ]
+   },
+   {
+    "id": "X4",
+    "qpage": 4,
+    "questions": [
+     {
+      "id": "X4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "X4-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "X4-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "X4-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "X4-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "X4-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "X4-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "X4-(8)",
+      "label": "(8)"
+     }
+    ]
+   },
+   {
+    "id": "Y-OU",
+    "qpage": 5,
+    "questions": [
+     {
+      "id": "Y-OU-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Y-OU-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Y-OU-(3)",
+      "label": "(3)"
+     }
+    ]
+   },
+   {
+    "id": "Y-JF",
+    "qpage": 6,
+    "questions": [
+     {
+      "id": "Y-JF-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Y-JF-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Y-JF-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Y-JF-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "Y-JF-(5)",
+      "label": "(5)"
+     }
+    ]
+   },
+   {
+    "id": "Y-WG",
+    "qpage": 7,
+    "questions": [
+     {
+      "id": "Y-WG-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Y-WG-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Y-WG-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Y-WG-(4)",
+      "label": "(4)"
+     }
+    ]
+   },
+   {
+    "id": "Y-KS",
+    "qpage": 8,
+    "questions": [
+     {
+      "id": "Y-KS-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Y-KS-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Y-KS-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Y-KS-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "Y-KS-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "Y-KS-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "Y-KS-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "Y-KS-(8)",
+      "label": "(8)"
+     }
+    ]
+   },
+   {
+    "id": "Y-NK",
+    "qpage": 9,
+    "questions": [
+     {
+      "id": "Y-NK-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Y-NK-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "Z-KA",
+    "qpage": 10,
+    "questions": [
+     {
+      "id": "Z-KA-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Z-KA-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Z-KA-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Z-KA-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "Z-KA-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "Z-KA-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "Z-KA-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "Z-KA-(8)",
+      "label": "(8)"
+     },
+     {
+      "id": "Z-KA-(9)",
+      "label": "(9)"
+     }
+    ]
+   },
+   {
+    "id": "Z-AZ",
+    "qpage": 11,
+    "questions": [
+     {
+      "id": "Z-AZ-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Z-AZ-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Z-AZ-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Z-AZ-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "Z-AZ-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "Z-AZ-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "Z-AZ-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "Z-AZ-(8)",
+      "label": "(8)"
+     },
+     {
+      "id": "Z-AZ-(9)",
+      "label": "(9)"
+     },
+     {
+      "id": "Z-AZ-(10)",
+      "label": "(10)"
+     }
+    ]
+   },
+   {
+    "id": "Z-SS",
+    "qpage": 13,
+    "questions": [
+     {
+      "id": "Z-SS-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Z-SS-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Z-SS-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Z-SS-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "Z-SS-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "Z-SS-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "Z-SS-(7)",
+      "label": "(7)"
+     }
+    ]
+   },
+   {
+    "id": "Z-KK",
+    "qpage": 14,
+    "questions": [
+     {
+      "id": "Z-KK-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "Z-KK-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "Z-KK-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "Z-KK-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "Z-KK-(5)",
+      "label": "(5)"
+     }
+    ]
+   },
+   {
+    "id": "Z-TK",
+    "qpage": 14,
+    "questions": [
+     {
+      "id": "Z-TK-①",
+      "label": "①"
+     },
+     {
+      "id": "Z-TK-②",
+      "label": "②"
+     },
+     {
+      "id": "Z-TK-③",
+      "label": "③"
+     },
+     {
+      "id": "Z-TK-④",
+      "label": "④"
+     },
+     {
+      "id": "Z-TK-⑤",
+      "label": "⑤"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/NS-04/"
+}

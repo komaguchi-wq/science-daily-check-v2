@@ -1,0 +1,154 @@
+{
+ "id": "単元別確認テストNS-04",
+ "title": "燃焼・気体の発生",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "単元別確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg",
+   "rs_a_05.jpg",
+   "rs_a_06.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "ML04問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML04問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML04問1-(2)アルミニウム",
+      "label": "(2)アルミニウム"
+     },
+     {
+      "id": "ML04問1-(2)銅",
+      "label": "(2)銅"
+     }
+    ]
+   },
+   {
+    "id": "ML04問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML04問2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML04問2-(2)アルミニウム",
+      "label": "(2)アルミニウム"
+     },
+     {
+      "id": "ML04問2-(2)銅",
+      "label": "(2)銅"
+     }
+    ]
+   },
+   {
+    "id": "ML04問3",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML04問3-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML04問3-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "ML04問4",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML04問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML04問4-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH04問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH04問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH04問1-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH04問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH04問2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH04問2-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH04問3",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH04問3-ア",
+      "label": "ア"
+     },
+     {
+      "id": "MH04問3-イ",
+      "label": "イ"
+     },
+     {
+      "id": "MH04問3-ウ",
+      "label": "ウ"
+     }
+    ]
+   },
+   {
+    "id": "MH04問4",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH04問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH04問4-(2)炭酸ナトリウム",
+      "label": "(2)炭酸ナトリウム"
+     },
+     {
+      "id": "MH04問4-(2)水",
+      "label": "(2)水"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/単元別確認テストNS-04/"
+}

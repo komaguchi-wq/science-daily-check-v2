@@ -1,0 +1,85 @@
+{
+ "id": "理科④",
+ "title": "デイリートレーニング",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "デイリートレーニング",
+  "questionPages": [
+   "rs_q_01.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "理科④",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "理科④-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "理科④-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "理科④-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "理科④-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "理科④-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "理科④-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "理科④-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "理科④-(8)",
+      "label": "(8)"
+     },
+     {
+      "id": "理科④-(9)",
+      "label": "(9)"
+     },
+     {
+      "id": "理科④-(10)",
+      "label": "(10)"
+     },
+     {
+      "id": "理科④-(11)",
+      "label": "(11)"
+     },
+     {
+      "id": "理科④-(12)",
+      "label": "(12)"
+     },
+     {
+      "id": "理科④-(13)",
+      "label": "(13)"
+     },
+     {
+      "id": "理科④-(14)",
+      "label": "(14)"
+     },
+     {
+      "id": "理科④-(15)",
+      "label": "(15)"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/理科④/"
+}

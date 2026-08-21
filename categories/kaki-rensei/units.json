@@ -24,6 +24,14 @@
   "xyzCount": 87
  },
  {
+  "id": "NS-04",
+  "title": "",
+  "subject": "理科",
+  "pageCount": 19,
+  "totalRegions": 0,
+  "xyzCount": 85
+ },
+ {
   "id": "単元別確認テストNS-01",
   "title": "電気",
   "subject": "理科",
@@ -46,6 +54,14 @@
   "pageCount": 4,
   "totalRegions": 0,
   "xyzCount": 18
+ },
+ {
+  "id": "単元別確認テストNS-04",
+  "title": "燃焼・気体の発生",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 0,
+  "xyzCount": 20
  },
  {
   "id": "理科①",
@@ -72,6 +88,14 @@
   "xyzCount": 15
  },
  {
+  "id": "理科④",
+  "title": "デイリートレーニング",
+  "subject": "理科",
+  "pageCount": 1,
+  "totalRegions": 0,
+  "xyzCount": 15
+ },
+ {
   "id": "理科確認テスト計算理科L　てこ",
   "title": "",
   "subject": "理科",
@@ -86,6 +110,14 @@
   "pageCount": 4,
   "totalRegions": 0,
   "xyzCount": 17
+ },
+ {
+  "id": "理科確認テスト計算理科L　気体の発生",
+  "title": "",
+  "subject": "理科",
+  "pageCount": 4,
+  "totalRegions": 0,
+  "xyzCount": 26
  },
  {
   "id": "理科確認テスト計算理科L　電気",
