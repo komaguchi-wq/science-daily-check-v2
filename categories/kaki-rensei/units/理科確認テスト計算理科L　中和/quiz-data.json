@@ -1,0 +1,176 @@
+{
+ "id": "理科確認テスト計算理科L　中和",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "中和②問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "中和②問1-①",
+      "label": "①"
+     },
+     {
+      "id": "中和②問1-②",
+      "label": "②"
+     },
+     {
+      "id": "中和②問1-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "中和②問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "中和②問2-①",
+      "label": "①"
+     },
+     {
+      "id": "中和②問2-②",
+      "label": "②"
+     },
+     {
+      "id": "中和②問2-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "中和③問1",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "中和③問1-①",
+      "label": "①"
+     },
+     {
+      "id": "中和③問1-②",
+      "label": "②"
+     },
+     {
+      "id": "中和③問1-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "中和③問2",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "中和③問2-①",
+      "label": "①"
+     },
+     {
+      "id": "中和③問2-②",
+      "label": "②"
+     },
+     {
+      "id": "中和③問2-③",
+      "label": "③"
+     },
+     {
+      "id": "中和③問2-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "中和④問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "中和④問1-①",
+      "label": "①"
+     },
+     {
+      "id": "中和④問1-②",
+      "label": "②"
+     },
+     {
+      "id": "中和④問1-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "中和④問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "中和④問2-①",
+      "label": "①"
+     },
+     {
+      "id": "中和④問2-②",
+      "label": "②"
+     },
+     {
+      "id": "中和④問2-③",
+      "label": "③"
+     },
+     {
+      "id": "中和④問2-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "中和⑤問1",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "中和⑤問1-①",
+      "label": "①"
+     },
+     {
+      "id": "中和⑤問1-②",
+      "label": "②"
+     },
+     {
+      "id": "中和⑤問1-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "中和⑤問2",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "中和⑤問2-①",
+      "label": "①"
+     },
+     {
+      "id": "中和⑤問2-②",
+      "label": "②"
+     },
+     {
+      "id": "中和⑤問2-③",
+      "label": "③"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/理科確認テスト計算理科L　中和/"
+}

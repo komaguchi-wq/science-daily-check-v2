@@ -1,0 +1,154 @@
+{
+ "id": "単元別確認テストNS-05",
+ "title": "中和",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "単元別確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg",
+   "rs_q_02.jpg",
+   "rs_q_03.jpg",
+   "rs_q_04.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg",
+   "rs_a_03.jpg",
+   "rs_a_04.jpg",
+   "rs_a_05.jpg",
+   "rs_a_06.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "ML05問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML05問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML05問1-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "ML05問1-(3)",
+      "label": "(3)"
+     }
+    ]
+   },
+   {
+    "id": "ML05問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "ML05問2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML05問2-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "ML05問2-(3)",
+      "label": "(3)"
+     }
+    ]
+   },
+   {
+    "id": "ML05問3",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML05問3-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML05問3-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "ML05問4",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ML05問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ML05問4-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH05問1",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH05問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH05問1-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH05問2",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "MH05問2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH05問2-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "MH05問2-(3)",
+      "label": "(3)"
+     }
+    ]
+   },
+   {
+    "id": "MH05問3",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH05問3-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH05問3-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "MH05問4",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "MH05問4-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "MH05問4-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "MH05問4-(3)",
+      "label": "(3)"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/単元別確認テストNS-05/"
+}
