@@ -2924,7 +2924,7 @@
     ]
   },
   "xyz": {
-    "label": "正誤表（確認問題・発展問題・デイリーステップ）",
+    "label": "確認問題・発展問題・デイリーステップ",
     "questionPages": [
       "page_08_qmasked.jpg",
       "page_09_qmasked.jpg",
@@ -3681,5 +3681,101 @@
         "page_16_expl_1.jpg"
       ]
     }
+  },
+  "reading": {
+    "label": "説明文＆ポイントチェック",
+    "pages": [
+      {
+        "image": "page_02.jpg",
+        "label": "説明文 p2",
+        "width": 4191,
+        "height": 3006
+      },
+      {
+        "image": "page_03.jpg",
+        "label": "説明文 p3",
+        "width": 4200,
+        "height": 3006
+      },
+      {
+        "image": "page_04.jpg",
+        "label": "説明文 p4",
+        "width": 4191,
+        "height": 3006
+      },
+      {
+        "image": "page_05.jpg",
+        "label": "説明文 p5",
+        "width": 4197,
+        "height": 3006
+      },
+      {
+        "image": "page_06.jpg",
+        "label": "説明文 p6",
+        "width": 4191,
+        "height": 3006
+      },
+      {
+        "image": "page_07.jpg",
+        "label": "説明文 p7",
+        "width": 4200,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_01.jpg",
+        "label": "ポイントチェック 1（p18-19）",
+        "width": 4197,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_02.jpg",
+        "label": "ポイントチェック 2（p20-21）",
+        "width": 4191,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_03.jpg",
+        "label": "ポイントチェック 3（p22-23）",
+        "width": 4206,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_04.jpg",
+        "label": "ポイントチェック 4（p24-25）",
+        "width": 4200,
+        "height": 3006
+      }
+    ],
+    "generatedBy": "seigohyo_rollout",
+    "spreads": [
+      {
+        "name": "pcspread_01.jpg",
+        "src": [
+          "page_18.jpg",
+          "page_19.jpg"
+        ]
+      },
+      {
+        "name": "pcspread_02.jpg",
+        "src": [
+          "page_20.jpg",
+          "page_21.jpg"
+        ]
+      },
+      {
+        "name": "pcspread_03.jpg",
+        "src": [
+          "page_22.jpg",
+          "page_23.jpg"
+        ]
+      },
+      {
+        "name": "pcspread_04.jpg",
+        "src": [
+          "page_24.jpg",
+          "page_25.jpg"
+        ]
+      }
+    ]
   }
 }

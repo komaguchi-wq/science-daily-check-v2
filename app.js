@@ -41,6 +41,7 @@ const SECTION_META = {
   dailystep: { label: "デイリーステップ", icon: "📋" },
   weekly: { label: "知識の総完成", icon: "📘" },
   coreplus: { label: "コアプラス", icon: "📗" },
+  reading: { label: "説明文＆ポイントチェック", icon: "📝" },  // ★2026-08-24 DS単元の閲覧ブロック（quiz-data.reading・見開き）
 };
 // 旧コードとの互換性
 const SECTION_LABELS = Object.fromEntries(
@@ -400,7 +401,7 @@ function renderCategories() {
 async function openCategory(cat) {
   currentCategory = cat;
   document.getElementById("units-header-title").textContent = cat.name;
-  const res = await fetch(`categories/${cat.id}/units.json`);
+  const res = await fetch(`categories/${cat.id}/units.json`, { cache: "no-cache" });  // 単元追加・進捗仕様変更が即反映されるよう再検証付き
   unitsList = await res.json();
   renderUnits();
   showScreen("screen-units");
@@ -411,7 +412,8 @@ async function openCategory(cat) {
 // ==============================
 // 単元カード共通: 緑=正答率60%以上 / 黄=60%未満 / 灰=未回答 の棒グラフ＋凡例＋完了%（全アプリ共通デザイン）
 function unitBarStats(unit) {
-  if (isXyzOnlyUnit(unit)) return getXyzUnitStats(unit);
+  // ★xyzPrimary（2026-08-24〜 理科DS: 単元詳細が「正誤表＋説明文&PC」の2カードになった単元）は単元カードも正誤表の進捗で表示
+  if (isXyzOnlyUnit(unit) || unit.xyzPrimary) return getXyzUnitStats(unit);
   const p = getUnitProgress(unit);
   const good = Math.min(p.good || 0, p.attempted);
   return { total: p.total, attempted: p.attempted, good, low: p.attempted - good, unanswered: p.total - p.attempted };
@@ -472,6 +474,13 @@ async function openUnit(unit) {
 
 // セクションごとのページ集合（containsSections も考慮）
 function getSectionPages(section) {
+  // ★「説明文＆ポイントチェック」（quiz-data.reading）: 閲覧専用の疑似ページ列（説明文見開き → ポイントチェック見開き・答え全表示）
+  if (section === "reading") {
+    const r = quizData.reading;
+    if (!r || !Array.isArray(r.pages)) return [];
+    return r.pages.map((pg, i) => ({ id: i + 1, type: "reading", image: pg.image, label: pg.label,
+                                    width: pg.width || 2, height: pg.height || 1, regions: [] }));
+  }
   return quizData.pages.filter(p =>
     p.type === section || (p.containsSections && p.containsSections.includes(section)));
 }
@@ -528,6 +537,28 @@ function renderUnitDetail() {
       </div>`;
     card.addEventListener("click", openWsMode);
     list.appendChild(card);
+  }
+
+  // ★2026-08-24 ユーザー確定: DS単元（quiz-data.reading あり）は「正誤表」＋「説明文＆ポイントチェック」の2カードだけ。
+  //   確認/発展/ポイントチェック/DSの独立カード（旧クイズ方式）は表示しない（データ・コードは残す＝旧○×はAI提案の材料、WS/コアプラスは従来通り）
+  if (quizData.reading && Array.isArray(quizData.reading.pages) && quizData.reading.pages.length > 0) {
+    const pages = getSectionPages("reading");
+    const card = document.createElement("div");
+    card.className = "section-card section-reading-only";
+    card.innerHTML = `
+      <div class="section-card-icon">${SECTION_META.reading.icon}</div>
+      <div class="section-card-body">
+        <div class="section-card-title">${quizData.reading.label || SECTION_META.reading.label}<span class="section-card-badge">閲覧のみ</span></div>
+        <div class="section-card-meta">${pages.length}ページ（見開き）</div>
+        <div class="section-card-progress"><div class="section-card-progress-fill" style="width:0%;"></div></div>
+      </div>
+      <div class="section-card-stats">
+        <div class="section-card-stats-main" style="color:#86868b">${pages.length}p</div>
+        <div class="section-card-stats-sub">ページ</div>
+      </div>`;
+    card.addEventListener("click", () => openSection("reading"));
+    list.appendChild(card);
+    return;
   }
 
   SECTION_ORDER.forEach(sec => {
@@ -708,6 +739,7 @@ function renderSectionDetail() {
 }
 
 function getPageLabel(page) {
+  if (page.label) return page.label;
   const sec = SECTION_LABELS[page.type] || page.type;
   return `${sec} p${page.id}`;
 }
@@ -1186,7 +1218,7 @@ function renderReading() {
   const page = readingPages[readingIndex];
   document.getElementById("reading-title").textContent =
     `${sectionDisplayLabel(currentReadingSection)} (${currentUnit.id} ${currentUnit.title})`;
-  document.getElementById("reading-page-info").textContent = `p${page.id}`;
+  document.getElementById("reading-page-info").textContent = page.label || `p${page.id}`;
   document.getElementById("reading-indicator").textContent =
     `${readingIndex + 1} / ${readingPages.length}`;
   document.getElementById("btn-reading-prev").disabled = readingIndex === 0;

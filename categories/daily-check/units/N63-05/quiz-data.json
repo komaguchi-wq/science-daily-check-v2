@@ -1761,7 +1761,7 @@
     "dailystep": 71
   },
   "xyz": {
-    "label": "正誤表（確認問題・発展問題・デイリーステップ）",
+    "label": "確認問題・発展問題・デイリーステップ",
     "questionPages": [
       "page_06_qmasked.jpg",
       "page_07_qmasked.jpg",
@@ -2606,5 +2606,63 @@
         "page_14_expl_1.jpg"
       ]
     }
+  },
+  "reading": {
+    "label": "説明文＆ポイントチェック",
+    "pages": [
+      {
+        "image": "page_02.jpg",
+        "label": "説明文 p2",
+        "width": 4239,
+        "height": 3006
+      },
+      {
+        "image": "page_03.jpg",
+        "label": "説明文 p3",
+        "width": 4245,
+        "height": 3006
+      },
+      {
+        "image": "page_04.jpg",
+        "label": "説明文 p4",
+        "width": 4239,
+        "height": 3006
+      },
+      {
+        "image": "page_05.jpg",
+        "label": "説明文 p5",
+        "width": 4245,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_01.jpg",
+        "label": "ポイントチェック 1（p15-16）",
+        "width": 4257,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_02.jpg",
+        "label": "ポイントチェック 2（p17-18）",
+        "width": 4248,
+        "height": 3006
+      }
+    ],
+    "generatedBy": "seigohyo_rollout",
+    "spreads": [
+      {
+        "name": "pcspread_01.jpg",
+        "src": [
+          "page_15.jpg",
+          "page_16.jpg"
+        ]
+      },
+      {
+        "name": "pcspread_02.jpg",
+        "src": [
+          "page_17.jpg",
+          "page_18.jpg"
+        ]
+      }
+    ]
   }
 }
