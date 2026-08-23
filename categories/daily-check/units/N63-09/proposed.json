@@ -1,0 +1,21 @@
+{
+ "unit": "N63-09",
+ "source": "claude-vision",
+ "created": "2026-08-23",
+ "grades": {
+  "k1-(1)": true,
+  "k1-(2)": true,
+  "k2-(1)": true,
+  "k2-(2)": false,
+  "k2-(3)": true,
+  "k2-(4)": true,
+  "k2-(5)": true,
+  "k2-(6)": true,
+  "k3-(1)": true,
+  "k3-(2)": false,
+  "k3-(3)": false,
+  "k3-(4)": false,
+  "k4-(1)": true,
+  "k4-(2)": false
+ }
+}
