@@ -145,7 +145,19 @@ function getUnitProgress(unit) {
     }
     attempted++;
   }
-  return { total, attempted: Math.min(attempted, total) };
+  const quizProg = { total, attempted: Math.min(attempted, total) };
+  // ★正誤表(xyz)が併設された単元（2026-08-23〜 通常DS/WSへ横展開・追加型）: クイズ進捗と正誤表進捗の高い方を表示
+  if (unit.xyzCount > 0) {
+    let att = 0;
+    for (const key in unitData) {
+      if (key.startsWith("xyz-") && unitData[key] && unitData[key].attempts > 0) att++;
+    }
+    const xyzProg = { total: unit.xyzCount, attempted: Math.min(att, unit.xyzCount) };
+    const rq = quizProg.total ? quizProg.attempted / quizProg.total : 0;
+    const rx = xyzProg.total ? xyzProg.attempted / xyzProg.total : 0;
+    if (rx > rq) return xyzProg;
+  }
+  return quizProg;
 }
 
 // 正誤表(xyz)のみの単元か（夏期集中志望校錬成特訓・夏期デイリートレーニング等）。
