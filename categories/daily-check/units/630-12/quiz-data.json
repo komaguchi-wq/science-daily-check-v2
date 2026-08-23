@@ -2239,10 +2239,8 @@
       "page_12_qmasked.jpg",
       "page_13_qmasked.jpg",
       "page_14_qmasked.jpg",
-      "page_21_masked.jpg",
-      "page_22_masked.jpg",
-      "page_23_masked.jpg",
-      "page_24_masked.jpg"
+      "spread_01_q.jpg",
+      "spread_02_q.jpg"
     ],
     "answerPages": [
       "page_06_answer.jpg",
@@ -2254,10 +2252,8 @@
       "page_12_answer.jpg",
       "page_13_answer.jpg",
       "page_14_answer.jpg",
-      "page_21.jpg",
-      "page_22.jpg",
-      "page_23.jpg",
-      "page_24.jpg",
+      "spread_01_a.jpg",
+      "spread_02_a.jpg",
       "page_06_expl_1.jpg",
       "page_06_expl_2.jpg",
       "page_07_expl_1.jpg",
@@ -2767,7 +2763,7 @@
       },
       {
         "id": "DS2",
-        "qpage": 10,
+        "qpage": 9,
         "questions": [
           {
             "id": "d2-①",
@@ -2813,7 +2809,7 @@
       },
       {
         "id": "DS3",
-        "qpage": 11,
+        "qpage": 10,
         "questions": [
           {
             "id": "d3-①",
@@ -2859,7 +2855,7 @@
       },
       {
         "id": "DS4",
-        "qpage": 12,
+        "qpage": 10,
         "questions": [
           {
             "id": "d4-①",
@@ -2906,6 +2902,32 @@
     ],
     "generatedBy": "seigohyo_rollout",
     "generatedAt": "2026-08-23",
-    "solvedPages": []
+    "solvedPages": [],
+    "spreads": [
+      {
+        "q": "spread_01_q.jpg",
+        "a": "spread_01_a.jpg",
+        "src_q": [
+          "page_21_masked.jpg",
+          "page_22_masked.jpg"
+        ],
+        "src_a": [
+          "page_21.jpg",
+          "page_22.jpg"
+        ]
+      },
+      {
+        "q": "spread_02_q.jpg",
+        "a": "spread_02_a.jpg",
+        "src_q": [
+          "page_23_masked.jpg",
+          "page_24_masked.jpg"
+        ],
+        "src_a": [
+          "page_23.jpg",
+          "page_24.jpg"
+        ]
+      }
+    ]
   }
 }

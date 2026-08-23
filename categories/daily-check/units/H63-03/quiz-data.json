@@ -3565,12 +3565,9 @@
       "page_14_qmasked.jpg",
       "page_15_qmasked.jpg",
       "page_16_qmasked.jpg",
-      "page_25_masked.jpg",
-      "page_26_masked.jpg",
-      "page_27_masked.jpg",
-      "page_28_masked.jpg",
-      "page_29_masked.jpg",
-      "page_30_masked.jpg"
+      "spread_01_q.jpg",
+      "spread_02_q.jpg",
+      "spread_03_q.jpg"
     ],
     "answerPages": [
       "page_07_answer.jpg",
@@ -3583,12 +3580,9 @@
       "page_14_answer.jpg",
       "page_15_answer.jpg",
       "page_16_answer.jpg",
-      "page_25.jpg",
-      "page_26.jpg",
-      "page_27.jpg",
-      "page_28.jpg",
-      "page_29.jpg",
-      "page_30.jpg",
+      "spread_01_a.jpg",
+      "spread_02_a.jpg",
+      "spread_03_a.jpg",
       "page_07_expl_1.jpg",
       "page_07_expl_2.jpg",
       "page_08_expl_1.jpg",
@@ -4133,7 +4127,7 @@
       },
       {
         "id": "DS2",
-        "qpage": 11,
+        "qpage": 10,
         "questions": [
           {
             "id": "d2-①",
@@ -4179,7 +4173,7 @@
       },
       {
         "id": "DS3",
-        "qpage": 12,
+        "qpage": 11,
         "questions": [
           {
             "id": "d3-①",
@@ -4225,7 +4219,7 @@
       },
       {
         "id": "DS4",
-        "qpage": 13,
+        "qpage": 11,
         "questions": [
           {
             "id": "d4-①",
@@ -4271,7 +4265,7 @@
       },
       {
         "id": "DS5",
-        "qpage": 14,
+        "qpage": 12,
         "questions": [
           {
             "id": "d5-①",
@@ -4317,7 +4311,7 @@
       },
       {
         "id": "DS6",
-        "qpage": 15,
+        "qpage": 12,
         "questions": [
           {
             "id": "d6-①",
@@ -4364,6 +4358,44 @@
     ],
     "generatedBy": "seigohyo_rollout",
     "generatedAt": "2026-08-23",
-    "solvedPages": []
+    "solvedPages": [],
+    "spreads": [
+      {
+        "q": "spread_01_q.jpg",
+        "a": "spread_01_a.jpg",
+        "src_q": [
+          "page_25_masked.jpg",
+          "page_26_masked.jpg"
+        ],
+        "src_a": [
+          "page_25.jpg",
+          "page_26.jpg"
+        ]
+      },
+      {
+        "q": "spread_02_q.jpg",
+        "a": "spread_02_a.jpg",
+        "src_q": [
+          "page_27_masked.jpg",
+          "page_28_masked.jpg"
+        ],
+        "src_a": [
+          "page_27.jpg",
+          "page_28.jpg"
+        ]
+      },
+      {
+        "q": "spread_03_q.jpg",
+        "a": "spread_03_a.jpg",
+        "src_q": [
+          "page_29_masked.jpg",
+          "page_30_masked.jpg"
+        ],
+        "src_a": [
+          "page_29.jpg",
+          "page_30.jpg"
+        ]
+      }
+    ]
   }
 }
