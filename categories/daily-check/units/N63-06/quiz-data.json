@@ -2152,23 +2152,14 @@
       "spread_01_a.jpg",
       "spread_02_a.jpg",
       "spread_03_a.jpg",
-      "page_08_expl_1.jpg",
-      "page_09_expl_1.jpg",
-      "page_09_expl_2.jpg",
-      "page_10_expl_1.jpg",
-      "page_10_expl_2.jpg",
-      "page_11_expl_1.jpg",
-      "page_11_expl_2.jpg",
-      "page_11_expl_3.jpg",
-      "page_12_expl_1.jpg",
-      "page_12_expl_2.jpg",
-      "page_12_expl_3.jpg",
-      "page_13_expl_1.jpg",
-      "page_13_expl_2.jpg",
-      "page_14_expl_1.jpg",
-      "page_14_expl_2.jpg",
-      "page_15_expl_1.jpg",
-      "page_16_expl_1.jpg",
+      "abook_01.jpg",
+      "abook_02.jpg",
+      "abook_03.jpg",
+      "abook_04.jpg",
+      "abook_05.jpg",
+      "abook_06.jpg",
+      "abook_07.jpg",
+      "abook_08.jpg",
       "solved_01.jpg",
       "solved_02.jpg",
       "solved_03.jpg",
@@ -2871,6 +2862,50 @@
           "page_26.jpg"
         ]
       }
-    ]
+    ],
+    "abook": {
+      "files": [
+        "abook_01.jpg",
+        "abook_02.jpg",
+        "abook_03.jpg",
+        "abook_04.jpg",
+        "abook_05.jpg",
+        "abook_06.jpg",
+        "abook_07.jpg",
+        "abook_08.jpg"
+      ],
+      "phys": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "droppedBlank": [],
+      "rot180": false,
+      "pdf": "_scratch/science_v2_intake/N63-06_A.pdf",
+      "removedExpl": [
+        "page_08_expl_1.jpg",
+        "page_09_expl_1.jpg",
+        "page_09_expl_2.jpg",
+        "page_10_expl_1.jpg",
+        "page_10_expl_2.jpg",
+        "page_11_expl_1.jpg",
+        "page_11_expl_2.jpg",
+        "page_11_expl_3.jpg",
+        "page_12_expl_1.jpg",
+        "page_12_expl_2.jpg",
+        "page_12_expl_3.jpg",
+        "page_13_expl_1.jpg",
+        "page_13_expl_2.jpg",
+        "page_14_expl_1.jpg",
+        "page_14_expl_2.jpg",
+        "page_15_expl_1.jpg",
+        "page_16_expl_1.jpg"
+      ]
+    }
   }
 }
