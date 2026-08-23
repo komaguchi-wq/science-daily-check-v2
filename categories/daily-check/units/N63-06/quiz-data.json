@@ -2174,7 +2174,13 @@
       "page_14_expl_1.jpg",
       "page_14_expl_2.jpg",
       "page_15_expl_1.jpg",
-      "page_16_expl_1.jpg"
+      "page_16_expl_1.jpg",
+      "solved_01.jpg",
+      "solved_02.jpg",
+      "solved_03.jpg",
+      "solved_04.jpg",
+      "solved_05.jpg",
+      "solved_06.jpg"
     ],
     "daimons": [
       {
@@ -2826,6 +2832,13 @@
     ],
     "generatedBy": "seigohyo_rollout",
     "generatedAt": "2026-08-23",
-    "solvedPages": []
+    "solvedPages": [
+      "solved_01.jpg",
+      "solved_02.jpg",
+      "solved_03.jpg",
+      "solved_04.jpg",
+      "solved_05.jpg",
+      "solved_06.jpg"
+    ]
   }
 }
