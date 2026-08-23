@@ -172,7 +172,7 @@ function isXyzOnlyUnit(unit) {
 }
 
 // 正誤表(xyz)のみ単元の単元カード用統計
-// 戻り値: { total, attempted(解いた), good(正答率67%以上), low(解いたが67%未満), unanswered }
+// 戻り値: { total, attempted(解いた), good(正答率60%以上), low(解いたが60%未満), unanswered }
 function getXyzUnitStats(unit) {
   const total = unit.xyzCount || 0;
   const unitData = getTracking()[unit.id] || {};
@@ -486,11 +486,11 @@ function getSectionPages(section) {
 }
 
 // セクションの統計情報
-// 戻り値: { totalPages, totalRegions, attempted, perfectCount, goodCount(67%以上達成), accuracyAvg }
+// 戻り値: { totalPages, totalRegions, attempted, perfectCount, goodCount(60%以上達成), accuracyAvg }
 function getSectionStats(section) {
   const pages = getSectionPages(section);
   let totalRegions = 0, attempted = 0, totalCorrect = 0, totalAttempts = 0;
-  let goodCount = 0; // 67%以上の正答率を達成した問数
+  let goodCount = 0; // 60%以上（GOOD_RATE）の正答率を達成した問数
   pages.forEach(p => {
     p.regions.forEach((_, ri) => {
       totalRegions++;
@@ -499,7 +499,7 @@ function getSectionStats(section) {
         attempted++;
         totalAttempts += t.attempts;
         totalCorrect += t.correct;
-        if (t.correct / t.attempts >= 0.67) goodCount++;
+        if (t.correct / t.attempts >= GOOD_RATE) goodCount++;
       }
     });
   });
@@ -513,27 +513,25 @@ function renderUnitDetail() {
   // X・Y・Z問題（デイリーサポート方式）カード（quiz-data.json に xyz があれば先頭に表示）
   if (quizData.xyz && Array.isArray(quizData.xyz.daimons) && quizData.xyz.daimons.length > 0) {
     const xyz = quizData.xyz;
-    let good = 0, total = 0;
+    let good = 0, total = 0, attempted = 0;
     xyz.daimons.forEach(dm => dm.questions.forEach(q => {
       total++;
       const t = getXyzTracking(currentUnit.id, q.id);
-      if (t.attempts > 0 && t.correct / t.attempts >= 0.67) good++;
+      if (t.attempts > 0) { attempted++; if (t.correct / t.attempts >= GOOD_RATE) good++; }
     }));
     const progress = total > 0 ? Math.round(good / total * 100) : 0;
+    const xyzBar = unitBarHTML({ total, attempted, good, low: attempted - good, unanswered: total - attempted });
     const card = document.createElement("div");
     card.className = "section-card";
     card.innerHTML = `
       <div class="section-card-icon">🧪</div>
       <div class="section-card-body">
         <div class="section-card-title">${xyz.label || "X・Y・Z問題"}</div>
-        <div class="section-card-meta">問題${xyz.questionPages.length}ページ ・ 全${total}問</div>
-        <div class="section-card-progress">
-          <div class="section-card-progress-fill" style="width: ${progress}%;"></div>
-        </div>
+        <div class="section-card-meta">問題${xyz.questionPages.length}ページ ・ 全${total}問</div>${xyzBar}
       </div>
       <div class="section-card-stats">
         <div class="section-card-stats-main">${good}/${total}</div>
-        <div class="section-card-stats-sub">67%↑ 達成 (${progress}%)</div>
+        <div class="section-card-stats-sub">60%↑ 達成 (${progress}%)</div>
       </div>`;
     card.addEventListener("click", openWsMode);
     list.appendChild(card);
@@ -580,7 +578,7 @@ function renderUnitDetail() {
     const statsHTML = isQuizable
       ? `<div class="section-card-stats">
            <div class="section-card-stats-main">${stats.goodCount}/${stats.totalRegions}</div>
-           <div class="section-card-stats-sub">67%↑ 達成 (${progress}%)</div>
+           <div class="section-card-stats-sub">60%↑ 達成 (${progress}%)</div>
          </div>`
       : `<div class="section-card-stats">
            <div class="section-card-stats-main" style="color:#86868b">${pages.length}p</div>
@@ -592,9 +590,7 @@ function renderUnitDetail() {
       <div class="section-card-body">
         <div class="section-card-title">${sectionDisplayLabel(sec)}${badge}</div>
         <div class="section-card-meta">${pages.length}ページ${isQuizable ? ` ・ 全${stats.totalRegions}問` : ""}</div>
-        ${isQuizable ? `<div class="section-card-progress">
-          <div class="section-card-progress-fill" style="width: ${progress}%;"></div>
-        </div>` : ""}
+        ${isQuizable ? unitBarHTML({ total: stats.totalRegions, attempted: stats.attempted, good: stats.goodCount, low: stats.attempted - stats.goodCount, unanswered: stats.totalRegions - stats.attempted }) : ""}
       </div>
       ${statsHTML}
     `;
