@@ -807,6 +807,7 @@ function startWsMode(mode) {
   pendingXyz = {};
   document.getElementById("wsmondai-title").textContent = `${currentUnit.id} ${wsmLabel()}`;
   renderXyzTable();
+  restoreWsmTableHeight();
   loadXyzProposals();   // AI正誤提案バナー
   renderWsPages();
   updateWsTabUI();
@@ -920,12 +921,7 @@ function applyProposals() {
   }
   renderXyzTable();
   // 正誤表を広げて全体を見えるようにする
-  const t = document.getElementById("wsm-table");
-  if (t && !t.classList.contains("expanded")) {
-    t.classList.add("expanded");
-    const chev = document.querySelector("#wsm-table-toggle .wsm-table-chev");
-    if (chev) chev.textContent = "△ 閉じる";
-  }
+  setWsmTableHeight(wsmTableMaxH(), false);
   renderProposalBanner("review");
 }
 
@@ -949,6 +945,70 @@ function dismissProposals() {
   currentProposals = null;
   const banner = document.getElementById("wsm-proposal-banner");
   if (banner) banner.style.display = "none";
+}
+
+// ==============================
+// 正誤表の高さ: ドラッグバーで可変（最小〜画面の半分）＋「広げる」は半分まで
+// ==============================
+const WSM_TABLE_MIN_H = 34;
+function wsmTableMaxH() { return Math.max(200, Math.round(window.innerHeight * 0.5)); }   // 画面の半分（非表示時のガード200px）
+function wsmTableDefaultH() { return 64; }
+function getWsmTableEl() { return document.getElementById("wsm-table"); }
+function setWsmTableHeight(h, persist) {
+  const t = getWsmTableEl();
+  if (!t) return;
+  h = Math.max(WSM_TABLE_MIN_H, Math.min(wsmTableMaxH(), Math.round(h)));
+  t.style.maxHeight = h + "px";
+  t.style.height = h + "px";
+  const chev = document.querySelector("#wsm-table-toggle .wsm-table-chev");
+  const big = h >= wsmTableMaxH() - 2;
+  t.classList.toggle("expanded", big);
+  if (chev) chev.textContent = big ? "△ 閉じる" : "▽ 広げる";
+  if (persist) { try { localStorage.setItem("wsm-table-h", String(h)); } catch (e) {} }
+}
+function restoreWsmTableHeight() {
+  let h = wsmTableDefaultH();
+  try { const s = parseInt(localStorage.getItem("wsm-table-h") || "", 10); if (s > 0) h = s; } catch (e) {}
+  setWsmTableHeight(h, false);
+}
+function toggleWsmTableHeight() {
+  const t = getWsmTableEl();
+  if (!t) return;
+  const cur = t.getBoundingClientRect().height;
+  if (cur >= wsmTableMaxH() - 2) setWsmTableHeight(wsmTableDefaultH(), true);
+  else setWsmTableHeight(wsmTableMaxH(), true);
+}
+function initWsmDivider() {
+  const bar = document.getElementById("wsm-divider");
+  const t = getWsmTableEl();
+  if (!bar || !t || bar._init) return;
+  bar._init = true;
+  let startY = 0, startH = 0, dragging = false;
+  const onMove = ev => {
+    if (!dragging) return;
+    ev.preventDefault();
+    setWsmTableHeight(startH + (ev.clientY - startY), false);
+  };
+  const onUp = ev => {
+    if (!dragging) return;
+    dragging = false;
+    bar.classList.remove("dragging");
+    setWsmTableHeight(t.getBoundingClientRect().height, true);
+    window.removeEventListener("pointermove", onMove);
+    window.removeEventListener("pointerup", onUp);
+    window.removeEventListener("pointercancel", onUp);
+  };
+  bar.addEventListener("pointerdown", ev => {
+    ev.preventDefault();
+    dragging = true;
+    startY = ev.clientY;
+    startH = t.getBoundingClientRect().height;
+    bar.classList.add("dragging");
+    try { bar.setPointerCapture(ev.pointerId); } catch (e) {}
+    window.addEventListener("pointermove", onMove, { passive: false });
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
+  });
 }
 
 function markXyz(subId, isCorrect) {
@@ -1781,12 +1841,9 @@ function setupEventListeners() {
   document.getElementById("wsm-print-btn").addEventListener("click", wsmPrint);
   // 正誤表の縦幅トグル（まとめて入力したいとき広げる）
   const wsmToggle = document.getElementById("wsm-table-toggle");
-  if (wsmToggle) wsmToggle.addEventListener("click", () => {
-    const t = document.getElementById("wsm-table");
-    const expanded = t.classList.toggle("expanded");
-    const chev = wsmToggle.querySelector(".wsm-table-chev");
-    if (chev) chev.textContent = expanded ? "△ 閉じる" : "▽ 広げる";
-  });
+  if (wsmToggle) wsmToggle.addEventListener("click", toggleWsmTableHeight);
+  initWsmDivider();
+  restoreWsmTableHeight();
 
   // 閲覧モード（ページめくり）
   document.getElementById("btn-back-reading").addEventListener("click", () => {
@@ -1935,10 +1992,10 @@ init();
 // ==============================
 // Pinch-zoom for canvas-wrapper / reading-wrapper
 // ==============================
-function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
+function attachPinchZoom(wrapperId, contentSelector, fit = "media", minScale = 1, maxScale = 4) {
   const wrapper = document.getElementById(wrapperId);
   if (!wrapper) return;
-  let scale = 1, minScale = 1, maxScale = 4;
+  let scale = 1;
   let startDist = 0, startScale = 1;
   let isPinching = false;
   let baseWidth = 0;
@@ -1973,6 +2030,7 @@ function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
     cvs.style.maxWidth = 'none';
     cvs.style.maxHeight = 'none';
     cvs.style.height = 'auto';
+    if (fit === "container") { cvs.style.marginLeft = "auto"; cvs.style.marginRight = "auto"; }  // 50%縮小時は中央寄せ
     const newCanvasX = ratioX * cvs.offsetWidth;
     const newCanvasY = ratioY * cvs.offsetHeight;
     wrapper.scrollLeft = newCanvasX - (midXClient - wRect.left);
@@ -1983,6 +2041,7 @@ function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
     const cvs = getContent();
     if (!cvs) return;
     scale = 1;
+    cvs.style.marginLeft = ""; cvs.style.marginRight = "";
     if (fit === "container") {
       // 複数画像を縦に積んだコンテナ: 幅100%にフィット（高さは内容なり）
       cvs.style.width = "100%";
@@ -2045,7 +2104,7 @@ function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
   wrapper.addEventListener('touchend', e => {
     if (isPinching && e.touches.length < 2) {
       isPinching = false;
-      if (scale <= 1.05) resetZoom();
+      if (scale > 0.95 && scale < 1.05) resetZoom();   // 100%付近はぴったり戻す（縮小はそのまま保持）
     }
     if (e.touches.length === 0) isPanning = false;
   }, { passive: true });
@@ -2054,7 +2113,7 @@ function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
   wrapper.addEventListener('touchend', e => {
     if (e.touches.length > 0) return;
     const now = Date.now();
-    if (now - lastTap < 300 && scale > 1) {
+    if (now - lastTap < 300 && scale !== 1) {
       resetZoom();
       wrapper.scrollTop = 0;
     }
@@ -2078,4 +2137,4 @@ function attachPinchZoom(wrapperId, contentSelector, fit = "media") {
 attachPinchZoom('canvas-wrapper', '#quiz-canvas');
 attachPinchZoom('reading-wrapper', '#reading-image');
 attachPinchZoom('explain-viewport', '#explain-img');
-attachPinchZoom('wsm-pages', '#wsm-pages-inner', 'container');
+attachPinchZoom('wsm-pages', '#wsm-pages-inner', 'container', 0.5, 2);   // 問題/解答ページは50%〜200%
