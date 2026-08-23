@@ -1,0 +1,15 @@
+{
+ "unit": "単元別確認テストNS-05",
+ "source": "claude-vision",
+ "created": "2026-08-23",
+ "grades": {
+  "MH05問1-(1)": true,
+  "MH05問1-(2)": true,
+  "MH05問2-(1)": false,
+  "MH05問2-(2)": true,
+  "MH05問2-(3)": false,
+  "MH05問4-(1)": true,
+  "MH05問4-(2)": true,
+  "MH05問4-(3)": false
+ }
+}

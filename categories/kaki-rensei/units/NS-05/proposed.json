@@ -1,0 +1,25 @@
+{
+ "unit": "NS-05",
+ "source": "claude-vision",
+ "created": "2026-08-23",
+ "grades": {
+  "Y-JF-(1)": false,
+  "Y-JF-(2)": true,
+  "Y-JF-(3)": false,
+  "Y-JF-(4)": false,
+  "Y-JF-(5)": true,
+  "Y-JF-(6)": false,
+  "Y-WG-(1)": true,
+  "Y-WG-(2)": false,
+  "Y-WG-(3)": false,
+  "Y-WG-(4)": true,
+  "Y-WG-(5)": false,
+  "Y-WG-(6)": false,
+  "Z-KA-(1)": false,
+  "Z-KA-(2)": false,
+  "Z-KA-(3)": false,
+  "Z-KA-(4)": false,
+  "Z-KA-(5)": false,
+  "Z-KA-(6)": false
+ }
+}
