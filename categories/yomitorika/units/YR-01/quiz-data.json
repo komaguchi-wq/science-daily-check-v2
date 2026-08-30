@@ -1,0 +1,79 @@
+{
+ "id": "YR-01",
+ "title": "判断力・分析力特訓",
+ "category": "yomitorika",
+ "pages": [],
+ "xyz": {
+  "label": "判断力・分析力特訓",
+  "questionPages": [
+   "yr_q_01.jpg",
+   "yr_q_02.jpg"
+  ],
+  "answerPages": [
+   "yr_a_01.jpg",
+   "yr_a_02.jpg",
+   "yr_a_03.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "大問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "大問1-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "大問1-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "大問1-(3)",
+      "label": "(3)"
+     }
+    ]
+   },
+   {
+    "id": "大問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "大問2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "大問2-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "大問3",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "大問3-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "大問3-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "大問3-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "大問3-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "大問3-(5)",
+      "label": "(5)"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/yomitorika/YR-01/"
+}

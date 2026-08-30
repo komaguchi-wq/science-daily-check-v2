@@ -405,5 +405,13 @@
    "16": "weekly"
   },
   "xyzCount": 58
+ },
+ {
+  "id": "WS-20",
+  "title": "地震や火山",
+  "subject": "理科",
+  "pageCount": 9,
+  "totalRegions": 0,
+  "xyzCount": 71
  }
 ]

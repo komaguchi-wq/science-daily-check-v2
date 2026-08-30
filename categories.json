@@ -28,5 +28,11 @@
     "name": "夏期集中志望校錬成特訓",
     "icon": "🔥",
     "description": "NS-XX 夏期志望校別特訓 X・Y・Z問題（問題/解答タブ＋正誤表）"
+  },
+  {
+    "id": "yomitorika",
+    "name": "YomitoRIKA",
+    "icon": "🔍",
+    "description": "YomitoRIKA 〜判断力・分析力特訓〜（問題/解答タブ＋正誤表）"
   }
 ]
