@@ -464,10 +464,11 @@ async function openUnit(unit) {
   const res = await fetch(`categories/${currentCategory.id}/units/${unit.id}/quiz-data.json`);
   quizData = await res.json();
   // 正誤表(xyz)のみの単元は単元詳細（カード1枚）を飛ばしてモード選択へ直行
-  const xyzOnly = (!quizData.pages || quizData.pages.length === 0)
-    && quizData.xyz && Array.isArray(quizData.xyz.daimons) && quizData.xyz.daimons.length > 0;
+  //（wsmブロックが複数ある単元＝WS-20コアプラス確認テスト併設等は単元詳細でカード選択）
+  const blocks = wsmBlockList();
+  const xyzOnly = (!quizData.pages || quizData.pages.length === 0) && blocks.length === 1;
   wsmDirect = !!xyzOnly;
-  if (xyzOnly) { openWsMode(); return; }
+  if (xyzOnly) { wsmBlockKey = blocks[0]; openWsMode(); return; }
   renderUnitDetail();
   showScreen("screen-unit-detail");
 }
@@ -510,9 +511,10 @@ function renderUnitDetail() {
   const list = document.getElementById("section-card-list");
   list.innerHTML = "";
 
-  // X・Y・Z問題（デイリーサポート方式）カード（quiz-data.json に xyz があれば先頭に表示）
-  if (quizData.xyz && Array.isArray(quizData.xyz.daimons) && quizData.xyz.daimons.length > 0) {
-    const xyz = quizData.xyz;
+  // 正誤表セグメントカード（X・Y・Z問題／コアプラス確認テスト。quiz-data.json にあれば先頭に表示）
+  wsmBlockList().forEach(bk => {
+    const xyz = quizData[bk];
+    const meta = WSM_BLOCK_META[bk] || WSM_BLOCK_META.xyz;
     let good = 0, total = 0, attempted = 0;
     xyz.daimons.forEach(dm => dm.questions.forEach(q => {
       total++;
@@ -524,18 +526,18 @@ function renderUnitDetail() {
     const card = document.createElement("div");
     card.className = "section-card";
     card.innerHTML = `
-      <div class="section-card-icon">🧪</div>
+      <div class="section-card-icon">${meta.icon}</div>
       <div class="section-card-body">
-        <div class="section-card-title">${xyz.label || "X・Y・Z問題"}</div>
+        <div class="section-card-title">${xyz.label || meta.defaultLabel}</div>
         <div class="section-card-meta">問題${xyz.questionPages.length}ページ ・ 全${total}問</div>${xyzBar}
       </div>
       <div class="section-card-stats">
         <div class="section-card-stats-main">${good}/${total}</div>
         <div class="section-card-stats-sub">60%↑ 達成 (${progress}%)</div>
       </div>`;
-    card.addEventListener("click", openWsMode);
+    card.addEventListener("click", () => { wsmBlockKey = bk; openWsMode(); });
     list.appendChild(card);
-  }
+  });
 
   // ★2026-08-24 ユーザー確定: DS単元（quiz-data.reading あり）は「正誤表」＋「説明文＆ポイントチェック」の2カードだけ。
   //   確認/発展/ポイントチェック/DSの独立カード（旧クイズ方式）は表示しない（データ・コードは残す＝旧○×はAI提案の材料、WS/コアプラスは従来通り）
@@ -751,6 +753,20 @@ let wsmShowingAnswer = false;
 let pendingXyz = {};       // {subId: "correct"|"wrong"} 仮選択
 let xyzIdleTimer = null;
 let wsmDirect = false; // 単元一覧からモード選択へ直行した（戻るは単元一覧へ）
+// ★2026-09-03 wsmブロック一般化: 1単元に複数の正誤表セグメントを持てる
+//   （WS-20〜: X・Y・Z問題 + コアプラス確認テスト）。quiz-data.json のキー名で識別
+const WSM_BLOCK_KEYS = ["xyz", "cptest"];
+const WSM_BLOCK_META = {
+  xyz:    { icon: "🧪", defaultLabel: "X・Y・Z問題" },
+  cptest: { icon: "📗", defaultLabel: "コアプラス確認テスト" },
+};
+let wsmBlockKey = "xyz";   // 現在開いているブロック
+function wsmBlock() { return quizData ? quizData[wsmBlockKey] : null; }
+function wsmBlockList() {
+  if (!quizData) return [];
+  return WSM_BLOCK_KEYS.filter(k =>
+    quizData[k] && Array.isArray(quizData[k].daimons) && quizData[k].daimons.length > 0);
+}
 let wsmFilter = "all";     // all | below50 | below67 | below99 | unanswered
 let wsmFilteredIds = null; // Set of target 小問id（all のとき null）
 
@@ -794,7 +810,7 @@ function xyzSubMatchesMode(subId, mode) {
 function computeWsFilterIds(mode) {
   if (mode === "all") return null;
   const ids = new Set();
-  quizData.xyz.daimons.forEach(dm => dm.questions.forEach(q => {
+  wsmBlock().daimons.forEach(dm => dm.questions.forEach(q => {
     if (xyzSubMatchesMode(q.id, mode)) ids.add(q.id);
   }));
   return ids;
@@ -811,7 +827,7 @@ function openWsMode() {
 
 function wsModeCounts() {
   const counts = { all: 0, below50: 0, below67: 0, below99: 0, unanswered: 0 };
-  quizData.xyz.daimons.forEach(dm => dm.questions.forEach(q => {
+  wsmBlock().daimons.forEach(dm => dm.questions.forEach(q => {
     for (const m of Object.keys(counts)) if (xyzSubMatchesMode(q.id, m)) counts[m]++;
   }));
   return counts;
@@ -836,7 +852,9 @@ function setWsFilter(mode) {
 }
 
 function wsmLabel() {
-  return (quizData && quizData.xyz && quizData.xyz.label) || "X・Y・Z問題";
+  const b = wsmBlock();
+  const meta = WSM_BLOCK_META[wsmBlockKey] || WSM_BLOCK_META.xyz;
+  return (b && b.label) || meta.defaultLabel;
 }
 
 
@@ -859,7 +877,7 @@ function startWsMode(mode) {
 }
 
 function renderXyzTable() {
-  const xyz = quizData.xyz;
+  const xyz = wsmBlock();
   const el = document.getElementById("wsm-table");
   if (!xyz) { el.innerHTML = ""; return; }
   const prevScroll = el.scrollTop;
@@ -907,7 +925,7 @@ async function loadXyzProposals() {
   banner.innerHTML = "";
   proposalReviewMode = false;
   currentProposals = null;
-  if (!currentCategory || !currentUnit || !quizData || !quizData.xyz) return;
+  if (!currentCategory || !currentUnit || !quizData || !wsmBlock()) return;
   const unitKey = `${currentCategory.id}/${currentUnit.id}`;
   if (dismissedProposalUnits.has(unitKey)) return;
   let prop = null;
@@ -923,7 +941,7 @@ async function loadXyzProposals() {
   currentProposalDoneKey = `proposal-done:${currentUser}:${unitKey}:${prop.id || prop.created || ''}:${Object.keys(prop.grades).length}`   // id=提案バッチ固有（同日2枚目でも別扱い）;
   try { if (localStorage.getItem(currentProposalDoneKey) === "1") return; } catch (e) {}
   const validIds = new Set();
-  quizData.xyz.daimons.forEach(dm => dm.questions.forEach(q => validIds.add(q.id)));
+  wsmBlock().daimons.forEach(dm => dm.questions.forEach(q => validIds.add(q.id)));
   const applicable = {};
   for (const qid of Object.keys(prop.grades)) {
     if (!validIds.has(qid)) continue;
@@ -1092,7 +1110,7 @@ function commitXyz() {
 }
 
 function renderWsPages() {
-  const xyz = quizData.xyz;
+  const xyz = wsmBlock();
   const base = unitImagesBase();
   const el = document.getElementById("wsm-pages-inner");
   const q = xyz.questionPages.map((p, i) =>
@@ -1115,7 +1133,7 @@ function renderWsPages() {
 function wsTargetTextForPage(idx, idsSet) {
   if (!idsSet) return "";
   const parts = [];
-  quizData.xyz.daimons.forEach(dm => {
+  wsmBlock().daimons.forEach(dm => {
     if (dm.qpage !== idx) return;
     const subs = dm.questions.filter(q => idsSet.has(q.id));
     if (!subs.length) return;
@@ -1179,7 +1197,7 @@ function drawWsTargetText(ctx, text, W, H) {
 // モード別に問題ページを印刷（対象小問を赤文字で焼き込む）
 async function printWsMode(mode) {
   commitXyz();
-  const xyz = quizData.xyz;
+  const xyz = wsmBlock();
   if (!xyz) return;
   const ids = computeWsFilterIds(mode);
   const base = unitImagesBase();
@@ -1201,7 +1219,7 @@ async function printWsMode(mode) {
 // 問題画面ヘッダーの印刷: 表示中タブを印刷（問題タブは現フィルタの赤文字付き）
 async function wsmPrint() {
   commitXyz();
-  const xyz = quizData.xyz;
+  const xyz = wsmBlock();
   if (!xyz) return;
   if (!wsmShowingAnswer) { return printWsMode(wsmFilter || "all"); }
   const base = unitImagesBase();
@@ -1215,7 +1233,7 @@ async function wsmPrint() {
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
-  _openPrintOverlay(`${currentUnit.id} X・Y・Z解答`, dataURLs);
+  _openPrintOverlay(`${currentUnit.id} ${wsmLabel()} 解答`, dataURLs);
 }
 
 // ==============================

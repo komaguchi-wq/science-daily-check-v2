@@ -1,11 +1,32 @@
 {
  "unit": "WS-20",
  "source": "claude-vision",
- "created": "2026-08-30",
+ "created": "2026-09-03",
  "grades": {
   "Y4-(1)": true,
   "Y4-(2)": false,
   "Y4-(3)": true,
-  "Y4-(4)": false
- }
+  "Y4-(4)": false,
+  "CP-(1)": true,
+  "CP-(2)": true,
+  "CP-(3)": true,
+  "CP-(4)": true,
+  "CP-(5)": true,
+  "CP-(6)": true,
+  "CP-(7)": true,
+  "CP-(8)": false,
+  "CP-(9)": true,
+  "CP-(10)": true,
+  "CP-(11)": true,
+  "CP-(12)": true,
+  "CP-(13)": true,
+  "CP-(14)": true,
+  "CP-(15)": false,
+  "CP-(16)": true,
+  "CP-(17)": true,
+  "CP-(18)": true,
+  "CP-(19)": true,
+  "CP-(20)": true
+ },
+ "id": "cptest-2026-09-03"
 }
