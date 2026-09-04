@@ -884,6 +884,42 @@
     "xyzPrimary": true
   },
   {
+    "id": "630-21",
+    "title": "惑星",
+    "subject": "6年理科 デイリーサピックス",
+    "pageCount": 26,
+    "totalRegions": 334,
+    "sectionRegions": {
+      "kakunin": 103,
+      "hatten": 30,
+      "pointcheck": 137,
+      "dailystep": 64
+    },
+    "sectionPages": {
+      "7": "kakunin",
+      "8": "kakunin",
+      "9": "kakunin",
+      "10": "kakunin",
+      "12": "kakunin",
+      "13": "kakunin",
+      "14": "kakunin",
+      "15": "hatten",
+      "16": "hatten",
+      "17": "pointcheck",
+      "18": "pointcheck",
+      "19": "pointcheck",
+      "20": "pointcheck",
+      "21": "dailystep",
+      "22": "dailystep",
+      "23": "dailystep",
+      "24": "dailystep",
+      "25": "dailystep",
+      "26": "dailystep"
+    },
+    "xyzCount": 142,
+    "xyzPrimary": true
+  },
+  {
     "id": "N63-01",
     "title": "森林と食物連鎖",
     "subject": "6年理科 デイリーサピックス",
