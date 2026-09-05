@@ -2440,7 +2440,7 @@
   ]
  },
  "xyz": {
-  "label": "確認問題・発展問題・デイリーステップ",
+  "label": "確認問題・発展問題",
   "questionPages": [
    "page_07_qmasked.jpg",
    "page_08_qmasked.jpg",
@@ -2450,10 +2450,7 @@
    "page_13_qmasked.jpg",
    "page_14_qmasked.jpg",
    "page_15_qmasked.jpg",
-   "page_16_qmasked.jpg",
-   "spread_01_q.jpg",
-   "spread_02_q.jpg",
-   "spread_03_q.jpg"
+   "page_16_qmasked.jpg"
   ],
   "answerPages": [
    "page_07_answer.jpg",
@@ -2465,9 +2462,6 @@
    "page_14_answer.jpg",
    "page_15_answer.jpg",
    "page_16_answer.jpg",
-   "spread_01_a.jpg",
-   "spread_02_a.jpg",
-   "spread_03_a.jpg",
    "abook_01.jpg",
    "abook_02.jpg",
    "abook_03.jpg",
@@ -2906,10 +2900,58 @@
       "label": "(6)"
      }
     ]
-   },
+   }
+  ],
+  "generatedBy": "seigohyo_rollout",
+  "generatedAt": "2026-09-04",
+  "solvedPages": [
+   "dcans_01.jpg",
+   "dcans_02.jpg",
+   "solved_01.jpg",
+   "solved_02.jpg",
+   "solved_03.jpg",
+   "solved_04.jpg",
+   "solved_05.jpg"
+  ],
+  "abook": {
+   "files": [
+    "abook_01.jpg",
+    "abook_02.jpg",
+    "abook_03.jpg",
+    "abook_04.jpg",
+    "abook_05.jpg",
+    "abook_06.jpg"
+   ],
+   "phys": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "droppedBlank": [],
+   "rot180": false,
+   "pdf": "_scratch/science_v2_intake/630-21_A.pdf",
+   "removedExpl": []
+  }
+ },
+ "ds": {
+  "label": "デイリーステップ",
+  "questionPages": [
+   "spread_01_q.jpg",
+   "spread_02_q.jpg",
+   "spread_03_q.jpg"
+  ],
+  "answerPages": [
+   "spread_01_a.jpg",
+   "spread_02_a.jpg",
+   "spread_03_a.jpg"
+  ],
+  "daimons": [
    {
     "id": "DS1",
-    "qpage": 9,
+    "qpage": 0,
     "questions": [
      {
       "id": "d1-①",
@@ -2955,7 +2997,7 @@
    },
    {
     "id": "DS2",
-    "qpage": 9,
+    "qpage": 0,
     "questions": [
      {
       "id": "d2-①",
@@ -3001,7 +3043,7 @@
    },
    {
     "id": "DS3",
-    "qpage": 10,
+    "qpage": 1,
     "questions": [
      {
       "id": "d3-①",
@@ -3047,7 +3089,7 @@
    },
    {
     "id": "DS4",
-    "qpage": 10,
+    "qpage": 1,
     "questions": [
      {
       "id": "d4-①",
@@ -3093,7 +3135,7 @@
    },
    {
     "id": "DS5",
-    "qpage": 11,
+    "qpage": 2,
     "questions": [
      {
       "id": "d5-①",
@@ -3139,7 +3181,7 @@
    },
    {
     "id": "DS6",
-    "qpage": 11,
+    "qpage": 2,
     "questions": [
      {
       "id": "d6-①",
@@ -3184,17 +3226,7 @@
     ]
    }
   ],
-  "generatedBy": "seigohyo_rollout",
-  "generatedAt": "2026-09-04",
-  "solvedPages": [
-   "dcans_01.jpg",
-   "dcans_02.jpg",
-   "solved_01.jpg",
-   "solved_02.jpg",
-   "solved_03.jpg",
-   "solved_04.jpg",
-   "solved_05.jpg"
-  ],
+  "generatedBy": "split_ds_block.py",
   "spreads": [
    {
     "q": "spread_01_q.jpg",
@@ -3232,29 +3264,7 @@
      "page_26.jpg"
     ]
    }
-  ],
-  "abook": {
-   "files": [
-    "abook_01.jpg",
-    "abook_02.jpg",
-    "abook_03.jpg",
-    "abook_04.jpg",
-    "abook_05.jpg",
-    "abook_06.jpg"
-   ],
-   "phys": [
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-   ],
-   "droppedBlank": [],
-   "rot180": false,
-   "pdf": "_scratch/science_v2_intake/630-21_A.pdf",
-   "removedExpl": []
-  }
+  ]
  },
  "reading": {
   "label": "説明文＆ポイントチェック",
@@ -3320,5 +3330,112 @@
    }
   ]
  },
- "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/daily-check/630-21/"
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/daily-check/630-21/",
+ "cptest": {
+  "label": "コアプラス+確認テスト",
+  "questionPages": [
+   "cp_q_01.jpg",
+   "cp_q_02.jpg"
+  ],
+  "answerPages": [
+   "cp_a_01.jpg",
+   "cp_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "L",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "L-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "L-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "L-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "L-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "L-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "L-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "L-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "L-(8)",
+      "label": "(8)"
+     },
+     {
+      "id": "L-(9)",
+      "label": "(9)"
+     },
+     {
+      "id": "L-(10)",
+      "label": "(10)"
+     }
+    ]
+   },
+   {
+    "id": "M",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "M-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "M-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "M-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "M-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "M-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "M-(6)",
+      "label": "(6)"
+     },
+     {
+      "id": "M-(7)",
+      "label": "(7)"
+     },
+     {
+      "id": "M-(8)",
+      "label": "(8)"
+     },
+     {
+      "id": "M-(9)",
+      "label": "(9)"
+     },
+     {
+      "id": "M-(10)",
+      "label": "(10)"
+     }
+    ]
+   }
+  ],
+  "generatedBy": "process_dc_cptest.py",
+  "generatedAt": "2026-09-06"
+ }
 }
