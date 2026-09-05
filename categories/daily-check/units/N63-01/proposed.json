@@ -1,19 +1,18 @@
 {
- "unit": "N63-06",
+ "unit": "N63-01",
  "source": "claude-vision",
- "created": "2026-09-05",
  "grades": {
-  "k8-(1)": true,
   "CP-(1)": true,
   "CP-(2)": true,
   "CP-(3)": true,
   "CP-(4)": false,
   "CP-(5)": true,
-  "CP-(6)": true,
-  "CP-(7)": true,
+  "CP-(6)": false,
+  "CP-(7)": false,
   "CP-(8)": true,
   "CP-(9)": true,
-  "CP-(10)": true
+  "CP-(10)": false
  },
- "id": "cptest-2026-09-05"
+ "id": "cptest-2026-09-05",
+ "created": "2026-09-05"
 }

@@ -1,7 +1,7 @@
 {
  "unit": "N63-09",
  "source": "claude-vision",
- "created": "2026-08-23",
+ "created": "2026-09-05",
  "grades": {
   "k1-(1)": true,
   "k1-(2)": true,
@@ -16,7 +16,17 @@
   "k3-(3)": false,
   "k3-(4)": false,
   "k4-(1)": true,
-  "k4-(2)": false
+  "k4-(2)": false,
+  "CP-(1)": false,
+  "CP-(2)": false,
+  "CP-(3)": true,
+  "CP-(4)": true,
+  "CP-(5)": true,
+  "CP-(6)": false,
+  "CP-(7)": false,
+  "CP-(8)": true,
+  "CP-(9)": false,
+  "CP-(10)": false
  },
- "id": "2026-08-23-seigo-N63-09"
+ "id": "cptest-2026-09-05"
 }

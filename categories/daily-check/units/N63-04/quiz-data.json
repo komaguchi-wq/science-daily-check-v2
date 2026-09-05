@@ -2659,5 +2659,64 @@
         ]
       }
     ]
+  },
+  "cptest": {
+    "label": "コアプラス確認テスト",
+    "questionPages": [
+      "cp_q_01.jpg"
+    ],
+    "answerPages": [
+      "cp_a_01.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "CP",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "CP-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "CP-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "CP-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "CP-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "CP-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "CP-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "CP-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "CP-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "CP-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "CP-(10)",
+            "label": "(10)"
+          }
+        ]
+      }
+    ],
+    "generatedBy": "process_dc_cptest.py",
+    "generatedAt": "2026-09-05"
   }
 }

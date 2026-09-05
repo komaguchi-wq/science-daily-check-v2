@@ -953,7 +953,7 @@
       "27": "dailystep",
       "28": "dailystep"
     },
-    "xyzCount": 140,
+    "xyzCount": 150,
     "xyzPrimary": true
   },
   {
@@ -989,7 +989,7 @@
       "25": "dailystep",
       "26": "dailystep"
     },
-    "xyzCount": 143,
+    "xyzCount": 153,
     "xyzPrimary": true
   },
   {
@@ -1022,7 +1022,7 @@
       "23": "dailystep",
       "24": "dailystep"
     },
-    "xyzCount": 125,
+    "xyzCount": 135,
     "xyzPrimary": true
   },
   {
@@ -1054,7 +1054,7 @@
       "25": "dailystep",
       "26": "dailystep"
     },
-    "xyzCount": 128,
+    "xyzCount": 138,
     "xyzPrimary": true
   },
   {
@@ -1126,7 +1126,7 @@
       "25": "dailystep",
       "26": "dailystep"
     },
-    "xyzCount": 127,
+    "xyzCount": 137,
     "xyzPrimary": true
   },
   {
@@ -1163,7 +1163,7 @@
       "25": "dailystep",
       "26": "dailystep"
     },
-    "xyzCount": 139,
+    "xyzCount": 149,
     "xyzPrimary": true
   },
   {
@@ -1232,7 +1232,7 @@
       "21": "dailystep",
       "22": "dailystep"
     },
-    "xyzCount": 106,
+    "xyzCount": 116,
     "xyzPrimary": true
   }
 ]
