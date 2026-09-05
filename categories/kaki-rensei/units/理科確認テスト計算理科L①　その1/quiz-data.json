@@ -1,0 +1,94 @@
+{
+ "id": "理科確認テスト計算理科L①　その1",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "1（てこ）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "1（てこ）-①",
+      "label": "①"
+     },
+     {
+      "id": "1（てこ）-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "2（滑車）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "2（滑車）-①",
+      "label": "①"
+     },
+     {
+      "id": "2（滑車）-②",
+      "label": "②"
+     },
+     {
+      "id": "2（滑車）-③",
+      "label": "③"
+     }
+    ]
+   },
+   {
+    "id": "3（浮力）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "3（浮力）-①",
+      "label": "①"
+     },
+     {
+      "id": "3（浮力）-②",
+      "label": "②"
+     },
+     {
+      "id": "3（浮力）-③",
+      "label": "③"
+     },
+     {
+      "id": "3（浮力）-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "4（光）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "4（光）-①",
+      "label": "①"
+     },
+     {
+      "id": "4（光）-②エ",
+      "label": "②エ"
+     },
+     {
+      "id": "4（光）-②オ",
+      "label": "②オ"
+     },
+     {
+      "id": "4（光）-②カ",
+      "label": "②カ"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/kaki-rensei/理科確認テスト計算理科L①　その1/"
+}
