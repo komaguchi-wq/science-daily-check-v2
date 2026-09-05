@@ -1,417 +1,615 @@
 [
- {
-  "id": "WS-01",
-  "title": "水の三態と熱 / 知識の総完成 第1回 植物①",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 124,
-  "sectionRegions": {
-   "weekly": 124
+  {
+    "id": "WS-01",
+    "title": "水の三態と熱 / 知識の総完成 第1回 植物①",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 124,
+    "sectionRegions": {
+      "weekly": 124
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 52,
+    "pageRegionCounts": {
+      "1": 27,
+      "2": 20,
+      "3": 19,
+      "4": 19,
+      "5": 11,
+      "6": 15,
+      "7": 7,
+      "8": 6
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-02",
+    "title": "植物のつくり / 知識の総完成 第2回 植物②",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 147,
+    "sectionRegions": {
+      "weekly": 147
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 51,
+    "pageRegionCounts": {
+      "1": 22,
+      "2": 27,
+      "3": 18,
+      "4": 12,
+      "5": 15,
+      "6": 19,
+      "7": 13,
+      "8": 21
+    }
   },
-  "xyzCount": 52
- },
- {
-  "id": "WS-02",
-  "title": "植物のつくり / 知識の総完成 第2回 植物②",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 147,
-  "sectionRegions": {
-   "weekly": 147
+  {
+    "id": "WS-03",
+    "title": "花と受粉 / 知識の総完成 第3回 植物③",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 161,
+    "sectionRegions": {
+      "weekly": 161
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 46,
+    "pageRegionCounts": {
+      "1": 26,
+      "2": 23,
+      "3": 20,
+      "4": 8,
+      "5": 17,
+      "6": 21,
+      "7": 22,
+      "8": 24
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-04",
+    "title": "岩石 / 知識の総完成 第4回 植物④",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 111,
+    "sectionRegions": {
+      "weekly": 111
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 49,
+    "pageRegionCounts": {
+      "1": 15,
+      "2": 16,
+      "3": 9,
+      "4": 13,
+      "5": 13,
+      "6": 16,
+      "7": 14,
+      "8": 15
+    }
   },
-  "xyzCount": 51
- },
- {
-  "id": "WS-03",
-  "title": "花と受粉 / 知識の総完成 第3回 植物③",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 161,
-  "sectionRegions": {
-   "weekly": 161
+  {
+    "id": "WS-05",
+    "title": "人体（分化） / 知識の総完成 第5回 動物① 人体①",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 183,
+    "sectionRegions": {
+      "weekly": 183
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 46,
+    "pageRegionCounts": {
+      "1": 27,
+      "2": 16,
+      "3": 31,
+      "4": 15,
+      "5": 20,
+      "6": 50,
+      "7": 15,
+      "8": 9
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-06",
+    "title": "動物の分類 / 知識の総完成 第6回 動物② 人体②",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 89,
+    "sectionRegions": {
+      "weekly": 89
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 62,
+    "pageRegionCounts": {
+      "1": 16,
+      "2": 19,
+      "3": 5,
+      "4": 13,
+      "5": 4,
+      "6": 11,
+      "7": 14,
+      "8": 7
+    }
   },
-  "xyzCount": 46
- },
- {
-  "id": "WS-04",
-  "title": "岩石 / 知識の総完成 第4回 植物④",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 111,
-  "sectionRegions": {
-   "weekly": 111
+  {
+    "id": "WS-07",
+    "title": "電流と方位磁針 / 知識の総完成 第7回 動物③",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 200,
+    "sectionRegions": {
+      "weekly": 200
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 47,
+    "pageRegionCounts": {
+      "1": 24,
+      "2": 18,
+      "3": 26,
+      "4": 25,
+      "5": 40,
+      "6": 27,
+      "7": 24,
+      "8": 16
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-08",
+    "title": "星の知識 / 知識の総完成 第8回 動物④ 食物連鎖",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 157,
+    "sectionRegions": {
+      "weekly": 157
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 74,
+    "pageRegionCounts": {
+      "1": 12,
+      "2": 24,
+      "3": 15,
+      "4": 23,
+      "5": 24,
+      "6": 18,
+      "7": 15,
+      "8": 26
+    }
   },
-  "xyzCount": 49
- },
- {
-  "id": "WS-05",
-  "title": "人体（分化） / 知識の総完成 第5回 動物① 人体①",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 183,
-  "sectionRegions": {
-   "weekly": 183
+  {
+    "id": "WS-09",
+    "title": "気体の発生計算・金属の燃焼計算 / 知識の総完成 第9回 化学① 水溶液",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 154,
+    "sectionRegions": {
+      "weekly": 154
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 58,
+    "pageRegionCounts": {
+      "1": 67,
+      "2": 17,
+      "3": 10,
+      "4": 19,
+      "5": 12,
+      "6": 12,
+      "7": 11,
+      "8": 6
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-10",
+    "title": "てこ / 知識の総完成 第10回 化学② 気体",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 183,
+    "sectionRegions": {
+      "weekly": 183
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 48,
+    "pageRegionCounts": {
+      "1": 16,
+      "2": 19,
+      "3": 20,
+      "4": 19,
+      "5": 12,
+      "6": 22,
+      "7": 46,
+      "8": 29
+    }
   },
-  "xyzCount": 46
- },
- {
-  "id": "WS-06",
-  "title": "動物の分類 / 知識の総完成 第6回 動物② 人体②",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 89,
-  "sectionRegions": {
-   "weekly": 89
+  {
+    "id": "WS-11",
+    "title": "ろうそくと燃焼 / 知識の総完成 第11回 化学③ 燃焼",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 177,
+    "sectionRegions": {
+      "weekly": 177
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 52,
+    "pageRegionCounts": {
+      "1": 13,
+      "2": 10,
+      "3": 28,
+      "4": 19,
+      "5": 22,
+      "6": 18,
+      "7": 22,
+      "8": 45
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-12",
+    "title": "濃度 / 知識の総完成 第12回 化学④ 熱",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 157,
+    "sectionRegions": {
+      "weekly": 157
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 51,
+    "pageRegionCounts": {
+      "1": 20,
+      "2": 18,
+      "3": 21,
+      "4": 20,
+      "5": 23,
+      "6": 23,
+      "7": 19,
+      "8": 13
+    }
   },
-  "xyzCount": 62
- },
- {
-  "id": "WS-07",
-  "title": "電流と方位磁針 / 知識の総完成 第7回 動物③",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 200,
-  "sectionRegions": {
-   "weekly": 200
+  {
+    "id": "WS-13",
+    "title": "WS-12の復習 / 知識の総完成 第13回 地学① 星と月",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 281,
+    "sectionRegions": {
+      "weekly": 281
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 43,
+    "pageRegionCounts": {
+      "1": 32,
+      "2": 35,
+      "3": 34,
+      "4": 43,
+      "5": 43,
+      "6": 35,
+      "7": 32,
+      "8": 27
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-14",
+    "title": "音 / 知識の総完成 第14回 地学② 太陽",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 181,
+    "sectionRegions": {
+      "weekly": 181
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 59,
+    "pageRegionCounts": {
+      "1": 23,
+      "2": 23,
+      "3": 26,
+      "4": 17,
+      "5": 42,
+      "6": 12,
+      "7": 19,
+      "8": 19
+    }
   },
-  "xyzCount": 47
- },
- {
-  "id": "WS-08",
-  "title": "星の知識 / 知識の総完成 第8回 動物④ 食物連鎖",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 157,
-  "sectionRegions": {
-   "weekly": 157
+  {
+    "id": "WS-15",
+    "title": "磁石 / 知識の総完成 第15回 地学③ 気象",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 136,
+    "sectionRegions": {
+      "weekly": 136
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 44,
+    "pageRegionCounts": {
+      "1": 27,
+      "2": 15,
+      "3": 18,
+      "4": 11,
+      "5": 25,
+      "6": 19,
+      "7": 12,
+      "8": 9
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-16",
+    "title": "WS-16 月 / 知識の総完成 第16回 地学④ 地層と岩石",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 184,
+    "sectionRegions": {
+      "weekly": 184
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 48,
+    "pageRegionCounts": {
+      "1": 22,
+      "2": 27,
+      "3": 23,
+      "4": 35,
+      "5": 24,
+      "6": 19,
+      "7": 21,
+      "8": 13
+    }
   },
-  "xyzCount": 74
- },
- {
-  "id": "WS-09",
-  "title": "気体の発生計算・金属の燃焼計算 / 知識の総完成 第9回 化学① 水溶液",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 154,
-  "sectionRegions": {
-   "weekly": 154
+  {
+    "id": "WS-17",
+    "title": "WS-17 電熱線 / 知識の総完成 第17回 物理① 電気と磁気",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 208,
+    "sectionRegions": {
+      "weekly": 208
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 51,
+    "pageRegionCounts": {
+      "1": 29,
+      "2": 37,
+      "3": 29,
+      "4": 17,
+      "5": 35,
+      "6": 29,
+      "7": 17,
+      "8": 15
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
+  {
+    "id": "WS-18",
+    "title": "WS-18 滑車と輪軸 / 知識の総完成 第18回 物理② 光と音",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 124,
+    "sectionRegions": {
+      "weekly": 124
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly"
+    },
+    "xyzCount": 54,
+    "pageRegionCounts": {
+      "1": 26,
+      "2": 15,
+      "3": 11,
+      "4": 8,
+      "5": 16,
+      "6": 15,
+      "7": 16,
+      "8": 17
+    }
   },
-  "xyzCount": 58
- },
- {
-  "id": "WS-10",
-  "title": "てこ / 知識の総完成 第10回 化学② 気体",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 183,
-  "sectionRegions": {
-   "weekly": 183
+  {
+    "id": "WS-19",
+    "title": "WS-19 浮力 / 知識の総完成 第19回 物理③ 力学",
+    "subject": "理科",
+    "pageCount": 16,
+    "totalRegions": 345,
+    "sectionRegions": {
+      "weekly": 345
+    },
+    "sectionPages": {
+      "1": "weekly",
+      "2": "weekly",
+      "3": "weekly",
+      "4": "weekly",
+      "5": "weekly",
+      "6": "weekly",
+      "7": "weekly",
+      "8": "weekly",
+      "9": "weekly",
+      "10": "weekly",
+      "11": "weekly",
+      "12": "weekly",
+      "13": "weekly",
+      "14": "weekly",
+      "15": "weekly",
+      "16": "weekly"
+    },
+    "xyzCount": 58,
+    "pageRegionCounts": {
+      "1": 16,
+      "2": 16,
+      "3": 32,
+      "4": 22,
+      "5": 15,
+      "6": 38,
+      "7": 40,
+      "8": 28,
+      "9": 22,
+      "10": 14,
+      "11": 13,
+      "12": 16,
+      "13": 12,
+      "14": 26,
+      "15": 15,
+      "16": 20
+    }
   },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 48
- },
- {
-  "id": "WS-11",
-  "title": "ろうそくと燃焼 / 知識の総完成 第11回 化学③ 燃焼",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 177,
-  "sectionRegions": {
-   "weekly": 177
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 52
- },
- {
-  "id": "WS-12",
-  "title": "濃度 / 知識の総完成 第12回 化学④ 熱",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 157,
-  "sectionRegions": {
-   "weekly": 157
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 51
- },
- {
-  "id": "WS-13",
-  "title": "WS-12の復習 / 知識の総完成 第13回 地学① 星と月",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 281,
-  "sectionRegions": {
-   "weekly": 281
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 43
- },
- {
-  "id": "WS-14",
-  "title": "音 / 知識の総完成 第14回 地学② 太陽",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 181,
-  "sectionRegions": {
-   "weekly": 181
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 59
- },
- {
-  "id": "WS-15",
-  "title": "磁石 / 知識の総完成 第15回 地学③ 気象",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 136,
-  "sectionRegions": {
-   "weekly": 136
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 44
- },
- {
-  "id": "WS-16",
-  "title": "WS-16 月 / 知識の総完成 第16回 地学④ 地層と岩石",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 184,
-  "sectionRegions": {
-   "weekly": 184
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 48
- },
- {
-  "id": "WS-17",
-  "title": "WS-17 電熱線 / 知識の総完成 第17回 物理① 電気と磁気",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 208,
-  "sectionRegions": {
-   "weekly": 208
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 51
- },
- {
-  "id": "WS-18",
-  "title": "WS-18 滑車と輪軸 / 知識の総完成 第18回 物理② 光と音",
-  "subject": "理科",
-  "pageCount": 8,
-  "totalRegions": 124,
-  "sectionRegions": {
-   "weekly": 124
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly"
-  },
-  "xyzCount": 54
- },
- {
-  "id": "WS-19",
-  "title": "WS-19 浮力 / 知識の総完成 第19回 物理③ 力学",
-  "subject": "理科",
-  "pageCount": 16,
-  "totalRegions": 345,
-  "sectionRegions": {
-   "weekly": 345
-  },
-  "sectionPages": {
-   "1": "weekly",
-   "2": "weekly",
-   "3": "weekly",
-   "4": "weekly",
-   "5": "weekly",
-   "6": "weekly",
-   "7": "weekly",
-   "8": "weekly",
-   "9": "weekly",
-   "10": "weekly",
-   "11": "weekly",
-   "12": "weekly",
-   "13": "weekly",
-   "14": "weekly",
-   "15": "weekly",
-   "16": "weekly"
-  },
-  "xyzCount": 58
- },
- {
-  "id": "WS-20",
-  "title": "地震や火山",
-  "subject": "理科",
-  "pageCount": 9,
-  "totalRegions": 0,
-  "xyzCount": 91
- }
+  {
+    "id": "WS-20",
+    "title": "地震や火山",
+    "subject": "理科",
+    "pageCount": 9,
+    "totalRegions": 0,
+    "xyzCount": 91
+  }
 ]

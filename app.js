@@ -119,6 +119,24 @@ function getUnitStats(unitId) {
 // セクション情報は units.json の sectionRegions / sectionPages（無い単元は自動で全問数へフォールバック）
 const UNIT_CARD_SECTIONS = ["kakunin", "hatten", "dailystep"];
 const GOOD_RATE = 0.6;   // ★単元カードの緑=小問の正答率60%以上（2026-08-23 ユーザー確定・全アプリ共通）
+
+// 記録キーが現行の問題に実在するか。過去の region 再検出や同期キーの日付化け復元で
+// localStorage に残った「孤児キー」を集計から外す（孤児を数えると attempted/good が
+// 分母超過 → クランプで「解けば全緑」になり単元詳細と緑/黄がずれる。社会v2と同修正）。
+// pageRegionCounts が無い単元（未移行・新規追加直後）は従来通り全キー集計にフォールバック。
+function makeLiveKeyCheck(unit) {
+  const prc = unit.pageRegionCounts || null;
+  const furi = unit.furiganaKeys && unit.furiganaKeys.length ? new Set(unit.furiganaKeys) : null;
+  return (key) => {
+    if (furi && furi.has(key)) return false;
+    if (!prc) return true;
+    const i = key.lastIndexOf("-");
+    if (i < 0) return false;
+    const idx = Number(key.slice(i + 1));
+    return Number.isInteger(idx) && idx >= 0 && idx < prc[key.slice(0, i)];
+  };
+}
+
 function getUnitProgress(unit) {
   const sr = unit.sectionRegions || null;
   const filtered = !!(sr && UNIT_CARD_SECTIONS.some(s => sr[s] > 0));
@@ -138,10 +156,12 @@ function getUnitProgress(unit) {
   const pageSections = unit.sectionPages || {};
   const unitData = getTracking()[unit.id] || {};
   let attempted = 0, good = 0;
+  const isLiveKey = makeLiveKeyCheck(unit);
   for (const key in unitData) {
     if (key.startsWith("xyz-")) continue; // X/Y/Z問題は単元一覧の進捗に含めない
     const t = unitData[key];
     if (!t || !(t.attempts > 0)) continue;
+    if (!isLiveKey(key)) continue;
     if (filtered) {
       const pageId = key.slice(0, key.lastIndexOf("-"));
       if (UNIT_CARD_SECTIONS.indexOf(pageSections[pageId]) < 0) continue;
