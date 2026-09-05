@@ -1,1 +1,15 @@
-{"unit": "YR-02", "source": "claude-vision", "created": "2026-09-05", "grades": {"大問1-(1)": false, "大問1-(2)": true, "大問1-(3)": true}, "id": "wsm-2026-09-05"}
+{
+ "unit": "YR-02",
+ "id": "2026-09-05-seigo-YR-02",
+ "source": "20260905223603_001_理科YomitoRIKA02(判断力・分析力特訓).pdf",
+ "created": "2026-09-05",
+ "grades": {
+  "大問1-(1)": false,
+  "大問1-(2)": true,
+  "大問1-(3)": true,
+  "大問2-(1)": false,
+  "大問2-(2)": true,
+  "大問3-(1)": false,
+  "大問3-(2)": false
+ }
+}
