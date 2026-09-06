@@ -34,5 +34,11 @@
     "name": "YomitoRIKA",
     "icon": "🔍",
     "description": "YomitoRIKA 〜判断力・分析力特訓〜（問題/解答タブ＋正誤表）"
+  },
+  {
+    "id": "ss-tokkun",
+    "name": "SS特訓",
+    "icon": "🎯",
+    "description": "SS特訓（Sunday Sapix志望校別特訓）理科（問題/解答タブ＋正誤表）"
   }
 ]

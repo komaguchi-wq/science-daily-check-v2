@@ -1,0 +1,100 @@
+{
+ "id": "昼テスト-01",
+ "title": "SS-YomitoRIKA その①",
+ "category": "ss-tokkun",
+ "pages": [],
+ "xyz": {
+  "label": "昼テスト",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg",
+   "st_a_03.jpg",
+   "st_a_04.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "L",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "L-(1)A",
+      "label": "(1)A"
+     },
+     {
+      "id": "L-(1)B",
+      "label": "(1)B"
+     },
+     {
+      "id": "L-(1)C",
+      "label": "(1)C"
+     },
+     {
+      "id": "L-(1)D",
+      "label": "(1)D"
+     },
+     {
+      "id": "L-(1)E",
+      "label": "(1)E"
+     },
+     {
+      "id": "L-(1)F",
+      "label": "(1)F"
+     },
+     {
+      "id": "L-(2)G",
+      "label": "(2)G"
+     },
+     {
+      "id": "L-(2)H",
+      "label": "(2)H"
+     },
+     {
+      "id": "L-(2)I",
+      "label": "(2)I"
+     }
+    ]
+   },
+   {
+    "id": "H・応用",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H・応用-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "H・応用-(2)",
+      "label": "(2)"
+     }
+    ]
+   },
+   {
+    "id": "H・半減期",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H・半減期-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "H・半減期-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "H・半減期-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "H・半減期-(2)②",
+      "label": "(2)②"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/昼テスト-01/"
+}

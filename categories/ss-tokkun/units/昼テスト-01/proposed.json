@@ -1,0 +1,22 @@
+{
+ "unit": "昼テスト-01",
+ "source": "claude-vision",
+ "created": "2026-09-06",
+ "grades": {
+  "L-(1)A": true,
+  "L-(1)B": true,
+  "L-(1)C": true,
+  "L-(1)D": false,
+  "L-(1)E": true,
+  "L-(1)F": true,
+  "L-(2)G": true,
+  "L-(2)H": true,
+  "L-(2)I": true,
+  "H・応用-(1)": false,
+  "H・応用-(2)": false,
+  "H・半減期-(1)①": true,
+  "H・半減期-(1)②": false,
+  "H・半減期-(2)①": true,
+  "H・半減期-(2)②": true
+ }
+}
