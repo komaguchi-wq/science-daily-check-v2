@@ -3,38 +3,318 @@
  "title": "化学① 気体",
  "category": "ss-tokkun",
  "pages": [],
- "xyz": {
-  "label": "X・Y・Z問題",
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/SS-01/",
+ "chishiki": {
+  "label": "知識の総完成＆基礎演習",
   "questionPages": [
-   "st_q_01.jpg",
-   "st_q_02.jpg",
+   "kiso_q_01.jpg",
    "st_q_03.jpg",
-   "st_q_04.jpg",
-   "st_q_05.jpg",
-   "st_q_06.jpg",
-   "st_q_07.jpg",
-   "st_q_08.jpg",
-   "st_q_09.jpg",
-   "st_q_10.jpg",
-   "st_q_11.jpg",
-   "st_q_12.jpg",
-   "st_q_13.jpg",
-   "st_q_14.jpg",
-   "st_q_15.jpg"
+   "st_q_04.jpg"
   ],
   "answerPages": [
-   "st_a_01.jpg",
+   "kiso_a_01.jpg",
    "st_a_02.jpg",
-   "st_a_03.jpg",
-   "st_a_04.jpg",
-   "st_a_05.jpg",
    "st_a_06.jpg",
    "st_a_07.jpg"
   ],
   "daimons": [
    {
+    "id": "A1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "A1-1",
+      "label": "1"
+     },
+     {
+      "id": "A1-2",
+      "label": "2"
+     },
+     {
+      "id": "A1-3",
+      "label": "3"
+     },
+     {
+      "id": "A1-4",
+      "label": "4"
+     },
+     {
+      "id": "A1-5",
+      "label": "5"
+     },
+     {
+      "id": "A1-6",
+      "label": "6"
+     },
+     {
+      "id": "A1-7",
+      "label": "7"
+     },
+     {
+      "id": "A1-8",
+      "label": "8"
+     },
+     {
+      "id": "A1-9",
+      "label": "9"
+     },
+     {
+      "id": "A1-10",
+      "label": "10"
+     },
+     {
+      "id": "A1-11",
+      "label": "11"
+     },
+     {
+      "id": "A1-12",
+      "label": "12"
+     },
+     {
+      "id": "A1-13",
+      "label": "13"
+     },
+     {
+      "id": "A1-14",
+      "label": "14"
+     },
+     {
+      "id": "A1-15",
+      "label": "15"
+     },
+     {
+      "id": "A1-16",
+      "label": "16"
+     },
+     {
+      "id": "A1-17",
+      "label": "17"
+     },
+     {
+      "id": "A1-18",
+      "label": "18"
+     },
+     {
+      "id": "A1-19",
+      "label": "19"
+     },
+     {
+      "id": "A1-20",
+      "label": "20"
+     },
+     {
+      "id": "A1-21",
+      "label": "21"
+     },
+     {
+      "id": "A1-22",
+      "label": "22"
+     },
+     {
+      "id": "A1-23",
+      "label": "23"
+     },
+     {
+      "id": "A1-24",
+      "label": "24"
+     },
+     {
+      "id": "A1-25",
+      "label": "25"
+     },
+     {
+      "id": "A1-26",
+      "label": "26"
+     },
+     {
+      "id": "A1-27",
+      "label": "27"
+     },
+     {
+      "id": "A1-28",
+      "label": "28"
+     },
+     {
+      "id": "A1-29",
+      "label": "29"
+     },
+     {
+      "id": "A1-30",
+      "label": "30"
+     },
+     {
+      "id": "A1-31",
+      "label": "31"
+     },
+     {
+      "id": "A1-32",
+      "label": "32"
+     },
+     {
+      "id": "A1-33",
+      "label": "33"
+     },
+     {
+      "id": "A1-34",
+      "label": "34"
+     }
+    ],
+    "label": "A・1 いろいろな気体の性質"
+   },
+   {
+    "id": "A2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "A2-35",
+      "label": "35"
+     },
+     {
+      "id": "A2-36",
+      "label": "36"
+     },
+     {
+      "id": "A2-37",
+      "label": "37"
+     },
+     {
+      "id": "A2-38",
+      "label": "38"
+     }
+    ],
+    "label": "A・2 空気の成分"
+   },
+   {
+    "id": "A3",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "A3-39",
+      "label": "39"
+     },
+     {
+      "id": "A3-40",
+      "label": "40"
+     },
+     {
+      "id": "A3-41",
+      "label": "41"
+     },
+     {
+      "id": "A3-42",
+      "label": "42"
+     },
+     {
+      "id": "A3-43",
+      "label": "43"
+     },
+     {
+      "id": "A3-44",
+      "label": "44"
+     },
+     {
+      "id": "A3-45",
+      "label": "45"
+     },
+     {
+      "id": "A3-46",
+      "label": "46"
+     },
+     {
+      "id": "A3-47",
+      "label": "47"
+     },
+     {
+      "id": "A3-48",
+      "label": "48"
+     },
+     {
+      "id": "A3-49",
+      "label": "49"
+     },
+     {
+      "id": "A3-50",
+      "label": "50"
+     },
+     {
+      "id": "A3-51",
+      "label": "51"
+     }
+    ],
+    "label": "A・3 水素の発生"
+   },
+   {
+    "id": "A4",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "A4-52",
+      "label": "52"
+     },
+     {
+      "id": "A4-53",
+      "label": "53"
+     },
+     {
+      "id": "A4-54",
+      "label": "54"
+     },
+     {
+      "id": "A4-55",
+      "label": "55"
+     },
+     {
+      "id": "A4-56",
+      "label": "56"
+     }
+    ],
+    "label": "A・4 酸素の発生"
+   },
+   {
+    "id": "A5",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "A5-57",
+      "label": "57"
+     },
+     {
+      "id": "A5-58",
+      "label": "58"
+     },
+     {
+      "id": "A5-59",
+      "label": "59"
+     },
+     {
+      "id": "A5-60",
+      "label": "60"
+     },
+     {
+      "id": "A5-61",
+      "label": "61"
+     }
+    ],
+    "label": "A・5 二酸化炭素の発生"
+   },
+   {
+    "id": "A6",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "A6-62",
+      "label": "62"
+     },
+     {
+      "id": "A6-63",
+      "label": "63"
+     }
+    ],
+    "label": "A・6 気体を発生・捕集する実験"
+   },
+   {
     "id": "B",
-    "qpage": 2,
+    "qpage": 1,
     "questions": [
      {
       "id": "B-(1)",
@@ -76,11 +356,12 @@
       "id": "B-(10)",
       "label": "(10)"
      }
-    ]
+    ],
+    "label": "B 基礎演習"
    },
    {
     "id": "C",
-    "qpage": 3,
+    "qpage": 2,
     "questions": [
      {
       "id": "C-(1)",
@@ -122,11 +403,37 @@
       "id": "C-(10)",
       "label": "(10)"
      }
-    ]
-   },
+    ],
+    "label": "C 基礎演習"
+   }
+  ]
+ },
+ "xyz": {
+  "label": "X・Y・Z問題",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_05.jpg",
+   "st_q_06.jpg",
+   "st_q_07.jpg",
+   "st_q_08.jpg",
+   "st_q_09.jpg",
+   "st_q_10.jpg",
+   "st_q_11.jpg",
+   "st_q_12.jpg",
+   "st_q_13.jpg",
+   "st_q_14.jpg",
+   "st_q_15.jpg"
+  ],
+  "answerPages": [
+   "st_a_02.jpg",
+   "st_a_03.jpg",
+   "st_a_04.jpg",
+   "st_a_05.jpg"
+  ],
+  "daimons": [
    {
     "id": "X1",
-    "qpage": 4,
+    "qpage": 1,
     "questions": [
      {
       "id": "X1-(1)",
@@ -148,7 +455,7 @@
    },
    {
     "id": "X2",
-    "qpage": 4,
+    "qpage": 1,
     "questions": [
      {
       "id": "X2-(1)",
@@ -182,7 +489,7 @@
    },
    {
     "id": "X3",
-    "qpage": 5,
+    "qpage": 2,
     "questions": [
      {
       "id": "X3-(1)",
@@ -228,7 +535,7 @@
    },
    {
     "id": "X4",
-    "qpage": 6,
+    "qpage": 3,
     "questions": [
      {
       "id": "X4-(1)",
@@ -262,7 +569,7 @@
    },
    {
     "id": "X5",
-    "qpage": 6,
+    "qpage": 3,
     "questions": [
      {
       "id": "X5-(1)",
@@ -288,7 +595,7 @@
    },
    {
     "id": "X6",
-    "qpage": 7,
+    "qpage": 4,
     "questions": [
      {
       "id": "X6-(1)",
@@ -334,7 +641,7 @@
    },
    {
     "id": "X7",
-    "qpage": 8,
+    "qpage": 5,
     "questions": [
      {
       "id": "X7-(1)",
@@ -372,7 +679,7 @@
    },
    {
     "id": "X8",
-    "qpage": 8,
+    "qpage": 5,
     "questions": [
      {
       "id": "X8-(1)",
@@ -406,7 +713,7 @@
    },
    {
     "id": "Y1",
-    "qpage": 9,
+    "qpage": 6,
     "questions": [
      {
       "id": "Y1-(1)",
@@ -428,7 +735,7 @@
    },
    {
     "id": "Y2",
-    "qpage": 9,
+    "qpage": 6,
     "questions": [
      {
       "id": "Y2-(1)",
@@ -446,7 +753,7 @@
    },
    {
     "id": "Y3",
-    "qpage": 10,
+    "qpage": 7,
     "questions": [
      {
       "id": "Y3-(1)",
@@ -472,7 +779,7 @@
    },
    {
     "id": "Y4",
-    "qpage": 10,
+    "qpage": 7,
     "questions": [
      {
       "id": "Y4-(1)",
@@ -494,7 +801,7 @@
    },
    {
     "id": "Z",
-    "qpage": 11,
+    "qpage": 8,
     "questions": [
      {
       "id": "Z-(1)",
@@ -547,6 +854,5 @@
     ]
    }
   ]
- },
- "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/SS-01/"
+ }
 }
