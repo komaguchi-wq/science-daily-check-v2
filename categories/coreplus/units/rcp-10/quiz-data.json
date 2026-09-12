@@ -2,7 +2,8 @@
   "id": "rcp-10",
   "title": "第I部 身のまわりの理科 第10節 花と受粉",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -159,12 +160,237 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "136",
+        "label": "136",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "136",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "137",
+        "label": "137",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "137",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "138",
+        "label": "138",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "138",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "139",
+        "label": "139",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "139-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "139-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "139-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "139-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "140",
+        "label": "140",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "140-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "140-⑥",
+            "label": "⑥",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "141",
+        "label": "141",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "141",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "142",
+        "label": "142",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "142",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "143",
+        "label": "143",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "143",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "144",
+        "label": "144",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "144-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "145",
+        "label": "145",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "145-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "145-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "146",
+        "label": "146",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "146",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "147",
+        "label": "147",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "147-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "147-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "148",
+        "label": "148",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "148",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "149",
+        "label": "149",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "149-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "149-B",
+            "label": "B",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "150",
+        "label": "150",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "150",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

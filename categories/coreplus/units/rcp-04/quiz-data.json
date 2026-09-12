@@ -2,7 +2,8 @@
   "id": "rcp-04",
   "title": "第I部 身のまわりの理科 第4節 火山と化石",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -141,12 +142,222 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "46",
+        "label": "46",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "46",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "47",
+        "label": "47",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "47",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "48",
+        "label": "48",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "48",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "49",
+        "label": "49",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "49",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "50",
+        "label": "50",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "50-て",
+            "label": "て",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "51",
+        "label": "51",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "51",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "52",
+        "label": "52",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "52",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "53",
+        "label": "53",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "53",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "54",
+        "label": "54",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "54-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "54-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "55",
+        "label": "55",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "55-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "56",
+        "label": "56",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "56",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "57",
+        "label": "57",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "57",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "58",
+        "label": "58",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "58-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "58-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "59",
+        "label": "59",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "59",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "60",
+        "label": "60",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "60-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "60-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "60-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

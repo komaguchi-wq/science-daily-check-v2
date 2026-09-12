@@ -2,7 +2,8 @@
   "id": "rcp-20",
   "title": "第II部 第4章 生物 第1節 植物",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -796,17 +797,911 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg",
+      "page_05_masked.jpg",
+      "page_06_masked.jpg",
+      "page_07_masked.jpg",
+      "page_08_masked.jpg",
+      "page_09_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg",
+      "page_05.jpg",
+      "page_06.jpg",
+      "page_07.jpg",
+      "page_08.jpg",
+      "page_09.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "454",
+        "label": "454",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "454-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "454-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "454-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "454-E",
+            "label": "E",
+            "group": ""
+          },
+          {
+            "id": "454-F",
+            "label": "F",
+            "group": ""
+          },
+          {
+            "id": "454-G",
+            "label": "G",
+            "group": ""
+          },
+          {
+            "id": "454-H",
+            "label": "H",
+            "group": ""
+          },
+          {
+            "id": "454-J",
+            "label": "J",
+            "group": ""
+          },
+          {
+            "id": "454-K",
+            "label": "K",
+            "group": ""
+          },
+          {
+            "id": "454-L",
+            "label": "L",
+            "group": ""
+          },
+          {
+            "id": "454-M",
+            "label": "M",
+            "group": ""
+          },
+          {
+            "id": "454-N",
+            "label": "N",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "455",
+        "label": "455",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "455-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "455-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "455-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "455-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "455-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "455-⑥",
+            "label": "⑥",
+            "group": ""
+          },
+          {
+            "id": "455-⑦",
+            "label": "⑦",
+            "group": ""
+          },
+          {
+            "id": "455-⑧",
+            "label": "⑧",
+            "group": ""
+          },
+          {
+            "id": "455-⑨",
+            "label": "⑨",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "456",
+        "label": "456",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "456-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "456-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "456-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "456-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "457",
+        "label": "457",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "457-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "457-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "457-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "457-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "458",
+        "label": "458",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "458-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "458-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "458-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "459",
+        "label": "459",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "459-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "459-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "459-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "460",
+        "label": "460",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "460",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "461",
+        "label": "461",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "461-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "461-C",
+            "label": "C",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "462",
+        "label": "462",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "462-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "462-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "462-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "462-D",
+            "label": "D",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "463",
+        "label": "463",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "463",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "464",
+        "label": "464",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "464-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "464-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "464-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "464-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "465",
+        "label": "465",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "465-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "465-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "465-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "465-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "465-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "466",
+        "label": "466",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "466-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "466-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "466-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "466-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "467",
+        "label": "467",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "467",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "468",
+        "label": "468",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "468-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "469",
+        "label": "469",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "469-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "469-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "469-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "469-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "470",
+        "label": "470",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "470-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "470-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "470-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "470-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "470-E",
+            "label": "E",
+            "group": ""
+          },
+          {
+            "id": "470-F",
+            "label": "F",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "471",
+        "label": "471",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "471-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "471-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "471-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "471-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "471-⑤",
+            "label": "⑤",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "472",
+        "label": "472",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "472-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "472-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "473",
+        "label": "473",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "473-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "473-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "473-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "473-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "473-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "474",
+        "label": "474",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "474-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "474-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "474-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "474-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "474-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "474-⑥",
+            "label": "⑥",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "475",
+        "label": "475",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "475",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "476",
+        "label": "476",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "476-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "476-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "477",
+        "label": "477",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "477-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "478",
+        "label": "478",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "478-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "478-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "478-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "478-D",
+            "label": "D",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "479",
+        "label": "479",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "479-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "479-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "479-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "479-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "479-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "479-⑥",
+            "label": "⑥",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "480",
+        "label": "480",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "480-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "480-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "480-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "480-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "481",
+        "label": "481",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "481-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "481-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "481-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "481-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "481-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "481-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "481-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "481-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "481-ア",
+            "label": "ア",
+            "group": ""
+          },
+          {
+            "id": "481-ウ",
+            "label": "ウ",
+            "group": ""
+          },
+          {
+            "id": "481-エ",
+            "label": "エ",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "482",
+        "label": "482",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "482-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "483",
+        "label": "483",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "483-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "483-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "483-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "483-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "483-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "483-⑥",
+            "label": "⑥",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "484",
+        "label": "484",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "484-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "484-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "484-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "484-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "484-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "484-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "484-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "484-⑤",
+            "label": "⑤",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "485",
+        "label": "485",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "485",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

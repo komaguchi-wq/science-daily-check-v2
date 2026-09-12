@@ -2,7 +2,8 @@
   "id": "rcp-08",
   "title": "第I部 身のまわりの理科 第8節 セキツイ動物",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -195,12 +196,307 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "106",
+        "label": "106",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "106",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "107",
+        "label": "107",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "107",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "108",
+        "label": "108",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "108-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "108-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "108-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "108-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "109",
+        "label": "109",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "109",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "110",
+        "label": "110",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "110",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "111",
+        "label": "111",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "111",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "112",
+        "label": "112",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "112",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "113",
+        "label": "113",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "113-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "113-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "113-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "113-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "113-⑤",
+            "label": "⑤",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "114",
+        "label": "114",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "114-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "114-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "115",
+        "label": "115",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "115",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "116",
+        "label": "116",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "116-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "116-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "116-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "117",
+        "label": "117",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "117-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "117-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "118",
+        "label": "118",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "118-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "118-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "119",
+        "label": "119",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "119-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "119-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "119-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "119-B",
+            "label": "B",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "120",
+        "label": "120",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "120-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "120-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "120-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "120-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "120-E",
+            "label": "E",
+            "group": ""
+          },
+          {
+            "id": "120-F",
+            "label": "F",
+            "group": ""
+          },
+          {
+            "id": "120-G",
+            "label": "G",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

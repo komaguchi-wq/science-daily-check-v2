@@ -2,7 +2,8 @@
   "id": "rcp-01",
   "title": "第I部 身のまわりの理科 第1節 月と惑星",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -159,12 +160,217 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "1",
+        "label": "1",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "1",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "label": "2",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "2",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "label": "3",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "3",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "label": "4",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "4",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "label": "5",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "5",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "label": "6",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "6",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "label": "7",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "7",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "label": "8",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "8",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "label": "9",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "9",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "label": "10",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "10",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "label": "11",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "11-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "11-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "label": "12",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "12",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "label": "13",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "13-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "13-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "label": "14",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "14-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "14-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "15",
+        "label": "15",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "15",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

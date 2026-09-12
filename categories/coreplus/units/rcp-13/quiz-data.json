@@ -2,7 +2,8 @@
   "id": "rcp-13",
   "title": "第II部 第1章 化学 第3節 溶解度・水溶液",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -316,13 +317,414 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4,
-      5
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg",
+      "page_05_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg",
+      "page_05.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "207",
+        "label": "207",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "207-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "208",
+        "label": "208",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "208-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "208-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "209",
+        "label": "209",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "209",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "210",
+        "label": "210",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "210",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "211",
+        "label": "211",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "211",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "212",
+        "label": "212",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "212-ア",
+            "label": "ア",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "213",
+        "label": "213",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "213",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "214",
+        "label": "214",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "214-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "214-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "215",
+        "label": "215",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "215-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "216",
+        "label": "216",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "216",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "217",
+        "label": "217",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "217",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "218",
+        "label": "218",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "218-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "218-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "219",
+        "label": "219",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "219-ア",
+            "label": "ア",
+            "group": ""
+          },
+          {
+            "id": "219-イ",
+            "label": "イ",
+            "group": ""
+          },
+          {
+            "id": "219-ウ",
+            "label": "ウ",
+            "group": ""
+          },
+          {
+            "id": "219-エ",
+            "label": "エ",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "220",
+        "label": "220",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "220-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "220-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "220-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "220-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "220-⑤",
+            "label": "⑤",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "221",
+        "label": "221",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "221-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "221-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "221-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "221-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "222",
+        "label": "222",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "222",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "223",
+        "label": "223",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "223-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "223-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "224",
+        "label": "224",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "224",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "225",
+        "label": "225",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "225",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "226",
+        "label": "226",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "226",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "227",
+        "label": "227",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "227-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "227-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "227-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "228",
+        "label": "228",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "228-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "229",
+        "label": "229",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "229-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "229-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "230",
+        "label": "230",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "230-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "230-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "231",
+        "label": "231",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "231",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

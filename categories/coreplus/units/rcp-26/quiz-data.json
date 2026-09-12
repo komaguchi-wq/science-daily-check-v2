@@ -2,7 +2,8 @@
   "id": "rcp-26",
   "title": "第III部 計算理科 第2節 中和",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -194,13 +195,180 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4,
-      5
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg",
+      "page_05_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg",
+      "page_05.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "604",
+        "label": "604",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "604-B",
+            "label": "B",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "605",
+        "label": "605",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "605-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "605-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "605-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "605-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "605-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "605-E",
+            "label": "E",
+            "group": ""
+          },
+          {
+            "id": "605-F",
+            "label": "F",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "606",
+        "label": "606",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "606",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "607",
+        "label": "607",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "607",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "608",
+        "label": "608",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "608",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "609",
+        "label": "609",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "609",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "610",
+        "label": "610",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "610-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "610-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "610-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "611",
+        "label": "611",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "611-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "611-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "611-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "611-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "611-⑤",
+            "label": "⑤",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

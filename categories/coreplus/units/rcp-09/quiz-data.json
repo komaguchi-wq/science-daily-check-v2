@@ -2,7 +2,8 @@
   "id": "rcp-09",
   "title": "第I部 身のまわりの理科 第9節 種子と発芽",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -159,12 +160,227 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "121",
+        "label": "121",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "121",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "122",
+        "label": "122",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "122",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "123",
+        "label": "123",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "123",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "124",
+        "label": "124",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "124",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "125",
+        "label": "125",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "125",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "126",
+        "label": "126",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "126",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "127",
+        "label": "127",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "127",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "128",
+        "label": "128",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "128",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "129",
+        "label": "129",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "129-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "129-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "129-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "130",
+        "label": "130",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "130-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "130-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "131",
+        "label": "131",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "131",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "132",
+        "label": "132",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "132",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "133",
+        "label": "133",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "133-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "134",
+        "label": "134",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "134-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "134-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "134-C",
+            "label": "C",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "135",
+        "label": "135",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "135",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

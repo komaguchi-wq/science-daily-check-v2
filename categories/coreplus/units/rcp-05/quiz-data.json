@@ -2,7 +2,8 @@
   "id": "rcp-05",
   "title": "第I部 身のまわりの理科 第5節 気象と太陽",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -165,12 +166,272 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "61",
+        "label": "61",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "61",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "62",
+        "label": "62",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "62",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "63",
+        "label": "63",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "63",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "64",
+        "label": "64",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "64",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "65",
+        "label": "65",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "65-の",
+            "label": "の",
+            "group": ""
+          },
+          {
+            "id": "65-を",
+            "label": "を",
+            "group": ""
+          },
+          {
+            "id": "65-に",
+            "label": "に",
+            "group": ""
+          },
+          {
+            "id": "65-し",
+            "label": "し",
+            "group": ""
+          },
+          {
+            "id": "65-た",
+            "label": "た",
+            "group": ""
+          },
+          {
+            "id": "65-で",
+            "label": "で",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "66",
+        "label": "66",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "66",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "67",
+        "label": "67",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "67",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "68",
+        "label": "68",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "68-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "68-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "69",
+        "label": "69",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "69-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "69-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "69-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "69-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "70",
+        "label": "70",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "70-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "70-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "70-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "70-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "71",
+        "label": "71",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "71-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "71-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "71-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "72",
+        "label": "72",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "72",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "73",
+        "label": "73",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "73-①",
+            "label": "①",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "74",
+        "label": "74",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "74",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "75",
+        "label": "75",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "75",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }

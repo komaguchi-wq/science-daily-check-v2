@@ -2,7 +2,8 @@
   "id": "rcp-24",
   "title": "第II部 第5章 環境 第1節 環境",
   "category": "coreplus",
-  "pages": [
+  "pages": [],
+  "_pages_backup": [
     {
       "id": 1,
       "type": "coreplus",
@@ -429,13 +430,154 @@
       ]
     }
   ],
-  "sectionBreakdown": {
-    "coreplus": [
-      1,
-      2,
-      3,
-      4,
-      5
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg",
+      "page_05_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg",
+      "page_05.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "583",
+        "label": "583",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "583-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "583-お",
+            "label": "お",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "584",
+        "label": "584",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "584-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "584-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "584-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "584-D",
+            "label": "D",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "585",
+        "label": "585",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "585-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "585-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "585-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "585-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "585-E",
+            "label": "E",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "586",
+        "label": "586",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "586-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "586-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "586-B",
+            "label": "B",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "587",
+        "label": "587",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "587-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "587-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "587-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "587-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "587-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      }
     ]
   }
 }
