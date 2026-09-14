@@ -1178,6 +1178,24 @@ function renderWsPages() {
 
 // 指定ページ(idx)の対象問題を短い1行テキストに。
 // 同じ大問はまとめて "X2-(1),(2),(3)" と省略。複数大問は "　/　" 区切り。
+// 対象バナーの小問ラベル: 親番号(group)を落とさず、同じgroupの小問はまとめる
+//   例: (2),(5),(6)①②,(9)  /  (1)1・2・3 / (7)あ・い（囲み文字以外は「・」区切りで誤読防止）
+function wsTargetLabels(subs) {
+  const runs = [];
+  subs.forEach(q => {
+    const g = q.group || "";
+    const s = (g && q.label.startsWith(g)) ? q.label.slice(g.length) : q.label;
+    const last = runs[runs.length - 1];
+    if (g && last && last.g === g) last.items.push(s);
+    else runs.push({ g, items: [s] });
+  });
+  return runs.map(r => {
+    if (!r.g) return r.items.join(",");
+    const compact = r.items.every(s => /^[\u2460-\u24FF\u3251-\u32BF]$/.test(s));   // ①②…㊿ の囲み文字だけ詰める
+    return r.g + r.items.join(compact ? "" : "・");
+  }).join(",");
+}
+
 function wsTargetTextForPage(idx, idsSet) {
   if (!idsSet) return "";
   const parts = [];
@@ -1185,7 +1203,7 @@ function wsTargetTextForPage(idx, idsSet) {
     if (dm.qpage !== idx) return;
     const subs = dm.questions.filter(q => idsSet.has(q.id));
     if (!subs.length) return;
-    parts.push(`${dm.id}-${subs.map(q => q.label).join(",")}`);
+    parts.push(`${dm.id}-${wsTargetLabels(subs)}`);
   });
   return parts.length ? "対象 " + parts.join("　/　") : "";
 }
