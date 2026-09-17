@@ -481,7 +481,9 @@ function renderUnits() {
 async function openUnit(unit) {
   currentUnit = unit;
   document.getElementById("unit-detail-title").textContent = `${unit.id} ${unit.title}`;
-  const res = await fetch(`categories/${currentCategory.id}/units/${unit.id}/quiz-data.json`);
+  // ★2026-09-18 単元データも毎回サーバーに更新確認する（no-cache＝ETag再検証。変わっていなければ転送なし）。
+  //   既定のキャッシュだと GitHub Pages の max-age=600 の間、修正後も古い単元データで表示・印刷されてしまう
+  const res = await fetch(`categories/${currentCategory.id}/units/${unit.id}/quiz-data.json`, { cache: "no-cache" });
   quizData = await res.json();
   // 正誤表(xyz)のみの単元は単元詳細（カード1枚）を飛ばしてモード選択へ直行
   //（wsmブロックが複数ある単元＝WS-20コアプラス確認テスト併設等は単元詳細でカード選択）
