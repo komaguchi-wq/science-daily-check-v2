@@ -2401,7 +2401,35 @@
       "solved_04.jpg",
       "solved_05.jpg"
     ],
-    "kaisetsu": "kaisetsu_cptest.html"
+    "kaisetsu": "kaisetsu_cptest.html",
+    "spread": true,
+    "spreadGroups": {
+      "q": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "a": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ]
+    }
   },
   "kijutsu": {
     "label": "記述の総復習",

@@ -3496,7 +3496,35 @@
    "solved_03.jpg",
    "solved_04.jpg",
    "solved_05.jpg"
-  ]
+  ],
+  "spread": true,
+  "spreadGroups": {
+   "q": [
+    [
+     0,
+     1
+    ],
+    [
+     2
+    ]
+   ],
+   "a": [
+    [
+     0,
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     5
+    ]
+   ]
+  }
  },
  "kijutsu": {
   "label": "記述の総復習",

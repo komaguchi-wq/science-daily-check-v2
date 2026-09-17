@@ -1164,10 +1164,9 @@ function renderWsPages() {
     const rows = [];
     for (const pt of ["q", "a"]) {
       const files = pt === "q" ? xyz.questionPages : xyz.answerPages;
-      for (let i = 0; i < files.length; i += 2) {
-        let inner = wsmPageHTML(pt, files[i], i, files.length, base);
-        if (i + 1 < files.length) inner += wsmPageHTML(pt, files[i + 1], i + 1, files.length, base);
-        rows.push(`<div class="wsm-spread" data-pt="${pt}"${pt === "a" ? ' style="display:none"' : ""}>${inner}</div>`);
+      for (const grp of wsSpreadGroups(xyz, pt)) {
+        const inner = grp.map(i => wsmPageHTML(pt, files[i], i, files.length, base)).join("");
+        rows.push(`<div class="wsm-spread${grp.length === 1 ? " wsm-spread-single" : ""}" data-pt="${pt}"${pt === "a" ? ' style="display:none"' : ""}>${inner}</div>`);
       }
     }
     el.innerHTML = rows.join("");
@@ -1339,16 +1338,33 @@ function drawWsTargetText(ctx, text, W, H) {
 }
 
 // 見開き(2-up)用: 2ページを1枚のB4横キャンバスに合成
-async function composeSpreadDataURLs(files, base, perPageDraw) {
+// ★2026-09-18 見開きの組（どのページを1枚に並べるか）。既定は先頭から2ページずつ。
+//   ブロックに spreadGroups: {q:[[0,1],[2]], a:[[0,1],[2],[3,4],[5]]} があればそれに従う
+//   （コアプラス+確認テスト: L・M は B4横1枚に左右、H面は元々 B4横1枚なので単独）
+function wsSpreadGroups(xyz, pt) {
+  const files = pt === "q" ? xyz.questionPages : xyz.answerPages;
+  const g = xyz.spreadGroups && xyz.spreadGroups[pt];
+  if (Array.isArray(g) && g.length) return g.map(a => a.filter(i => i >= 0 && i < files.length)).filter(a => a.length);
+  const out = [];
+  for (let i = 0; i < files.length; i += 2) out.push(i + 1 < files.length ? [i, i + 1] : [i]);
+  return out;
+}
+
+async function composeSpreadDataURLs(files, base, perPageDraw, groups) {
   const urls = [];
-  for (let i = 0; i < files.length; i += 2) {
+  const explicit = Array.isArray(groups);
+  if (!explicit) { groups = []; for (let i = 0; i < files.length; i += 2) groups.push(i + 1 < files.length ? [i, i + 1] : [i]); }
+  for (const grp of groups) {
+    const i = grp[0];
     let img1, img2 = null;
     try { img1 = await loadImage(base + files[i]); } catch (e) { continue; }
-    if (i + 1 < files.length) {
-      try { img2 = await loadImage(base + files[i + 1]); } catch (e) { img2 = null; }
+    if (grp.length > 1) {
+      try { img2 = await loadImage(base + files[grp[1]]); } catch (e) { img2 = null; }
     }
-    const gap = Math.round(img1.width * 0.015);
-    const W = img1.width + gap + (img2 ? img2.width : img1.width);
+    // 組を明示したブロックは、元の1枚の紙面を左右に切り分けた画像なので、すき間なしで元どおりにつなぐ
+    const gap = explicit ? 0 : Math.round(img1.width * 0.015);
+    // 組を明示した単独ページ（元々B4横1枚の紙面など）は、右半分を空けずにそのまま1枚にする
+    const W = (explicit && grp.length === 1) ? img1.width : img1.width + gap + (img2 ? img2.width : img1.width);
     const H = Math.max(img1.height, img2 ? img2.height : 0);
     const cc = document.createElement("canvas");
     cc.width = W; cc.height = H;
@@ -1359,7 +1375,7 @@ async function composeSpreadDataURLs(files, base, perPageDraw) {
     if (img2) {
       ctx.save(); ctx.translate(img1.width + gap, 0);
       ctx.drawImage(img2, 0, 0);
-      if (perPageDraw) perPageDraw(ctx, i + 1, img2.width, img2.height);
+      if (perPageDraw) perPageDraw(ctx, grp[1], img2.width, img2.height);
       ctx.restore();
     }
     urls.push(cc.toDataURL("image/jpeg", 0.9));
@@ -1377,7 +1393,7 @@ async function printWsMode(mode) {
   if (xyz.spread) {
     const urls = await composeSpreadDataURLs(xyz.questionPages, base, (ctx, idx, W2, H2) => {
       if (ids) drawWsTargetText(ctx, wsTargetTextForPage(idx, ids), W2, H2);
-    });
+    }, xyz.spreadGroups ? wsSpreadGroups(xyz, "q") : undefined);
     if (urls.length === 0) { alert("画像の読み込みに失敗しました"); return; }
     _openPrintOverlay(`${currentUnit.id} ${wsmLabel()}（${WS_MODE_LABELS[mode]}）`, urls);
     return;
@@ -1405,7 +1421,7 @@ async function wsmPrint() {
   if (!wsmShowingAnswer) { return printWsMode(wsmFilter || "all"); }
   const base = unitImagesBase();
   if (xyz.spread) {
-    const urls = await composeSpreadDataURLs(xyz.answerPages, base, null);
+    const urls = await composeSpreadDataURLs(xyz.answerPages, base, null, xyz.spreadGroups ? wsSpreadGroups(xyz, "a") : undefined);
     if (urls.length === 0) { alert("画像の読み込みに失敗しました"); return; }
     _openPrintOverlay(`${currentUnit.id} ${wsmLabel()} 解答`, urls);
     return;
