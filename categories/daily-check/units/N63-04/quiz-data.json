@@ -1836,7 +1836,9 @@
    "page_13_qmasked.jpg",
    "page_14_qmasked.jpg",
    "page_15_qmasked.jpg",
-   "page_16_qmasked.jpg"
+   "page_16_qmasked.jpg",
+   "page_17.jpg",
+   "page_18.jpg"
   ],
   "answerPages": [
    "page_09_answer.jpg",
@@ -1847,6 +1849,8 @@
    "page_14_answer.jpg",
    "page_15_answer.jpg",
    "page_16_answer.jpg",
+   "page_17.jpg",
+   "page_18.jpg",
    "abook_01.jpg",
    "abook_02.jpg",
    "abook_03.jpg",

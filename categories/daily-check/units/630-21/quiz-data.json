@@ -485,7 +485,8 @@
    "width": 4266,
    "height": 3006,
    "image": "page_11_answer.jpg",
-   "regions": []
+   "regions": [],
+   "imageMasked": "page_11_qmasked.jpg"
   },
   {
    "id": 12,
@@ -2446,6 +2447,7 @@
    "page_08_qmasked.jpg",
    "page_09_qmasked.jpg",
    "page_10_qmasked.jpg",
+   "page_11_qmasked.jpg",
    "page_12_qmasked.jpg",
    "page_13_qmasked.jpg",
    "page_14_qmasked.jpg",
@@ -2457,6 +2459,7 @@
    "page_08_answer.jpg",
    "page_09_answer.jpg",
    "page_10_answer.jpg",
+   "page_11_answer.jpg",
    "page_12_answer.jpg",
    "page_13_answer.jpg",
    "page_14_answer.jpg",
@@ -2699,7 +2702,7 @@
    },
    {
     "id": "確認8",
-    "qpage": 4,
+    "qpage": 5,
     "questions": [
      {
       "id": "k8-(1)",
@@ -2721,7 +2724,7 @@
    },
    {
     "id": "確認9",
-    "qpage": 5,
+    "qpage": 6,
     "questions": [
      {
       "id": "k9-(1)",
@@ -2743,7 +2746,7 @@
    },
    {
     "id": "確認10",
-    "qpage": 5,
+    "qpage": 6,
     "questions": [
      {
       "id": "k10-(1)",
@@ -2761,7 +2764,7 @@
    },
    {
     "id": "確認11",
-    "qpage": 6,
+    "qpage": 7,
     "questions": [
      {
       "id": "k11-(1)",
@@ -2791,7 +2794,7 @@
    },
    {
     "id": "発展1",
-    "qpage": 7,
+    "qpage": 8,
     "questions": [
      {
       "id": "h1-(1)",
@@ -2821,7 +2824,7 @@
    },
    {
     "id": "発展2",
-    "qpage": 7,
+    "qpage": 8,
     "questions": [
      {
       "id": "h2-(1)",
@@ -2855,7 +2858,7 @@
    },
    {
     "id": "発展3",
-    "qpage": 8,
+    "qpage": 9,
     "questions": [
      {
       "id": "h3-(1)",
@@ -2873,7 +2876,7 @@
    },
    {
     "id": "発展4",
-    "qpage": 8,
+    "qpage": 9,
     "questions": [
      {
       "id": "h4-(1)",
