@@ -2048,5 +2048,56 @@
    "26": 10
   },
   "xyzPrimary": true
+ },
+ {
+  "id": "630-23",
+  "title": "LEDと手回し発電機",
+  "subject": "6年理科 デイリーサピックス",
+  "pageCount": 28,
+  "totalRegions": 171,
+  "sectionRegions": {
+   "kakunin": 60,
+   "hatten": 13,
+   "pointcheck": 58,
+   "dailystep": 40
+  },
+  "sectionPages": {
+   "8": "kakunin",
+   "9": "kakunin",
+   "10": "kakunin",
+   "11": "kakunin",
+   "12": "kakunin",
+   "13": "kakunin",
+   "15": "kakunin",
+   "16": "kakunin",
+   "17": "hatten",
+   "18": "hatten",
+   "19": "pointcheck",
+   "20": "pointcheck",
+   "25": "dailystep",
+   "26": "dailystep",
+   "27": "dailystep",
+   "28": "dailystep"
+  },
+  "xyzCount": 133,
+  "pageRegionCounts": {
+   "8": 11,
+   "9": 9,
+   "10": 5,
+   "11": 6,
+   "12": 5,
+   "13": 4,
+   "15": 10,
+   "16": 10,
+   "17": 5,
+   "18": 8,
+   "19": 43,
+   "20": 15,
+   "25": 10,
+   "26": 10,
+   "27": 10,
+   "28": 10
+  },
+  "xyzPrimary": true
  }
 ]
