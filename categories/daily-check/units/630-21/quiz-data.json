@@ -2471,13 +2471,6 @@
    "abook_04.jpg",
    "abook_05.jpg",
    "abook_06.jpg",
-   "dcans_01.jpg",
-   "dcans_02.jpg",
-   "solved_01.jpg",
-   "solved_02.jpg",
-   "solved_03.jpg",
-   "solved_04.jpg",
-   "solved_05.jpg",
    "solved_2026-09-05_01.jpg",
    "solved_2026-09-05_02.jpg",
    "solved_2026-09-05_03.jpg",
@@ -2907,15 +2900,7 @@
   ],
   "generatedBy": "seigohyo_rollout",
   "generatedAt": "2026-09-04",
-  "solvedPages": [
-   "dcans_01.jpg",
-   "dcans_02.jpg",
-   "solved_01.jpg",
-   "solved_02.jpg",
-   "solved_03.jpg",
-   "solved_04.jpg",
-   "solved_05.jpg"
-  ],
+  "solvedPages": [],
   "abook": {
    "files": [
     "abook_01.jpg",
@@ -3269,15 +3254,101 @@
    }
   ]
  },
+ "dctest": {
+  "label": "デイリーチェック（N63-09の確認）",
+  "questionPages": [
+   "dc_q_01.jpg"
+  ],
+  "answerPages": [
+   "dc_a_01.jpg",
+   "solved_01.jpg",
+   "solved_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "DC1",
+    "label": "大問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "DC1-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "DC1-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "DC1-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "DC1-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "DC1-(3)①",
+      "label": "(3)①"
+     },
+     {
+      "id": "DC1-(3)②",
+      "label": "(3)②"
+     },
+     {
+      "id": "DC1-(4)①",
+      "label": "(4)①"
+     },
+     {
+      "id": "DC1-(4)②",
+      "label": "(4)②"
+     }
+    ]
+   },
+   {
+    "id": "DC2",
+    "label": "大問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "DC2-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "DC2-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "DC2-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "DC2-(4)",
+      "label": "(4)"
+     }
+    ]
+   }
+  ],
+  "solvedPages": [
+   "solved_01.jpg",
+   "solved_02.jpg"
+  ],
+  "generatedBy": "_scratch/diag/science_v2_retro/clean21.py",
+  "generatedAt": "2026-09-18"
+ },
  "cptest": {
   "label": "コアプラス+確認テスト",
   "questionPages": [
    "cp_q_01.jpg",
-   "cp_q_02.jpg"
+   "cp_q_02.jpg",
+   "cp_q_03.jpg"
   ],
   "answerPages": [
    "cp_a_01.jpg",
-   "cp_a_02.jpg"
+   "cp_a_02.jpg",
+   "cp_a_03.jpg",
+   "solved_03.jpg",
+   "solved_04.jpg",
+   "solved_05.jpg"
   ],
   "daimons": [
    {
@@ -3371,10 +3442,61 @@
       "label": "(10)"
      }
     ]
+   },
+   {
+    "id": "H",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "H-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "H-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "H-(1)③",
+      "label": "(1)③"
+     },
+     {
+      "id": "H-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "H-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "H-(3)①",
+      "label": "(3)①"
+     },
+     {
+      "id": "H-(3)②",
+      "label": "(3)②"
+     },
+     {
+      "id": "H-(3)③",
+      "label": "(3)③"
+     },
+     {
+      "id": "H-(4)①",
+      "label": "(4)①"
+     },
+     {
+      "id": "H-(4)②",
+      "label": "(4)②"
+     }
+    ]
    }
   ],
   "generatedBy": "process_dc_cptest.py",
-  "generatedAt": "2026-09-06"
+  "generatedAt": "2026-09-06",
+  "solvedPages": [
+   "solved_03.jpg",
+   "solved_04.jpg",
+   "solved_05.jpg"
+  ]
  },
  "kijutsu": {
   "label": "記述の総復習",

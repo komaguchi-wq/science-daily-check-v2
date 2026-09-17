@@ -2911,85 +2911,93 @@
    }
   ]
  },
- "reading": {
-  "label": "説明文＆ポイントチェック",
-  "pages": [
+ "dctest": {
+  "label": "デイリーチェック（630-21の確認）",
+  "questionPages": [
+   "dc_q_01.jpg"
+  ],
+  "answerPages": [
+   "dc_a_01.jpg"
+  ],
+  "daimons": [
    {
-    "image": "page_02.jpg",
-    "label": "説明文 p2",
-    "width": 4254,
-    "height": 3006
+    "id": "DC1",
+    "label": "大問1",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "DC1-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "DC1-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "DC1-(1)③",
+      "label": "(1)③"
+     },
+     {
+      "id": "DC1-(1)④",
+      "label": "(1)④"
+     },
+     {
+      "id": "DC1-(1)⑤",
+      "label": "(1)⑤"
+     },
+     {
+      "id": "DC1-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "DC1-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "DC1-(2)③",
+      "label": "(2)③"
+     }
+    ]
    },
    {
-    "image": "page_03.jpg",
-    "label": "説明文 p3",
-    "width": 4263,
-    "height": 3006
-   },
-   {
-    "image": "page_04.jpg",
-    "label": "説明文 p4",
-    "width": 4254,
-    "height": 3006
-   },
-   {
-    "image": "page_05.jpg",
-    "label": "説明文 p5",
-    "width": 4263,
-    "height": 3006
-   },
-   {
-    "image": "page_06.jpg",
-    "label": "説明文 p6",
-    "width": 4254,
-    "height": 3006
-   },
-   {
-    "image": "page_07.jpg",
-    "label": "説明文 p7",
-    "width": 4263,
-    "height": 3006
-   },
-   {
-    "image": "pcspread_01.jpg",
-    "label": "ポイントチェック 1（p17-18）",
-    "width": 4272,
-    "height": 3006
-   },
-   {
-    "image": "pcspread_02.jpg",
-    "label": "ポイントチェック 2（p19-20）",
-    "width": 4263,
-    "height": 3006
+    "id": "DC2",
+    "label": "大問2",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "DC2-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "DC2-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "DC2-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "DC2-(3)",
+      "label": "(3)"
+     }
+    ]
    }
   ],
-  "generatedBy": "seigohyo_rollout",
-  "spreads": [
-   {
-    "name": "pcspread_01.jpg",
-    "src": [
-     "page_17.jpg",
-     "page_18.jpg"
-    ]
-   },
-   {
-    "name": "pcspread_02.jpg",
-    "src": [
-     "page_19.jpg",
-     "page_20.jpg"
-    ]
-   }
-  ]
+  "solvedPages": [],
+  "generatedBy": "_scratch/diag/science_v2_retro/clean21.py",
+  "generatedAt": "2026-09-18"
  },
  "cptest": {
   "label": "コアプラス+確認テスト",
   "questionPages": [
    "cp_q_01.jpg",
-   "cp_q_02.jpg"
+   "cp_q_02.jpg",
+   "cp_q_03.jpg"
   ],
   "answerPages": [
    "cp_a_01.jpg",
-   "cp_a_02.jpg"
+   "cp_a_02.jpg",
+   "cp_a_03.jpg"
   ],
   "daimons": [
    {
@@ -3083,10 +3091,126 @@
       "label": "(10)"
      }
     ]
+   },
+   {
+    "id": "H",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "H-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "H-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "H-(1)③",
+      "label": "(1)③"
+     },
+     {
+      "id": "H-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "H-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "H-(2)③",
+      "label": "(2)③"
+     },
+     {
+      "id": "H-(3)①",
+      "label": "(3)①"
+     },
+     {
+      "id": "H-(3)②",
+      "label": "(3)②"
+     },
+     {
+      "id": "H-(4)①",
+      "label": "(4)①"
+     },
+     {
+      "id": "H-(4)②",
+      "label": "(4)②"
+     }
+    ]
    }
   ],
   "generatedBy": "process_dc_cptest.py",
   "generatedAt": "2026-09-10"
+ },
+ "reading": {
+  "label": "説明文＆ポイントチェック",
+  "pages": [
+   {
+    "image": "page_02.jpg",
+    "label": "説明文 p2",
+    "width": 4254,
+    "height": 3006
+   },
+   {
+    "image": "page_03.jpg",
+    "label": "説明文 p3",
+    "width": 4263,
+    "height": 3006
+   },
+   {
+    "image": "page_04.jpg",
+    "label": "説明文 p4",
+    "width": 4254,
+    "height": 3006
+   },
+   {
+    "image": "page_05.jpg",
+    "label": "説明文 p5",
+    "width": 4263,
+    "height": 3006
+   },
+   {
+    "image": "page_06.jpg",
+    "label": "説明文 p6",
+    "width": 4254,
+    "height": 3006
+   },
+   {
+    "image": "page_07.jpg",
+    "label": "説明文 p7",
+    "width": 4263,
+    "height": 3006
+   },
+   {
+    "image": "pcspread_01.jpg",
+    "label": "ポイントチェック 1（p17-18）",
+    "width": 4272,
+    "height": 3006
+   },
+   {
+    "image": "pcspread_02.jpg",
+    "label": "ポイントチェック 2（p19-20）",
+    "width": 4263,
+    "height": 3006
+   }
+  ],
+  "generatedBy": "seigohyo_rollout",
+  "spreads": [
+   {
+    "name": "pcspread_01.jpg",
+    "src": [
+     "page_17.jpg",
+     "page_18.jpg"
+    ]
+   },
+   {
+    "name": "pcspread_02.jpg",
+    "src": [
+     "page_19.jpg",
+     "page_20.jpg"
+    ]
+   }
+  ]
  },
  "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/daily-check/630-22/"
 }
