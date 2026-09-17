@@ -2236,7 +2236,8 @@
       "solved_02.jpg"
     ],
     "generatedBy": "_scratch/diag/science_v2_630-23/dch/clean_dch.py",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-18",
+    "kaisetsu": "kaisetsu_dctest.html"
   },
   "cptest": {
     "label": "コアプラス+確認テスト",
@@ -2399,7 +2400,119 @@
       "solved_03.jpg",
       "solved_04.jpg",
       "solved_05.jpg"
-    ]
+    ],
+    "kaisetsu": "kaisetsu_cptest.html"
+  },
+  "kijutsu": {
+    "label": "記述の総復習",
+    "questionPages": [
+      "kj2_q.jpg",
+      "kj3_q.jpg"
+    ],
+    "answerPages": [
+      "kj3_a.jpg",
+      "kj2_solved.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "記述②",
+        "label": "記述の総復習②",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "KJ2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "KJ2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "KJ2-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "KJ2-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "KJ2-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "KJ2-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "KJ2-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "KJ2-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "KJ2-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "KJ2-(10)",
+            "label": "(10)"
+          }
+        ]
+      },
+      {
+        "id": "記述③",
+        "label": "記述の総復習③",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "KJ3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "KJ3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "KJ3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "KJ3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "KJ3-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "KJ3-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "KJ3-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "KJ3-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "KJ3-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "KJ3-(10)",
+            "label": "(10)"
+          }
+        ]
+      }
+    ],
+    "solvedPages": [
+      "kj2_solved.jpg"
+    ],
+    "generatedBy": "process_kijutsu_fukushu.py"
   },
   "reading": {
     "label": "説明文＆ポイントチェック",

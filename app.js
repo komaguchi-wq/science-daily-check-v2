@@ -776,13 +776,15 @@ let wsmDirect = false; // 単元一覧からモード選択へ直行した（戻
 // ★2026-09-03 wsmブロック一般化: 1単元に複数の正誤表セグメントを持てる
 //   （WS-20〜: X・Y・Z問題 + コアプラス確認テスト）。quiz-data.json のキー名で識別
 // ★2026-09-18 dctest = デイリーチェック（授業内テスト）の正誤表。630-23〜（解いて採点済みのDCが入稿されたら付ける）
-const WSM_BLOCK_KEYS = ["chishiki", "xyz", "ds", "dctest", "cptest"];
+//   kijutsu = 理科確認テスト「記述の総復習◯」（その回が入稿された単元の別カード。scripts/process_kijutsu_fukushu.py）
+const WSM_BLOCK_KEYS = ["chishiki", "xyz", "ds", "dctest", "cptest", "kijutsu"];
 const WSM_BLOCK_META = {
   chishiki: { icon: "📙", defaultLabel: "知識の総完成＆基礎演習" },
   xyz:    { icon: "🧪", defaultLabel: "X・Y・Z問題" },
   ds:     { icon: "📘", defaultLabel: "デイリーステップ" },
   dctest: { icon: "📒", defaultLabel: "デイリーチェック" },
   cptest: { icon: "📗", defaultLabel: "コアプラス確認テスト" },
+  kijutsu: { icon: "✍️", defaultLabel: "記述の総復習" },
 };
 let wsmBlockKey = "xyz";   // 現在開いているブロック
 function wsmBlock() { return quizData ? quizData[wsmBlockKey] : null; }
