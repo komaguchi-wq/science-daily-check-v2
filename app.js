@@ -775,11 +775,13 @@ let xyzIdleTimer = null;
 let wsmDirect = false; // 単元一覧からモード選択へ直行した（戻るは単元一覧へ）
 // ★2026-09-03 wsmブロック一般化: 1単元に複数の正誤表セグメントを持てる
 //   （WS-20〜: X・Y・Z問題 + コアプラス確認テスト）。quiz-data.json のキー名で識別
-const WSM_BLOCK_KEYS = ["chishiki", "xyz", "ds", "cptest"];
+// ★2026-09-18 dctest = デイリーチェック（授業内テスト）の正誤表。630-23〜（解いて採点済みのDCが入稿されたら付ける）
+const WSM_BLOCK_KEYS = ["chishiki", "xyz", "ds", "dctest", "cptest"];
 const WSM_BLOCK_META = {
   chishiki: { icon: "📙", defaultLabel: "知識の総完成＆基礎演習" },
   xyz:    { icon: "🧪", defaultLabel: "X・Y・Z問題" },
   ds:     { icon: "📘", defaultLabel: "デイリーステップ" },
+  dctest: { icon: "📒", defaultLabel: "デイリーチェック" },
   cptest: { icon: "📗", defaultLabel: "コアプラス確認テスト" },
 };
 let wsmBlockKey = "xyz";   // 現在開いているブロック

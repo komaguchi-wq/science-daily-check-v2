@@ -1517,13 +1517,7 @@
       "abook_01.jpg",
       "abook_02.jpg",
       "abook_03.jpg",
-      "abook_04.jpg",
-      "dcans_01.jpg",
-      "solved_01.jpg",
-      "solved_02.jpg",
-      "solved_03.jpg",
-      "solved_04.jpg",
-      "solved_05.jpg"
+      "abook_04.jpg"
     ],
     "daimons": [
       {
@@ -1813,14 +1807,7 @@
     ],
     "generatedBy": "seigohyo_rollout",
     "generatedAt": "2026-09-17",
-    "solvedPages": [
-      "dcans_01.jpg",
-      "solved_01.jpg",
-      "solved_02.jpg",
-      "solved_03.jpg",
-      "solved_04.jpg",
-      "solved_05.jpg"
-    ],
+    "solvedPages": [],
     "abook": {
       "files": [
         "abook_01.jpg",
@@ -2170,85 +2157,101 @@
       }
     ]
   },
-  "reading": {
-    "label": "説明文＆ポイントチェック",
-    "pages": [
+  "dctest": {
+    "label": "デイリーチェック（630-22の確認）",
+    "questionPages": [
+      "dc_q_01.jpg"
+    ],
+    "answerPages": [
+      "dc_a_01.jpg",
+      "solved_01.jpg",
+      "solved_02.jpg"
+    ],
+    "daimons": [
       {
-        "image": "page_02.jpg",
-        "label": "説明文 p2",
-        "width": 4254,
-        "height": 3006
+        "id": "DC1",
+        "label": "大問1",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "DC1-(1)X",
+            "label": "(1)X"
+          },
+          {
+            "id": "DC1-(1)Y",
+            "label": "(1)Y"
+          },
+          {
+            "id": "DC1-(2)2番目",
+            "label": "(2)2番目"
+          },
+          {
+            "id": "DC1-(2)4番目",
+            "label": "(2)4番目"
+          },
+          {
+            "id": "DC1-(3)①",
+            "label": "(3)①"
+          },
+          {
+            "id": "DC1-(3)②",
+            "label": "(3)②"
+          },
+          {
+            "id": "DC1-(4)①",
+            "label": "(4)①"
+          },
+          {
+            "id": "DC1-(4)②",
+            "label": "(4)②"
+          }
+        ]
       },
       {
-        "image": "page_03.jpg",
-        "label": "説明文 p3",
-        "width": 4260,
-        "height": 3006
-      },
-      {
-        "image": "page_04.jpg",
-        "label": "説明文 p4",
-        "width": 4254,
-        "height": 3006
-      },
-      {
-        "image": "page_05.jpg",
-        "label": "説明文 p5",
-        "width": 4263,
-        "height": 3006
-      },
-      {
-        "image": "page_06.jpg",
-        "label": "説明文 p6",
-        "width": 4254,
-        "height": 3006
-      },
-      {
-        "image": "page_07.jpg",
-        "label": "説明文 p7",
-        "width": 4266,
-        "height": 3006
-      },
-      {
-        "image": "pcspread_01.jpg",
-        "label": "ポイントチェック 1（p19-20）",
-        "width": 4278,
-        "height": 3006
-      },
-      {
-        "image": "pcspread_02.jpg",
-        "label": "ポイントチェック 2（p21-22）",
-        "width": 4254,
-        "height": 3006
+        "id": "DC2",
+        "label": "大問2",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "DC2-(1)①",
+            "label": "(1)①"
+          },
+          {
+            "id": "DC2-(1)②",
+            "label": "(1)②"
+          },
+          {
+            "id": "DC2-(1)③",
+            "label": "(1)③"
+          },
+          {
+            "id": "DC2-(2)",
+            "label": "(2)"
+          }
+        ]
       }
     ],
-    "generatedBy": "seigohyo_rollout",
-    "spreads": [
-      {
-        "name": "pcspread_01.jpg",
-        "src": [
-          "page_19.jpg",
-          "page_20.jpg"
-        ]
-      },
-      {
-        "name": "pcspread_02.jpg",
-        "src": [
-          "page_21.jpg",
-          "page_22.jpg"
-        ]
-      }
-    ]
+    "solvedPages": [
+      "solved_01.jpg",
+      "solved_02.jpg"
+    ],
+    "generatedBy": "_scratch/diag/science_v2_630-23/dch/clean_dch.py",
+    "generatedAt": "2026-09-18"
   },
   "cptest": {
     "label": "コアプラス+確認テスト",
     "questionPages": [
       "cp_q_01.jpg",
-      "cp_q_02.jpg"
+      "cp_q_02.jpg",
+      "cp_q_03.jpg"
     ],
     "answerPages": [
       "cp_a_01.jpg",
-      "cp_a_02.jpg"
+      "cp_a_02.jpg",
+      "cp_a_03.jpg",
+      "solved_03.jpg",
+      "solved_04.jpg",
+      "solved_05.jpg"
     ],
     "daimons": [
       {
@@ -2342,10 +2345,131 @@
             "label": "(10)"
           }
         ]
+      },
+      {
+        "id": "H",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "H-(1)①",
+            "label": "(1)①"
+          },
+          {
+            "id": "H-(1)②",
+            "label": "(1)②"
+          },
+          {
+            "id": "H-(1)③",
+            "label": "(1)③"
+          },
+          {
+            "id": "H-(2)①",
+            "label": "(2)①"
+          },
+          {
+            "id": "H-(2)②",
+            "label": "(2)②"
+          },
+          {
+            "id": "H-(2)③",
+            "label": "(2)③"
+          },
+          {
+            "id": "H-(3)①",
+            "label": "(3)①"
+          },
+          {
+            "id": "H-(3)②",
+            "label": "(3)②"
+          },
+          {
+            "id": "H-(4)①",
+            "label": "(4)①"
+          },
+          {
+            "id": "H-(4)②",
+            "label": "(4)②"
+          }
+        ]
       }
     ],
     "generatedBy": "process_dc_cptest.py",
-    "generatedAt": "2026-09-17"
+    "generatedAt": "2026-09-17",
+    "solvedPages": [
+      "solved_03.jpg",
+      "solved_04.jpg",
+      "solved_05.jpg"
+    ]
+  },
+  "reading": {
+    "label": "説明文＆ポイントチェック",
+    "pages": [
+      {
+        "image": "page_02.jpg",
+        "label": "説明文 p2",
+        "width": 4254,
+        "height": 3006
+      },
+      {
+        "image": "page_03.jpg",
+        "label": "説明文 p3",
+        "width": 4260,
+        "height": 3006
+      },
+      {
+        "image": "page_04.jpg",
+        "label": "説明文 p4",
+        "width": 4254,
+        "height": 3006
+      },
+      {
+        "image": "page_05.jpg",
+        "label": "説明文 p5",
+        "width": 4263,
+        "height": 3006
+      },
+      {
+        "image": "page_06.jpg",
+        "label": "説明文 p6",
+        "width": 4254,
+        "height": 3006
+      },
+      {
+        "image": "page_07.jpg",
+        "label": "説明文 p7",
+        "width": 4266,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_01.jpg",
+        "label": "ポイントチェック 1（p19-20）",
+        "width": 4278,
+        "height": 3006
+      },
+      {
+        "image": "pcspread_02.jpg",
+        "label": "ポイントチェック 2（p21-22）",
+        "width": 4254,
+        "height": 3006
+      }
+    ],
+    "generatedBy": "seigohyo_rollout",
+    "spreads": [
+      {
+        "name": "pcspread_01.jpg",
+        "src": [
+          "page_19.jpg",
+          "page_20.jpg"
+        ]
+      },
+      {
+        "name": "pcspread_02.jpg",
+        "src": [
+          "page_21.jpg",
+          "page_22.jpg"
+        ]
+      }
+    ]
   },
   "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/daily-check/630-23/"
 }
