@@ -1,0 +1,25 @@
+{
+ "unit": "JF-03",
+ "source": "claude-vision",
+ "created": "2026-09-20",
+ "grades": {
+  "Ⅰ-1図1": true,
+  "Ⅰ-1図2": true,
+  "Ⅰ-1図3": true,
+  "Ⅰ-2": true,
+  "Ⅰ-3": true,
+  "Ⅰ-4(1)": false,
+  "Ⅰ-4(2)": false,
+  "Ⅰ-5": true,
+  "Ⅰ-6": true,
+  "Ⅰ-7": false,
+  "Ⅱ-1問1": true,
+  "Ⅱ-1問2": false,
+  "Ⅱ-2問3": true,
+  "Ⅱ-2問4": false,
+  "Ⅲ-1問1": true,
+  "Ⅲ-1問2": true,
+  "Ⅲ-2問3": false,
+  "Ⅲ-2問4": true
+ }
+}

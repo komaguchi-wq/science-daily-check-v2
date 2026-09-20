@@ -1,0 +1,110 @@
+{
+ "id": "JF-03",
+ "title": "女子学院対策",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/JF-03/",
+ "xyz": {
+  "label": "JF 第3回",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "Ⅰ",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "Ⅰ-1図1",
+      "label": "1図1"
+     },
+     {
+      "id": "Ⅰ-1図2",
+      "label": "1図2"
+     },
+     {
+      "id": "Ⅰ-1図3",
+      "label": "1図3"
+     },
+     {
+      "id": "Ⅰ-2",
+      "label": "2"
+     },
+     {
+      "id": "Ⅰ-3",
+      "label": "3"
+     },
+     {
+      "id": "Ⅰ-4(1)",
+      "label": "4(1)"
+     },
+     {
+      "id": "Ⅰ-4(2)",
+      "label": "4(2)"
+     },
+     {
+      "id": "Ⅰ-5",
+      "label": "5"
+     },
+     {
+      "id": "Ⅰ-6",
+      "label": "6"
+     },
+     {
+      "id": "Ⅰ-7",
+      "label": "7"
+     }
+    ]
+   },
+   {
+    "id": "Ⅱ",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "Ⅱ-1問1",
+      "label": "1問1"
+     },
+     {
+      "id": "Ⅱ-1問2",
+      "label": "1問2"
+     },
+     {
+      "id": "Ⅱ-2問3",
+      "label": "2問3"
+     },
+     {
+      "id": "Ⅱ-2問4",
+      "label": "2問4"
+     }
+    ]
+   },
+   {
+    "id": "Ⅲ",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "Ⅲ-1問1",
+      "label": "1問1"
+     },
+     {
+      "id": "Ⅲ-1問2",
+      "label": "1問2"
+     },
+     {
+      "id": "Ⅲ-2問3",
+      "label": "2問3"
+     },
+     {
+      "id": "Ⅲ-2問4",
+      "label": "2問4"
+     }
+    ]
+   }
+  ]
+ }
+}
