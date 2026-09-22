@@ -828,18 +828,8 @@
         "qpage": 4,
         "questions": [
           {
-            "id": "440-①",
-            "label": "①",
-            "group": ""
-          },
-          {
-            "id": "440-②",
-            "label": "②",
-            "group": ""
-          },
-          {
-            "id": "440-A",
-            "label": "A",
+            "id": "440",
+            "label": "―",
             "group": ""
           }
         ]

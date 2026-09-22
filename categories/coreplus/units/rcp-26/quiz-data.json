@@ -219,6 +219,11 @@
         "qpage": 0,
         "questions": [
           {
+            "id": "604-A",
+            "label": "A",
+            "group": ""
+          },
+          {
             "id": "604-B",
             "label": "B",
             "group": ""
@@ -233,6 +238,11 @@
           {
             "id": "605-①",
             "label": "①",
+            "group": ""
+          },
+          {
+            "id": "605-A",
+            "label": "A",
             "group": ""
           },
           {

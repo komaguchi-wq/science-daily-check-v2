@@ -726,28 +726,8 @@
         "qpage": 1,
         "questions": [
           {
-            "id": "613-①",
-            "label": "①",
-            "group": ""
-          },
-          {
-            "id": "613-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "613-②",
-            "label": "②",
-            "group": ""
-          },
-          {
-            "id": "613-③",
-            "label": "③",
-            "group": ""
-          },
-          {
-            "id": "613-C",
-            "label": "C",
+            "id": "613",
+            "label": "―",
             "group": ""
           }
         ]
@@ -877,6 +857,11 @@
         "qpage": 7,
         "questions": [
           {
+            "id": "621-①",
+            "label": "①",
+            "group": ""
+          },
+          {
             "id": "621-②",
             "label": "②",
             "group": ""
@@ -915,6 +900,11 @@
         "label": "623",
         "qpage": 7,
         "questions": [
+          {
+            "id": "623-①",
+            "label": "①",
+            "group": ""
+          },
           {
             "id": "623-②",
             "label": "②",

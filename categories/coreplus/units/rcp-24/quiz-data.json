@@ -459,8 +459,8 @@
             "group": ""
           },
           {
-            "id": "583-お",
-            "label": "お",
+            "id": "583-②",
+            "label": "②",
             "group": ""
           }
         ]
@@ -471,23 +471,23 @@
         "qpage": 0,
         "questions": [
           {
+            "id": "584-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "584-②",
+            "label": "②",
+            "group": ""
+          },
+          {
             "id": "584-③",
             "label": "③",
             "group": ""
           },
           {
-            "id": "584-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "584-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "584-D",
-            "label": "D",
+            "id": "584-④",
+            "label": "④",
             "group": ""
           }
         ]
@@ -530,6 +530,11 @@
         "qpage": 2,
         "questions": [
           {
+            "id": "586-①",
+            "label": "①",
+            "group": ""
+          },
+          {
             "id": "586-②",
             "label": "②",
             "group": ""
@@ -552,23 +557,13 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "587-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "587-C",
-            "label": "C",
+            "id": "587-①",
+            "label": "①",
             "group": ""
           },
           {
             "id": "587-②",
             "label": "②",
-            "group": ""
-          },
-          {
-            "id": "587-A",
-            "label": "A",
             "group": ""
           },
           {
