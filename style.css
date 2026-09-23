@@ -882,6 +882,15 @@ body {
   font-size: 12px; color: #6e6e73; font-weight: 600;
   margin-bottom: 4px; padding-left: 2px;
 }
+/* ★2026-09-23 対象小問の解答らんを囲む赤枠（daily-check 確認・発展。位置は seigohyo_map.json） */
+.wsm-imgwrap { position: relative; }
+.wsm-tboxes { position: absolute; inset: 0; pointer-events: none; }
+.wsm-tbox {
+  position: absolute; box-sizing: border-box;
+  border: 3px solid #ff3b30; border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.8) inset;
+}
+@media (max-width: 767px) { .wsm-tbox { border-width: 2px; } }
 .wsm-page img {
   width: 100%; height: auto; display: block;
   background: #fff; border-radius: 6px;

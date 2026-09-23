@@ -907,6 +907,7 @@ function startWsMode(mode) {
   updateWsTabUI();
   showScreen("screen-wsmondai");
   document.getElementById("wsm-pages").scrollTop = 0;
+  loadWsSubRects().then(r => { if (r) updateWsTargetBoxes(); });
 }
 
 function renderXyzTable() {
@@ -1154,9 +1155,12 @@ function commitXyz() {
 function wsmPageHTML(pt, file, i, total, base) {
   const lbl = pt === "q" ? "問題" : "解答";
   const banner = pt === "q" ? `<div class="wsm-target-banner" style="display:none"></div>` : "";
+  // ★2026-09-23 問題ページは .wsm-imgwrap で包み、対象小問の解答らんを赤枠で囲むレイヤー（.wsm-tboxes）を重ねる
+  const img = `<img src="${base}${file}" loading="lazy" alt="${lbl}${i + 1}">`;
+  const body = pt === "q" ? `<div class="wsm-imgwrap">${img}<div class="wsm-tboxes" data-idx="${i}"></div></div>` : img;
   return `<div class="wsm-page" data-pt="${pt}" data-idx="${i}"${pt === "a" ? ' style="display:none"' : ""}>
        <div class="wsm-page-label">${lbl} ${i + 1} / ${total}</div>${banner}
-       <img src="${base}${file}" loading="lazy" alt="${lbl}${i + 1}">
+       ${body}
      </div>`;
 }
 
@@ -1316,6 +1320,76 @@ function wsTargetTextForPage(idx, idsSet) {
   return parts.length ? "対象 " + parts.join("　/　") : "";
 }
 
+// ★2026-09-23 対象小問の「解答らん」を赤枠で囲む（デイリーサピックス daily-check の xyz＝確認・発展のみ）。
+//   位置は seigohyo_map.json（regionToSub: "{pageId}-{regionIdx}" → 小問id）と quiz-data.pages[].regions（px）から。
+//   位置データが無いブロック（DS・DC・CP+・記述・SS特訓・Weekly など）は従来どおり上のバナーだけ（誤った場所を囲まない）。
+let _subRectsCache = {};
+function wsSubRectsKey() {
+  return currentCategory && currentUnit ? `${currentCategory.id}/${currentUnit.id}/${wsmBlockKey}` : "";
+}
+async function loadWsSubRects() {
+  const key = wsSubRectsKey();
+  if (!key || wsmBlockKey !== "xyz" || !currentCategory || currentCategory.id !== "daily-check") return null;
+  if (key in _subRectsCache) return _subRectsCache[key];
+  _subRectsCache[key] = null;
+  try {
+    const res = await fetch(`categories/${currentCategory.id}/units/${currentUnit.id}/seigohyo_map.json`, { cache: "no-cache" });
+    if (!res.ok) return null;
+    const m = await res.json();
+    const xyz = quizData && quizData.xyz;
+    if (!m || !m.regionToSub || !xyz) return null;
+    // 問題ページの添字 ← ページid（ファイル名 page_08_qmasked.jpg の 08）
+    const idxOfPage = {};
+    (xyz.questionPages || []).forEach((f, i) => { const mm = /page_(\d+)/.exec(f || ""); if (mm) idxOfPage[parseInt(mm[1], 10)] = i; });
+    const pageById = {};
+    (quizData.pages || []).forEach(p => { pageById[p.id] = p; });
+    const rects = {};
+    for (const [rk, sub] of Object.entries(m.regionToSub)) {
+      const mm = /^(\d+)-(\d+)$/.exec(rk);
+      if (!mm) continue;
+      const pid = parseInt(mm[1], 10), ri = parseInt(mm[2], 10);
+      const pg = pageById[pid], qi = idxOfPage[pid];
+      if (!pg || qi == null || !pg.regions || !pg.regions[ri]) continue;
+      const r = pg.regions[ri];
+      (rects[sub] = rects[sub] || []).push({ qpage: qi, x: r.x, y: r.y, w: r.w, h: r.h, W: pg.width, H: pg.height });
+    }
+    _subRectsCache[key] = rects;
+    return rects;
+  } catch (e) { console.warn("seigohyo_map 読み込み失敗", e); return null; }
+}
+function wsTargetRectsForPage(idx, idsSet) {
+  const rects = _subRectsCache[wsSubRectsKey()];
+  if (!rects || !idsSet) return [];
+  const out = [];
+  idsSet.forEach(id => (rects[id] || []).forEach(r => { if (r.qpage === idx) out.push(r); }));
+  return out;
+}
+function updateWsTargetBoxes() {
+  document.querySelectorAll('#wsm-pages .wsm-tboxes').forEach(layer => {
+    const idx = parseInt(layer.dataset.idx);
+    const rs = wsTargetRectsForPage(idx, wsmFilteredIds);
+    layer.innerHTML = rs.map(r => {
+      const pad = Math.max(6, r.h * 0.12);
+      const l = ((r.x - pad) / r.W * 100).toFixed(2), t = ((r.y - pad) / r.H * 100).toFixed(2);
+      const w = ((r.w + pad * 2) / r.W * 100).toFixed(2), h = ((r.h + pad * 2) / r.H * 100).toFixed(2);
+      return `<span class="wsm-tbox" style="left:${l}%;top:${t}%;width:${w}%;height:${h}%"></span>`;
+    }).join("");
+  });
+}
+// 印刷用: 対象小問の解答らんの赤枠を canvas に焼き込む
+function drawWsTargetBoxes(ctx, idx, idsSet, W, H) {
+  const rs = wsTargetRectsForPage(idx, idsSet);
+  if (!rs.length) return;
+  ctx.save();
+  ctx.strokeStyle = "#ff3b30";
+  ctx.lineWidth = Math.max(6, Math.round(W * 0.0022));
+  rs.forEach(r => {
+    const sx = W / r.W, sy = H / r.H, pad = Math.max(6, r.h * 0.12);
+    ctx.strokeRect((r.x - pad) * sx, (r.y - pad) * sy, (r.w + pad * 2) * sx, (r.h + pad * 2) * sy);
+  });
+  ctx.restore();
+}
+
 function updateWsTargetBanners() {
   document.querySelectorAll('#wsm-pages .wsm-page[data-pt="q"]').forEach(pageEl => {
     const idx = parseInt(pageEl.dataset.idx);
@@ -1325,6 +1399,7 @@ function updateWsTargetBanners() {
     if (txt) { banner.textContent = txt; banner.style.display = ""; }
     else { banner.style.display = "none"; banner.textContent = ""; }
   });
+  updateWsTargetBoxes();
 }
 
 function applyWsTabVisibility() {
@@ -1431,6 +1506,7 @@ async function printWsMode(mode) {
   if (!xyz) return;
   const ids = computeWsFilterIds(mode);
   const base = unitImagesBase();
+  if (ids) await loadWsSubRects();
   if (xyz.spread) {
     const urls = await composeSpreadDataURLs(xyz.questionPages, base, (ctx, idx, W2, H2) => {
       if (ids) drawWsTargetText(ctx, wsTargetTextForPage(idx, ids), W2, H2);
@@ -1447,7 +1523,7 @@ async function printWsMode(mode) {
     cc.width = img.width; cc.height = img.height;
     const ctx = cc.getContext("2d");
     ctx.drawImage(img, 0, 0);
-    if (ids) drawWsTargetText(ctx, wsTargetTextForPage(i, ids), cc.width, cc.height);
+    if (ids) { drawWsTargetText(ctx, wsTargetTextForPage(i, ids), cc.width, cc.height); drawWsTargetBoxes(ctx, i, ids, cc.width, cc.height); }
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
