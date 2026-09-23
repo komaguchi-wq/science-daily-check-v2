@@ -1329,33 +1329,58 @@ function wsSubRectsKey() {
 }
 async function loadWsSubRects() {
   const key = wsSubRectsKey();
-  if (!key || wsmBlockKey !== "xyz" || !currentCategory || currentCategory.id !== "daily-check") return null;
+  if (!key || !currentCategory || !currentUnit) return null;
   if (key in _subRectsCache) return _subRectsCache[key];
   _subRectsCache[key] = null;
+  const rects = {};
+  const xyz = quizData && quizData[wsmBlockKey];
+  const unitPath = `categories/${currentCategory.id}/units/${currentUnit.id}`;
+  // (1) 解答らんの赤枠（デイリーサピックス daily-check の xyz＝確認・発展のみ・seigohyo_map.json）
+  if (wsmBlockKey === "xyz" && currentCategory.id === "daily-check" && xyz) {
+    try {
+      const res = await fetch(`${unitPath}/seigohyo_map.json`, { cache: "no-cache" });
+      const m = res.ok ? await res.json() : null;
+      if (m && m.regionToSub) {
+        // 問題ページの添字 ← ページid（ファイル名 page_08_qmasked.jpg の 08）
+        const idxOfPage = {};
+        (xyz.questionPages || []).forEach((f, i) => { const mm = /page_(\d+)/.exec(f || ""); if (mm) idxOfPage[parseInt(mm[1], 10)] = i; });
+        const pageById = {};
+        (quizData.pages || []).forEach(p => { pageById[p.id] = p; });
+        for (const [rk, sub] of Object.entries(m.regionToSub)) {
+          const mm = /^(\d+)-(\d+)$/.exec(rk);
+          if (!mm) continue;
+          const pid = parseInt(mm[1], 10), ri = parseInt(mm[2], 10);
+          const pg = pageById[pid], qi = idxOfPage[pid];
+          if (!pg || qi == null || !pg.regions || !pg.regions[ri]) continue;
+          const r = pg.regions[ri];
+          (rects[sub] = rects[sub] || []).push({ qpage: qi, x: r.x, y: r.y, w: r.w, h: r.h, W: pg.width, H: pg.height });
+        }
+      }
+    } catch (e) { console.warn("seigohyo_map 読み込み失敗", e); }
+  }
+  // (2) ★2026-09-24 小問ラベル「(1)」「①」の位置に赤い丸（qpos.json＝scripts/daily_print/detect_qpos.py が OCR で作る。
+  //     SS特訓・Weekly など位置データが無かった教材。番号列が読み順でそろった大問だけ入っている。
+  //     小問の位置が無く大問見出し（X1 等）だけあるときは見出しに丸＝算数の「大問の番号」と同じ）
   try {
-    const res = await fetch(`categories/${currentCategory.id}/units/${currentUnit.id}/seigohyo_map.json`, { cache: "no-cache" });
-    if (!res.ok) return null;
-    const m = await res.json();
-    const xyz = quizData && quizData.xyz;
-    if (!m || !m.regionToSub || !xyz) return null;
-    // 問題ページの添字 ← ページid（ファイル名 page_08_qmasked.jpg の 08）
-    const idxOfPage = {};
-    (xyz.questionPages || []).forEach((f, i) => { const mm = /page_(\d+)/.exec(f || ""); if (mm) idxOfPage[parseInt(mm[1], 10)] = i; });
-    const pageById = {};
-    (quizData.pages || []).forEach(p => { pageById[p.id] = p; });
-    const rects = {};
-    for (const [rk, sub] of Object.entries(m.regionToSub)) {
-      const mm = /^(\d+)-(\d+)$/.exec(rk);
-      if (!mm) continue;
-      const pid = parseInt(mm[1], 10), ri = parseInt(mm[2], 10);
-      const pg = pageById[pid], qi = idxOfPage[pid];
-      if (!pg || qi == null || !pg.regions || !pg.regions[ri]) continue;
-      const r = pg.regions[ri];
-      (rects[sub] = rects[sub] || []).push({ qpage: qi, x: r.x, y: r.y, w: r.w, h: r.h, W: pg.width, H: pg.height });
+    const res = await fetch(`${unitPath}/qpos.json`, { cache: "no-cache" });
+    if (res.ok && xyz) {
+      const j = await res.json();
+      if (j && j.subs && (j.block || "xyz") === wsmBlockKey) {
+        const pageWH = {};
+        (j.pages || []).forEach(p => { pageWH[p.i] = p; });
+        (xyz.daimons || []).forEach(dm => (dm.questions || []).forEach(q => {
+          if (rects[q.id]) return;   // 解答らんの枠がある小問はそのまま
+          const s = j.subs[q.id];
+          const p = s || (j.daimons && j.daimons[String(dm.id)]);
+          if (!p) return;
+          const wh = pageWH[p.page] || {};
+          rects[q.id] = [{ qpage: p.page, ring: true, sub: !!s, cx: p.x, cy: p.y, W: wh.W || 1000, H: wh.H || 700 }];
+        }));
+      }
     }
-    _subRectsCache[key] = rects;
-    return rects;
-  } catch (e) { console.warn("seigohyo_map 読み込み失敗", e); return null; }
+  } catch (e) { console.warn("qpos 読み込み失敗", e); }
+  _subRectsCache[key] = Object.keys(rects).length ? rects : null;
+  return _subRectsCache[key];
 }
 function wsTargetRectsForPage(idx, idsSet) {
   const rects = _subRectsCache[wsSubRectsKey()];
@@ -1369,6 +1394,10 @@ function updateWsTargetBoxes() {
     const idx = parseInt(layer.dataset.idx);
     const rs = wsTargetRectsForPage(idx, wsmFilteredIds);
     layer.innerHTML = rs.map(r => {
+      if (r.ring) {   // 小問ラベルの赤丸（小問=少し左・少し小さめ／大問見出し=そのまま。算数 drawTargetRings と同じ寸法）
+        const w = 0.033 * (r.sub ? 0.92 : 1.15), h = 0.033 * r.W / r.H, cx = r.cx - (r.sub ? 0.006 : 0);
+        return `<span class="wsm-tring" style="left:${((cx - w / 2) * 100).toFixed(2)}%;top:${((r.cy - h / 2) * 100).toFixed(2)}%;width:${(w * 100).toFixed(2)}%;height:${(h * 100).toFixed(2)}%"></span>`;
+      }
       const pad = Math.max(6, r.h * 0.12);
       const l = ((r.x - pad) / r.W * 100).toFixed(2), t = ((r.y - pad) / r.H * 100).toFixed(2);
       const w = ((r.w + pad * 2) / r.W * 100).toFixed(2), h = ((r.h + pad * 2) / r.H * 100).toFixed(2);
@@ -1384,6 +1413,13 @@ function drawWsTargetBoxes(ctx, idx, idsSet, W, H) {
   ctx.strokeStyle = "#ff3b30";
   ctx.lineWidth = Math.max(6, Math.round(W * 0.0022));
   rs.forEach(r => {
+    if (r.ring) {
+      const rr = Math.max(9, W * 0.0165);
+      ctx.beginPath();
+      ctx.ellipse((r.cx - (r.sub ? 0.006 : 0)) * W, r.cy * H, rr * (r.sub ? 0.92 : 1.15), rr, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      return;
+    }
     const sx = W / r.W, sy = H / r.H, pad = Math.max(6, r.h * 0.12);
     ctx.strokeRect((r.x - pad) * sx, (r.y - pad) * sy, (r.w + pad * 2) * sx, (r.h + pad * 2) * sy);
   });
