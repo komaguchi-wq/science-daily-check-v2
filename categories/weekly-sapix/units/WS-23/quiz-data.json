@@ -421,7 +421,8 @@
     ],
     "generatedBy": "_scratch/diag/science_v2_ws_tests_retro/make_wc.py",
     "generatedAt": "2026-09-25",
-    "note": "問題冊子3p目（実施済み）の赤を除去し解答らんを白塗り。解答は解答冊子1p目の右上ボックス"
+    "note": "問題冊子3p目（実施済み）の赤を除去し解答らんを白塗り。解答は解答冊子1p目の右上ボックス",
+    "kaisetsu": "kaisetsu_wctest.html"
   },
   "chishiki20": {
     "label": "知識の20題確認テスト WS-23",
@@ -522,7 +523,8 @@
     ],
     "generatedBy": "_scratch/diag/science_v2_ws_tests_retro/make_wc.py",
     "generatedAt": "2026-09-25",
-    "note": "未記入用紙（次の土曜に実施・採点済み用紙は未入稿）。解答＝解答冊子1p目（左の解答欄＋解説）"
+    "note": "未記入用紙（次の土曜に実施・採点済み用紙は未入稿）。解答＝解答冊子1p目（左の解答欄＋解説）",
+    "kaisetsu": "kaisetsu_chishiki20.html"
   },
   "cptest": {
     "label": "コアプラス確認テスト",
