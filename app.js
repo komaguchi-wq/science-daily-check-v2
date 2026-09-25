@@ -780,12 +780,16 @@ let wsmDirect = false; // 単元一覧からモード選択へ直行した（戻
 //   （WS-20〜: X・Y・Z問題 + コアプラス確認テスト）。quiz-data.json のキー名で識別
 // ★2026-09-18 dctest = デイリーチェック（授業内テスト）の正誤表。630-23〜（解いて採点済みのDCが入稿されたら付ける）
 //   kijutsu = 理科確認テスト「記述の総復習◯」（その回が入稿された単元の別カード。scripts/process_kijutsu_fukushu.py）
-const WSM_BLOCK_KEYS = ["chishiki", "xyz", "ds", "dctest", "cptest", "kijutsu"];
+// ★2026-09-25 wctest = Weekly（土特）のウィークリーチェック（前週の復習・授業内テスト）／chishiki20 = 知識の20題確認テスト（次の土曜に実施）。
+//   WS-19〜 の遡及＋WS-24〜。dctest と同じ扱い（正誤表・解いた用紙・kaisetsu）
+const WSM_BLOCK_KEYS = ["chishiki", "xyz", "ds", "dctest", "wctest", "chishiki20", "cptest", "kijutsu"];
 const WSM_BLOCK_META = {
   chishiki: { icon: "📙", defaultLabel: "知識の総完成＆基礎演習" },
   xyz:    { icon: "🧪", defaultLabel: "X・Y・Z問題" },
   ds:     { icon: "📘", defaultLabel: "デイリーステップ" },
   dctest: { icon: "📒", defaultLabel: "デイリーチェック" },
+  wctest: { icon: "📝", defaultLabel: "ウィークリーチェック" },
+  chishiki20: { icon: "📒", defaultLabel: "知識の20題確認テスト" },
   cptest: { icon: "📗", defaultLabel: "コアプラス確認テスト" },
   kijutsu: { icon: "✍️", defaultLabel: "記述の総復習" },
 };

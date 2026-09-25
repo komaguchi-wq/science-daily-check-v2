@@ -2643,5 +2643,171 @@
       }
     ]
   },
+  "wctest": {
+    "label": "ウィークリーチェック（WS-18の復習）",
+    "questionPages": [
+      "wc_q_01.jpg"
+    ],
+    "answerPages": [
+      "wc_a_01.jpg",
+      "wc_solved_01.jpg"
+    ],
+    "solvedPages": [
+      "wc_solved_01.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "WC",
+        "label": "ウィークリーチェック WS-19",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "WC-(1)①",
+            "label": "(1)①"
+          },
+          {
+            "id": "WC-(1)②",
+            "label": "(1)②"
+          },
+          {
+            "id": "WC-(1)③",
+            "label": "(1)③"
+          },
+          {
+            "id": "WC-(1)④",
+            "label": "(1)④"
+          },
+          {
+            "id": "WC-(1)⑤",
+            "label": "(1)⑤"
+          },
+          {
+            "id": "WC-(1)⑥",
+            "label": "(1)⑥"
+          },
+          {
+            "id": "WC-(1)⑦",
+            "label": "(1)⑦"
+          },
+          {
+            "id": "WC-(2)A",
+            "label": "(2)A"
+          },
+          {
+            "id": "WC-(2)B",
+            "label": "(2)B"
+          },
+          {
+            "id": "WC-(2)C",
+            "label": "(2)C"
+          }
+        ]
+      }
+    ],
+    "generatedBy": "_scratch/diag/science_v2_ws_tests_retro/make_wc.py",
+    "generatedAt": "2026-09-25",
+    "note": "問題冊子3p目（実施済み）の赤を除去し解答らんを白塗り。解答は解答冊子1p目の右上ボックス"
+  },
+  "chishiki20": {
+    "label": "知識の20題確認テスト WS-19",
+    "questionPages": [
+      "k20_q_01.jpg"
+    ],
+    "answerPages": [
+      "k20_a_01.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "K20",
+        "label": "知識の20題 WS-19",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "K20-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "K20-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "K20-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "K20-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "K20-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "K20-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "K20-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "K20-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "K20-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "K20-(10)",
+            "label": "(10)"
+          },
+          {
+            "id": "K20-(11)",
+            "label": "(11)"
+          },
+          {
+            "id": "K20-(12)",
+            "label": "(12)"
+          },
+          {
+            "id": "K20-(13)",
+            "label": "(13)"
+          },
+          {
+            "id": "K20-(14)",
+            "label": "(14)"
+          },
+          {
+            "id": "K20-(15)",
+            "label": "(15)"
+          },
+          {
+            "id": "K20-(16)",
+            "label": "(16)"
+          },
+          {
+            "id": "K20-(17)",
+            "label": "(17)"
+          },
+          {
+            "id": "K20-(18)",
+            "label": "(18)"
+          },
+          {
+            "id": "K20-(19)",
+            "label": "(19)"
+          },
+          {
+            "id": "K20-(20)",
+            "label": "(20)"
+          }
+        ]
+      }
+    ],
+    "generatedBy": "_scratch/diag/science_v2_ws_tests_retro/make_wc.py",
+    "generatedAt": "2026-09-25",
+    "note": "未記入用紙（次の土曜に実施・採点済み用紙は未入稿）。解答＝解答冊子1p目（左の解答欄＋解説）"
+  },
   "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/weekly-sapix/WS-19/"
 }
