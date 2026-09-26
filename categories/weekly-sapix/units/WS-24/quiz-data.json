@@ -1,0 +1,575 @@
+{
+  "id": "WS-24",
+  "title": "環境問題",
+  "category": "weekly-sapix",
+  "pages": [],
+  "xyz": {
+    "label": "X・Y・Z問題",
+    "questionPages": [
+      "xyz_q_01.jpg",
+      "xyz_q_02.jpg",
+      "xyz_q_03.jpg",
+      "xyz_q_04.jpg",
+      "xyz_q_05.jpg",
+      "xyz_q_06.jpg",
+      "xyz_q_07.jpg",
+      "xyz_q_08.jpg",
+      "xyz_q_09.jpg"
+    ],
+    "answerPages": [
+      "xyz_a_01.jpg",
+      "xyz_a_02.jpg",
+      "xyz_a_03.jpg",
+      "xyz_a_04.jpg",
+      "xyz_a_05.jpg",
+      "solved_01.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "X1",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "X1-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X1-(2)",
+            "label": "(2)"
+          }
+        ]
+      },
+      {
+        "id": "X2",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "X2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X2-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X2-(4)",
+            "label": "(4)"
+          }
+        ]
+      },
+      {
+        "id": "X3",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "X3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "X3-(5)",
+            "label": "(5)"
+          }
+        ]
+      },
+      {
+        "id": "X4",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "X4-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X4-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X4-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X4-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "X4-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "X4-(6)",
+            "label": "(6)"
+          }
+        ]
+      },
+      {
+        "id": "Y1",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "Y1-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y1-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y1-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y1-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Y1-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "Y1-(6)",
+            "label": "(6)"
+          }
+        ]
+      },
+      {
+        "id": "Y2",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "Y2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y2-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y2-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Y2-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "Y2-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "Y2-(7)",
+            "label": "(7)"
+          }
+        ]
+      },
+      {
+        "id": "Y3",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "Y3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Y3-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "Y3-(6)",
+            "label": "(6)"
+          }
+        ]
+      },
+      {
+        "id": "Y4",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "Y4-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y4-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y4-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y4-(4)",
+            "label": "(4)"
+          }
+        ]
+      },
+      {
+        "id": "Z1",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "Z1-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Z1-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Z1-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Z1-(4)",
+            "label": "(4)"
+          }
+        ]
+      },
+      {
+        "id": "Z2",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "Z2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Z2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Z2-(3)",
+            "label": "(3)"
+          }
+        ]
+      },
+      {
+        "id": "Z3",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "Z3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Z3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Z3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Z3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Z3-(5)",
+            "label": "(5)"
+          }
+        ]
+      }
+    ],
+    "solvedPages": [
+      "solved_01.jpg"
+    ]
+  },
+  "wctest": {
+    "label": "ウィークリーチェック（WS-23の復習）",
+    "questionPages": [
+      "wc_q_01.jpg"
+    ],
+    "answerPages": [
+      "wc_a_01.jpg",
+      "wc_solved_01.jpg"
+    ],
+    "solvedPages": [
+      "wc_solved_01.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "WC",
+        "label": "ウィークリーチェック WS-24",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "WC-(1)①",
+            "label": "(1)①"
+          },
+          {
+            "id": "WC-(1)②",
+            "label": "(1)②"
+          },
+          {
+            "id": "WC-(1)③",
+            "label": "(1)③"
+          },
+          {
+            "id": "WC-(1)④",
+            "label": "(1)④"
+          },
+          {
+            "id": "WC-(1)⑤",
+            "label": "(1)⑤"
+          },
+          {
+            "id": "WC-(2)①",
+            "label": "(2)①"
+          },
+          {
+            "id": "WC-(2)②",
+            "label": "(2)②"
+          },
+          {
+            "id": "WC-(2)③",
+            "label": "(2)③"
+          },
+          {
+            "id": "WC-(2)④",
+            "label": "(2)④"
+          },
+          {
+            "id": "WC-(2)⑤",
+            "label": "(2)⑤"
+          }
+        ]
+      }
+    ],
+    "generatedBy": "_scratch/diag/science_v2_WS-24_tests/make_wc24.py",
+    "generatedAt": "2026-09-26",
+    "note": "問題冊子3p目（実施済み80点）の赤を除去し、解答らん②〜⑤を白塗り・グラフ内の鉛筆線は方眼を合成して除去。解答は解答冊子1p目の右上ボックス"
+  },
+  "chishiki20": {
+    "label": "知識の20題確認テスト WS-24",
+    "questionPages": [
+      "k20_q_01.jpg"
+    ],
+    "answerPages": [
+      "k20_a_01.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "K20",
+        "label": "知識の20題 WS-24",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "K20-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "K20-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "K20-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "K20-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "K20-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "K20-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "K20-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "K20-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "K20-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "K20-(10)",
+            "label": "(10)"
+          },
+          {
+            "id": "K20-(11)",
+            "label": "(11)"
+          },
+          {
+            "id": "K20-(12)",
+            "label": "(12)"
+          },
+          {
+            "id": "K20-(13)",
+            "label": "(13)"
+          },
+          {
+            "id": "K20-(14)",
+            "label": "(14)"
+          },
+          {
+            "id": "K20-(15)",
+            "label": "(15)"
+          },
+          {
+            "id": "K20-(16)",
+            "label": "(16)"
+          },
+          {
+            "id": "K20-(17)",
+            "label": "(17)"
+          },
+          {
+            "id": "K20-(18)",
+            "label": "(18)"
+          },
+          {
+            "id": "K20-(19)",
+            "label": "(19)"
+          },
+          {
+            "id": "K20-(20)",
+            "label": "(20)"
+          }
+        ]
+      }
+    ],
+    "generatedBy": "_scratch/diag/science_v2_WS-24_tests/make_wc24.py",
+    "generatedAt": "2026-09-26",
+    "note": "未記入用紙（p19・次の土曜に実施・採点済み用紙は未入稿）。解答＝解答冊子1p目（左の解答欄＋解説）"
+  },
+  "cptest": {
+    "label": "コアプラス確認テスト",
+    "questionPages": [
+      "cp_q_01.jpg"
+    ],
+    "answerPages": [
+      "cp_a_01.jpg",
+      "cp_a_02.jpg"
+    ],
+    "solvedPages": [
+      "cp_a_02.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "CP",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "CP-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "CP-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "CP-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "CP-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "CP-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "CP-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "CP-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "CP-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "CP-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "CP-(10)",
+            "label": "(10)"
+          },
+          {
+            "id": "CP-(11)",
+            "label": "(11)"
+          },
+          {
+            "id": "CP-(12)",
+            "label": "(12)"
+          },
+          {
+            "id": "CP-(13)",
+            "label": "(13)"
+          },
+          {
+            "id": "CP-(14)",
+            "label": "(14)"
+          },
+          {
+            "id": "CP-(15)",
+            "label": "(15)"
+          },
+          {
+            "id": "CP-(16)",
+            "label": "(16)"
+          },
+          {
+            "id": "CP-(17)",
+            "label": "(17)"
+          },
+          {
+            "id": "CP-(18)",
+            "label": "(18)"
+          },
+          {
+            "id": "CP-(19)",
+            "label": "(19)"
+          },
+          {
+            "id": "CP-(20)",
+            "label": "(20)"
+          }
+        ]
+      }
+    ]
+  },
+  "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/weekly-sapix/WS-24/"
+}
