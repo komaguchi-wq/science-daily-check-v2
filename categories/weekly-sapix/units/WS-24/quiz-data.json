@@ -22,7 +22,10 @@
    "xyz_a_03.jpg",
    "xyz_a_04.jpg",
    "xyz_a_05.jpg",
-   "solved_01.jpg"
+   "solved_01.jpg",
+   "solved_2026-09-29_01.jpg",
+   "solved_2026-09-29_02.jpg",
+   "solved_2026-09-29_03.jpg"
   ],
   "daimons": [
    {
@@ -312,7 +315,8 @@
   ],
   "answerPages": [
    "wc_a_01.jpg",
-   "wc_solved_01.jpg"
+   "wc_solved_01.jpg",
+   "solved_2026-09-29_05.jpg"
   ],
   "solvedPages": [
    "wc_solved_01.jpg"
@@ -480,7 +484,8 @@
   ],
   "answerPages": [
    "cp_a_01.jpg",
-   "cp_a_02.jpg"
+   "cp_a_02.jpg",
+   "solved_2026-09-29_04.jpg"
   ],
   "solvedPages": [
    "cp_a_02.jpg"
