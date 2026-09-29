@@ -295,5 +295,60 @@
     "sectionPages": {},
     "xyzCount": 29,
     "pageRegionCounts": {}
+  },
+  {
+    "id": "rcpp-01",
+    "title": "コアプラス＋ 第1部 第1章 化学編",
+    "subject": "理科",
+    "pageCount": 9,
+    "totalRegions": 0,
+    "sectionRegions": {},
+    "sectionPages": {},
+    "xyzCount": 117,
+    "pageRegionCounts": {}
+  },
+  {
+    "id": "rcpp-02",
+    "title": "コアプラス＋ 第1部 第2章 地学編",
+    "subject": "理科",
+    "pageCount": 8,
+    "totalRegions": 0,
+    "sectionRegions": {},
+    "sectionPages": {},
+    "xyzCount": 156,
+    "pageRegionCounts": {}
+  },
+  {
+    "id": "rcpp-03",
+    "title": "コアプラス＋ 第1部 第3章 物理編",
+    "subject": "理科",
+    "pageCount": 12,
+    "totalRegions": 0,
+    "sectionRegions": {},
+    "sectionPages": {},
+    "xyzCount": 162,
+    "pageRegionCounts": {}
+  },
+  {
+    "id": "rcpp-04",
+    "title": "コアプラス＋ 第1部 第4章 生物編",
+    "subject": "理科",
+    "pageCount": 4,
+    "totalRegions": 0,
+    "sectionRegions": {},
+    "sectionPages": {},
+    "xyzCount": 73,
+    "pageRegionCounts": {}
+  },
+  {
+    "id": "rcpp-05",
+    "title": "コアプラス＋ 第2部 中学受験理科の発展知識",
+    "subject": "理科",
+    "pageCount": 25,
+    "totalRegions": 0,
+    "sectionRegions": {},
+    "sectionPages": {},
+    "xyzCount": 170,
+    "pageRegionCounts": {}
   }
 ]

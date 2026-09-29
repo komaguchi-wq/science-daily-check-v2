@@ -1,0 +1,2635 @@
+{
+  "id": "rcpp-05",
+  "title": "コアプラス＋ 第2部 中学受験理科の発展知識",
+  "category": "coreplus",
+  "pages": [],
+  "_pages_backup": [
+    {
+      "id": 1,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 34,
+      "width": 1532,
+      "height": 2183,
+      "image": "page_01.jpg",
+      "imageMasked": "page_01_masked.jpg",
+      "regions": [
+        {
+          "x": 1052,
+          "y": 238,
+          "w": 411,
+          "h": 103
+        },
+        {
+          "x": 1056,
+          "y": 339,
+          "w": 37,
+          "h": 39
+        },
+        {
+          "x": 1051,
+          "y": 653,
+          "w": 412,
+          "h": 67
+        },
+        {
+          "x": 1031,
+          "y": 1179,
+          "w": 432,
+          "h": 420
+        },
+        {
+          "x": 1046,
+          "y": 1809,
+          "w": 417,
+          "h": 67
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 35,
+      "width": 1532,
+      "height": 2180,
+      "image": "page_02.jpg",
+      "imageMasked": "page_02_masked.jpg",
+      "regions": [
+        {
+          "x": 1027,
+          "y": 171,
+          "w": 436,
+          "h": 34
+        },
+        {
+          "x": 1008,
+          "y": 204,
+          "w": 455,
+          "h": 34
+        },
+        {
+          "x": 1027,
+          "y": 521,
+          "w": 436,
+          "h": 33
+        },
+        {
+          "x": 1005,
+          "y": 554,
+          "w": 458,
+          "h": 70
+        },
+        {
+          "x": 1078,
+          "y": 940,
+          "w": 385,
+          "h": 32
+        },
+        {
+          "x": 1030,
+          "y": 1461,
+          "w": 418,
+          "h": 70
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 36,
+      "width": 1532,
+      "height": 2179,
+      "image": "page_03.jpg",
+      "imageMasked": "page_03_masked.jpg",
+      "regions": [
+        {
+          "x": 1050,
+          "y": 159,
+          "w": 413,
+          "h": 67
+        },
+        {
+          "x": 1072,
+          "y": 438,
+          "w": 391,
+          "h": 35
+        },
+        {
+          "x": 1050,
+          "y": 757,
+          "w": 413,
+          "h": 101
+        },
+        {
+          "x": 1030,
+          "y": 1039,
+          "w": 433,
+          "h": 69
+        },
+        {
+          "x": 1047,
+          "y": 1336,
+          "w": 416,
+          "h": 352
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 37,
+      "width": 1532,
+      "height": 2180,
+      "image": "page_04.jpg",
+      "imageMasked": "page_04_masked.jpg",
+      "regions": [
+        {
+          "x": 1005,
+          "y": 167,
+          "w": 458,
+          "h": 69
+        },
+        {
+          "x": 1026,
+          "y": 450,
+          "w": 437,
+          "h": 33
+        },
+        {
+          "x": 1011,
+          "y": 483,
+          "w": 452,
+          "h": 39
+        },
+        {
+          "x": 1013,
+          "y": 518,
+          "w": 450,
+          "h": 36
+        },
+        {
+          "x": 1005,
+          "y": 815,
+          "w": 458,
+          "h": 135
+        },
+        {
+          "x": 1029,
+          "y": 1235,
+          "w": 434,
+          "h": 32
+        },
+        {
+          "x": 1033,
+          "y": 1574,
+          "w": 417,
+          "h": 30
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 38,
+      "width": 1532,
+      "height": 2176,
+      "image": "page_05.jpg",
+      "imageMasked": "page_05_masked.jpg",
+      "regions": [
+        {
+          "x": 1050,
+          "y": 159,
+          "w": 413,
+          "h": 69
+        },
+        {
+          "x": 1053,
+          "y": 228,
+          "w": 410,
+          "h": 32
+        },
+        {
+          "x": 1048,
+          "y": 474,
+          "w": 415,
+          "h": 135
+        },
+        {
+          "x": 1068,
+          "y": 885,
+          "w": 395,
+          "h": 35
+        },
+        {
+          "x": 1027,
+          "y": 918,
+          "w": 436,
+          "h": 104
+        },
+        {
+          "x": 1114,
+          "y": 1440,
+          "w": 349,
+          "h": 36
+        },
+        {
+          "x": 1114,
+          "y": 1475,
+          "w": 349,
+          "h": 66
+        },
+        {
+          "x": 1068,
+          "y": 1542,
+          "w": 395,
+          "h": 35
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 39,
+      "width": 1532,
+      "height": 2177,
+      "image": "page_06.jpg",
+      "imageMasked": "page_06_masked.jpg",
+      "regions": [
+        {
+          "x": 1030,
+          "y": 173,
+          "w": 433,
+          "h": 35
+        },
+        {
+          "x": 1031,
+          "y": 488,
+          "w": 432,
+          "h": 34
+        },
+        {
+          "x": 1013,
+          "y": 520,
+          "w": 47,
+          "h": 39
+        },
+        {
+          "x": 1033,
+          "y": 772,
+          "w": 430,
+          "h": 315
+        },
+        {
+          "x": 1014,
+          "y": 1086,
+          "w": 449,
+          "h": 40
+        },
+        {
+          "x": 1011,
+          "y": 1495,
+          "w": 439,
+          "h": 69
+        },
+        {
+          "x": 1011,
+          "y": 1565,
+          "w": 439,
+          "h": 66
+        },
+        {
+          "x": 1014,
+          "y": 1631,
+          "w": 436,
+          "h": 39
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 40,
+      "width": 1532,
+      "height": 2173,
+      "image": "page_07.jpg",
+      "imageMasked": "page_07_masked.jpg",
+      "regions": [
+        {
+          "x": 1077,
+          "y": 164,
+          "w": 386,
+          "h": 33
+        },
+        {
+          "x": 1053,
+          "y": 377,
+          "w": 410,
+          "h": 105
+        },
+        {
+          "x": 1050,
+          "y": 717,
+          "w": 413,
+          "h": 100
+        },
+        {
+          "x": 1050,
+          "y": 968,
+          "w": 413,
+          "h": 69
+        },
+        {
+          "x": 1070,
+          "y": 1357,
+          "w": 393,
+          "h": 33
+        },
+        {
+          "x": 1048,
+          "y": 1642,
+          "w": 415,
+          "h": 66
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 41,
+      "width": 1532,
+      "height": 2172,
+      "image": "page_08.jpg",
+      "imageMasked": "page_08_masked.jpg",
+      "regions": [
+        {
+          "x": 1030,
+          "y": 169,
+          "w": 433,
+          "h": 37
+        },
+        {
+          "x": 1010,
+          "y": 450,
+          "w": 453,
+          "h": 68
+        },
+        {
+          "x": 990,
+          "y": 810,
+          "w": 473,
+          "h": 66
+        },
+        {
+          "x": 1034,
+          "y": 1365,
+          "w": 421,
+          "h": 32
+        },
+        {
+          "x": 1079,
+          "y": 1399,
+          "w": 376,
+          "h": 31
+        },
+        {
+          "x": 1038,
+          "y": 1684,
+          "w": 417,
+          "h": 32
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 42,
+      "width": 1532,
+      "height": 2170,
+      "image": "page_09.jpg",
+      "imageMasked": "page_09_masked.jpg",
+      "regions": [
+        {
+          "x": 1069,
+          "y": 163,
+          "w": 394,
+          "h": 32
+        },
+        {
+          "x": 1067,
+          "y": 508,
+          "w": 396,
+          "h": 31
+        },
+        {
+          "x": 1067,
+          "y": 893,
+          "w": 396,
+          "h": 69
+        },
+        {
+          "x": 1112,
+          "y": 1396,
+          "w": 351,
+          "h": 33
+        },
+        {
+          "x": 1066,
+          "y": 1674,
+          "w": 397,
+          "h": 34
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 43,
+      "width": 1532,
+      "height": 2172,
+      "image": "page_10.jpg",
+      "imageMasked": "page_10_masked.jpg",
+      "regions": [
+        {
+          "x": 1008,
+          "y": 172,
+          "w": 455,
+          "h": 308
+        },
+        {
+          "x": 1032,
+          "y": 841,
+          "w": 431,
+          "h": 34
+        },
+        {
+          "x": 1032,
+          "y": 1122,
+          "w": 431,
+          "h": 34
+        },
+        {
+          "x": 1034,
+          "y": 1450,
+          "w": 416,
+          "h": 32
+        },
+        {
+          "x": 1015,
+          "y": 1483,
+          "w": 435,
+          "h": 39
+        },
+        {
+          "x": 1033,
+          "y": 1695,
+          "w": 417,
+          "h": 33
+        },
+        {
+          "x": 1034,
+          "y": 1726,
+          "w": 416,
+          "h": 37
+        },
+        {
+          "x": 1013,
+          "y": 1763,
+          "w": 450,
+          "h": 66
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 44,
+      "width": 1532,
+      "height": 2168,
+      "image": "page_11.jpg",
+      "imageMasked": "page_11_masked.jpg",
+      "regions": [
+        {
+          "x": 1065,
+          "y": 161,
+          "w": 398,
+          "h": 32
+        },
+        {
+          "x": 1065,
+          "y": 196,
+          "w": 398,
+          "h": 30
+        },
+        {
+          "x": 1041,
+          "y": 229,
+          "w": 422,
+          "h": 35
+        },
+        {
+          "x": 1042,
+          "y": 714,
+          "w": 421,
+          "h": 352
+        },
+        {
+          "x": 1063,
+          "y": 1394,
+          "w": 400,
+          "h": 33
+        },
+        {
+          "x": 1043,
+          "y": 1428,
+          "w": 420,
+          "h": 249
+        },
+        {
+          "x": 1068,
+          "y": 1681,
+          "w": 395,
+          "h": 30
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 45,
+      "width": 1532,
+      "height": 2168,
+      "image": "page_12.jpg",
+      "imageMasked": "page_12_masked.jpg",
+      "regions": [
+        {
+          "x": 1030,
+          "y": 170,
+          "w": 433,
+          "h": 31
+        },
+        {
+          "x": 990,
+          "y": 204,
+          "w": 473,
+          "h": 63
+        },
+        {
+          "x": 1011,
+          "y": 763,
+          "w": 452,
+          "h": 484
+        },
+        {
+          "x": 1015,
+          "y": 1246,
+          "w": 448,
+          "h": 36
+        },
+        {
+          "x": 1014,
+          "y": 1280,
+          "w": 449,
+          "h": 35
+        },
+        {
+          "x": 1038,
+          "y": 1356,
+          "w": 413,
+          "h": 40
+        },
+        {
+          "x": 1036,
+          "y": 1396,
+          "w": 415,
+          "h": 29
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 46,
+      "width": 1532,
+      "height": 2164,
+      "image": "page_13.jpg",
+      "imageMasked": "page_13_masked.jpg",
+      "regions": [
+        {
+          "x": 1042,
+          "y": 159,
+          "w": 421,
+          "h": 99
+        },
+        {
+          "x": 1042,
+          "y": 406,
+          "w": 421,
+          "h": 64
+        },
+        {
+          "x": 1025,
+          "y": 837,
+          "w": 438,
+          "h": 66
+        },
+        {
+          "x": 1075,
+          "y": 1397,
+          "w": 388,
+          "h": 31
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 47,
+      "width": 1532,
+      "height": 2168,
+      "image": "page_14.jpg",
+      "imageMasked": "page_14_masked.jpg",
+      "regions": [
+        {
+          "x": 1027,
+          "y": 180,
+          "w": 436,
+          "h": 33
+        },
+        {
+          "x": 1007,
+          "y": 211,
+          "w": 456,
+          "h": 103
+        },
+        {
+          "x": 1009,
+          "y": 315,
+          "w": 454,
+          "h": 68
+        },
+        {
+          "x": 1030,
+          "y": 796,
+          "w": 433,
+          "h": 38
+        },
+        {
+          "x": 1079,
+          "y": 1458,
+          "w": 370,
+          "h": 31
+        },
+        {
+          "x": 1080,
+          "y": 1491,
+          "w": 369,
+          "h": 32
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 48,
+      "width": 1532,
+      "height": 2164,
+      "image": "page_15.jpg",
+      "imageMasked": "page_15_masked.jpg",
+      "regions": [
+        {
+          "x": 1045,
+          "y": 162,
+          "w": 418,
+          "h": 133
+        },
+        {
+          "x": 1066,
+          "y": 298,
+          "w": 397,
+          "h": 34
+        },
+        {
+          "x": 1049,
+          "y": 330,
+          "w": 414,
+          "h": 38
+        },
+        {
+          "x": 1068,
+          "y": 755,
+          "w": 395,
+          "h": 33
+        },
+        {
+          "x": 1043,
+          "y": 789,
+          "w": 420,
+          "h": 68
+        },
+        {
+          "x": 1048,
+          "y": 854,
+          "w": 415,
+          "h": 40
+        },
+        {
+          "x": 1062,
+          "y": 1349,
+          "w": 401,
+          "h": 72
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 49,
+      "width": 1532,
+      "height": 2165,
+      "image": "page_16.jpg",
+      "imageMasked": "page_16_masked.jpg",
+      "regions": [
+        {
+          "x": 991,
+          "y": 182,
+          "w": 472,
+          "h": 66
+        },
+        {
+          "x": 1032,
+          "y": 730,
+          "w": 431,
+          "h": 36
+        },
+        {
+          "x": 1017,
+          "y": 765,
+          "w": 35,
+          "h": 39
+        },
+        {
+          "x": 1011,
+          "y": 800,
+          "w": 452,
+          "h": 102
+        },
+        {
+          "x": 1038,
+          "y": 1183,
+          "w": 425,
+          "h": 553
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 50,
+      "width": 1532,
+      "height": 2159,
+      "image": "page_17.jpg",
+      "imageMasked": "page_17_masked.jpg",
+      "regions": [
+        {
+          "x": 1042,
+          "y": 164,
+          "w": 421,
+          "h": 136
+        },
+        {
+          "x": 1064,
+          "y": 766,
+          "w": 399,
+          "h": 33
+        },
+        {
+          "x": 1060,
+          "y": 1114,
+          "w": 403,
+          "h": 33
+        },
+        {
+          "x": 1059,
+          "y": 1475,
+          "w": 404,
+          "h": 34
+        },
+        {
+          "x": 1047,
+          "y": 1510,
+          "w": 416,
+          "h": 101
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 51,
+      "width": 1532,
+      "height": 2165,
+      "image": "page_18.jpg",
+      "imageMasked": "page_18_masked.jpg",
+      "regions": [
+        {
+          "x": 1031,
+          "y": 169,
+          "w": 432,
+          "h": 33
+        },
+        {
+          "x": 1032,
+          "y": 451,
+          "w": 431,
+          "h": 36
+        },
+        {
+          "x": 1014,
+          "y": 486,
+          "w": 449,
+          "h": 35
+        },
+        {
+          "x": 1032,
+          "y": 932,
+          "w": 431,
+          "h": 36
+        },
+        {
+          "x": 1034,
+          "y": 1441,
+          "w": 417,
+          "h": 35
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 52,
+      "width": 1532,
+      "height": 2159,
+      "image": "page_19.jpg",
+      "imageMasked": "page_19_masked.jpg",
+      "regions": [
+        {
+          "x": 1064,
+          "y": 159,
+          "w": 399,
+          "h": 34
+        },
+        {
+          "x": 1044,
+          "y": 193,
+          "w": 419,
+          "h": 68
+        },
+        {
+          "x": 1043,
+          "y": 260,
+          "w": 420,
+          "h": 67
+        },
+        {
+          "x": 1042,
+          "y": 829,
+          "w": 421,
+          "h": 71
+        },
+        {
+          "x": 1040,
+          "y": 897,
+          "w": 423,
+          "h": 67
+        },
+        {
+          "x": 1058,
+          "y": 1427,
+          "w": 405,
+          "h": 35
+        },
+        {
+          "x": 1059,
+          "y": 1610,
+          "w": 404,
+          "h": 33
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 53,
+      "width": 1532,
+      "height": 2160,
+      "image": "page_20.jpg",
+      "imageMasked": "page_20_masked.jpg",
+      "regions": [
+        {
+          "x": 1009,
+          "y": 175,
+          "w": 454,
+          "h": 67
+        },
+        {
+          "x": 1015,
+          "y": 242,
+          "w": 448,
+          "h": 70
+        },
+        {
+          "x": 1011,
+          "y": 752,
+          "w": 452,
+          "h": 169
+        },
+        {
+          "x": 1035,
+          "y": 1388,
+          "w": 416,
+          "h": 31
+        },
+        {
+          "x": 1014,
+          "y": 1421,
+          "w": 437,
+          "h": 70
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 54,
+      "width": 1532,
+      "height": 2156,
+      "image": "page_21.jpg",
+      "imageMasked": "page_21_masked.jpg",
+      "regions": [
+        {
+          "x": 1040,
+          "y": 156,
+          "w": 423,
+          "h": 101
+        },
+        {
+          "x": 1060,
+          "y": 258,
+          "w": 403,
+          "h": 33
+        },
+        {
+          "x": 1040,
+          "y": 292,
+          "w": 423,
+          "h": 99
+        },
+        {
+          "x": 1022,
+          "y": 883,
+          "w": 441,
+          "h": 66
+        },
+        {
+          "x": 1039,
+          "y": 1380,
+          "w": 424,
+          "h": 67
+        },
+        {
+          "x": 1060,
+          "y": 1696,
+          "w": 403,
+          "h": 33
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 55,
+      "width": 1532,
+      "height": 2156,
+      "image": "page_22.jpg",
+      "imageMasked": "page_22_masked.jpg",
+      "regions": [
+        {
+          "x": 1029,
+          "y": 173,
+          "w": 434,
+          "h": 32
+        },
+        {
+          "x": 1013,
+          "y": 205,
+          "w": 450,
+          "h": 39
+        },
+        {
+          "x": 1032,
+          "y": 807,
+          "w": 431,
+          "h": 33
+        },
+        {
+          "x": 1030,
+          "y": 839,
+          "w": 433,
+          "h": 34
+        },
+        {
+          "x": 1006,
+          "y": 871,
+          "w": 457,
+          "h": 104
+        },
+        {
+          "x": 1033,
+          "y": 1356,
+          "w": 415,
+          "h": 33
+        },
+        {
+          "x": 1011,
+          "y": 1639,
+          "w": 437,
+          "h": 66
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 56,
+      "width": 1532,
+      "height": 2155,
+      "image": "page_23.jpg",
+      "imageMasked": "page_23_masked.jpg",
+      "regions": [
+        {
+          "x": 1040,
+          "y": 158,
+          "w": 423,
+          "h": 66
+        },
+        {
+          "x": 1040,
+          "y": 406,
+          "w": 423,
+          "h": 103
+        },
+        {
+          "x": 1046,
+          "y": 506,
+          "w": 417,
+          "h": 37
+        },
+        {
+          "x": 1020,
+          "y": 893,
+          "w": 443,
+          "h": 104
+        },
+        {
+          "x": 1070,
+          "y": 1340,
+          "w": 393,
+          "h": 67
+        },
+        {
+          "x": 1058,
+          "y": 1585,
+          "w": 405,
+          "h": 32
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 57,
+      "width": 1532,
+      "height": 2156,
+      "image": "page_24.jpg",
+      "imageMasked": "page_24_masked.jpg",
+      "regions": [
+        {
+          "x": 995,
+          "y": 172,
+          "w": 468,
+          "h": 66
+        },
+        {
+          "x": 1038,
+          "y": 807,
+          "w": 425,
+          "h": 33
+        },
+        {
+          "x": 1038,
+          "y": 839,
+          "w": 425,
+          "h": 34
+        },
+        {
+          "x": 1020,
+          "y": 872,
+          "w": 443,
+          "h": 74
+        },
+        {
+          "x": 1021,
+          "y": 943,
+          "w": 442,
+          "h": 31
+        },
+        {
+          "x": 996,
+          "y": 1440,
+          "w": 459,
+          "h": 139
+        },
+        {
+          "x": 1030,
+          "y": 1573,
+          "w": 425,
+          "h": 72
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "coreplus",
+      "src_book": "question",
+      "src_print_page": 58,
+      "width": 1532,
+      "height": 2155,
+      "image": "page_25.jpg",
+      "imageMasked": "page_25_masked.jpg",
+      "regions": [
+        {
+          "x": 1066,
+          "y": 166,
+          "w": 397,
+          "h": 30
+        },
+        {
+          "x": 1059,
+          "y": 548,
+          "w": 404,
+          "h": 35
+        },
+        {
+          "x": 1058,
+          "y": 1010,
+          "w": 405,
+          "h": 32
+        },
+        {
+          "x": 1033,
+          "y": 1322,
+          "w": 430,
+          "h": 66
+        }
+      ]
+    }
+  ],
+  "xyz": {
+    "label": "コアプラス",
+    "spread": true,
+    "questionPages": [
+      "page_01_masked.jpg",
+      "page_02_masked.jpg",
+      "page_03_masked.jpg",
+      "page_04_masked.jpg",
+      "page_05_masked.jpg",
+      "page_06_masked.jpg",
+      "page_07_masked.jpg",
+      "page_08_masked.jpg",
+      "page_09_masked.jpg",
+      "page_10_masked.jpg",
+      "page_11_masked.jpg",
+      "page_12_masked.jpg",
+      "page_13_masked.jpg",
+      "page_14_masked.jpg",
+      "page_15_masked.jpg",
+      "page_16_masked.jpg",
+      "page_17_masked.jpg",
+      "page_18_masked.jpg",
+      "page_19_masked.jpg",
+      "page_20_masked.jpg",
+      "page_21_masked.jpg",
+      "page_22_masked.jpg",
+      "page_23_masked.jpg",
+      "page_24_masked.jpg",
+      "page_25_masked.jpg"
+    ],
+    "answerPages": [
+      "page_01.jpg",
+      "page_02.jpg",
+      "page_03.jpg",
+      "page_04.jpg",
+      "page_05.jpg",
+      "page_06.jpg",
+      "page_07.jpg",
+      "page_08.jpg",
+      "page_09.jpg",
+      "page_10.jpg",
+      "page_11.jpg",
+      "page_12.jpg",
+      "page_13.jpg",
+      "page_14.jpg",
+      "page_15.jpg",
+      "page_16.jpg",
+      "page_17.jpg",
+      "page_18.jpg",
+      "page_19.jpg",
+      "page_20.jpg",
+      "page_21.jpg",
+      "page_22.jpg",
+      "page_23.jpg",
+      "page_24.jpg",
+      "page_25.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "804",
+        "label": "804",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "804-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "804-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "805",
+        "label": "805",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "805-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "805-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "805-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "806",
+        "label": "806",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "806-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "806-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "807",
+        "label": "807",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "807-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "807-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "807-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "808",
+        "label": "808",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "808-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "808-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "809",
+        "label": "809",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "809-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "809-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "810",
+        "label": "810",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "810-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "810-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "811",
+        "label": "811",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "811-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "811-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "812",
+        "label": "812",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "812-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "812-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "813",
+        "label": "813",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "813-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "813-B",
+            "label": "B",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "814",
+        "label": "814",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "814-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "814-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "815",
+        "label": "815",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "815-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "815-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "816",
+        "label": "816",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "816-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "816-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "816-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "816-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "817",
+        "label": "817",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "817-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "817-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "818",
+        "label": "818",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "818-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "818-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "819",
+        "label": "819",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "819-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "819-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "820",
+        "label": "820",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "820-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "820-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "820-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "821",
+        "label": "821",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "821-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "821-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "822",
+        "label": "822",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "822-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "822-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "823",
+        "label": "823",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "823-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "823-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "824",
+        "label": "824",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "824",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "825",
+        "label": "825",
+        "qpage": 7,
+        "questions": [
+          {
+            "id": "825-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "825-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "826",
+        "label": "826",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "826-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "826-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "827",
+        "label": "827",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "827-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "827-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "827-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "827-④",
+            "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "828",
+        "label": "828",
+        "qpage": 8,
+        "questions": [
+          {
+            "id": "828-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "828-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "829",
+        "label": "829",
+        "qpage": 9,
+        "questions": [
+          {
+            "id": "829-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "829-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "830",
+        "label": "830",
+        "qpage": 9,
+        "questions": [
+          {
+            "id": "830-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "830-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "831",
+        "label": "831",
+        "qpage": 9,
+        "questions": [
+          {
+            "id": "831-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "831-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "832",
+        "label": "832",
+        "qpage": 10,
+        "questions": [
+          {
+            "id": "832-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "832-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "832-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "832-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "832-⑤",
+            "label": "⑤",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "833",
+        "label": "833",
+        "qpage": 10,
+        "questions": [
+          {
+            "id": "833-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "833-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "833-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "833-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "834",
+        "label": "834",
+        "qpage": 10,
+        "questions": [
+          {
+            "id": "834-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "834-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "834-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "835",
+        "label": "835",
+        "qpage": 11,
+        "questions": [
+          {
+            "id": "835-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "835-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "835-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "836",
+        "label": "836",
+        "qpage": 11,
+        "questions": [
+          {
+            "id": "836-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "836-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "837",
+        "label": "837",
+        "qpage": 11,
+        "questions": [
+          {
+            "id": "837-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "837-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "838",
+        "label": "838",
+        "qpage": 12,
+        "questions": [
+          {
+            "id": "838-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "838-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "839",
+        "label": "839",
+        "qpage": 12,
+        "questions": [
+          {
+            "id": "839",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "840",
+        "label": "840",
+        "qpage": 12,
+        "questions": [
+          {
+            "id": "840",
+            "label": "―",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "841",
+        "label": "841",
+        "qpage": 13,
+        "questions": [
+          {
+            "id": "841-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "841-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "841-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "842",
+        "label": "842",
+        "qpage": 13,
+        "questions": [
+          {
+            "id": "842-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "842-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "842-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "843",
+        "label": "843",
+        "qpage": 13,
+        "questions": [
+          {
+            "id": "843-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "843-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "843-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "843-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "844",
+        "label": "844",
+        "qpage": 14,
+        "questions": [
+          {
+            "id": "844-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "844-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "845",
+        "label": "845",
+        "qpage": 14,
+        "questions": [
+          {
+            "id": "845-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "845-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "846",
+        "label": "846",
+        "qpage": 14,
+        "questions": [
+          {
+            "id": "846-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "846-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "847",
+        "label": "847",
+        "qpage": 15,
+        "questions": [
+          {
+            "id": "847-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "847-A",
+            "label": "A",
+            "group": ""
+          },
+          {
+            "id": "847-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "847-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "848",
+        "label": "848",
+        "qpage": 15,
+        "questions": [
+          {
+            "id": "848-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "848-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "849",
+        "label": "849",
+        "qpage": 15,
+        "questions": [
+          {
+            "id": "849-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "849-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "850",
+        "label": "850",
+        "qpage": 16,
+        "questions": [
+          {
+            "id": "850-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "850-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "851",
+        "label": "851",
+        "qpage": 16,
+        "questions": [
+          {
+            "id": "851-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "851-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "852",
+        "label": "852",
+        "qpage": 16,
+        "questions": [
+          {
+            "id": "852-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "852-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "853",
+        "label": "853",
+        "qpage": 17,
+        "questions": [
+          {
+            "id": "853-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "853-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "854",
+        "label": "854",
+        "qpage": 17,
+        "questions": [
+          {
+            "id": "854-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "854-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "854-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "855",
+        "label": "855",
+        "qpage": 17,
+        "questions": [
+          {
+            "id": "855-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "855-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "855-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "856",
+        "label": "856",
+        "qpage": 18,
+        "questions": [
+          {
+            "id": "856-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "856-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "857",
+        "label": "857",
+        "qpage": 18,
+        "questions": [
+          {
+            "id": "857-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "857-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "858",
+        "label": "858",
+        "qpage": 18,
+        "questions": [
+          {
+            "id": "858-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "858-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "858-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "859",
+        "label": "859",
+        "qpage": 19,
+        "questions": [
+          {
+            "id": "859-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "859-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "860",
+        "label": "860",
+        "qpage": 19,
+        "questions": [
+          {
+            "id": "860-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "860-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "861",
+        "label": "861",
+        "qpage": 19,
+        "questions": [
+          {
+            "id": "861-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "861-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "862",
+        "label": "862",
+        "qpage": 20,
+        "questions": [
+          {
+            "id": "862-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "862-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "862-③",
+            "label": "③",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "863",
+        "label": "863",
+        "qpage": 20,
+        "questions": [
+          {
+            "id": "863-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "863-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "864",
+        "label": "864",
+        "qpage": 20,
+        "questions": [
+          {
+            "id": "864-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "864-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "865",
+        "label": "865",
+        "qpage": 21,
+        "questions": [
+          {
+            "id": "865-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "865-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "866",
+        "label": "866",
+        "qpage": 21,
+        "questions": [
+          {
+            "id": "866-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "866-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "867",
+        "label": "867",
+        "qpage": 21,
+        "questions": [
+          {
+            "id": "867-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "867-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "868",
+        "label": "868",
+        "qpage": 22,
+        "questions": [
+          {
+            "id": "868-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "868-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "869",
+        "label": "869",
+        "qpage": 22,
+        "questions": [
+          {
+            "id": "869-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "869-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "870",
+        "label": "870",
+        "qpage": 22,
+        "questions": [
+          {
+            "id": "870-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "870-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "871",
+        "label": "871",
+        "qpage": 23,
+        "questions": [
+          {
+            "id": "871-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "871-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "871-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "871-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "871-⑤",
+            "label": "⑤",
+            "group": ""
+          },
+          {
+            "id": "871-⑥",
+            "label": "⑥",
+            "group": ""
+          },
+          {
+            "id": "871-⑦",
+            "label": "⑦",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "872",
+        "label": "872",
+        "qpage": 23,
+        "questions": [
+          {
+            "id": "872-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "872-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "873",
+        "label": "873",
+        "qpage": 23,
+        "questions": [
+          {
+            "id": "873-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "873-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "874",
+        "label": "874",
+        "qpage": 24,
+        "questions": [
+          {
+            "id": "874-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "874-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "875",
+        "label": "875",
+        "qpage": 24,
+        "questions": [
+          {
+            "id": "875-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "875-②",
+            "label": "②",
+            "group": ""
+          }
+        ]
+      }
+    ]
+  },
+  "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/coreplus/rcpp-05/"
+}
