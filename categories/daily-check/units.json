@@ -2156,5 +2156,62 @@
    "26": 10
   },
   "xyzPrimary": true
+ },
+ {
+  "id": "630-25",
+  "title": "気象",
+  "subject": "6年理科 デイリーサピックス",
+  "pageCount": 26,
+  "totalRegions": 365,
+  "sectionRegions": {
+   "kakunin": 96,
+   "hatten": 19,
+   "pointcheck": 130,
+   "dailystep": 120
+  },
+  "sectionPages": {
+   "8": "kakunin",
+   "9": "kakunin",
+   "10": "kakunin",
+   "11": "kakunin",
+   "12": "kakunin",
+   "13": "kakunin",
+   "14": "kakunin",
+   "15": "hatten",
+   "16": "hatten",
+   "17": "pointcheck",
+   "18": "pointcheck",
+   "19": "pointcheck",
+   "20": "pointcheck",
+   "21": "dailystep",
+   "22": "dailystep",
+   "23": "dailystep",
+   "24": "dailystep",
+   "25": "dailystep",
+   "26": "dailystep"
+  },
+  "xyzCount": 192,
+  "pageRegionCounts": {
+   "8": 15,
+   "9": 12,
+   "10": 24,
+   "11": 14,
+   "12": 16,
+   "13": 5,
+   "14": 10,
+   "15": 10,
+   "16": 9,
+   "17": 24,
+   "18": 35,
+   "19": 49,
+   "20": 22,
+   "21": 10,
+   "22": 10,
+   "23": 35,
+   "24": 10,
+   "25": 37,
+   "26": 18
+  },
+  "xyzPrimary": true
  }
 ]
