@@ -1,0 +1,18 @@
+{
+ "unit": "rcpp-02",
+ "id": "2026-10-02-seigo-rcpp-02-ambiguous",
+ "source": "テスト範囲の束1001 コアプラス＋（印が読み切れない問だけ仮入力）",
+ "created": "2026-10-02",
+ "grades": {
+  "690-①": false,
+  "699-A": true,
+  "699-B": true,
+  "699-C": true,
+  "699-D": true,
+  "699-E": true,
+  "699-G": true,
+  "700-③": false,
+  "701-B": false,
+  "701-②": false
+ }
+}
