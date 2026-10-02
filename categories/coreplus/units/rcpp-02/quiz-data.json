@@ -936,8 +936,23 @@
         "qpage": 0,
         "questions": [
           {
-            "id": "677",
-            "label": "―",
+            "id": "677-春分",
+            "label": "春分",
+            "group": ""
+          },
+          {
+            "id": "677-夏至",
+            "label": "夏至",
+            "group": ""
+          },
+          {
+            "id": "677-秋分",
+            "label": "秋分",
+            "group": ""
+          },
+          {
+            "id": "677-冬至",
+            "label": "冬至",
             "group": ""
           }
         ]
@@ -970,33 +985,28 @@
             "group": ""
           },
           {
-            "id": "679-②",
-            "label": "②",
+            "id": "679-②A",
+            "label": "②A",
             "group": ""
           },
           {
-            "id": "679-A",
-            "label": "A",
+            "id": "679-②B",
+            "label": "②B",
             "group": ""
           },
           {
-            "id": "679-B",
-            "label": "B",
+            "id": "679-②C",
+            "label": "②C",
             "group": ""
           },
           {
-            "id": "679-C",
-            "label": "C",
+            "id": "679-②D",
+            "label": "②D",
             "group": ""
           },
           {
-            "id": "679-D",
-            "label": "D",
-            "group": ""
-          },
-          {
-            "id": "679-E",
-            "label": "E",
+            "id": "679-②E",
+            "label": "②E",
             "group": ""
           },
           {
@@ -1017,18 +1027,48 @@
         "qpage": 0,
         "questions": [
           {
-            "id": "680-①",
-            "label": "①",
+            "id": "680-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "680-②",
-            "label": "②",
+            "id": "680-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "680-③",
-            "label": "③",
+            "id": "680-①C",
+            "label": "①C",
+            "group": ""
+          },
+          {
+            "id": "680-②A",
+            "label": "②A",
+            "group": ""
+          },
+          {
+            "id": "680-②B",
+            "label": "②B",
+            "group": ""
+          },
+          {
+            "id": "680-②C",
+            "label": "②C",
+            "group": ""
+          },
+          {
+            "id": "680-③A",
+            "label": "③A",
+            "group": ""
+          },
+          {
+            "id": "680-③B",
+            "label": "③B",
+            "group": ""
+          },
+          {
+            "id": "680-③C",
+            "label": "③C",
             "group": ""
           }
         ]
@@ -1395,43 +1435,38 @@
         "qpage": 3,
         "questions": [
           {
-            "id": "699-①",
-            "label": "①",
-            "group": ""
-          },
-          {
             "id": "699-A",
-            "label": "A",
+            "label": "①A",
             "group": ""
           },
           {
             "id": "699-B",
-            "label": "B",
+            "label": "①B",
             "group": ""
           },
           {
             "id": "699-C",
-            "label": "C",
+            "label": "①C",
             "group": ""
           },
           {
             "id": "699-D",
-            "label": "D",
+            "label": "①D",
             "group": ""
           },
           {
             "id": "699-E",
-            "label": "E",
+            "label": "①E",
             "group": ""
           },
           {
             "id": "699-F",
-            "label": "F",
+            "label": "①F",
             "group": ""
           },
           {
             "id": "699-G",
-            "label": "G",
+            "label": "①G",
             "group": ""
           },
           {
@@ -1447,23 +1482,18 @@
         "qpage": 3,
         "questions": [
           {
-            "id": "700-①",
-            "label": "①",
-            "group": ""
-          },
-          {
             "id": "700-A",
-            "label": "A",
+            "label": "①A",
             "group": ""
           },
           {
             "id": "700-B",
-            "label": "B",
+            "label": "①B",
             "group": ""
           },
           {
             "id": "700-C",
-            "label": "C",
+            "label": "①C",
             "group": ""
           },
           {
@@ -1484,23 +1514,23 @@
         "qpage": 3,
         "questions": [
           {
-            "id": "701-①",
-            "label": "①",
-            "group": ""
-          },
-          {
             "id": "701-A",
-            "label": "A",
+            "label": "①A",
             "group": ""
           },
           {
             "id": "701-B",
-            "label": "B",
+            "label": "①B",
             "group": ""
           },
           {
             "id": "701-②",
-            "label": "②",
+            "label": "②3つ星",
+            "group": ""
+          },
+          {
+            "id": "701-②北極星",
+            "label": "②北極星",
             "group": ""
           }
         ]
@@ -1511,13 +1541,53 @@
         "qpage": 3,
         "questions": [
           {
-            "id": "702-①",
-            "label": "①",
+            "id": "702-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "702-②",
-            "label": "②",
+            "id": "702-①B",
+            "label": "①B",
+            "group": ""
+          },
+          {
+            "id": "702-①C",
+            "label": "①C",
+            "group": ""
+          },
+          {
+            "id": "702-①D",
+            "label": "①D",
+            "group": ""
+          },
+          {
+            "id": "702-①E",
+            "label": "①E",
+            "group": ""
+          },
+          {
+            "id": "702-②A",
+            "label": "②A",
+            "group": ""
+          },
+          {
+            "id": "702-②B",
+            "label": "②B",
+            "group": ""
+          },
+          {
+            "id": "702-②C",
+            "label": "②C",
+            "group": ""
+          },
+          {
+            "id": "702-②D",
+            "label": "②D",
+            "group": ""
+          },
+          {
+            "id": "702-②E",
+            "label": "②E",
             "group": ""
           },
           {
@@ -1648,23 +1718,28 @@
         "qpage": 5,
         "questions": [
           {
-            "id": "708-①",
-            "label": "①",
+            "id": "708-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "708-A",
-            "label": "A",
+            "id": "708-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "708-B",
-            "label": "B",
+            "id": "708-②X",
+            "label": "②X",
             "group": ""
           },
           {
-            "id": "708-②",
-            "label": "②",
+            "id": "708-②Y",
+            "label": "②Y",
+            "group": ""
+          },
+          {
+            "id": "708-②Z",
+            "label": "②Z",
             "group": ""
           }
         ]
@@ -1709,8 +1784,18 @@
         "qpage": 5,
         "questions": [
           {
-            "id": "711-①",
-            "label": "①",
+            "id": "711-①X",
+            "label": "①X",
+            "group": ""
+          },
+          {
+            "id": "711-①Y",
+            "label": "①Y",
+            "group": ""
+          },
+          {
+            "id": "711-①Z",
+            "label": "①Z",
             "group": ""
           },
           {
@@ -1773,48 +1858,43 @@
             "group": ""
           },
           {
-            "id": "713-④",
-            "label": "④",
+            "id": "713-④A",
+            "label": "④A",
             "group": ""
           },
           {
-            "id": "713-A",
-            "label": "A",
+            "id": "713-④B",
+            "label": "④B",
             "group": ""
           },
           {
-            "id": "713-B",
-            "label": "B",
+            "id": "713-④C",
+            "label": "④C",
             "group": ""
           },
           {
-            "id": "713-C",
-            "label": "C",
+            "id": "713-④D",
+            "label": "④D",
             "group": ""
           },
           {
-            "id": "713-D",
-            "label": "D",
+            "id": "713-④E",
+            "label": "④E",
             "group": ""
           },
           {
-            "id": "713-E",
-            "label": "E",
+            "id": "713-④F",
+            "label": "④F",
             "group": ""
           },
           {
-            "id": "713-F",
-            "label": "F",
+            "id": "713-④G",
+            "label": "④G",
             "group": ""
           },
           {
-            "id": "713-G",
-            "label": "G",
-            "group": ""
-          },
-          {
-            "id": "713-H",
-            "label": "H",
+            "id": "713-④H",
+            "label": "④H",
             "group": ""
           }
         ]
@@ -1869,33 +1949,23 @@
         "qpage": 6,
         "questions": [
           {
-            "id": "716-①",
-            "label": "①",
+            "id": "716-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "716-A",
-            "label": "A",
+            "id": "716-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "716-B",
-            "label": "B",
+            "id": "716-②C",
+            "label": "②C",
             "group": ""
           },
           {
-            "id": "716-②",
-            "label": "②",
-            "group": ""
-          },
-          {
-            "id": "716-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "716-D",
-            "label": "D",
+            "id": "716-②D",
+            "label": "②D",
             "group": ""
           }
         ]
@@ -1940,28 +2010,23 @@
         "qpage": 7,
         "questions": [
           {
-            "id": "719-①",
-            "label": "①",
+            "id": "719-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "719-A",
-            "label": "A",
+            "id": "719-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "719-B",
-            "label": "B",
+            "id": "719-①C",
+            "label": "①C",
             "group": ""
           },
           {
-            "id": "719-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "719-D",
-            "label": "D",
+            "id": "719-①D",
+            "label": "①D",
             "group": ""
           },
           {
@@ -1989,23 +2054,18 @@
         "qpage": 7,
         "questions": [
           {
-            "id": "721-①",
-            "label": "①",
+            "id": "721-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "721-A",
-            "label": "A",
+            "id": "721-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "721-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "721-C",
-            "label": "C",
+            "id": "721-①C",
+            "label": "①C",
             "group": ""
           },
           {
@@ -2021,8 +2081,63 @@
         "qpage": 7,
         "questions": [
           {
-            "id": "722",
-            "label": "―",
+            "id": "722-X春分",
+            "label": "X春分",
+            "group": ""
+          },
+          {
+            "id": "722-X夏至",
+            "label": "X夏至",
+            "group": ""
+          },
+          {
+            "id": "722-X秋分",
+            "label": "X秋分",
+            "group": ""
+          },
+          {
+            "id": "722-X冬至",
+            "label": "X冬至",
+            "group": ""
+          },
+          {
+            "id": "722-Y春分",
+            "label": "Y春分",
+            "group": ""
+          },
+          {
+            "id": "722-Y夏至",
+            "label": "Y夏至",
+            "group": ""
+          },
+          {
+            "id": "722-Y秋分",
+            "label": "Y秋分",
+            "group": ""
+          },
+          {
+            "id": "722-Y冬至",
+            "label": "Y冬至",
+            "group": ""
+          },
+          {
+            "id": "722-Z春分",
+            "label": "Z春分",
+            "group": ""
+          },
+          {
+            "id": "722-Z夏至",
+            "label": "Z夏至",
+            "group": ""
+          },
+          {
+            "id": "722-Z秋分",
+            "label": "Z秋分",
+            "group": ""
+          },
+          {
+            "id": "722-Z冬至",
+            "label": "Z冬至",
             "group": ""
           }
         ]
@@ -2033,8 +2148,63 @@
         "qpage": 7,
         "questions": [
           {
-            "id": "723",
-            "label": "―",
+            "id": "723-X春分",
+            "label": "X春分",
+            "group": ""
+          },
+          {
+            "id": "723-X夏至",
+            "label": "X夏至",
+            "group": ""
+          },
+          {
+            "id": "723-X秋分",
+            "label": "X秋分",
+            "group": ""
+          },
+          {
+            "id": "723-X冬至",
+            "label": "X冬至",
+            "group": ""
+          },
+          {
+            "id": "723-Y春分",
+            "label": "Y春分",
+            "group": ""
+          },
+          {
+            "id": "723-Y夏至",
+            "label": "Y夏至",
+            "group": ""
+          },
+          {
+            "id": "723-Y秋分",
+            "label": "Y秋分",
+            "group": ""
+          },
+          {
+            "id": "723-Y冬至",
+            "label": "Y冬至",
+            "group": ""
+          },
+          {
+            "id": "723-Z春分",
+            "label": "Z春分",
+            "group": ""
+          },
+          {
+            "id": "723-Z夏至",
+            "label": "Z夏至",
+            "group": ""
+          },
+          {
+            "id": "723-Z秋分",
+            "label": "Z秋分",
+            "group": ""
+          },
+          {
+            "id": "723-Z冬至",
+            "label": "Z冬至",
             "group": ""
           }
         ]

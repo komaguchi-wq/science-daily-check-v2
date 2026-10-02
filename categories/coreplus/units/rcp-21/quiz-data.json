@@ -1185,83 +1185,73 @@
         "qpage": 0,
         "questions": [
           {
-            "id": "486-①",
-            "label": "①",
+            "id": "486-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "486-A",
-            "label": "A",
+            "id": "486-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "486-B",
-            "label": "B",
+            "id": "486-①C",
+            "label": "①C",
             "group": ""
           },
           {
-            "id": "486-C",
-            "label": "C",
+            "id": "486-①D",
+            "label": "①D",
             "group": ""
           },
           {
-            "id": "486-D",
-            "label": "D",
+            "id": "486-①E",
+            "label": "①E",
             "group": ""
           },
           {
-            "id": "486-E",
-            "label": "E",
+            "id": "486-②ア",
+            "label": "②ア",
             "group": ""
           },
           {
-            "id": "486-②",
-            "label": "②",
+            "id": "486-②イ",
+            "label": "②イ",
             "group": ""
           },
           {
-            "id": "486-ア",
-            "label": "ア",
+            "id": "486-②ウ",
+            "label": "②ウ",
             "group": ""
           },
           {
-            "id": "486-イ",
-            "label": "イ",
+            "id": "486-②エ",
+            "label": "②エ",
             "group": ""
           },
           {
-            "id": "486-ウ",
-            "label": "ウ",
+            "id": "486-②オ",
+            "label": "②オ",
             "group": ""
           },
           {
-            "id": "486-エ",
-            "label": "エ",
+            "id": "486-②カ",
+            "label": "②カ",
             "group": ""
           },
           {
-            "id": "486-オ",
-            "label": "オ",
+            "id": "486-②キ",
+            "label": "②キ",
             "group": ""
           },
           {
-            "id": "486-カ",
-            "label": "カ",
+            "id": "486-②ク",
+            "label": "②ク",
             "group": ""
           },
           {
-            "id": "486-キ",
-            "label": "キ",
-            "group": ""
-          },
-          {
-            "id": "486-ク",
-            "label": "ク",
-            "group": ""
-          },
-          {
-            "id": "486-ケ",
-            "label": "ケ",
+            "id": "486-②ケ",
+            "label": "②ケ",
             "group": ""
           },
           {
@@ -1307,33 +1297,28 @@
         "qpage": 0,
         "questions": [
           {
-            "id": "487-①",
-            "label": "①",
+            "id": "487-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "487-A",
-            "label": "A",
+            "id": "487-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "487-B",
-            "label": "B",
+            "id": "487-①C",
+            "label": "①C",
             "group": ""
           },
           {
-            "id": "487-C",
-            "label": "C",
+            "id": "487-①D",
+            "label": "①D",
             "group": ""
           },
           {
-            "id": "487-D",
-            "label": "D",
-            "group": ""
-          },
-          {
-            "id": "487-E",
-            "label": "E",
+            "id": "487-①E",
+            "label": "①E",
             "group": ""
           },
           {
@@ -1364,23 +1349,18 @@
         "qpage": 1,
         "questions": [
           {
-            "id": "488-①",
-            "label": "①",
+            "id": "488-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "488-A",
-            "label": "A",
+            "id": "488-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "488-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "488-C",
-            "label": "C",
+            "id": "488-①C",
+            "label": "①C",
             "group": ""
           },
           {
@@ -1394,18 +1374,13 @@
             "group": ""
           },
           {
-            "id": "488-④",
-            "label": "④",
+            "id": "488-④X",
+            "label": "④X",
             "group": ""
           },
           {
-            "id": "488-X",
-            "label": "X",
-            "group": ""
-          },
-          {
-            "id": "488-Y",
-            "label": "Y",
+            "id": "488-④Y",
+            "label": "④Y",
             "group": ""
           }
         ]
@@ -1470,8 +1445,13 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "491",
-            "label": "―",
+            "id": "491-卵",
+            "label": "卵",
+            "group": ""
+          },
+          {
+            "id": "491-精子",
+            "label": "精子",
             "group": ""
           }
         ]
@@ -1482,23 +1462,18 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "492-①",
-            "label": "①",
+            "id": "492-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "492-A",
-            "label": "A",
+            "id": "492-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "492-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "492-C",
-            "label": "C",
+            "id": "492-①C",
+            "label": "①C",
             "group": ""
           },
           {
@@ -1541,33 +1516,23 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "494-①",
-            "label": "①",
+            "id": "494-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "494-A",
-            "label": "A",
+            "id": "494-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "494-B",
-            "label": "B",
+            "id": "494-②C",
+            "label": "②C",
             "group": ""
           },
           {
-            "id": "494-②",
-            "label": "②",
-            "group": ""
-          },
-          {
-            "id": "494-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "494-D",
-            "label": "D",
+            "id": "494-②D",
+            "label": "②D",
             "group": ""
           }
         ]
@@ -1827,33 +1792,28 @@
         "qpage": 5,
         "questions": [
           {
-            "id": "502-①",
-            "label": "①",
+            "id": "502-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "502-A",
-            "label": "A",
+            "id": "502-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "502-B",
-            "label": "B",
+            "id": "502-①C",
+            "label": "①C",
             "group": ""
           },
           {
-            "id": "502-C",
-            "label": "C",
+            "id": "502-①D",
+            "label": "①D",
             "group": ""
           },
           {
-            "id": "502-D",
-            "label": "D",
-            "group": ""
-          },
-          {
-            "id": "502-E",
-            "label": "E",
+            "id": "502-①E",
+            "label": "①E",
             "group": ""
           },
           {
@@ -2036,43 +1996,38 @@
         "qpage": 6,
         "questions": [
           {
-            "id": "509-①",
-            "label": "①",
+            "id": "509-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "509-A",
-            "label": "A",
+            "id": "509-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "509-B",
-            "label": "B",
+            "id": "509-①C",
+            "label": "①C",
             "group": ""
           },
           {
-            "id": "509-C",
-            "label": "C",
+            "id": "509-①D",
+            "label": "①D",
             "group": ""
           },
           {
-            "id": "509-D",
-            "label": "D",
+            "id": "509-①E",
+            "label": "①E",
             "group": ""
           },
           {
-            "id": "509-E",
-            "label": "E",
+            "id": "509-①F",
+            "label": "①F",
             "group": ""
           },
           {
-            "id": "509-F",
-            "label": "F",
-            "group": ""
-          },
-          {
-            "id": "509-G",
-            "label": "G",
+            "id": "509-①G",
+            "label": "①G",
             "group": ""
           },
           {
@@ -2081,8 +2036,13 @@
             "group": ""
           },
           {
-            "id": "509-③",
-            "label": "③",
+            "id": "509-③心房",
+            "label": "③心房",
+            "group": ""
+          },
+          {
+            "id": "509-③心室",
+            "label": "③心室",
             "group": ""
           },
           {
@@ -2140,6 +2100,41 @@
           {
             "id": "510-⑨",
             "label": "⑨",
+            "group": ""
+          },
+          {
+            "id": "510-⑩",
+            "label": "⑩",
+            "group": ""
+          },
+          {
+            "id": "510-⑪",
+            "label": "⑪",
+            "group": ""
+          },
+          {
+            "id": "510-⑫",
+            "label": "⑫",
+            "group": ""
+          },
+          {
+            "id": "510-⑬",
+            "label": "⑬",
+            "group": ""
+          },
+          {
+            "id": "510-⑭",
+            "label": "⑭",
+            "group": ""
+          },
+          {
+            "id": "510-⑮",
+            "label": "⑮",
+            "group": ""
+          },
+          {
+            "id": "510-⑯",
+            "label": "⑯",
             "group": ""
           }
         ]
@@ -2399,28 +2394,23 @@
             "group": ""
           },
           {
-            "id": "518-③",
-            "label": "③",
+            "id": "518-③A",
+            "label": "③A",
             "group": ""
           },
           {
-            "id": "518-A",
-            "label": "A",
+            "id": "518-③B",
+            "label": "③B",
             "group": ""
           },
           {
-            "id": "518-B",
-            "label": "B",
+            "id": "518-③C",
+            "label": "③C",
             "group": ""
           },
           {
-            "id": "518-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "518-D",
-            "label": "D",
+            "id": "518-③D",
+            "label": "③D",
             "group": ""
           }
         ]
@@ -2446,8 +2436,13 @@
             "group": ""
           },
           {
-            "id": "519-④",
-            "label": "④",
+            "id": "519-④図1",
+            "label": "④図1",
+            "group": ""
+          },
+          {
+            "id": "519-④図2",
+            "label": "④図2",
             "group": ""
           },
           {
@@ -2468,23 +2463,18 @@
             "group": ""
           },
           {
-            "id": "520-②",
-            "label": "②",
+            "id": "520-②A",
+            "label": "②A",
             "group": ""
           },
           {
-            "id": "520-A",
-            "label": "A",
+            "id": "520-②B",
+            "label": "②B",
             "group": ""
           },
           {
-            "id": "520-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "520-C",
-            "label": "C",
+            "id": "520-②C",
+            "label": "②C",
             "group": ""
           }
         ]

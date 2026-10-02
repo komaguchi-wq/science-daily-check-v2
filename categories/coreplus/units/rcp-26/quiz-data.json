@@ -236,43 +236,33 @@
         "qpage": 0,
         "questions": [
           {
-            "id": "605-①",
-            "label": "①",
+            "id": "605-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "605-A",
-            "label": "A",
+            "id": "605-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "605-B",
-            "label": "B",
+            "id": "605-②C",
+            "label": "②C",
             "group": ""
           },
           {
-            "id": "605-②",
-            "label": "②",
+            "id": "605-②D",
+            "label": "②D",
             "group": ""
           },
           {
-            "id": "605-C",
-            "label": "C",
+            "id": "605-②E",
+            "label": "②E",
             "group": ""
           },
           {
-            "id": "605-D",
-            "label": "D",
-            "group": ""
-          },
-          {
-            "id": "605-E",
-            "label": "E",
-            "group": ""
-          },
-          {
-            "id": "605-F",
-            "label": "F",
+            "id": "605-②F",
+            "label": "②F",
             "group": ""
           }
         ]
@@ -283,8 +273,23 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "606",
-            "label": "―",
+            "id": "606-x1",
+            "label": "x1",
+            "group": ""
+          },
+          {
+            "id": "606-x2",
+            "label": "x2",
+            "group": ""
+          },
+          {
+            "id": "606-x3",
+            "label": "x3",
+            "group": ""
+          },
+          {
+            "id": "606-x4",
+            "label": "x4",
             "group": ""
           }
         ]
@@ -295,8 +300,13 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "607",
-            "label": "―",
+            "id": "607-x1",
+            "label": "x1",
+            "group": ""
+          },
+          {
+            "id": "607-x2",
+            "label": "x2",
             "group": ""
           }
         ]
@@ -307,8 +317,13 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "608",
-            "label": "―",
+            "id": "608-x1",
+            "label": "x1",
+            "group": ""
+          },
+          {
+            "id": "608-x2",
+            "label": "x2",
             "group": ""
           }
         ]
@@ -319,8 +334,13 @@
         "qpage": 4,
         "questions": [
           {
-            "id": "609",
-            "label": "―",
+            "id": "609-x1",
+            "label": "x1",
+            "group": ""
+          },
+          {
+            "id": "609-x2",
+            "label": "x2",
             "group": ""
           }
         ]
@@ -331,18 +351,28 @@
         "qpage": 4,
         "questions": [
           {
-            "id": "610-①",
-            "label": "①",
+            "id": "610-図1",
+            "label": "図1",
             "group": ""
           },
           {
-            "id": "610-②",
-            "label": "②",
+            "id": "610-図2",
+            "label": "図2",
             "group": ""
           },
           {
-            "id": "610-③",
-            "label": "③",
+            "id": "610-図3",
+            "label": "図3",
+            "group": ""
+          },
+          {
+            "id": "610-図4",
+            "label": "図4",
+            "group": ""
+          },
+          {
+            "id": "610-図5",
+            "label": "図5",
             "group": ""
           }
         ]
@@ -353,28 +383,28 @@
         "qpage": 4,
         "questions": [
           {
-            "id": "611-①",
-            "label": "①",
+            "id": "611-図1",
+            "label": "図1",
             "group": ""
           },
           {
-            "id": "611-②",
-            "label": "②",
+            "id": "611-図2",
+            "label": "図2",
             "group": ""
           },
           {
-            "id": "611-③",
-            "label": "③",
+            "id": "611-図3",
+            "label": "図3",
             "group": ""
           },
           {
-            "id": "611-④",
-            "label": "④",
+            "id": "611-図4",
+            "label": "図4",
             "group": ""
           },
           {
-            "id": "611-⑤",
-            "label": "⑤",
+            "id": "611-図5",
+            "label": "図5",
             "group": ""
           }
         ]

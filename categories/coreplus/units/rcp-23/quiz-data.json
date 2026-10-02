@@ -979,6 +979,11 @@
             "id": "560-②",
             "label": "②",
             "group": ""
+          },
+          {
+            "id": "560-③",
+            "label": "③",
+            "group": ""
           }
         ]
       },
@@ -988,8 +993,33 @@
         "qpage": 0,
         "questions": [
           {
-            "id": "561-⑤",
-            "label": "⑤",
+            "id": "561-①",
+            "label": "①",
+            "group": ""
+          },
+          {
+            "id": "561-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "561-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "561-④",
+            "label": "④",
+            "group": ""
+          },
+          {
+            "id": "561-⑤アルコール",
+            "label": "⑤アルコール",
+            "group": ""
+          },
+          {
+            "id": "561-⑤葉",
+            "label": "⑤葉",
             "group": ""
           },
           {
@@ -1057,13 +1087,33 @@
         "qpage": 1,
         "questions": [
           {
-            "id": "563-①",
-            "label": "①",
+            "id": "563-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "563-②",
-            "label": "②",
+            "id": "563-①B",
+            "label": "①B",
+            "group": ""
+          },
+          {
+            "id": "563-①C",
+            "label": "①C",
+            "group": ""
+          },
+          {
+            "id": "563-②A",
+            "label": "②A",
+            "group": ""
+          },
+          {
+            "id": "563-②B",
+            "label": "②B",
+            "group": ""
+          },
+          {
+            "id": "563-②C",
+            "label": "②C",
             "group": ""
           }
         ]
@@ -1074,13 +1124,33 @@
         "qpage": 1,
         "questions": [
           {
-            "id": "564-①",
-            "label": "①",
+            "id": "564-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "564-②",
-            "label": "②",
+            "id": "564-①B",
+            "label": "①B",
+            "group": ""
+          },
+          {
+            "id": "564-①C",
+            "label": "①C",
+            "group": ""
+          },
+          {
+            "id": "564-②A",
+            "label": "②A",
+            "group": ""
+          },
+          {
+            "id": "564-②B",
+            "label": "②B",
+            "group": ""
+          },
+          {
+            "id": "564-②C",
+            "label": "②C",
             "group": ""
           }
         ]
@@ -1096,18 +1166,13 @@
             "group": ""
           },
           {
-            "id": "565-②",
-            "label": "②",
+            "id": "565-②C",
+            "label": "②C",
             "group": ""
           },
           {
-            "id": "565-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "565-D",
-            "label": "D",
+            "id": "565-②D",
+            "label": "②D",
             "group": ""
           },
           {
@@ -1172,8 +1237,23 @@
         "qpage": 2,
         "questions": [
           {
-            "id": "568",
-            "label": "―",
+            "id": "568-B",
+            "label": "B",
+            "group": ""
+          },
+          {
+            "id": "568-C",
+            "label": "C",
+            "group": ""
+          },
+          {
+            "id": "568-D",
+            "label": "D",
+            "group": ""
+          },
+          {
+            "id": "568-水面の高さ",
+            "label": "水面の高さ",
             "group": ""
           }
         ]
@@ -1414,28 +1494,103 @@
         "qpage": 5,
         "questions": [
           {
-            "id": "579-①",
-            "label": "①",
+            "id": "579-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "579-②",
-            "label": "②",
+            "id": "579-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "579-③",
-            "label": "③",
+            "id": "579-①C",
+            "label": "①C",
             "group": ""
           },
           {
-            "id": "579-④",
-            "label": "④",
+            "id": "579-①D",
+            "label": "①D",
             "group": ""
           },
           {
-            "id": "579-⑤",
-            "label": "⑤",
+            "id": "579-②A",
+            "label": "②A",
+            "group": ""
+          },
+          {
+            "id": "579-②B",
+            "label": "②B",
+            "group": ""
+          },
+          {
+            "id": "579-②C",
+            "label": "②C",
+            "group": ""
+          },
+          {
+            "id": "579-②D",
+            "label": "②D",
+            "group": ""
+          },
+          {
+            "id": "579-③A",
+            "label": "③A",
+            "group": ""
+          },
+          {
+            "id": "579-③B",
+            "label": "③B",
+            "group": ""
+          },
+          {
+            "id": "579-③C",
+            "label": "③C",
+            "group": ""
+          },
+          {
+            "id": "579-④A",
+            "label": "④A",
+            "group": ""
+          },
+          {
+            "id": "579-④B",
+            "label": "④B",
+            "group": ""
+          },
+          {
+            "id": "579-④C",
+            "label": "④C",
+            "group": ""
+          },
+          {
+            "id": "579-④D",
+            "label": "④D",
+            "group": ""
+          },
+          {
+            "id": "579-⑤A",
+            "label": "⑤A",
+            "group": ""
+          },
+          {
+            "id": "579-⑤B",
+            "label": "⑤B",
+            "group": ""
+          },
+          {
+            "id": "579-⑤C",
+            "label": "⑤C",
+            "group": ""
+          },
+          {
+            "id": "579-⑤D",
+            "label": "⑤D",
+            "group": ""
+          },
+          {
+            "id": "579-⑤E",
+            "label": "⑤E",
             "group": ""
           }
         ]
@@ -1446,8 +1601,18 @@
         "qpage": 6,
         "questions": [
           {
-            "id": "580-①",
-            "label": "①",
+            "id": "580-①A",
+            "label": "①A",
+            "group": ""
+          },
+          {
+            "id": "580-①B",
+            "label": "①B",
+            "group": ""
+          },
+          {
+            "id": "580-①C",
+            "label": "①C",
             "group": ""
           },
           {
@@ -1456,28 +1621,98 @@
             "group": ""
           },
           {
-            "id": "580-③",
-            "label": "③",
+            "id": "580-③A",
+            "label": "③A",
             "group": ""
           },
           {
-            "id": "580-④",
-            "label": "④",
+            "id": "580-③B",
+            "label": "③B",
             "group": ""
           },
           {
-            "id": "580-⑤",
-            "label": "⑤",
+            "id": "580-③C",
+            "label": "③C",
             "group": ""
           },
           {
-            "id": "580-⑥",
-            "label": "⑥",
+            "id": "580-③D",
+            "label": "③D",
             "group": ""
           },
           {
-            "id": "580-⑦",
-            "label": "⑦",
+            "id": "580-③E",
+            "label": "③E",
+            "group": ""
+          },
+          {
+            "id": "580-④A",
+            "label": "④A",
+            "group": ""
+          },
+          {
+            "id": "580-④B",
+            "label": "④B",
+            "group": ""
+          },
+          {
+            "id": "580-⑤A",
+            "label": "⑤A",
+            "group": ""
+          },
+          {
+            "id": "580-⑤B",
+            "label": "⑤B",
+            "group": ""
+          },
+          {
+            "id": "580-⑤C",
+            "label": "⑤C",
+            "group": ""
+          },
+          {
+            "id": "580-⑥A",
+            "label": "⑥A",
+            "group": ""
+          },
+          {
+            "id": "580-⑥B",
+            "label": "⑥B",
+            "group": ""
+          },
+          {
+            "id": "580-⑥C",
+            "label": "⑥C",
+            "group": ""
+          },
+          {
+            "id": "580-⑥D",
+            "label": "⑥D",
+            "group": ""
+          },
+          {
+            "id": "580-⑥E",
+            "label": "⑥E",
+            "group": ""
+          },
+          {
+            "id": "580-⑦ア",
+            "label": "⑦ア",
+            "group": ""
+          },
+          {
+            "id": "580-⑦イ",
+            "label": "⑦イ",
+            "group": ""
+          },
+          {
+            "id": "580-⑦ウ",
+            "label": "⑦ウ",
+            "group": ""
+          },
+          {
+            "id": "580-⑦エ",
+            "label": "⑦エ",
             "group": ""
           },
           {
@@ -1490,31 +1725,66 @@
       {
         "id": "581",
         "label": "581",
-        "qpage": 6,
+        "qpage": 8,
         "questions": [
           {
-            "id": "581-①",
-            "label": "①",
+            "id": "581-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "581-②",
-            "label": "②",
+            "id": "581-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "581-③",
-            "label": "③",
+            "id": "581-②A",
+            "label": "②A",
             "group": ""
           },
           {
-            "id": "581-④",
-            "label": "④",
+            "id": "581-②B",
+            "label": "②B",
             "group": ""
           },
           {
-            "id": "581-⑤",
-            "label": "⑤",
+            "id": "581-②C",
+            "label": "②C",
+            "group": ""
+          },
+          {
+            "id": "581-③A",
+            "label": "③A",
+            "group": ""
+          },
+          {
+            "id": "581-③B",
+            "label": "③B",
+            "group": ""
+          },
+          {
+            "id": "581-④A",
+            "label": "④A",
+            "group": ""
+          },
+          {
+            "id": "581-④B",
+            "label": "④B",
+            "group": ""
+          },
+          {
+            "id": "581-④C",
+            "label": "④C",
+            "group": ""
+          },
+          {
+            "id": "581-⑤A",
+            "label": "⑤A",
+            "group": ""
+          },
+          {
+            "id": "581-⑤B",
+            "label": "⑤B",
             "group": ""
           },
           {
@@ -1523,8 +1793,23 @@
             "group": ""
           },
           {
-            "id": "581-⑦",
-            "label": "⑦",
+            "id": "581-⑦A",
+            "label": "⑦A",
+            "group": ""
+          },
+          {
+            "id": "581-⑦B",
+            "label": "⑦B",
+            "group": ""
+          },
+          {
+            "id": "581-⑦C",
+            "label": "⑦C",
+            "group": ""
+          },
+          {
+            "id": "581-⑦D",
+            "label": "⑦D",
             "group": ""
           }
         ]
@@ -1535,23 +1820,120 @@
         "qpage": 9,
         "questions": [
           {
-            "id": "582-①",
-            "label": "①",
+            "id": "582-①A",
+            "label": "①A",
             "group": ""
           },
           {
-            "id": "582-②",
-            "label": "②",
+            "id": "582-①B",
+            "label": "①B",
             "group": ""
           },
           {
-            "id": "582-③",
-            "label": "③",
+            "id": "582-②A",
+            "label": "②A",
+            "group": ""
+          },
+          {
+            "id": "582-②B",
+            "label": "②B",
+            "group": ""
+          },
+          {
+            "id": "582-③A",
+            "label": "③A",
+            "group": ""
+          },
+          {
+            "id": "582-③B",
+            "label": "③B",
             "group": ""
           },
           {
             "id": "582-④",
             "label": "④",
+            "group": ""
+          }
+        ]
+      },
+      {
+        "id": "583",
+        "label": "583",
+        "qpage": 10,
+        "questions": [
+          {
+            "id": "583-①A",
+            "label": "①A",
+            "group": ""
+          },
+          {
+            "id": "583-①B",
+            "label": "①B",
+            "group": ""
+          },
+          {
+            "id": "583-①C",
+            "label": "①C",
+            "group": ""
+          },
+          {
+            "id": "583-①D",
+            "label": "①D",
+            "group": ""
+          },
+          {
+            "id": "583-②",
+            "label": "②",
+            "group": ""
+          },
+          {
+            "id": "583-③",
+            "label": "③",
+            "group": ""
+          },
+          {
+            "id": "583-④A",
+            "label": "④A",
+            "group": ""
+          },
+          {
+            "id": "583-④B",
+            "label": "④B",
+            "group": ""
+          },
+          {
+            "id": "583-④C",
+            "label": "④C",
+            "group": ""
+          },
+          {
+            "id": "583-⑤A",
+            "label": "⑤A",
+            "group": ""
+          },
+          {
+            "id": "583-⑤B",
+            "label": "⑤B",
+            "group": ""
+          },
+          {
+            "id": "583-⑤C",
+            "label": "⑤C",
+            "group": ""
+          },
+          {
+            "id": "583-⑥A",
+            "label": "⑥A",
+            "group": ""
+          },
+          {
+            "id": "583-⑥B",
+            "label": "⑥B",
+            "group": ""
+          },
+          {
+            "id": "583-⑥C",
+            "label": "⑥C",
             "group": ""
           }
         ]
