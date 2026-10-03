@@ -1,0 +1,311 @@
+<!-- generated WS-25 kaisetsu (scripts/kaisetsu/assemble.py) -->
+<nav class="toc"><b>目次</b><ul><li><a href="#CP">CP（コアプラス確認テスト WS-25・力学の再徹底 356〜394・602〜615）</a></li></ul></nav>
+<div class="daimon" id="CP"><h1 class="dtitle">WS-25 CP（コアプラス確認テスト WS-25・力学の再徹底 356〜394・602〜615）</h1>
+<section class="card card-overview">
+  <h2><span class="qid">CP</span> 全体像 <span class="type">てこ・ばね・滑車・浮力・ふりこ 20問（各5点・100点）</span></h2>
+  <p>コアプラス「力学の再徹底」の確認テスト。前半(1)〜(12)は てこ・重心・ばね・滑車・輪軸の計算、後半(13)〜(20)は 密度・浮力・ふりこの決まり。計算問題はどれも「<b>図に数字を書きこむ → つり合いの式を1本</b>」で決まる。</p>
+  <p>今回は<b>80／100点</b>。落とした4問は (8)重心の向き・(9)ばねの両端・(18)単位・(20)ふりこの長さ。式の立て方はできているので、失点は「図に置く前に答えた」「mをcmに直さなかった」の型。</p>
+</section>
+
+<section class="card card-fact">
+  <h2><span class="qid">CP (1)</span> ボートのオールの支点 <span class="type">知識問題</span></h2>
+  <div class="fact">C。オールは水をとらえた先（C）が動かない点＝<b>支点</b>。手（A）が力点、オール受け（B）が作用点で、ここに力が伝わってボートが進む。「水に入っている方が支点」でおぼえる。</div>
+  <div class="ans">答え：C</div>
+  <div class="miss">今回：C ○。</div>
+</section>
+
+<section class="card card-fact">
+  <h2><span class="qid">CP (2)</span> つめ切りの作用点 <span class="type">知識問題・2か所</span></h2>
+  <div class="fact">AとC。つめ切りは てこが2つ重なった道具。上のレバー（支点B・力点D）が押すCが1つ目の作用点、下の刃の組（支点E・力点C）がつめを切るAが2つ目の作用点。<b>Cは「作用点でもあり力点でもある」</b>のが見どころ。</div>
+  <div class="ans">答え：A・C</div>
+  <div class="miss">今回：C・A ○（順番は問わない）。</div>
+</section>
+
+<section class="card card-fact">
+  <h2><span class="qid">CP (3)</span> 栓抜き・力点−支点−作用点の順 <span class="type">知識問題</span></h2>
+  <div class="fact">B。Aは先を栓の上にのせて（支点）、ふちに引っかけた所（作用点）を持ち手（力点）で引き上げる＝<b>支点−作用点−力点</b>。Bは先を栓のふちに引っかけ（作用点）、栓の上にのった所を支点にして持ち手をたたく＝<b>力点−支点−作用点</b>。同じ道具でも使い方で順が変わる。</div>
+  <div class="ans">答え：B</div>
+  <div class="miss">今回：B ○。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (4)</span> ばねばかりでつった棒の重さ <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は「<b>太さが一様な棒</b>」と図4の「<b>55cm／80cm／45g</b>」。棒の重さは<b>まん中（左から40cm）に矢印</b>で置き、ばねばかりは左から80−55＝25cmと直して書く → 支点はばねばかり。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>太さが一様な棒の重さは、まん中に全部かかっているとみなせる。</li>
+    <li>つり合い＝支点からの距離×重さが左右で等しい。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>ばねばかりの位置は左から25cm。45gは左端（25cm左）、棒の重さ□gはまん中（40−25＝<b>15cm右</b>）。</li>
+    <li>45×25＝□×15 → 1125÷15＝<b>75</b>。</li>
+  </ol>
+  <div class="ans">答え：75g</div>
+  <div class="miss">今回：75g ○。図4に「25」「15」を書きこんでから式を立てている。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (5)</span> ばねばかりの示す値 <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は(4)と変わった「<b>ばねばかりの示す値</b>」に丸。ばねばかりは棒全体を1本で支えているので、「<b>下向きの力の合計</b>」に直して書く。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>支点が1か所なら、支えている力＝ぶら下がっている重さの合計（おもり＋棒）。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>下向きの力は 45g と 棒の75g。</li>
+    <li>45＋75＝<b>120</b>。</li>
+  </ol>
+  <div class="ans">答え：120g</div>
+  <div class="miss">今回：120g ○。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (6)</span> 太さが一様でない棒の重心 <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は「<b>太さが一様でない</b>」と図5の「<b>90g・120g・84cm</b>」、聞かれ方「<b>Aから何cm</b>」に丸。重心は棒のまん中ではないので、「<b>距離の比＝重さの逆比</b>」に直して書く。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>両端を支える力の比は、重心からの距離の逆比になる（重心に近い方が重く支える）。</li>
+    <li>棒の重さ＝90＋120＝210g。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>A:B＝90:120＝3:4 → 重心からの距離は逆の <b>A側:B側＝4:3</b>。</li>
+    <li>84cm を 4:3 に分ける → 84×4/7＝<b>48</b>。重い120g側（B）に近い所にある、で向きを確かめる。</li>
+  </ol>
+  <div class="ans">答え：48cm</div>
+  <div class="miss">今回：48cm ○。図5に「4:3」と書いてから分けている。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (7)</span> 中央でつるしてつり合わせる <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は(6)と変わった「<b>棒の中央を糸でつるした</b>」に丸。支点＝中央（Aから42cm）、重心＝48cm（210g）を図に置く → 重心が<b>B側に6cm</b>ずれているので、おもりはA側。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>棒の重さは重心に全部かかっているとみなす。つるした点を支点に、左右のモーメントをそろえる。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>重心は支点から 48−42＝6cm B側。B側のモーメントは 210×6＝1260。</li>
+    <li>A端は支点から42cm → □×42＝1260 → □＝<b>30</b>。①は <b>A</b>。</li>
+  </ol>
+  <div class="ans">答え：① A　② 30g</div>
+  <div class="miss">今回：① A・② 30 ○。(6)の48cmをそのまま使って、支点との差6cmで式を立てている。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (8)</span> L字形の針金をAでつるす <span class="type">条件文・重心の向き</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は図6の「<b>10cm・5cm・20cm</b>」と「<b>Aを支点に</b>」。針金は長さ＝重さなので、たてを1、横を2に直して書く。つるすと<b>重心がAの真下</b>に来る、で形が決まる。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>ものをつるすと、重心はつるした点の真下で止まる。</li>
+    <li>たて10cmの針金の重心はそのまん中＝Aの位置（Aは下から5cm）。横20cmの重心はその中央。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>全体の重心は、Aと「横の針金のまん中」を結ぶ線の上（重さ1:2なので横のまん中寄り）。</li>
+    <li>だからつるすと、<b>横20cmの針金のまん中がAの真下</b>に来る。</li>
+    <li>角はAの左下へ、長い針金は右下へななめに。この形は<b>イ</b>。ウは長い方が真下＝たての重さを無視した形。</li>
+  </ol>
+  <div class="ans">答え：イ</div>
+  <div class="miss">今回：ウ ×。部品の形を直さなかった＝「10cmと20cm」を重さ1:2に直して重心を図に置かず、「長い方がまっすぐ下」と決めた。次は横の針金のまん中に点を打ち、その点がAの真下になるように回す。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (9)</span> 両端におもりをつけたばね <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は「<b>自然長18cm・100gで20cm</b>」と、図7で「<b>300g</b>」のおもりが床についていること。100g＝2cmのびと直して書き、ばねを引く力は<b>どちらの端も200g</b>と図に置く。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>ばねの両端を同じ力で引くと、のびは「片方の力」の分だけ。両端200gなら、かべにつけて200gで引くのと同じ。</li>
+    <li>床についたおもりは、糸を引く力がその重さより小さい。右の糸は200gで引かれ、300gのうち残り100gは床が支える。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>左は200gがぶら下がっているので、糸の力は200g。ばねはつり合っているので右の糸も200g。</li>
+    <li>100gで2cmのびる → 200gで<b>4cm</b>。18＋4＝<b>22</b>。</li>
+  </ol>
+  <div class="ans">答え：22cm</div>
+  <div class="miss">今回：20cm ×。部品を拾えなかった＝のび2cm＝100g分で、「300gは床についている」を見ずに 300−200 の差で引いたと思われる。次は図7の床と糸に「200g」と書いてから式に入る。</div>
+  <div class="tip">コツ：「両端にそれぞれ200g」は足して400gにしない。ばねのどこを切っても力は200gで、のびは1回分。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (10)</span> 滑車のおもりPの重さ <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は「<b>糸や滑車の重さは考えない</b>」と図8の「<b>360g</b>」。糸は1本なのでどこでも同じ力□gと直して書き、360gの動滑車から<b>上に出ている糸の本数</b>を数える。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>1本の糸は、どこを切っても引く力が同じ。動滑車は、上向きの糸の本数分だけ力が分かれる。</li>
+    <li>図8の下の動滑車からは、左の糸・右の糸・ななめに結ばれた糸の<b>3本</b>が上に向いている。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>糸の力を□gとすると、下の動滑車は □×3＝360 → □＝<b>120</b>。</li>
+    <li>糸の端はP。Pは糸1本で引かれているので、P＝<b>120g</b>。</li>
+  </ol>
+  <div class="ans">答え：120g</div>
+  <div class="miss">今回：120g ○。糸に「120」と書いて3本で数えている。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (11)</span> Pを24cm引くとおもりは何cm上がるか <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は(10)と変わった「<b>24cm引いた</b>」と聞かれ方「<b>何cm上がる</b>」に丸。(10)で数えた<b>3本</b>をそのまま使い、「力が1/3なら距離は3倍」に直して書く。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>滑車は力を小さくできるが、仕事の量は変わらない。力が1/3なら引く長さは3倍。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>360gを支える糸は3本 → 24cm引くと、3本が8cmずつ縮む。</li>
+    <li>24÷3＝<b>8</b>。</li>
+  </ol>
+  <div class="ans">答え：8cm</div>
+  <div class="miss">今回：8cm ○。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (12)</span> 輪軸と水中のおもりの密度 <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は図9の「<b>2cm・5cm・300g・80g</b>」と聞かれ方「<b>密度</b>（g/cm³）」。300gは動滑車で<b>150g</b>に直して小さい輪に置く → 大きい輪の糸の力が決まり、浮力→体積→密度の順。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>輪軸は てこと同じ。半径×力が左右で等しい。</li>
+    <li>浮力＝おし出した水の重さ。水1cm³＝1gなので、浮力の数字＝水中の体積（cm³）。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>300gは動滑車にぶら下がっているので、小さい輪を引く糸は 300÷2＝150g。</li>
+    <li>150×2＝□×5 → 大きい輪の糸の力は <b>60g</b>。これがAの水中での重さ。</li>
+    <li>浮力＝80−60＝20g → Aの体積は20cm³。密度＝80÷20＝<b>4</b>。</li>
+  </ol>
+  <div class="ans">答え：4g/cm³</div>
+  <div class="miss">今回：4g/cm³ ○。図9に「150」「60」を書いてから浮力に進んでいる。</div>
+</section>
+
+<section class="card card-fact">
+  <h2><span class="qid">CP (13)</span> 水の密度が最大になる温度 <span class="type">知識問題</span></h2>
+  <div class="fact">大きく。水は<b>4℃のときに体積が最小</b>になるので、密度が最大。氷になるとふくらんで密度が小さくなる（氷が水に浮く理由）。</div>
+  <div class="ans">答え：大きく</div>
+  <div class="miss">今回：大きく ○。</div>
+</section>
+
+<section class="card card-fact">
+  <h2><span class="qid">CP (14)</span> ろうが固まるときの密度 <span class="type">知識問題</span></h2>
+  <div class="fact">① 大きく　② 沈み。ろうは固まるとき<b>体積が小さくなる</b>（まん中がへこむ）ので密度は大きくなり、固体のろうを液体のろうに入れると沈む。水↔氷と<b>逆</b>、とセットで。</div>
+  <div class="ans">答え：① 大きく　② 沈み</div>
+  <div class="miss">今回：① 大きく・② 沈み ○。</div>
+</section>
+
+<section class="card card-fact">
+  <h2><span class="qid">CP (15)</span> 水と食塩水に浮かべた木材の浮力 <span class="type">知識問題</span></h2>
+  <div class="fact">ウ。<b>浮いているものの浮力＝その物の重さ</b>。木材の重さは変わらないので、水でも食塩水でも浮力は同じ。ちがうのは沈む深さ（食塩水の方が浅く沈む）。</div>
+  <div class="ans">答え：ウ</div>
+  <div class="miss">今回：ウ ○。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (16)</span> 坂を転がる金属球の速さ <span class="type">資料問題・並べかえ</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【資料問題】部品は図10の正体「<b>方眼の上の坂・A〜Dの高さ</b>」と聞かれ方「<b>速い順・等号・不等号</b>」に線。A〜Dは<b>どれも床から1マス上</b>の同じ高さ → 速さは高さだけで決まる。</div>
+  <h3>📚 前提知識（あれば答え合わせに使う）</h3>
+  <ul>
+    <li>転がる球の速さは、出発点からどれだけ下がったかで決まる。坂の傾きや途中の山は関係ない。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>A・B・C・Dの高さを方眼で数える → 全部同じ。</li>
+    <li>だから速さも全部同じ → <b>A＝B＝C＝D</b>。</li>
+  </ol>
+  <div class="ans">答え：A＝B＝C＝D</div>
+  <div class="miss">今回：A＝B＝C＝D ○。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (17)</span> ふりこの長さと周期の表 <span class="type">資料問題・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【資料問題】部品は表1の正体「<b>長さ(cm)と周期(秒)</b>」。25→1.0、100→2.0、400→4.0 を見比べて「<b>周期が2倍なら長さは4倍</b>」と直して書く → Yは周期3.0秒の長さ。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>ふりこの周期は長さで決まり、長さは周期×周期に比例する（25cm＝1.0秒が基準）。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>周期3.0秒は1.0秒の3倍 → 長さは 3×3＝9倍。</li>
+    <li>25×9＝<b>225</b>。625＝25×25＝5.0秒 で表と合う。</li>
+  </ol>
+  <div class="ans">答え：225cm</div>
+  <div class="miss">今回：225cm ○。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (18)</span> 長さ25mのふりこの周期 <span class="type">条件文・単位</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は「<b>25m</b>」の単位に丸。表1はcmなので「<b>25m＝2500cm</b>」と直して書く → 2500÷25＝100倍の長さ。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>長さが100倍なら、周期は10倍（10×10＝100）。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>2500cm は 25cm の100倍。</li>
+    <li>周期は 1.0×10＝<b>10.0</b>秒。</li>
+  </ol>
+  <div class="ans">答え：10.0秒</div>
+  <div class="miss">今回：1.0秒 ×。部品の形を直さなかった＝「25m」をcmに直さず、表の25cmの行をそのまま読んだ。次は単位に丸をつけ、表の単位とちがえば先に書きかえる。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (19)</span> くぎのあるふりこ・Zの長さ <span class="type">条件文・計算</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は図11の「<b>625cm</b>」「<b>釘</b>」と「<b>周期は3.0秒</b>」。周期を「<b>左半分（625cm）＋右半分（短いふりこ）</b>」に直して書く → 右半分の時間から短い方の長さが出る。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>くぎに糸がかかると、右側は長さ 625−Z の短いふりこになる。1往復の半分ずつを別のふりこが受け持つ。</li>
+    <li>表1より 625cm＝5.0秒、25cm＝1.0秒。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>左半分（A→B→A側）は625cmのふりこの半周期 ＝ 5.0÷2＝2.5秒。</li>
+    <li>右半分は 3.0−2.5＝<b>0.5秒</b> → 1周期なら1.0秒 → 長さ25cm。</li>
+    <li>Z＝625−25＝<b>600</b>。</li>
+  </ol>
+  <div class="ans">答え：600cm</div>
+  <div class="miss">今回：600cm ○。余白に「3.0」「2.5」「0.5」と半分ずつ分けて出している。</div>
+</section>
+
+<section class="card">
+  <h2><span class="qid">CP (20)</span> ふりこを長くしたときの木片の移動距離 <span class="type">条件文・選択</span></h2>
+  <h3 class="h-hint">👀 まず見るところ</h3>
+  <div class="hint">【条件文】部品は「<b>ふれる角度を変えずに</b>」「<b>長さを長くした</b>」に丸。この2つを「<b>おもりを放す高さが高くなる</b>」に直して書く → 最下点の速さが決まる。</div>
+  <h3>📚 前提知識</h3>
+  <ul>
+    <li>木片の移動距離は、ぶつかる瞬間のおもりの速さと重さで決まる。速さは放した高さで決まる。</li>
+    <li>同じ角度でも、糸が長いほどおもりの位置は最下点から高くなる（図12で糸を長くした絵を描くと分かる）。</li>
+  </ul>
+  <h3 class="h-read">🔍 こう読み解く</h3>
+  <ol>
+    <li>角度が同じで糸が長い → 放す高さが高い。</li>
+    <li>高い所から落ちる → 最下点で速い → 木片は遠くまで動く → <b>ア</b>。</li>
+  </ol>
+  <div class="ans">答え：ア</div>
+  <div class="miss">今回：イ ×。部品の形を直さなかった＝「角度を変えず長くする」を「高さが高くなる」に直さず、長い＝ゆっくり（周期が長い）で答えたと思われる。周期と速さは別、と分けてから図12に長い糸を描く。</div>
+  <div class="tip">コツ：ふりこの問題は「周期（長さだけ）」と「速さ（高さだけ）」の2本立て。聞かれているのがどちらかに丸をつける。</div>
+</section>
+
+<section class="card card-summary">
+  <h2><span class="qid">CP</span> まとめ <span class="type">80／100点（16／20問）</span></h2>
+  <ul>
+    <li>取れた16問は、てこ・重心・滑車・輪軸・浮力・ふりこの計算まで、図に数字を書いてから式を立てる手順ができている。</li>
+    <li>落とした4問は全部「図に置く前に決めた」型：(8)重心を点で打つ／(9)床についた300gに気づく／(18)mをcmに直す／(20)長くする＝高くなる と描く。<b>知識不足ではなく、部品の形を直す1手</b>の失点。</li>
+    <li>覚え直しはこの3つ：つるすと重心は真下／両端に同じ力＝のびは1回分／ふりこは 周期＝長さ・速さ＝高さ。</li>
+  </ul>
+</section>
+</div>
