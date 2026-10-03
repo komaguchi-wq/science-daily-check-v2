@@ -452,16 +452,13 @@ function unitBarHTML(st) {
         </div>`;
 }
 
-function renderUnits() {
-  const list = document.getElementById("unit-list");
-  list.innerHTML = "";
-  unitsList.forEach(unit => {
-    const card = document.createElement("div");
-    card.className = "unit-card";
-    if (isXyzOnlyUnit(unit)) card.classList.add("unit-card-xyz");   // 正誤表のみ単元（クリックでモード選択へ直行）
-    const st = unitBarStats(unit);
-    const donePct = st.total > 0 ? Math.round(st.attempted / st.total * 100) + "%" : "---";
-    card.innerHTML = `
+function unitCardElement(unit) {
+  const card = document.createElement("div");
+  card.className = "unit-card";
+  if (isXyzOnlyUnit(unit)) card.classList.add("unit-card-xyz");   // 正誤表のみ単元（クリックでモード選択へ直行）
+  const st = unitBarStats(unit);
+  const donePct = st.total > 0 ? Math.round(st.attempted / st.total * 100) + "%" : "---";
+  card.innerHTML = `
       <div class="unit-card-info">
         <div class="unit-card-title">${unit.id} ${unit.title}</div>
         <div class="unit-card-subtitle">${unit.subject} ・ 全${st.total}問</div>${unitBarHTML(st)}
@@ -470,9 +467,90 @@ function renderUnits() {
         <div class="unit-card-accuracy">${donePct}</div>
         <div class="unit-card-detail">完了 ${st.attempted}/${st.total}</div>
       </div>`;
-    card.addEventListener("click", () => openUnit(unit));
-    list.appendChild(card);
+  card.addEventListener("click", () => openUnit(unit));
+  return card;
+}
+
+// ★2026-10-03 ユーザー要望: コアプラスは単元をずらっと並べず「第I部／第II部（章ごと）／第III部…／コアプラス＋ 第1部・第2部」
+//   のグループに折りたたみ、見出しにそのグループ全体の ○／△／未・棒グラフ・完了% を単元カードと同じ形で出す
+//   （国語アプリの漢字の要／言葉ナビと同じ型）。グループ名は units.json のタイトル先頭から取る。開閉は端末ごとに記憶（表示の都合だけ）。
+function unitGroupOf(unit) {
+  if (!currentCategory || currentCategory.id !== "coreplus") return null;
+  const t = String(unit.title || "");
+  let m = t.match(/^(コアプラス＋ 第\d+部)(?: (第\d+章 [^ ]+))?/);
+  if (m) return { part: m[1], chapter: null };                       // コアプラス＋は部だけ（章は1単元ずつなので分けない）
+  m = t.match(/^(第[IVX]+部(?: [^第 ][^ ]*)?)(?: (第\d+章 [^ ]+))?/);
+  if (m) return { part: m[1], chapter: m[2] || null };
+  return { part: "その他", chapter: null };
+}
+function groupOpenKey() { return `science-unit-groups-open-${currentCategory.id}`; }
+function groupOpenSet() {
+  try { return new Set(JSON.parse(localStorage.getItem(groupOpenKey())) || []); } catch { return new Set(); }
+}
+function saveGroupOpenSet(set) { try { localStorage.setItem(groupOpenKey(), JSON.stringify([...set])); } catch {} }
+
+function groupSumStats(units) {
+  return units.reduce((a, u) => {
+    const st = unitBarStats(u);
+    a.total += st.total; a.attempted += st.attempted; a.good += st.good; a.low += st.low; a.unanswered += st.unanswered; return a;
+  }, { total: 0, attempted: 0, good: 0, low: 0, unanswered: 0 });
+}
+
+function groupSectionElement(key, name, units, level, bodyNodes, openSet) {
+  const st = groupSumStats(units);
+  const donePct = st.total > 0 ? Math.round(st.attempted / st.total * 100) + "%" : "---";
+  const sec = document.createElement("section");
+  sec.className = "unit-group" + (openSet.has(key) ? "" : " collapsed");
+  const head = document.createElement("div");
+  head.className = `grp-head grp-lv${level}`;
+  head.innerHTML = `
+      <div class="unit-card-info">
+        <div class="grp-row"><span class="grp-caret">▸</span><span class="grp-name">${name}</span><span class="grp-count">${units.length}単元 ・ 全${st.total}問</span></div>${unitBarHTML(st)}
+      </div>
+      <div class="unit-card-stats">
+        <div class="unit-card-accuracy">${donePct}</div>
+        <div class="unit-card-detail">完了 ${st.attempted}/${st.total}</div>
+      </div>`;
+  head.addEventListener("click", () => {
+    const open = sec.classList.toggle("collapsed") === false;
+    const set = groupOpenSet();
+    if (open) set.add(key); else set.delete(key);
+    saveGroupOpenSet(set);
   });
+  const body = document.createElement("div");
+  body.className = "grp-body";
+  bodyNodes.forEach(n => body.appendChild(n));
+  sec.appendChild(head); sec.appendChild(body);
+  return sec;
+}
+
+function renderUnits() {
+  const list = document.getElementById("unit-list");
+  list.innerHTML = "";
+  if (!unitsList.length || !unitGroupOf(unitsList[0])) {
+    unitsList.forEach(unit => list.appendChild(unitCardElement(unit)));
+    return;
+  }
+  const parts = [];   // [{name, units, chapters:[{name, units}]}]
+  for (const unit of unitsList) {
+    const g = unitGroupOf(unit);
+    let p = parts.find(x => x.name === g.part);
+    if (!p) { p = { name: g.part, units: [], chapters: [] }; parts.push(p); }
+    p.units.push(unit);
+    const cname = g.chapter || "";
+    let c = p.chapters[p.chapters.length - 1];
+    if (!c || c.name !== cname) { c = { name: cname, units: [] }; p.chapters.push(c); }
+    c.units.push(unit);
+  }
+  const openSet = groupOpenSet();
+  for (const p of parts) {
+    // 章が複数あり、どれかの章に2単元以上あるときだけ第2階層（章）を作る。1単元ずつの章は並べるだけ
+    const useChapters = p.chapters.length > 1 && p.chapters.every(c => c.name) && p.chapters.some(c => c.units.length > 1);
+    const body = useChapters
+      ? p.chapters.map(c => groupSectionElement(`${p.name}｜${c.name}`, c.name, c.units, 2, c.units.map(unitCardElement), openSet))
+      : p.units.map(unitCardElement);
+    list.appendChild(groupSectionElement(p.name, p.name, p.units, 1, body, openSet));
+  }
 }
 
 // ==============================

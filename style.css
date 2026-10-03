@@ -216,6 +216,30 @@ body {
   color: #86868b;
 }
 
+/* 単元グループの折りたたみ（コアプラス・2026-10-03）: 見出しは単元カードと同じ形（○△未の合計・棒グラフ・完了%） */
+.unit-group { display: flex; flex-direction: column; gap: 12px; }
+.grp-head {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+.grp-head:active { transform: scale(0.98); }
+.grp-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.grp-caret { color: #86868b; font-size: 14px; display: inline-block; transition: transform 0.15s; }
+.unit-group:not(.collapsed) > .grp-head .grp-caret { transform: rotate(90deg); }
+.grp-name { font-size: 17px; font-weight: 700; color: #1d1d1f; }
+.grp-count { font-size: 13px; color: #86868b; }
+.unit-group.collapsed > .grp-body { display: none; }
+.grp-body { display: flex; flex-direction: column; gap: 12px; margin-left: 6px; padding-left: 10px; border-left: 3px solid #e5e5ea; }
+.grp-head.grp-lv2 { background: #f5f5f7; box-shadow: none; border: 1px solid #e5e5ea; padding: 12px 14px; }
+.grp-lv2 .grp-name { font-size: 15px; }
+
 /* 正誤表(xyz)のみ単元のカード: 正誤グラフ＋完了% を単元一覧に直接表示 */
 .unit-card-xyz { border-left: 6px solid #007aff; }
 .unit-card-bar {
