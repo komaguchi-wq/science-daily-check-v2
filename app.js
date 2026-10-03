@@ -1239,7 +1239,8 @@ function wsmPageHTML(pt, file, i, total, base) {
   const banner = pt === "q" ? `<div class="wsm-target-banner" style="display:none"></div>` : "";
   // ★2026-09-23 問題ページは .wsm-imgwrap で包み、対象小問の解答らんを赤枠で囲むレイヤー（.wsm-tboxes）を重ねる
   const img = `<img src="${base}${file}" loading="lazy" alt="${lbl}${i + 1}">`;
-  const body = pt === "q" ? `<div class="wsm-imgwrap">${img}<div class="wsm-tboxes" data-idx="${i}"></div></div>` : img;
+  // ★2026-10-03 解答ページにも印のレイヤー（qpos.json の answerSame=true＝コアプラスのように問題と解答が同じ紙面のとき青丸）
+  const body = `<div class="wsm-imgwrap">${img}<div class="wsm-tboxes" data-idx="${i}" data-pt="${pt}"></div></div>`;
   return `<div class="wsm-page" data-pt="${pt}" data-idx="${i}"${pt === "a" ? ' style="display:none"' : ""}>
        <div class="wsm-page-label">${lbl} ${i + 1} / ${total}</div>${banner}
        ${body}
@@ -1454,31 +1455,50 @@ async function loadWsSubRects() {
           if (rects[q.id]) return;   // 解答らんの枠がある小問はそのまま
           const s = j.subs[q.id];
           const p = s || (j.daimons && j.daimons[String(dm.id)]);
-          if (!p) return;
-          const wh = pageWH[p.page] || {};
-          rects[q.id] = [{ qpage: p.page, ring: true, sub: !!s, cx: p.x, cy: p.y, W: wh.W || 1000, H: wh.H || 700 }];
+          const list = [];
+          if (p) {
+            const wh = pageWH[p.page] || {};
+            // ★2026-10-03 コアプラス: 記号の丸は番号のすぐ右で詰まっているので左にずらさない（shift:0）
+            list.push({ qpage: p.page, ring: true, sub: !!s, shift: j.answerSame ? 0 : undefined, cx: p.x, cy: p.y, W: wh.W || 1000, H: wh.H || 700 });
+          }
+          // ★2026-10-03 本文側の問題番号（☒ 235・qpos.dmq）: その問のどれかが対象なら番号にも丸（コアプラス）
+          const dq = j.dmq && j.dmq[String(dm.id)];
+          if (dq) {
+            const wh = pageWH[dq.page] || {};
+            list.push({ qpage: dq.page, ring: true, sub: false, dmKey: String(dm.id), cx: dq.x, cy: dq.y, W: wh.W || 1000, H: wh.H || 700 });
+          }
+          if (list.length) rects[q.id] = list;
         }));
+        if (j.answerSame) Object.defineProperty(rects, "__answerSame", { value: true, enumerable: false });
       }
     }
   } catch (e) { console.warn("qpos 読み込み失敗", e); }
   _subRectsCache[key] = Object.keys(rects).length ? rects : null;
   return _subRectsCache[key];
 }
-function wsTargetRectsForPage(idx, idsSet) {
+function wsTargetRectsForPage(idx, idsSet, pt) {
   const rects = _subRectsCache[wsSubRectsKey()];
   if (!rects || !idsSet) return [];
-  const out = [];
-  idsSet.forEach(id => (rects[id] || []).forEach(r => { if (r.qpage === idx) out.push(r); }));
+  if (pt === "a" && !rects.__answerSame) return [];   // 解答ページは「問題と同じ紙面」の教材だけ
+  const out = [], seen = new Set();
+  idsSet.forEach(id => (rects[id] || []).forEach(r => {
+    if (r.qpage !== idx) return;
+    if (r.dmKey) { const k = "dm:" + r.dmKey; if (seen.has(k)) return; seen.add(k); }   // 同じ問の番号の丸は1つだけ
+    out.push(r);
+  }));
   return out;
 }
 function updateWsTargetBoxes() {
   document.querySelectorAll('#wsm-pages .wsm-tboxes').forEach(layer => {
     const idx = parseInt(layer.dataset.idx);
-    const rs = wsTargetRectsForPage(idx, wsmFilteredIds);
+    const pt = layer.dataset.pt || "q";
+    const rs = wsTargetRectsForPage(idx, wsmFilteredIds, pt);
+    const cls = pt === "a" ? " wsm-tring-a" : "";   // 解答ページは青（赤い下敷きで隠しても見える）
     layer.innerHTML = rs.map(r => {
       if (r.ring) {   // 小問ラベルの赤丸（小問=少し左・少し小さめ／大問見出し=そのまま。算数 drawTargetRings と同じ寸法）
-        const w = 0.033 * (r.sub ? 0.92 : 1.15), h = 0.033 * r.W / r.H, cx = r.cx - (r.sub ? 0.006 : 0);
-        return `<span class="wsm-tring" style="left:${((cx - w / 2) * 100).toFixed(2)}%;top:${((r.cy - h / 2) * 100).toFixed(2)}%;width:${(w * 100).toFixed(2)}%;height:${(h * 100).toFixed(2)}%"></span>`;
+        const sh = r.shift != null ? r.shift : (r.sub ? 0.006 : 0);
+        const w = 0.033 * (r.sub ? 0.92 : 1.15), h = 0.033 * r.W / r.H, cx = r.cx - sh;
+        return `<span class="wsm-tring${cls}" style="left:${((cx - w / 2) * 100).toFixed(2)}%;top:${((r.cy - h / 2) * 100).toFixed(2)}%;width:${(w * 100).toFixed(2)}%;height:${(h * 100).toFixed(2)}%"></span>`;
       }
       const pad = Math.max(6, r.h * 0.12);
       const l = ((r.x - pad) / r.W * 100).toFixed(2), t = ((r.y - pad) / r.H * 100).toFixed(2);
@@ -1488,17 +1508,18 @@ function updateWsTargetBoxes() {
   });
 }
 // 印刷用: 対象小問の解答らんの赤枠を canvas に焼き込む
-function drawWsTargetBoxes(ctx, idx, idsSet, W, H) {
-  const rs = wsTargetRectsForPage(idx, idsSet);
+function drawWsTargetBoxes(ctx, idx, idsSet, W, H, pt) {
+  const rs = wsTargetRectsForPage(idx, idsSet, pt || "q");
   if (!rs.length) return;
   ctx.save();
-  ctx.strokeStyle = "#ff3b30";
+  ctx.strokeStyle = pt === "a" ? "#0a5fd6" : "#ff3b30";   // 解答ページは青（赤い下敷き対策）
   ctx.lineWidth = Math.max(6, Math.round(W * 0.0022));
   rs.forEach(r => {
     if (r.ring) {
       const rr = Math.max(9, W * 0.0165);
+      const sh = r.shift != null ? r.shift : (r.sub ? 0.006 : 0);
       ctx.beginPath();
-      ctx.ellipse((r.cx - (r.sub ? 0.006 : 0)) * W, r.cy * H, rr * (r.sub ? 0.92 : 1.15), rr, 0, 0, Math.PI * 2);
+      ctx.ellipse((r.cx - sh) * W, r.cy * H, rr * (r.sub ? 0.92 : 1.15), rr, 0, 0, Math.PI * 2);
       ctx.stroke();
       return;
     }
@@ -1662,6 +1683,9 @@ async function wsmPrint() {
   if (wsmShowingKaisetsu) { return printWsKaisetsu(); }   // ★2026-09-20 解説タブ中の右上「印刷」＝解説（対象の問だけ）
   if (!wsmShowingAnswer) { return printWsMode(wsmFilter || "all"); }
   const base = unitImagesBase();
+  // ★2026-10-03 解答の印刷にも対象の印（青丸）。問題と同じ紙面の教材（コアプラス）だけ付く
+  const ids = wsmFilter && wsmFilter !== "all" ? computeWsFilterIds(wsmFilter) : null;
+  if (ids) await loadWsSubRects();
   if (wsmPrintAsSpread(xyz)) {
     const urls = await composeSpreadDataURLs(xyz.answerPages, base, null, xyz.spreadGroups ? wsSpreadGroups(xyz, "a") : undefined);
     if (urls.length === 0) { alert("画像の読み込みに失敗しました"); return; }
@@ -1669,12 +1693,14 @@ async function wsmPrint() {
     return;
   }
   const dataURLs = [];
-  for (const p of xyz.answerPages) {
+  for (let i = 0; i < xyz.answerPages.length; i++) {
     let img;
-    try { img = await loadImage(base + p); } catch (e) { continue; }
+    try { img = await loadImage(base + xyz.answerPages[i]); } catch (e) { continue; }
     const cc = document.createElement("canvas");
     cc.width = img.width; cc.height = img.height;
-    cc.getContext("2d").drawImage(img, 0, 0);
+    const ctx = cc.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    if (ids) drawWsTargetBoxes(ctx, i, ids, cc.width, cc.height, "a");
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
