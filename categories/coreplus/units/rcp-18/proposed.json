@@ -1,9 +1,10 @@
 {
- "unit": "rcp-20",
- "id": "2026-10-03-seigo-rcp-20-ambiguous",
+ "unit": "rcp-18",
+ "id": "2026-10-03-seigo-rcp-18-ambiguous",
  "source": "コアプラス 青ペン正誤（印が読み切れない小問だけ仮入力）",
  "created": "2026-10-03",
  "grades": {
-  "477-②": false
+  "420-③": false,
+  "409-②": false
  }
 }
