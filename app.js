@@ -1476,10 +1476,26 @@ async function loadWsSubRects() {
   _subRectsCache[key] = Object.keys(rects).length ? rects : null;
   return _subRectsCache[key];
 }
+// ★2026-10-04 解答ページの添字 → 同じ紙面の問題ページの添字（daily-check 確認・発展: page_08_answer.jpg ↔ page_08_qmasked.jpg）。
+//   見つからなければ null（解答が別の紙面＝DC/CP+/記述/解いた用紙など）
+function wsAnswerToQuestionIdx(aIdx) {
+  const xyz = wsmBlock();
+  if (!xyz) return null;
+  const af = (xyz.answerPages || [])[aIdx] || "";
+  const m = /page_(\d+)_answer\.jpg$/.exec(af);
+  if (!m) return null;
+  const qi = (xyz.questionPages || []).findIndex(f => new RegExp(`page_${m[1]}_qmasked\\.jpg$`).test(f || ""));
+  return qi >= 0 ? qi : null;
+}
 function wsTargetRectsForPage(idx, idsSet, pt) {
   const rects = _subRectsCache[wsSubRectsKey()];
   if (!rects || !idsSet) return [];
-  if (pt === "a" && !rects.__answerSame) return [];   // 解答ページは「問題と同じ紙面」の教材だけ
+  if (pt === "a" && !rects.__answerSame) {
+    // ★2026-10-04 解答ページにも印（青）: 問題と同じ紙面の解答ページ（確認・発展の page_NN_answer）だけ。別紙面なら何も描かない
+    const qi = wsAnswerToQuestionIdx(idx);
+    if (qi == null) return [];
+    idx = qi;
+  }
   const out = [], seen = new Set();
   idsSet.forEach(id => (rects[id] || []).forEach(r => {
     if (r.qpage !== idx) return;
@@ -1496,14 +1512,15 @@ function updateWsTargetBoxes() {
     const cls = pt === "a" ? " wsm-tring-a" : "";   // 解答ページは青（赤い下敷きで隠しても見える）
     layer.innerHTML = rs.map(r => {
       if (r.ring) {   // 小問ラベルの赤丸（小問=少し左・少し小さめ／大問見出し=そのまま。算数 drawTargetRings と同じ寸法）
-        const sh = r.shift != null ? r.shift : (r.sub ? 0.006 : 0);
+        // ★2026-10-04 丸の中心はラベルの中心のまま（左に W×0.6% 寄せるのは算数だけ。理社は「(1)」が丸の右に寄って見えた＝ユーザー指摘）
+        const sh = r.shift != null ? r.shift : 0;
         const w = 0.033 * (r.sub ? 0.92 : 1.15), h = 0.033 * r.W / r.H, cx = r.cx - sh;
         return `<span class="wsm-tring${cls}" style="left:${((cx - w / 2) * 100).toFixed(2)}%;top:${((r.cy - h / 2) * 100).toFixed(2)}%;width:${(w * 100).toFixed(2)}%;height:${(h * 100).toFixed(2)}%"></span>`;
       }
       const pad = Math.max(6, r.h * 0.12);
       const l = ((r.x - pad) / r.W * 100).toFixed(2), t = ((r.y - pad) / r.H * 100).toFixed(2);
       const w = ((r.w + pad * 2) / r.W * 100).toFixed(2), h = ((r.h + pad * 2) / r.H * 100).toFixed(2);
-      return `<span class="wsm-tbox" style="left:${l}%;top:${t}%;width:${w}%;height:${h}%"></span>`;
+      return `<span class="wsm-tbox${pt === "a" ? " wsm-tbox-a" : ""}" style="left:${l}%;top:${t}%;width:${w}%;height:${h}%"></span>`;   // 解答ページは青
     }).join("");
   });
 }
@@ -1517,7 +1534,7 @@ function drawWsTargetBoxes(ctx, idx, idsSet, W, H, pt) {
   rs.forEach(r => {
     if (r.ring) {
       const rr = Math.max(9, W * 0.0165);
-      const sh = r.shift != null ? r.shift : (r.sub ? 0.006 : 0);
+      const sh = r.shift != null ? r.shift : 0;   // ★2026-10-04 左寄せ廃止（理社）
       ctx.beginPath();
       ctx.ellipse((r.cx - sh) * W, r.cy * H, rr * (r.sub ? 0.92 : 1.15), rr, 0, 0, Math.PI * 2);
       ctx.stroke();
