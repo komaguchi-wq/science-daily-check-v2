@@ -1,494 +1,494 @@
 {
-  "id": "rcp-07",
-  "title": "第I部 身のまわりの理科 第7節 メダカとプランクトン",
-  "category": "coreplus",
-  "pages": [],
-  "_pages_backup": [
+ "id": "rcp-07",
+ "title": "第I部 身のまわりの理科 第7節 メダカとプランクトン",
+ "category": "coreplus",
+ "pages": [],
+ "_pages_backup": [
+  {
+   "id": 1,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 28,
+   "width": 1532,
+   "height": 2171,
+   "image": "page_01.jpg",
+   "imageMasked": "page_01_masked.jpg",
+   "regions": []
+  },
+  {
+   "id": 2,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 29,
+   "width": 1532,
+   "height": 2171,
+   "image": "page_02.jpg",
+   "imageMasked": "page_02_masked.jpg",
+   "regions": [
     {
-      "id": 1,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 28,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_01.jpg",
-      "imageMasked": "page_01_masked.jpg",
-      "regions": []
+     "x": 976,
+     "y": 139,
+     "w": 487,
+     "h": 117
     },
     {
-      "id": 2,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 29,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_02.jpg",
-      "imageMasked": "page_02_masked.jpg",
-      "regions": [
-        {
-          "x": 976,
-          "y": 139,
-          "w": 487,
-          "h": 117
-        },
-        {
-          "x": 1033,
-          "y": 291,
-          "w": 430,
-          "h": 39
-        },
-        {
-          "x": 976,
-          "y": 368,
-          "w": 487,
-          "h": 156
-        },
-        {
-          "x": 975,
-          "y": 564,
-          "w": 488,
-          "h": 450
-        },
-        {
-          "x": 976,
-          "y": 1042,
-          "w": 487,
-          "h": 76
-        },
-        {
-          "x": 1002,
-          "y": 1270,
-          "w": 461,
-          "h": 110
-        },
-        {
-          "x": 975,
-          "y": 1420,
-          "w": 488,
-          "h": 114
-        },
-        {
-          "x": 976,
-          "y": 1574,
-          "w": 487,
-          "h": 147
-        }
-      ]
+     "x": 1033,
+     "y": 291,
+     "w": 430,
+     "h": 39
     },
     {
-      "id": 3,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 30,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_03.jpg",
-      "imageMasked": "page_03_masked.jpg",
-      "regions": [
-        {
-          "x": 1136,
-          "y": 187,
-          "w": 327,
-          "h": 37
-        },
-        {
-          "x": 1113,
-          "y": 225,
-          "w": 350,
-          "h": 113
-        },
-        {
-          "x": 1136,
-          "y": 389,
-          "w": 327,
-          "h": 38
-        },
-        {
-          "x": 1111,
-          "y": 428,
-          "w": 352,
-          "h": 114
-        },
-        {
-          "x": 1137,
-          "y": 545,
-          "w": 326,
-          "h": 35
-        },
-        {
-          "x": 1055,
-          "y": 623,
-          "w": 408,
-          "h": 113
-        },
-        {
-          "x": 1135,
-          "y": 1504,
-          "w": 328,
-          "h": 33
-        },
-        {
-          "x": 1134,
-          "y": 1539,
-          "w": 329,
-          "h": 198
-        }
-      ]
+     "x": 976,
+     "y": 368,
+     "w": 487,
+     "h": 156
     },
     {
-      "id": 4,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 31,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_04.jpg",
-      "imageMasked": "page_04_masked.jpg",
-      "regions": [
-        {
-          "x": 1004,
-          "y": 139,
-          "w": 434,
-          "h": 73
-        },
-        {
-          "x": 967,
-          "y": 451,
-          "w": 496,
-          "h": 231
-        },
-        {
-          "x": 1083,
-          "y": 841,
-          "w": 380,
-          "h": 38
-        },
-        {
-          "x": 1084,
-          "y": 878,
-          "w": 379,
-          "h": 41
-        },
-        {
-          "x": 1084,
-          "y": 916,
-          "w": 379,
-          "h": 41
-        },
-        {
-          "x": 1083,
-          "y": 955,
-          "w": 380,
-          "h": 40
-        },
-        {
-          "x": 1082,
-          "y": 995,
-          "w": 381,
-          "h": 39
-        },
-        {
-          "x": 1083,
-          "y": 1034,
-          "w": 380,
-          "h": 37
-        },
-        {
-          "x": 1084,
-          "y": 1071,
-          "w": 379,
-          "h": 37
-        },
-        {
-          "x": 967,
-          "y": 1110,
-          "w": 496,
-          "h": 149
-        }
-      ]
+     "x": 975,
+     "y": 564,
+     "w": 488,
+     "h": 450
+    },
+    {
+     "x": 976,
+     "y": 1042,
+     "w": 487,
+     "h": 76
+    },
+    {
+     "x": 1002,
+     "y": 1270,
+     "w": 461,
+     "h": 110
+    },
+    {
+     "x": 975,
+     "y": 1420,
+     "w": 488,
+     "h": 114
+    },
+    {
+     "x": 976,
+     "y": 1574,
+     "w": 487,
+     "h": 147
     }
-  ],
-  "xyz": {
-    "label": "コアプラス",
-    "spread": true,
-    "questionPages": [
-      "page_01_masked.jpg",
-      "page_02_masked.jpg",
-      "page_03_masked.jpg",
-      "page_04_masked.jpg"
-    ],
-    "answerPages": [
-      "page_01.jpg",
-      "page_02.jpg",
-      "page_03.jpg",
-      "page_04.jpg"
-    ],
-    "daimons": [
-      {
-        "id": "91",
-        "label": "91",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "91",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "92",
-        "label": "92",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "92-あ",
-            "label": "あ",
-            "group": ""
-          },
-          {
-            "id": "92-い",
-            "label": "い",
-            "group": ""
-          },
-          {
-            "id": "92-う",
-            "label": "う",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "93",
-        "label": "93",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "93",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "94",
-        "label": "94",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "94",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "95",
-        "label": "95",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "95",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "96",
-        "label": "96",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "96",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "97",
-        "label": "97",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "97",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "98",
-        "label": "98",
-        "qpage": 1,
-        "questions": [
-          {
-            "id": "98",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "99",
-        "label": "99",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "99-①",
-            "label": "①",
-            "group": ""
-          },
-          {
-            "id": "99-②",
-            "label": "②",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "100",
-        "label": "100",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "100-①",
-            "label": "①",
-            "group": ""
-          },
-          {
-            "id": "100-②",
-            "label": "②",
-            "group": ""
-          },
-          {
-            "id": "100-③",
-            "label": "③",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "101",
-        "label": "101",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "101",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "102",
-        "label": "102",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "102-①",
-            "label": "①",
-            "group": ""
-          },
-          {
-            "id": "102-②",
-            "label": "②",
-            "group": ""
-          },
-          {
-            "id": "102-スケッチ",
-            "label": "スケッチ",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "103",
-        "label": "103",
-        "qpage": 3,
-        "questions": [
-          {
-            "id": "103",
-            "label": "―",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "104",
-        "label": "104",
-        "qpage": 3,
-        "questions": [
-          {
-            "id": "104-答え",
-            "label": "答え",
-            "group": ""
-          },
-          {
-            "id": "104-違い",
-            "label": "違い",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "105",
-        "label": "105",
-        "qpage": 3,
-        "questions": [
-          {
-            "id": "105-A",
-            "label": "A",
-            "group": ""
-          },
-          {
-            "id": "105-B",
-            "label": "B",
-            "group": ""
-          },
-          {
-            "id": "105-C",
-            "label": "C",
-            "group": ""
-          },
-          {
-            "id": "105-D",
-            "label": "D",
-            "group": ""
-          },
-          {
-            "id": "105-E",
-            "label": "E",
-            "group": ""
-          },
-          {
-            "id": "105-F",
-            "label": "F",
-            "group": ""
-          },
-          {
-            "id": "105-G",
-            "label": "G",
-            "group": ""
-          },
-          {
-            "id": "105-H",
-            "label": "H",
-            "group": ""
-          },
-          {
-            "id": "105-I",
-            "label": "I",
-            "group": ""
-          },
-          {
-            "id": "105-光合成をするもの",
-            "label": "光合成をするもの",
-            "group": ""
-          }
-        ]
-      }
-    ]
+   ]
+  },
+  {
+   "id": 3,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 30,
+   "width": 1532,
+   "height": 2171,
+   "image": "page_03.jpg",
+   "imageMasked": "page_03_masked.jpg",
+   "regions": [
+    {
+     "x": 1136,
+     "y": 187,
+     "w": 327,
+     "h": 37
+    },
+    {
+     "x": 1113,
+     "y": 225,
+     "w": 350,
+     "h": 113
+    },
+    {
+     "x": 1136,
+     "y": 389,
+     "w": 327,
+     "h": 38
+    },
+    {
+     "x": 1111,
+     "y": 428,
+     "w": 352,
+     "h": 114
+    },
+    {
+     "x": 1137,
+     "y": 545,
+     "w": 326,
+     "h": 35
+    },
+    {
+     "x": 1055,
+     "y": 623,
+     "w": 408,
+     "h": 113
+    },
+    {
+     "x": 1135,
+     "y": 1504,
+     "w": 328,
+     "h": 33
+    },
+    {
+     "x": 1134,
+     "y": 1539,
+     "w": 329,
+     "h": 198
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 31,
+   "width": 1532,
+   "height": 2171,
+   "image": "page_04.jpg",
+   "imageMasked": "page_04_masked.jpg",
+   "regions": [
+    {
+     "x": 1004,
+     "y": 139,
+     "w": 434,
+     "h": 73
+    },
+    {
+     "x": 967,
+     "y": 451,
+     "w": 496,
+     "h": 231
+    },
+    {
+     "x": 1083,
+     "y": 841,
+     "w": 380,
+     "h": 38
+    },
+    {
+     "x": 1084,
+     "y": 878,
+     "w": 379,
+     "h": 41
+    },
+    {
+     "x": 1084,
+     "y": 916,
+     "w": 379,
+     "h": 41
+    },
+    {
+     "x": 1083,
+     "y": 955,
+     "w": 380,
+     "h": 40
+    },
+    {
+     "x": 1082,
+     "y": 995,
+     "w": 381,
+     "h": 39
+    },
+    {
+     "x": 1083,
+     "y": 1034,
+     "w": 380,
+     "h": 37
+    },
+    {
+     "x": 1084,
+     "y": 1071,
+     "w": 379,
+     "h": 37
+    },
+    {
+     "x": 967,
+     "y": 1110,
+     "w": 496,
+     "h": 149
+    }
+   ]
   }
+ ],
+ "xyz": {
+  "label": "コアプラス",
+  "spread": true,
+  "questionPages": [
+   "page_01_masked.jpg",
+   "page_02_masked.jpg",
+   "page_03_masked.jpg",
+   "page_04_masked.jpg"
+  ],
+  "answerPages": [
+   "page_01.jpg",
+   "page_02.jpg",
+   "page_03.jpg",
+   "page_04.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "91",
+    "label": "91",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "91",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "92",
+    "label": "92",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "92-あ",
+      "label": "あ",
+      "group": ""
+     },
+     {
+      "id": "92-い",
+      "label": "い",
+      "group": ""
+     },
+     {
+      "id": "92-う",
+      "label": "う",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "93",
+    "label": "93",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "93",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "94",
+    "label": "94",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "94",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "95",
+    "label": "95",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "95",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "96",
+    "label": "96",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "96",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "97",
+    "label": "97",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "97",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "98",
+    "label": "98",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "98",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "99",
+    "label": "99",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "99-①",
+      "label": "①",
+      "group": ""
+     },
+     {
+      "id": "99-②",
+      "label": "②",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "100",
+    "label": "100",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "100-①",
+      "label": "①",
+      "group": ""
+     },
+     {
+      "id": "100-②",
+      "label": "②",
+      "group": ""
+     },
+     {
+      "id": "100-③",
+      "label": "③",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "101",
+    "label": "101",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "101",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "102",
+    "label": "102",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "102-①",
+      "label": "①",
+      "group": ""
+     },
+     {
+      "id": "102-②",
+      "label": "②",
+      "group": ""
+     },
+     {
+      "id": "102-スケッチ",
+      "label": "スケッチ",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "103",
+    "label": "103",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "103",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "104",
+    "label": "104",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "104-答え",
+      "label": "答え",
+      "group": ""
+     },
+     {
+      "id": "104-違い",
+      "label": "違い",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "105",
+    "label": "105",
+    "qpage": 3,
+    "questions": [
+     {
+      "id": "105-A",
+      "label": "A",
+      "group": ""
+     },
+     {
+      "id": "105-B",
+      "label": "B",
+      "group": ""
+     },
+     {
+      "id": "105-C",
+      "label": "C",
+      "group": ""
+     },
+     {
+      "id": "105-D",
+      "label": "D",
+      "group": ""
+     },
+     {
+      "id": "105-E",
+      "label": "E",
+      "group": ""
+     },
+     {
+      "id": "105-F",
+      "label": "F",
+      "group": ""
+     },
+     {
+      "id": "105-G",
+      "label": "G",
+      "group": ""
+     },
+     {
+      "id": "105-H",
+      "label": "H",
+      "group": ""
+     },
+     {
+      "id": "105-I",
+      "label": "I",
+      "group": ""
+     },
+     {
+      "id": "105-光合成をするもの",
+      "label": "光合成をするもの",
+      "group": ""
+     }
+    ]
+   }
+  ]
+ }
 }

@@ -1,414 +1,222 @@
 {
-  "id": "rcp-26",
-  "title": "第III部 計算理科 第2節 中和",
-  "category": "coreplus",
-  "pages": [],
-  "_pages_backup": [
+ "id": "rcp-26",
+ "title": "第III部 計算理科 第4節 生物の計算",
+ "category": "coreplus",
+ "pages": [],
+ "_pages_backup": [
+  {
+   "id": 1,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 200,
+   "width": 1532,
+   "height": 2171,
+   "image": "page_01.jpg",
+   "imageMasked": "page_01_masked.jpg",
+   "regions": [
     {
-      "id": 1,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 188,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_01.jpg",
-      "imageMasked": "page_01_masked.jpg",
-      "regions": [
-        {
-          "x": 1025,
-          "y": 144,
-          "w": 438,
-          "h": 35
-        },
-        {
-          "x": 1141,
-          "y": 182,
-          "w": 322,
-          "h": 35
-        },
-        {
-          "x": 1197,
-          "y": 729,
-          "w": 266,
-          "h": 38
-        },
-        {
-          "x": 1197,
-          "y": 770,
-          "w": 266,
-          "h": 33
-        },
-        {
-          "x": 1197,
-          "y": 808,
-          "w": 266,
-          "h": 35
-        },
-        {
-          "x": 1198,
-          "y": 847,
-          "w": 265,
-          "h": 34
-        },
-        {
-          "x": 1196,
-          "y": 885,
-          "w": 267,
-          "h": 34
-        },
-        {
-          "x": 1196,
-          "y": 924,
-          "w": 267,
-          "h": 32
-        }
-      ]
+     "x": 1137,
+     "y": 301,
+     "w": 326,
+     "h": 34
     },
     {
-      "id": 2,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 189,
-      "width": 1532,
-      "height": 2169,
-      "image": "page_02.jpg",
-      "imageMasked": "page_02_masked.jpg",
-      "regions": []
+     "x": 1193,
+     "y": 340,
+     "w": 270,
+     "h": 33
     },
     {
-      "id": 3,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 190,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_03.jpg",
-      "imageMasked": "page_03_masked.jpg",
-      "regions": [
-        {
-          "x": 1078,
-          "y": 149,
-          "w": 385,
-          "h": 113
-        },
-        {
-          "x": 1132,
-          "y": 261,
-          "w": 331,
-          "h": 39
-        },
-        {
-          "x": 1084,
-          "y": 784,
-          "w": 379,
-          "h": 74
-        },
-        {
-          "x": 1085,
-          "y": 1466,
-          "w": 378,
-          "h": 76
-        }
-      ]
+     "x": 1191,
+     "y": 377,
+     "w": 272,
+     "h": 35
     },
     {
-      "id": 4,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 191,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_04.jpg",
-      "imageMasked": "page_04_masked.jpg",
-      "regions": []
+     "x": 1191,
+     "y": 417,
+     "w": 272,
+     "h": 35
     },
     {
-      "id": 5,
-      "type": "coreplus",
-      "src_book": "question",
-      "src_print_page": 192,
-      "width": 1532,
-      "height": 2171,
-      "image": "page_05.jpg",
-      "imageMasked": "page_05_masked.jpg",
-      "regions": [
-        {
-          "x": 1062,
-          "y": 150,
-          "w": 401,
-          "h": 74
-        },
-        {
-          "x": 1097,
-          "y": 783,
-          "w": 366,
-          "h": 41
-        },
-        {
-          "x": 1095,
-          "y": 822,
-          "w": 368,
-          "h": 39
-        },
-        {
-          "x": 1144,
-          "y": 860,
-          "w": 319,
-          "h": 39
-        },
-        {
-          "x": 1094,
-          "y": 897,
-          "w": 369,
-          "h": 79
-        },
-        {
-          "x": 1145,
-          "y": 1802,
-          "w": 318,
-          "h": 38
-        },
-        {
-          "x": 1146,
-          "y": 1841,
-          "w": 317,
-          "h": 35
-        },
-        {
-          "x": 1146,
-          "y": 1876,
-          "w": 317,
-          "h": 38
-        },
-        {
-          "x": 1096,
-          "y": 1916,
-          "w": 367,
-          "h": 35
-        },
-        {
-          "x": 1145,
-          "y": 1953,
-          "w": 318,
-          "h": 36
-        }
-      ]
+     "x": 1080,
+     "y": 1032,
+     "w": 383,
+     "h": 35
+    },
+    {
+     "x": 1135,
+     "y": 1324,
+     "w": 328,
+     "h": 32
+    },
+    {
+     "x": 1135,
+     "y": 1362,
+     "w": 328,
+     "h": 32
+    },
+    {
+     "x": 1134,
+     "y": 1401,
+     "w": 329,
+     "h": 32
     }
-  ],
-  "xyz": {
-    "label": "コアプラス",
-    "spread": true,
-    "questionPages": [
-      "page_01_masked.jpg",
-      "page_02_masked.jpg",
-      "page_03_masked.jpg",
-      "page_04_masked.jpg",
-      "page_05_masked.jpg"
-    ],
-    "answerPages": [
-      "page_01.jpg",
-      "page_02.jpg",
-      "page_03.jpg",
-      "page_04.jpg",
-      "page_05.jpg"
-    ],
-    "daimons": [
-      {
-        "id": "604",
-        "label": "604",
-        "qpage": 0,
-        "questions": [
-          {
-            "id": "604-A",
-            "label": "A",
-            "group": ""
-          },
-          {
-            "id": "604-B",
-            "label": "B",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "605",
-        "label": "605",
-        "qpage": 0,
-        "questions": [
-          {
-            "id": "605-①A",
-            "label": "①A",
-            "group": ""
-          },
-          {
-            "id": "605-①B",
-            "label": "①B",
-            "group": ""
-          },
-          {
-            "id": "605-②C",
-            "label": "②C",
-            "group": ""
-          },
-          {
-            "id": "605-②D",
-            "label": "②D",
-            "group": ""
-          },
-          {
-            "id": "605-②E",
-            "label": "②E",
-            "group": ""
-          },
-          {
-            "id": "605-②F",
-            "label": "②F",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "606",
-        "label": "606",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "606-x1",
-            "label": "x1",
-            "group": ""
-          },
-          {
-            "id": "606-x2",
-            "label": "x2",
-            "group": ""
-          },
-          {
-            "id": "606-x3",
-            "label": "x3",
-            "group": ""
-          },
-          {
-            "id": "606-x4",
-            "label": "x4",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "607",
-        "label": "607",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "607-x1",
-            "label": "x1",
-            "group": ""
-          },
-          {
-            "id": "607-x2",
-            "label": "x2",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "608",
-        "label": "608",
-        "qpage": 2,
-        "questions": [
-          {
-            "id": "608-x1",
-            "label": "x1",
-            "group": ""
-          },
-          {
-            "id": "608-x2",
-            "label": "x2",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "609",
-        "label": "609",
-        "qpage": 4,
-        "questions": [
-          {
-            "id": "609-x1",
-            "label": "x1",
-            "group": ""
-          },
-          {
-            "id": "609-x2",
-            "label": "x2",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "610",
-        "label": "610",
-        "qpage": 4,
-        "questions": [
-          {
-            "id": "610-図1",
-            "label": "図1",
-            "group": ""
-          },
-          {
-            "id": "610-図2",
-            "label": "図2",
-            "group": ""
-          },
-          {
-            "id": "610-図3",
-            "label": "図3",
-            "group": ""
-          },
-          {
-            "id": "610-図4",
-            "label": "図4",
-            "group": ""
-          },
-          {
-            "id": "610-図5",
-            "label": "図5",
-            "group": ""
-          }
-        ]
-      },
-      {
-        "id": "611",
-        "label": "611",
-        "qpage": 4,
-        "questions": [
-          {
-            "id": "611-図1",
-            "label": "図1",
-            "group": ""
-          },
-          {
-            "id": "611-図2",
-            "label": "図2",
-            "group": ""
-          },
-          {
-            "id": "611-図3",
-            "label": "図3",
-            "group": ""
-          },
-          {
-            "id": "611-図4",
-            "label": "図4",
-            "group": ""
-          },
-          {
-            "id": "611-図5",
-            "label": "図5",
-            "group": ""
-          }
-        ]
-      }
-    ]
+   ]
+  },
+  {
+   "id": 2,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 201,
+   "width": 1532,
+   "height": 2169,
+   "image": "page_02.jpg",
+   "imageMasked": "page_02_masked.jpg",
+   "regions": []
+  },
+  {
+   "id": 3,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 202,
+   "width": 1532,
+   "height": 2169,
+   "image": "page_03.jpg",
+   "imageMasked": "page_03_masked.jpg",
+   "regions": [
+    {
+     "x": 1023,
+     "y": 141,
+     "w": 440,
+     "h": 36
+    },
+    {
+     "x": 1085,
+     "y": 978,
+     "w": 378,
+     "h": 74
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "coreplus",
+   "src_book": "question",
+   "src_print_page": 203,
+   "width": 1532,
+   "height": 2171,
+   "image": "page_04.jpg",
+   "imageMasked": "page_04_masked.jpg",
+   "regions": []
   }
+ ],
+ "xyz": {
+  "label": "コアプラス",
+  "spread": true,
+  "questionPages": [
+   "page_01_masked.jpg",
+   "page_02_masked.jpg",
+   "page_03_masked.jpg",
+   "page_04_masked.jpg"
+  ],
+  "answerPages": [
+   "page_01.jpg",
+   "page_02.jpg",
+   "page_03.jpg",
+   "page_04.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "621",
+    "label": "621",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "621-①",
+      "label": "①",
+      "group": ""
+     },
+     {
+      "id": "621-②A",
+      "label": "②A",
+      "group": ""
+     },
+     {
+      "id": "621-②B",
+      "label": "②B",
+      "group": ""
+     },
+     {
+      "id": "621-②C",
+      "label": "②C",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "622",
+    "label": "622",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "622",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "623",
+    "label": "623",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "623-①",
+      "label": "①",
+      "group": ""
+     },
+     {
+      "id": "623-②",
+      "label": "②",
+      "group": ""
+     },
+     {
+      "id": "623-③",
+      "label": "③",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "624",
+    "label": "624",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "624",
+      "label": "―",
+      "group": ""
+     }
+    ]
+   },
+   {
+    "id": "625",
+    "label": "625",
+    "qpage": 2,
+    "questions": [
+     {
+      "id": "625-酸素",
+      "label": "酸素",
+      "group": ""
+     },
+     {
+      "id": "625-二酸化炭素",
+      "label": "二酸化炭素",
+      "group": ""
+     }
+    ]
+   }
+  ]
+ }
 }

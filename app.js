@@ -188,7 +188,8 @@ function getUnitProgress(unit) {
 // 正誤表(xyz)のみの単元か（夏期集中志望校錬成特訓・夏期デイリートレーニング等）。
 // units.json の totalRegions=0 かつ xyzCount>0 で判定（quiz-data.json を読まずに単元一覧で使う）
 function isXyzOnlyUnit(unit) {
-  return !(unit.totalRegions > 0) && unit.xyzCount > 0;
+  // viewOnly: 正誤チップの無い閲覧専用の単元（コアプラス rcp-27 巻末解説・2026-10-04）
+  return !(unit.totalRegions > 0) && (unit.xyzCount > 0 || !!unit.viewOnly);
 }
 
 // 正誤表(xyz)のみ単元の単元カード用統計
@@ -299,6 +300,48 @@ async function flushSyncQueue() {
   }
 }
 
+
+// ★2026-10-04 コアプラス本体（rcp-01〜27）を本の目次どおりに切り直した（scripts/coreplus_resplit.py）。
+//   ○×の記録は tracking[unitId] に入るので、旧い切り方で記録した unitId（GAS に残る・端末の localStorage に残る）を
+//   問題番号（xyz-{番号}-…・番号は本全体で一意）で新しい単元へ引き直す。GAS は追記専用なので書き換えず、読むときに直す
+const CP_NUM_UNITS = [[1,15,"rcp-01"],[16,30,"rcp-02"],[31,45,"rcp-03"],[46,60,"rcp-04"],[61,75,"rcp-05"],[76,90,"rcp-06"],[91,105,"rcp-07"],[106,120,"rcp-08"],[121,135,"rcp-09"],[136,150,"rcp-10"],[151,176,"rcp-11"],[177,206,"rcp-12"],[207,231,"rcp-13"],[232,287,"rcp-14"],[288,317,"rcp-15"],[318,355,"rcp-16"],[356,394,"rcp-17"],[395,421,"rcp-18"],[422,453,"rcp-19"],[454,494,"rcp-20"],[495,544,"rcp-21"],[545,588,"rcp-22"],[589,597,"rcp-23"],[598,601,"rcp-24"],[602,620,"rcp-25"],[621,625,"rcp-26"]];
+function cpCanonicalUnit(unitId, key) {
+  if (!/^rcp-\d\d$/.test(String(unitId))) return unitId;
+  const m = /^xyz-(\d+)/.exec(String(key));
+  if (!m) return unitId;
+  const n = Number(m[1]);
+  for (const [lo, hi, u] of CP_NUM_UNITS) if (n >= lo && n <= hi) return u;
+  return unitId;
+}
+function cpResplitMigratedKey() { return `science-cp-resplit-20261004-${currentUser}`; }
+// 端末に残る tracking／未送信イベントの unitId を一度だけ引き直す（記録の中身は変えない）
+function migrateCoreplusResplit() {
+  if (!currentUser) return;
+  try {
+    if (localStorage.getItem(cpResplitMigratedKey()) === "1") return;
+    const tr = getTracking(); let changed = false;
+    for (const u of Object.keys(tr)) {
+      if (!/^rcp-\d\d$/.test(u)) continue;
+      for (const k of Object.keys(tr[u])) {
+        const nu = cpCanonicalUnit(u, k);
+        if (nu === u) continue;
+        const src = tr[u][k]; const dst = (tr[nu] = tr[nu] || {})[k];
+        // 同じ小問が両方にあれば attempts の多い方（autoSyncFromSheets と同じ決め方）
+        if (!dst || (src && src.attempts > dst.attempts)) tr[nu][k] = src;
+        delete tr[u][k]; changed = true;
+      }
+    }
+    if (changed) setTracking(tr);
+    const evs = getEvents(); let evChanged = false;
+    for (const ev of evs) {
+      const nu = cpCanonicalUnit(ev.unitId, ev.key);
+      if (nu !== ev.unitId) { ev.unitId = nu; evChanged = true; }
+    }
+    if (evChanged) setEvents(evs);
+    localStorage.setItem(cpResplitMigratedKey(), "1");
+  } catch (e) { console.warn("migrateCoreplusResplit failed:", e.message); }
+}
+
 // 起動時自動復元: 未送信分をflush → GASから全件GET → イベント再構築でカウンタ更新
 async function autoSyncFromSheets() {
   if (!SHEETS_API_URL || !currentUser) return;
@@ -313,10 +356,11 @@ async function autoSyncFromSheets() {
     const remote = {};
     for (const e of json.entries) {
       const k = decodeSyncKey(e.key);
-      if (!remote[e.unitId]) remote[e.unitId] = {};
-      if (!remote[e.unitId][k]) remote[e.unitId][k] = { attempts: 0, correct: 0 };
-      remote[e.unitId][k].attempts++;
-      if (e.correct) remote[e.unitId][k].correct++;
+      const uid = cpCanonicalUnit(e.unitId, k);   // コアプラス本体の旧い切り方の unitId を引き直す（2026-10-04）
+      if (!remote[uid]) remote[uid] = {};
+      if (!remote[uid][k]) remote[uid][k] = { attempts: 0, correct: 0 };
+      remote[uid][k].attempts++;
+      if (e.correct) remote[uid][k].correct++;
     }
     // マージ: キーごとにattemptsの多い方を採用（多端末対応）
     const local = getTracking();
@@ -388,6 +432,7 @@ function selectUser(user) {
   try { localStorage.setItem('study-user', user); } catch(e) {}
   document.getElementById("header-user-name").textContent = user;
   migrateLegacyTrackingToEvents();
+  migrateCoreplusResplit();
   loadCategories();
   autoSyncFromSheets();  // バックグラウンドで最新データ取得＋マージ
 }
@@ -481,6 +526,7 @@ function unitGroupOf(unit) {
   if (m) return { part: m[1], chapter: null };                       // コアプラス＋は部だけ（章は1単元ずつなので分けない）
   m = t.match(/^(第[IVX]+部(?: [^第 ][^ ]*)?)(?: (第\d+章 [^ ]+))?/);
   if (m) return { part: m[1], chapter: m[2] || null };
+  if (t.startsWith("巻末解説")) return { part: "巻末解説", chapter: null };   // 本の目次どおり第III部の後ろに1つ（2026-10-04）
   return { part: "その他", chapter: null };
 }
 function groupOpenKey() { return `science-unit-groups-open-${currentCategory.id}`; }
@@ -875,8 +921,10 @@ let wsmBlockKey = "xyz";   // 現在開いているブロック
 function wsmBlock() { return quizData ? quizData[wsmBlockKey] : null; }
 function wsmBlockList() {
   if (!quizData) return [];
+  // 大問が0でも問題ページがあれば閲覧専用ブロックとして出す（コアプラス rcp-27 巻末解説・2026-10-04）
   return WSM_BLOCK_KEYS.filter(k =>
-    quizData[k] && Array.isArray(quizData[k].daimons) && quizData[k].daimons.length > 0);
+    quizData[k] && Array.isArray(quizData[k].daimons) &&
+    (quizData[k].daimons.length > 0 || (Array.isArray(quizData[k].questionPages) && quizData[k].questionPages.length > 0)));
 }
 // ★2026-09-06 モード再編: below50/below67=解答済みのみ（未解答を除外）、
 //   below50u=50%未満＋未解答（従来の below50 相当）。below99(80%未満)は廃止
