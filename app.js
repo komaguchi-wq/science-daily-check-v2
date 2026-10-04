@@ -1470,6 +1470,20 @@ async function loadWsSubRects() {
           if (list.length) rects[q.id] = list;
         }));
         if (j.answerSame) Object.defineProperty(rects, "__answerSame", { value: true, enumerable: false });
+        if (j.answerMap) Object.defineProperty(rects, "__answerMap", { value: j.answerMap, enumerable: false });   // ★2026-10-04 解答ページ添字→同じ紙面の問題ページ添字（qpos_answer_map.py）
+        // ★2026-10-04 解答ページ自体を OCR した位置（qpos.answer・detect_qpos.py）: 解答冊子は問題と紙面が違うので、こちらを優先する
+        if (j.answer && j.answer.subs) {
+          const arects = {}, apWH = {};
+          (j.answer.pages || []).forEach(p => { apWH[p.i] = p; });
+          (xyz.daimons || []).forEach(dm => (dm.questions || []).forEach(q => {
+            const s = j.answer.subs[q.id];
+            const p = s || (j.answer.daimons && j.answer.daimons[String(dm.id)]);
+            if (!p) return;
+            const wh = apWH[p.page] || {};
+            arects[q.id] = [{ qpage: p.page, ring: true, sub: !!s, shift: 0, cx: p.x, cy: p.y, W: wh.W || 1000, H: wh.H || 700 }];
+          }));
+          if (Object.keys(arects).length) Object.defineProperty(rects, "__a", { value: arects, enumerable: false });
+        }
       }
     }
   } catch (e) { console.warn("qpos 読み込み失敗", e); }
@@ -1490,9 +1504,15 @@ function wsAnswerToQuestionIdx(aIdx) {
 function wsTargetRectsForPage(idx, idsSet, pt) {
   const rects = _subRectsCache[wsSubRectsKey()];
   if (!rects || !idsSet) return [];
+  if (pt === "a" && rects.__a) {   // ★2026-10-04 解答ページ自体の位置（qpos.answer）があればそれを使う
+    const out = [];
+    idsSet.forEach(id => (rects.__a[id] || []).forEach(r => { if (r.qpage === idx) out.push(r); }));
+    return out;
+  }
   if (pt === "a" && !rects.__answerSame) {
     // ★2026-10-04 解答ページにも印（青）: 問題と同じ紙面の解答ページ（確認・発展の page_NN_answer）だけ。別紙面なら何も描かない
-    const qi = wsAnswerToQuestionIdx(idx);
+    const m = rects.__answerMap;
+    const qi = (m && m[String(idx)] != null) ? m[String(idx)] : wsAnswerToQuestionIdx(idx);
     if (qi == null) return [];
     idx = qi;
   }
