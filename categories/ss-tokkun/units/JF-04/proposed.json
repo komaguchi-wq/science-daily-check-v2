@@ -1,0 +1,26 @@
+{
+ "unit": "JF-04",
+ "source": "claude-vision",
+ "created": "2026-10-04",
+ "note": "Ⅰ40/Ⅱ25/Ⅲ25（○=Ⅰ3,5,6,7・Ⅱ問1・Ⅲ問1）",
+ "grades": {
+  "Ⅰ-1": false,
+  "Ⅰ-2": false,
+  "Ⅰ-3": true,
+  "Ⅰ-4": false,
+  "Ⅰ-5": true,
+  "Ⅰ-6": true,
+  "Ⅰ-7": true,
+  "Ⅰ-8": false,
+  "Ⅰ-9": false,
+  "Ⅰ-10": false,
+  "Ⅱ-1問1": true,
+  "Ⅱ-1問2": false,
+  "Ⅱ-2問3": false,
+  "Ⅱ-2問4": false,
+  "Ⅲ-1問1": true,
+  "Ⅲ-1問2": false,
+  "Ⅲ-2問3": false,
+  "Ⅲ-2問4": false
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "unit": "サンデーチェック-04",
+ "source": "claude-vision",
+ "created": "2026-10-04",
+ "note": "X復習 80/100（×=(3)①②）・ABC復習 90/100（×=(1)③④ 赤チェック）",
+ "grades": {
+  "X復習-(1)①": true,
+  "X復習-(1)②": true,
+  "X復習-(1)③": true,
+  "X復習-(2)①": true,
+  "X復習-(2)②": true,
+  "X復習-(2)③": true,
+  "X復習-(4)①": true,
+  "X復習-(4)②": true,
+  "X復習-(3)①": false,
+  "X復習-(3)②": false,
+  "ABC復習-(1)①②": true,
+  "ABC復習-(1)⑤⑥": true,
+  "ABC復習-(2)①②": true,
+  "ABC復習-(2)③④": true,
+  "ABC復習-(3)AB": true,
+  "ABC復習-(3)CD": true,
+  "ABC復習-(3)EF": true,
+  "ABC復習-(4)": true,
+  "ABC復習-(5)": true,
+  "ABC復習-(1)③④": false
+ }
+}
