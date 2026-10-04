@@ -114,5 +114,6 @@
   "Ⅰ": "complete 10/10 p0",
   "Ⅱ": "complete 2/2 p1",
   "Ⅲ": "bare [1, 2]… 候補4 不一致"
- }
+ },
+ "answerMap": {}
 }
