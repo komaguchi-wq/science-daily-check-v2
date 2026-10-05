@@ -118,7 +118,7 @@ function getUnitStats(unitId) {
 // 「解いた」= 正誤表に1度でもチェックが入っている（attempts > 0）。
 // セクション情報は units.json の sectionRegions / sectionPages（無い単元は自動で全問数へフォールバック）
 const UNIT_CARD_SECTIONS = ["kakunin", "hatten", "dailystep"];
-const GOOD_RATE = 0.6;   // ★単元カードの緑=小問の正答率60%以上（2026-08-23 ユーザー確定・全アプリ共通）
+const GOOD_RATE = 0.5;   // ★単元カードの緑=小問の正答率50%以上（2026-10-05 ユーザー確定 50%に変更（旧0.6=2026-08-23）・全アプリ共通）
 
 // 記録キーが現行の問題に実在するか。過去の region 再検出や同期キーの日付化け復元で
 // localStorage に残った「孤児キー」を集計から外す（孤児を数えると attempted/good が
@@ -193,7 +193,7 @@ function isXyzOnlyUnit(unit) {
 }
 
 // 正誤表(xyz)のみ単元の単元カード用統計
-// 戻り値: { total, attempted(解いた), good(正答率60%以上), low(解いたが60%未満), unanswered }
+// 戻り値: { total, attempted(解いた), good(正答率50%以上), low(解いたが50%未満), unanswered }
 function getXyzUnitStats(unit) {
   const total = unit.xyzCount || 0;
   const unitData = getTracking()[unit.id] || {};
@@ -475,7 +475,7 @@ async function openCategory(cat) {
 // ==============================
 // 単元一覧
 // ==============================
-// 単元カード共通: 緑=正答率60%以上 / 黄=60%未満 / 灰=未回答 の棒グラフ＋凡例＋完了%（全アプリ共通デザイン）
+// 単元カード共通: 緑=正答率50%以上 / 黄=50%未満 / 灰=未回答 の棒グラフ＋凡例＋完了%（全アプリ共通デザイン）
 function unitBarStats(unit) {
   // ★xyzPrimary（2026-08-24〜 理科DS: 単元詳細が「正誤表＋説明文&PC」の2カードになった単元）は単元カードも正誤表の進捗で表示
   if (isXyzOnlyUnit(unit) || unit.xyzPrimary) return getXyzUnitStats(unit);
@@ -486,7 +486,7 @@ function unitBarStats(unit) {
 function unitBarHTML(st) {
   const pct = (n) => st.total > 0 ? (n / st.total * 100) : 0;
   return `
-        <div class="unit-card-bar" title="緑=正答率60%以上 / 黄=60%未満 / 灰=未回答">
+        <div class="unit-card-bar" title="緑=正答率50%以上 / 黄=50%未満 / 灰=未回答">
           <div class="unit-card-bar-good" style="width:${pct(st.good)}%"></div>
           <div class="unit-card-bar-low" style="width:${pct(st.low)}%"></div>
         </div>
@@ -633,11 +633,11 @@ function getSectionPages(section) {
 }
 
 // セクションの統計情報
-// 戻り値: { totalPages, totalRegions, attempted, perfectCount, goodCount(60%以上達成), accuracyAvg }
+// 戻り値: { totalPages, totalRegions, attempted, perfectCount, goodCount(50%以上達成), accuracyAvg }
 function getSectionStats(section) {
   const pages = getSectionPages(section);
   let totalRegions = 0, attempted = 0, totalCorrect = 0, totalAttempts = 0;
-  let goodCount = 0; // 60%以上（GOOD_RATE）の正答率を達成した問数
+  let goodCount = 0; // 50%以上（GOOD_RATE）の正答率を達成した問数
   pages.forEach(p => {
     p.regions.forEach((_, ri) => {
       totalRegions++;
@@ -679,7 +679,7 @@ function renderUnitDetail() {
       </div>
       <div class="section-card-stats">
         <div class="section-card-stats-main">${good}/${total}</div>
-        <div class="section-card-stats-sub">60%↑ 達成 (${progress}%)</div>
+        <div class="section-card-stats-sub">50%↑ 達成 (${progress}%)</div>
       </div>`;
     card.addEventListener("click", () => { wsmBlockKey = bk; openWsMode(); });
     list.appendChild(card);
@@ -726,7 +726,7 @@ function renderUnitDetail() {
     const statsHTML = isQuizable
       ? `<div class="section-card-stats">
            <div class="section-card-stats-main">${stats.goodCount}/${stats.totalRegions}</div>
-           <div class="section-card-stats-sub">60%↑ 達成 (${progress}%)</div>
+           <div class="section-card-stats-sub">50%↑ 達成 (${progress}%)</div>
          </div>`
       : `<div class="section-card-stats">
            <div class="section-card-stats-main" style="color:#86868b">${pages.length}p</div>
@@ -875,7 +875,7 @@ function renderSectionDetail() {
           const pct = Math.round((t.correct / t.attempts) * 100);
           accText = `${t.correct}/${t.attempts} (${pct}%)`;
           if (pct === 100) accClass = "acc-perfect";
-          else if (pct >= 67) accClass = "acc-good";
+          else if (pct >= 50) accClass = "acc-good";  // 2026-10-05 67→50（○△の境目を全アプリ50%に統一）
           else if (pct > 0) accClass = "acc-bad";
           else accClass = "acc-zero";
         }
