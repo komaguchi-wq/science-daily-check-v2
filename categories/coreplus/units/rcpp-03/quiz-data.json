@@ -2280,7 +2280,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu.html"
   },
   "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/coreplus/rcpp-03/"
 }
