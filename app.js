@@ -418,9 +418,54 @@ function closeSettings() {
 }
 
 // --- 画面切り替え ---
-function showScreen(id) {
+// ==============================
+// 戻るボタンで前の画面へ戻るとき、離れたときのスクロール位置に復元する
+// （display:none になった要素はスクロール位置が 0 に戻るため、離れる直前に覚えておく。
+//   一覧から単元を開くなど「進む」ときは従来どおり最上部から）
+// ==============================
+const _screenScrollMemo = {};
+function _rememberScreenScroll(screenEl) {
+  if (!screenEl) return;
+  const memo = [];
+  if (window.scrollY > 0) memo.push({ win: true, top: window.scrollY });
+  if (screenEl.scrollTop > 0) memo.push({ path: [], top: screenEl.scrollTop });
+  screenEl.querySelectorAll('*').forEach(el => {
+    if (el.scrollTop > 0) {
+      const path = [];
+      for (let n = el; n !== screenEl; n = n.parentElement) path.unshift(Array.prototype.indexOf.call(n.parentElement.children, n));
+      memo.push({ path, top: el.scrollTop });
+    }
+  });
+  _screenScrollMemo[screenEl.id] = memo;
+}
+function _restoreScreenScroll(screenEl) {
+  const memo = screenEl && _screenScrollMemo[screenEl.id];
+  if (!memo || !memo.length) return;
+  const apply = () => memo.forEach(m => {
+    if (m.win) { window.scrollTo(0, m.top); return; }
+    let el = screenEl;
+    for (const i of m.path) el = el && el.children[i];
+    if (el) el.scrollTop = m.top;
+  });
+  apply();
+  requestAnimationFrame(apply);   // 画像の読み込みなどで高さが後から伸びた場合の再適用
+}
+
+function _resetScreenScroll(screenEl) {
+  // 「進む」ときは最上部から（Chrome は display:none でもスクロール位置を保つため明示的に戻す）
+  window.scrollTo(0, 0);
+  if (!screenEl) return;
+  screenEl.scrollTop = 0;
+  screenEl.querySelectorAll('*').forEach(el => { if (el.scrollTop > 0) el.scrollTop = 0; });
+}
+
+function showScreen(id, restoreScroll) {
+  const _prevScreen = document.querySelector(".screen.active");
+  _rememberScreenScroll(_prevScreen);
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
+  if (restoreScroll) _restoreScreenScroll(document.getElementById(id));
+  else if (_prevScreen !== document.getElementById(id)) _resetScreenScroll(document.getElementById(id));
 }
 
 // ==============================
@@ -2614,16 +2659,16 @@ function setupEventListeners() {
   document.getElementById("btn-close-settings").addEventListener("click", closeSettings);
   // ※ プリントは _openPrintOverlay 内で画像 decode 後に自動 window.print() 呼び出し
   document.getElementById("btn-back-categories").addEventListener("click", () => {
-    renderCategories(); showScreen("screen-categories");
+    renderCategories(); showScreen("screen-categories", true);
   });
   document.getElementById("btn-back-units").addEventListener("click", () => {
-    renderUnits(); showScreen("screen-units");
+    renderUnits(); showScreen("screen-units", true);
   });
 
   // セクション詳細から戻る
   document.getElementById("btn-back-section").addEventListener("click", () => {
     renderUnitDetail();
-    showScreen("screen-unit-detail");
+    showScreen("screen-unit-detail", true);
   });
 
   // X・Y・Z問題（デイリーサポート方式）
@@ -2633,9 +2678,9 @@ function setupEventListeners() {
   document.getElementById("btn-back-wsmondai").addEventListener("click", () => {
     if (proposalReviewMode) discardProposalReview();   // 未確定の提案は捨てる
     commitXyz();
-    if (wsmDirect) { renderUnits(); showScreen("screen-units"); return; }
+    if (wsmDirect) { renderUnits(); showScreen("screen-units", true); return; }
     renderUnitDetail();
-    showScreen("screen-unit-detail");
+    showScreen("screen-unit-detail", true);
   });
   document.getElementById("wsm-tab-q").addEventListener("click", () => setWsTab(false));
   document.getElementById("wsm-tab-a").addEventListener("click", () => setWsTab(true));
@@ -2651,12 +2696,12 @@ function setupEventListeners() {
   // 閲覧モード（ページめくり）
   document.getElementById("reading-print-all-btn").addEventListener("click", () => bulkPrint("reading"));
   document.getElementById("btn-back-reading").addEventListener("click", () => {
-    if (readingDirect) { readingDirect = false; renderUnitDetail(); showScreen("screen-unit-detail"); return; }
+    if (readingDirect) { readingDirect = false; renderUnitDetail(); showScreen("screen-unit-detail", true); return; }
     if (currentSection) {
       renderSectionDetail();
-      showScreen("screen-section-detail");
+      showScreen("screen-section-detail", true);
     } else {
-      showScreen("screen-unit-detail");
+      showScreen("screen-unit-detail", true);
     }
   });
   document.getElementById("btn-reading-prev").addEventListener("click", () => {
@@ -2741,13 +2786,13 @@ function setupEventListeners() {
   document.getElementById("btn-back-detail").addEventListener("click", () => {
     commitAllPending();
     answerRevealed = false;
-    if (quizDirect) { quizDirect = false; renderUnitDetail(); showScreen("screen-unit-detail"); return; }
+    if (quizDirect) { quizDirect = false; renderUnitDetail(); showScreen("screen-unit-detail", true); return; }
     if (currentSection) {
       renderSectionDetail();
-      showScreen("screen-section-detail");
+      showScreen("screen-section-detail", true);
     } else {
       renderUnitDetail();
-      showScreen("screen-unit-detail");
+      showScreen("screen-unit-detail", true);
     }
   });
   document.getElementById("print-btn").addEventListener("click", printCurrentPage);
@@ -2770,13 +2815,13 @@ function setupEventListeners() {
     renderQuiz();
   });
   document.getElementById("btn-back-unit-detail").addEventListener("click", () => {
-    if (quizDirect) { quizDirect = false; renderUnitDetail(); showScreen("screen-unit-detail"); return; }
+    if (quizDirect) { quizDirect = false; renderUnitDetail(); showScreen("screen-unit-detail", true); return; }
     if (currentSection) {
       renderSectionDetail();
-      showScreen("screen-section-detail");
+      showScreen("screen-section-detail", true);
     } else {
       renderUnitDetail();
-      showScreen("screen-unit-detail");
+      showScreen("screen-unit-detail", true);
     }
   });
   document.getElementById("btn-back-from-results").addEventListener("click", () => {
