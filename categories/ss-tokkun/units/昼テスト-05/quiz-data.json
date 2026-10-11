@@ -1,0 +1,86 @@
+{
+ "id": "昼テスト-05",
+ "title": "SS-YomitoRIKA その③",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/昼テスト-05/",
+ "xyz": {
+  "label": "昼テスト",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "L",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "L-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "L-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "L-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "L-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "L-(2)③",
+      "label": "(2)③"
+     },
+     {
+      "id": "L-(2)④",
+      "label": "(2)④"
+     },
+     {
+      "id": "L-(2)⑤",
+      "label": "(2)⑤"
+     },
+     {
+      "id": "L-(2)⑥",
+      "label": "(2)⑥"
+     },
+     {
+      "id": "L-(2)⑦",
+      "label": "(2)⑦"
+     }
+    ],
+    "label": "L 乾電池の個数と電流の関係"
+   },
+   {
+    "id": "H",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "H-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "H-(1)③",
+      "label": "(1)③"
+     },
+     {
+      "id": "H-(2)",
+      "label": "(2)"
+     }
+    ],
+    "label": "H スイッチのある回路"
+   }
+  ]
+ }
+}

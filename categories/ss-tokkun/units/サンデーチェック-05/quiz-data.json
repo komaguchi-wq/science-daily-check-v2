@@ -1,0 +1,115 @@
+{
+ "id": "サンデーチェック-05",
+ "title": "サンデー・チェック（SS-04の復習）",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/サンデーチェック-05/",
+ "xyz": {
+  "label": "サンデー・チェック",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "sc_a_01.jpg",
+   "st_a_02.jpg",
+   "st_a_03.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "X復習",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "X復習-(1)①",
+      "label": "(1)①"
+     },
+     {
+      "id": "X復習-(1)②",
+      "label": "(1)②"
+     },
+     {
+      "id": "X復習-(1)③",
+      "label": "(1)③"
+     },
+     {
+      "id": "X復習-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "X復習-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "X復習-(2)③",
+      "label": "(2)③"
+     },
+     {
+      "id": "X復習-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "X復習-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "X復習-(5)",
+      "label": "(5)"
+     },
+     {
+      "id": "X復習-(6)",
+      "label": "(6)"
+     }
+    ],
+    "label": "SS-04 Xの復習"
+   },
+   {
+    "id": "ABC復習",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "ABC復習-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "ABC復習-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "ABC復習-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "ABC復習-(4)南中時刻",
+      "label": "(4)南中時刻"
+     },
+     {
+      "id": "ABC復習-(4)南中高度",
+      "label": "(4)南中高度"
+     },
+     {
+      "id": "ABC復習-(5)①",
+      "label": "(5)①"
+     },
+     {
+      "id": "ABC復習-(5)②",
+      "label": "(5)②"
+     },
+     {
+      "id": "ABC復習-(6)①",
+      "label": "(6)①"
+     },
+     {
+      "id": "ABC復習-(6)②",
+      "label": "(6)②"
+     },
+     {
+      "id": "ABC復習-(6)③",
+      "label": "(6)③"
+     }
+    ],
+    "label": "SS-04 A・B・Cの復習"
+   }
+  ]
+ }
+}
