@@ -3653,66 +3653,17 @@
  "kijutsu": {
   "label": "記述の総復習",
   "questionPages": [
-   "kj4_q.jpg",
    "kj5_q.jpg"
   ],
   "answerPages": [
-   "kj4_a.jpg",
    "kj5_a.jpg",
-   "kj4_solved.jpg"
+   "kj5_solved.jpg"
   ],
   "daimons": [
    {
-    "id": "記述④",
-    "label": "記述の総復習④",
-    "qpage": 0,
-    "questions": [
-     {
-      "id": "KJ4-(1)",
-      "label": "(1)"
-     },
-     {
-      "id": "KJ4-(2)",
-      "label": "(2)"
-     },
-     {
-      "id": "KJ4-(3)",
-      "label": "(3)"
-     },
-     {
-      "id": "KJ4-(4)",
-      "label": "(4)"
-     },
-     {
-      "id": "KJ4-(5)",
-      "label": "(5)"
-     },
-     {
-      "id": "KJ4-(6)",
-      "label": "(6)"
-     },
-     {
-      "id": "KJ4-(7)",
-      "label": "(7)"
-     },
-     {
-      "id": "KJ4-(8)",
-      "label": "(8)"
-     },
-     {
-      "id": "KJ4-(9)",
-      "label": "(9)"
-     },
-     {
-      "id": "KJ4-(10)",
-      "label": "(10)"
-     }
-    ]
-   },
-   {
     "id": "記述⑤",
     "label": "記述の総復習⑤",
-    "qpage": 1,
+    "qpage": 0,
     "questions": [
      {
       "id": "KJ5-(1)",
@@ -3758,9 +3709,10 @@
    }
   ],
   "solvedPages": [
-   "kj4_solved.jpg"
+   "kj5_solved.jpg"
   ],
-  "generatedBy": "process_kijutsu_fukushu.py"
+  "generatedBy": "process_kijutsu_fukushu.py",
+  "note": "1単元=配付された回だけ（2026-10-13 restructure.py）"
  },
  "reading": {
   "label": "説明文＆ポイントチェック",

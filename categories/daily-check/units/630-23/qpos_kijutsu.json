@@ -1,0 +1,164 @@
+{
+ "version": 1,
+ "created": "2026-10-13 19:30",
+ "app": "rika",
+ "category": "daily-check",
+ "unit": "630-23",
+ "block": "kijutsu",
+ "method": "vision-ocr+sequence",
+ "pages": [
+  {
+   "i": 0,
+   "file": "kj3_q.jpg",
+   "W": 4266,
+   "H": 3006
+  }
+ ],
+ "daimons": {},
+ "subs": {
+  "KJ3-(1)": {
+   "page": 0,
+   "x": 0.068,
+   "y": 0.1775,
+   "kind": "paren"
+  },
+  "KJ3-(2)": {
+   "page": 0,
+   "x": 0.0679,
+   "y": 0.3305,
+   "kind": "paren"
+  },
+  "KJ3-(3)": {
+   "page": 0,
+   "x": 0.068,
+   "y": 0.4573,
+   "kind": "paren"
+  },
+  "KJ3-(4)": {
+   "page": 0,
+   "x": 0.0677,
+   "y": 0.585,
+   "kind": "paren"
+  },
+  "KJ3-(5)": {
+   "page": 0,
+   "x": 0.0679,
+   "y": 0.7372,
+   "kind": "paren"
+  },
+  "KJ3-(6)": {
+   "page": 0,
+   "x": 0.0675,
+   "y": 0.8644,
+   "kind": "paren"
+  },
+  "KJ3-(7)": {
+   "page": 0,
+   "x": 0.5381,
+   "y": 0.2033,
+   "kind": "paren"
+  },
+  "KJ3-(8)": {
+   "page": 0,
+   "x": 0.538,
+   "y": 0.4321,
+   "kind": "paren"
+  },
+  "KJ3-(9)": {
+   "page": 0,
+   "x": 0.5373,
+   "y": 0.6434,
+   "kind": "paren"
+  },
+  "KJ3-(10)": {
+   "page": 0,
+   "x": 0.5376,
+   "y": 0.6984,
+   "kind": "paren"
+  }
+ },
+ "failed": [],
+ "notes": {
+  "記述③": "complete 10/10 p0"
+ },
+ "answer": {
+  "pages": [
+   {
+    "i": 0,
+    "file": "kj3_a.jpg",
+    "W": 4263,
+    "H": 3006
+   }
+  ],
+  "daimons": {},
+  "subs": {
+   "KJ3-(1)": {
+    "page": 0,
+    "x": 0.0662,
+    "y": 0.1828,
+    "kind": "paren"
+   },
+   "KJ3-(2)": {
+    "page": 0,
+    "x": 0.0664,
+    "y": 0.3352,
+    "kind": "paren"
+   },
+   "KJ3-(3)": {
+    "page": 0,
+    "x": 0.067,
+    "y": 0.4622,
+    "kind": "paren"
+   },
+   "KJ3-(4)": {
+    "page": 0,
+    "x": 0.0666,
+    "y": 0.5898,
+    "kind": "paren"
+   },
+   "KJ3-(5)": {
+    "page": 0,
+    "x": 0.0669,
+    "y": 0.7423,
+    "kind": "paren"
+   },
+   "KJ3-(6)": {
+    "page": 0,
+    "x": 0.0671,
+    "y": 0.8698,
+    "kind": "paren"
+   },
+   "KJ3-(7)": {
+    "page": 0,
+    "x": 0.5372,
+    "y": 0.2073,
+    "kind": "paren"
+   },
+   "KJ3-(8)": {
+    "page": 0,
+    "x": 0.5372,
+    "y": 0.4356,
+    "kind": "paren"
+   },
+   "KJ3-(9)": {
+    "page": 0,
+    "x": 0.5367,
+    "y": 0.6474,
+    "kind": "paren"
+   },
+   "KJ3-(10)": {
+    "page": 0,
+    "x": 0.5366,
+    "y": 0.7019,
+    "kind": "paren"
+   }
+  },
+  "failed": [],
+  "notes": {
+   "記述③": "complete 10/10 p0"
+  }
+ },
+ "answerMap": {
+  "0": 0
+ }
+}
