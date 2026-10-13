@@ -3224,7 +3224,8 @@
    "kj2_solved.jpg"
   ],
   "generatedBy": "process_kijutsu_fukushu.py",
-  "note": "1単元=配付された回だけ（2026-10-13 restructure.py）"
+  "note": "1単元=配付された回だけ（2026-10-13 restructure.py）",
+  "kaisetsu": "kaisetsu_kijutsu.html"
  },
  "reading": {
   "label": "説明文＆ポイントチェック",
