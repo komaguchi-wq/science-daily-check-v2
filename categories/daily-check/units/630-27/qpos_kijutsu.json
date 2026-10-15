@@ -1,0 +1,103 @@
+{
+ "version": 1,
+ "created": "2026-10-16 00:36",
+ "app": "rika",
+ "category": "daily-check",
+ "unit": "630-27",
+ "block": "kijutsu",
+ "method": "vision-ocr+sequence",
+ "pages": [
+  {
+   "i": 0,
+   "file": "kj7_q.jpg",
+   "W": 4263,
+   "H": 3006
+  }
+ ],
+ "daimons": {},
+ "subs": {
+  "KJ7-(1)": {
+   "page": 0,
+   "x": 0.0635,
+   "y": 0.1643,
+   "kind": "paren"
+  },
+  "KJ7-(2)": {
+   "page": 0,
+   "x": 0.0631,
+   "y": 0.2911,
+   "kind": "paren"
+  },
+  "KJ7-(3)": {
+   "page": 0,
+   "x": 0.0629,
+   "y": 0.4182,
+   "kind": "paren"
+  },
+  "KJ7-(4)": {
+   "page": 0,
+   "x": 0.062,
+   "y": 0.5456,
+   "kind": "paren"
+  },
+  "KJ7-(5)": {
+   "page": 0,
+   "x": 0.0626,
+   "y": 0.6728,
+   "kind": "paren"
+  },
+  "KJ7-(6)": {
+   "page": 0,
+   "x": 0.0623,
+   "y": 0.8001,
+   "kind": "paren"
+  },
+  "KJ7-(7)": {
+   "page": 0,
+   "x": 0.5374,
+   "y": 0.1642,
+   "kind": "paren"
+  },
+  "KJ7-(8)": {
+   "page": 0,
+   "x": 0.5375,
+   "y": 0.3418,
+   "kind": "paren"
+  },
+  "KJ7-(9)": {
+   "page": 0,
+   "x": 0.5373,
+   "y": 0.5205,
+   "kind": "paren"
+  },
+  "KJ7-(10)": {
+   "page": 0,
+   "x": 0.5375,
+   "y": 0.5456,
+   "kind": "paren"
+  }
+ },
+ "failed": [],
+ "notes": {
+  "記述⑦": "complete 10/10 p0"
+ },
+ "answer": {
+  "pages": [
+   {
+    "i": 0,
+    "file": "kj7_a.jpg",
+    "W": 4260,
+    "H": 3006
+   }
+  ],
+  "daimons": {},
+  "subs": {},
+  "failed": [
+   "記述⑦"
+  ],
+  "notes": {
+   "記述⑦": "解答ページが見つからない（別紙面）"
+  }
+ },
+ "answerMap": {}
+}

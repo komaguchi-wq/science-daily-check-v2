@@ -3211,7 +3211,8 @@
       "kj6_q.jpg"
     ],
     "answerPages": [
-      "kj6_a.jpg"
+      "kj6_a.jpg",
+      "kj6_solved.jpg"
     ],
     "daimons": [
       {
@@ -3262,9 +3263,10 @@
         ]
       }
     ],
-    "solvedPages": [],
+    "solvedPages": [
+      "kj6_solved.jpg"
+    ],
     "generatedBy": "process_kijutsu_fukushu.py",
-    "note": "1単元=配付された回だけ（2026-10-13 restructure.py）",
     "kaisetsu": "kaisetsu_kijutsu.html"
   },
   "reading": {
