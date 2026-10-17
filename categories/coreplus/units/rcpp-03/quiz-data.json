@@ -929,7 +929,9 @@
       "page_10.jpg",
       "page_11.jpg",
       "page_12.jpg",
-      "solved_2026-10-02_01.jpg"
+      "solved_2026-10-02_01.jpg",
+      "solved_2026-10-17_01.jpg",
+      "solved_2026-10-17_02.jpg"
     ],
     "daimons": [
       {
@@ -2281,7 +2283,42 @@
         ]
       }
     ],
-    "kaisetsu": "kaisetsu.html"
+    "kaisetsu": "kaisetsu.html",
+    "spreadGroups": {
+      "a": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          14
+        ]
+      ]
+    }
   },
   "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/coreplus/rcpp-03/"
 }
