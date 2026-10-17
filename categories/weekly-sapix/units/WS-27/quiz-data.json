@@ -320,7 +320,8 @@
     "solvedPages": [
       "solved_01.jpg",
       "solved_02.jpg"
-    ]
+    ],
+    "kaisetsu": "kaisetsu.html"
   },
   "wctest": {
     "label": "ウィークリーチェック（WS-26の復習）",
@@ -385,7 +386,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_wctest.html"
   },
   "chishiki20": {
     "label": "知識の20題確認テスト WS-27",
@@ -486,7 +488,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_chishiki20.html"
   },
   "cptest": {
     "label": "コアプラス確認テスト",
@@ -500,9 +503,9 @@
     "solvedPages": [
       "cp_a_02.jpg"
     ],
-    "generatedBy": "_scratch/diag/science_v2_WS-27_tests/make_cp27.py",
+    "generatedBy": "_scratch/diag/science_v2_WS-27_tests/make_cp27.py（cp_a_02）＋ 未記入面・A5右半分の切り出し",
     "generatedAt": "2026-10-17",
-    "note": "未記入の版下が無いので採点済み面（50点）から赤除去＋解答らん白塗り（ラベル・単位打ち直し）で問題用画像を作成。解答＝テストの裏面（解答解説）",
+    "note": "問題＝027198 p8 の未記入面（180°回転）。解答＝解答冊子 A5 の右半分（WS-26 と同じ）。解いた原本＝採点済み面（50点・名前らんと赤線を白塗り）",
     "daimons": [
       {
         "id": "CP",
@@ -591,7 +594,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_cptest.html"
   },
   "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/weekly-sapix/WS-27/"
 }
