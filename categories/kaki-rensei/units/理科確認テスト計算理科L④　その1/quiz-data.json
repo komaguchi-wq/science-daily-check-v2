@@ -1,0 +1,94 @@
+{
+ "id": "理科確認テスト計算理科L④　その1",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg"
+  ],
+  "solvedPages": [
+   "rs_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "1（滑車）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "1（滑車）-重さ",
+      "label": "重さ"
+     },
+     {
+      "id": "1（滑車）-長さ",
+      "label": "長さ"
+     }
+    ]
+   },
+   {
+    "id": "2（浮力）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "2（浮力）-①",
+      "label": "①"
+     },
+     {
+      "id": "2（浮力）-②",
+      "label": "②"
+     },
+     {
+      "id": "2（浮力）-③",
+      "label": "③"
+     },
+     {
+      "id": "2（浮力）-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "3（電気）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "3（電気）-①",
+      "label": "①"
+     },
+     {
+      "id": "3（電気）-②",
+      "label": "②"
+     },
+     {
+      "id": "3（電気）-③",
+      "label": "③"
+     },
+     {
+      "id": "3（電気）-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "4（ばね）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "4（ばね）-B",
+      "label": "B"
+     },
+     {
+      "id": "4（ばね）-おもり",
+      "label": "おもり"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/kaki-rensei/理科確認テスト計算理科L④　その1/"
+}
