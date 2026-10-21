@@ -2828,7 +2828,8 @@
    }
   ],
   "solvedPages": [],
-  "generatedBy": "process_kijutsu_fukushu.py"
+  "generatedBy": "process_kijutsu_fukushu.py",
+  "kaisetsu": "kaisetsu_kijutsu.html"
  },
  "reading": {
   "label": "説明文＆ポイントチェック",
