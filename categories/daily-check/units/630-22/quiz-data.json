@@ -2985,7 +2985,8 @@
   ],
   "solvedPages": [],
   "generatedBy": "_scratch/diag/science_v2_retro/clean21.py",
-  "generatedAt": "2026-09-18"
+  "generatedAt": "2026-09-18",
+  "kaisetsu": "kaisetsu_dctest.html"
  },
  "cptest": {
   "label": "コアプラス+確認テスト",
@@ -3161,7 +3162,8 @@
      2
     ]
    ]
-  }
+  },
+  "kaisetsu": "kaisetsu_cptest.html"
  },
  "kijutsu": {
   "label": "記述の総復習",
