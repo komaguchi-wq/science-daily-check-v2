@@ -2247,7 +2247,8 @@
    "rot180": false,
    "pdf": "_scratch/science_v2_intake/630-27_A.pdf",
    "removedExpl": []
-  }
+  },
+  "kaisetsu": "kaisetsu.html"
  },
  "ds": {
   "label": "デイリーステップ",
@@ -2768,7 +2769,8 @@
      5
     ]
    ]
-  }
+  },
+  "kaisetsu": "kaisetsu_cptest.html"
  },
  "kijutsu": {
   "label": "記述の総復習",
