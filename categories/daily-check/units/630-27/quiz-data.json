@@ -2778,7 +2778,8 @@
    "kj7_q.jpg"
   ],
   "answerPages": [
-   "kj7_a.jpg"
+   "kj7_a.jpg",
+   "kj7_solved.jpg"
   ],
   "daimons": [
    {
@@ -2829,7 +2830,9 @@
     ]
    }
   ],
-  "solvedPages": [],
+  "solvedPages": [
+   "kj7_solved.jpg"
+  ],
   "generatedBy": "process_kijutsu_fukushu.py",
   "kaisetsu": "kaisetsu_kijutsu.html"
  },
