@@ -324,7 +324,8 @@
     "solvedPages": [
       "solved_01.jpg",
       "solved_02.jpg"
-    ]
+    ],
+    "kaisetsu": "kaisetsu.html"
   },
   "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/weekly-sapix/WS-28/",
   "wctest": {
@@ -390,7 +391,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_wctest.html"
   },
   "chishiki20": {
     "label": "知識の20題確認テスト WS-28",
@@ -491,7 +493,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_chishiki20.html"
   },
   "cptest": {
     "label": "コアプラス確認テスト",
@@ -596,6 +599,7 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_cptest.html"
   }
 }
