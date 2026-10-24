@@ -1,0 +1,601 @@
+{
+  "id": "WS-28",
+  "title": "グラフの問題②",
+  "category": "weekly-sapix",
+  "pages": [],
+  "xyz": {
+    "label": "X・Y・Z問題",
+    "questionPages": [
+      "xyz_q_01.jpg",
+      "xyz_q_02.jpg",
+      "xyz_q_03.jpg",
+      "xyz_q_04.jpg",
+      "xyz_q_05.jpg",
+      "xyz_q_06.jpg",
+      "xyz_q_07.jpg"
+    ],
+    "answerPages": [
+      "xyz_a_01.jpg",
+      "xyz_a_02.jpg",
+      "xyz_a_03.jpg",
+      "xyz_a_04.jpg",
+      "xyz_a_05.jpg",
+      "solved_01.jpg",
+      "solved_02.jpg"
+    ],
+    "daimons": [
+      {
+        "id": "X1",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "X1-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X1-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X1-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X1-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "X1-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "X1-(6)",
+            "label": "(6)"
+          }
+        ]
+      },
+      {
+        "id": "X2",
+        "qpage": 1,
+        "questions": [
+          {
+            "id": "X2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X2-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X2-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "X2-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "X2-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "X2-(7)",
+            "label": "(7)"
+          }
+        ]
+      },
+      {
+        "id": "X3",
+        "qpage": 2,
+        "questions": [
+          {
+            "id": "X3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "X3-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "X3-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "X3-(7)",
+            "label": "(7)"
+          }
+        ]
+      },
+      {
+        "id": "X4",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "X4-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "X4-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "X4-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "X4-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "X4-(5)",
+            "label": "(5)"
+          }
+        ]
+      },
+      {
+        "id": "Y1",
+        "qpage": 3,
+        "questions": [
+          {
+            "id": "Y1-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y1-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y1-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y1-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Y1-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "Y1-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "Y1-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "Y1-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "Y1-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "Y1-(10)",
+            "label": "(10)"
+          }
+        ]
+      },
+      {
+        "id": "Y2",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "Y2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y2-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y2-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Y2-(5)",
+            "label": "(5)"
+          }
+        ]
+      },
+      {
+        "id": "Y3",
+        "qpage": 4,
+        "questions": [
+          {
+            "id": "Y3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Y3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Y3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Y3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Y3-(5)",
+            "label": "(5)"
+          }
+        ]
+      },
+      {
+        "id": "Z1",
+        "qpage": 5,
+        "questions": [
+          {
+            "id": "Z1-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Z1-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Z1-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Z1-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Z1-(5)",
+            "label": "(5)"
+          }
+        ]
+      },
+      {
+        "id": "Z2",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "Z2-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Z2-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Z2-(3)",
+            "label": "(3)"
+          }
+        ]
+      },
+      {
+        "id": "Z3",
+        "qpage": 6,
+        "questions": [
+          {
+            "id": "Z3-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "Z3-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "Z3-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "Z3-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "Z3-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "Z3-(6)",
+            "label": "(6)"
+          }
+        ]
+      }
+    ],
+    "solvedPages": [
+      "solved_01.jpg",
+      "solved_02.jpg"
+    ]
+  },
+  "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/weekly-sapix/WS-28/",
+  "wctest": {
+    "label": "ウィークリーチェック（WS-27の復習）",
+    "questionPages": [
+      "wc_q_01.jpg"
+    ],
+    "answerPages": [
+      "wc_a_01.jpg",
+      "wc_solved_01.jpg"
+    ],
+    "solvedPages": [
+      "wc_solved_01.jpg"
+    ],
+    "generatedBy": "_scratch/diag/science_v2_WS-28_tests/make_wc28.py",
+    "generatedAt": "2026-10-24",
+    "note": "問題冊子3p目（実施済み70点）の赤を除去し、解答らん (1)①|②・(2)①|②|③・(3)①|②|③cm・(4)①人|②マス の10セルを白塗り（ラベル・単位を打ち直し・罫線書き戻し）。得点らんの赤70も白塗り。解答は解答冊子1p目の右上ボックス。各10点×10問＝10トグル",
+    "daimons": [
+      {
+        "id": "WC",
+        "label": "ウィークリーチェック WS-28",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "WC-(1)①",
+            "label": "(1)①"
+          },
+          {
+            "id": "WC-(1)②",
+            "label": "(1)②"
+          },
+          {
+            "id": "WC-(2)①",
+            "label": "(2)①"
+          },
+          {
+            "id": "WC-(2)②",
+            "label": "(2)②"
+          },
+          {
+            "id": "WC-(2)③",
+            "label": "(2)③"
+          },
+          {
+            "id": "WC-(3)①",
+            "label": "(3)①"
+          },
+          {
+            "id": "WC-(3)②",
+            "label": "(3)②"
+          },
+          {
+            "id": "WC-(3)③",
+            "label": "(3)③"
+          },
+          {
+            "id": "WC-(4)①",
+            "label": "(4)①"
+          },
+          {
+            "id": "WC-(4)②",
+            "label": "(4)②"
+          }
+        ]
+      }
+    ]
+  },
+  "chishiki20": {
+    "label": "知識の20題確認テスト WS-28",
+    "questionPages": [
+      "k20_q_01.jpg"
+    ],
+    "answerPages": [
+      "k20_a_01.jpg"
+    ],
+    "generatedBy": "_scratch/diag/science_v2_WS-28_tests/make_wc28.py",
+    "generatedAt": "2026-10-24",
+    "note": "未記入用紙（027930 p18・次の土曜に実施・採点済み用紙は未入稿）。解答＝解答冊子1p目（左の解答欄＋解説・WCボックスは白塗り）",
+    "daimons": [
+      {
+        "id": "K20",
+        "label": "知識の20題 WS-28",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "K20-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "K20-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "K20-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "K20-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "K20-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "K20-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "K20-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "K20-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "K20-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "K20-(10)",
+            "label": "(10)"
+          },
+          {
+            "id": "K20-(11)",
+            "label": "(11)"
+          },
+          {
+            "id": "K20-(12)",
+            "label": "(12)"
+          },
+          {
+            "id": "K20-(13)",
+            "label": "(13)"
+          },
+          {
+            "id": "K20-(14)",
+            "label": "(14)"
+          },
+          {
+            "id": "K20-(15)",
+            "label": "(15)"
+          },
+          {
+            "id": "K20-(16)",
+            "label": "(16)"
+          },
+          {
+            "id": "K20-(17)",
+            "label": "(17)"
+          },
+          {
+            "id": "K20-(18)",
+            "label": "(18)"
+          },
+          {
+            "id": "K20-(19)",
+            "label": "(19)"
+          },
+          {
+            "id": "K20-(20)",
+            "label": "(20)"
+          }
+        ]
+      }
+    ]
+  },
+  "cptest": {
+    "label": "コアプラス確認テスト",
+    "questionPages": [
+      "cp_q_01.jpg"
+    ],
+    "answerPages": [
+      "cp_a_01.jpg",
+      "cp_a_02.jpg"
+    ],
+    "solvedPages": [
+      "cp_a_02.jpg"
+    ],
+    "generatedBy": "scripts/process_ws_cptest.py（--solved-rot 180 --blank-rot 0 --apage 5 --a-crop-left 0.5）",
+    "generatedAt": "2026-10-24",
+    "note": "問題＝027930 p22 の未記入面。解答＝解答冊子 A5 の右半分（右下の赤い集計メモは白塗り）。解いた原本＝採点済み面 p21（70点・名前らん白塗り）",
+    "daimons": [
+      {
+        "id": "CP",
+        "label": "コアプラス確認テスト WS-28（人体の再徹底 454〜494・621）",
+        "qpage": 0,
+        "questions": [
+          {
+            "id": "CP-(1)",
+            "label": "(1)"
+          },
+          {
+            "id": "CP-(2)",
+            "label": "(2)"
+          },
+          {
+            "id": "CP-(3)",
+            "label": "(3)"
+          },
+          {
+            "id": "CP-(4)",
+            "label": "(4)"
+          },
+          {
+            "id": "CP-(5)",
+            "label": "(5)"
+          },
+          {
+            "id": "CP-(6)",
+            "label": "(6)"
+          },
+          {
+            "id": "CP-(7)",
+            "label": "(7)"
+          },
+          {
+            "id": "CP-(8)",
+            "label": "(8)"
+          },
+          {
+            "id": "CP-(9)",
+            "label": "(9)"
+          },
+          {
+            "id": "CP-(10)",
+            "label": "(10)"
+          },
+          {
+            "id": "CP-(11)",
+            "label": "(11)"
+          },
+          {
+            "id": "CP-(12)",
+            "label": "(12)"
+          },
+          {
+            "id": "CP-(13)",
+            "label": "(13)"
+          },
+          {
+            "id": "CP-(14)",
+            "label": "(14)"
+          },
+          {
+            "id": "CP-(15)",
+            "label": "(15)"
+          },
+          {
+            "id": "CP-(16)",
+            "label": "(16)"
+          },
+          {
+            "id": "CP-(17)",
+            "label": "(17)"
+          },
+          {
+            "id": "CP-(18)",
+            "label": "(18)"
+          },
+          {
+            "id": "CP-(19)",
+            "label": "(19)"
+          },
+          {
+            "id": "CP-(20)",
+            "label": "(20)"
+          }
+        ]
+      }
+    ]
+  }
+}
