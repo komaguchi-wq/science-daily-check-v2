@@ -1773,6 +1773,13 @@ async function composeSpreadDataURLs(files, base, perPageDraw, groups) {
 function wsmPrintAsSpread(xyz) {
   return !!(xyz && xyz.spread) && !(currentCategory && currentCategory.id === "coreplus");
 }
+// ★2026-10-30 ユーザー指摘「理科コアプラスを B4 縦で印刷しても A4 サイズにしかならない」（社会v2は 2026-10-19 に同じ修正済み）
+//   原因: 1ページ印刷の高さ上限が A4 縦(285mm)固定で、用紙を B4 にしても画像が A4 の高さで止まっていた。
+//   → コアプラスの1ページ印刷は B4 縦（@page B4 portrait・高さ上限 350mm）。ページ画像は縦横比 1.41＝B4 と同じなので
+//     余白 5mm でちょうど紙いっぱいになる（A4 に印刷しても幅 100% で収まる）。
+function wsmSinglePagePaper() {
+  return (currentCategory && currentCategory.id === "coreplus") ? "B4 portrait" : undefined;
+}
 
 // モード別に問題ページを印刷（対象小問を赤文字で焼き込む）
 async function printWsMode(mode) {
@@ -1802,7 +1809,7 @@ async function printWsMode(mode) {
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
-  _openPrintOverlay(`${currentUnit.id} ${wsmLabel()}（${WS_MODE_LABELS[mode]}）`, dataURLs);
+  _openPrintOverlay(`${currentUnit.id} ${wsmLabel()}（${WS_MODE_LABELS[mode]}）`, dataURLs, wsmSinglePagePaper());
 }
 
 // 問題画面ヘッダーの印刷: 表示中タブを印刷（問題タブは現フィルタの赤文字付き）
@@ -1834,7 +1841,7 @@ async function wsmPrint() {
     dataURLs.push(cc.toDataURL("image/jpeg", 0.92));
   }
   if (dataURLs.length === 0) { alert("画像の読み込みに失敗しました"); return; }
-  _openPrintOverlay(`${currentUnit.id} ${wsmLabel()} 解答`, dataURLs);
+  _openPrintOverlay(`${currentUnit.id} ${wsmLabel()} 解答`, dataURLs, wsmSinglePagePaper());
 }
 
 // ==============================
@@ -2359,11 +2366,14 @@ function _closePrintOverlay() {
 // ★高さ上限は vh(画面基準)ではなく物理mmで指定する。vh だと iOS Safari の印刷で
 //   画面px→紙mm 換算が端末ごとに狂い、特定iPadで「次ページが前ページに食い込む」
 //   ドリフトが出る(算数アプリで実際に発生→mm化で解消)。
-function _setPrintPageGeometry(img) {
+function _setPrintPageGeometry(img, forced) {
   const portrait = !!(img && img.naturalHeight > img.naturalWidth);
-  const pageSize = portrait ? "A4 portrait" : "B4 landscape";
+  let pageSize = portrait ? "A4 portrait" : "B4 landscape";
   // 印刷可能高(mm)=用紙高-余白10mm。A4縦=297-10=287→285、B4横=257-10=247→245(安全側)。
-  const maxH = portrait ? 285 : 245;
+  let maxH = portrait ? 285 : 245;
+  // ★2026-10-30 呼び出し側が用紙を指定できる（コアプラスの1ページ印刷=B4縦・上限 364-10=354→350 安全側）。社会v2 3c66b6e と同じ
+  if (forced === "B4 portrait") { pageSize = forced; maxH = 350; }
+  else if (forced === "A4 portrait" || forced === "B4 landscape") { pageSize = forced; maxH = forced === "A4 portrait" ? 285 : 245; }
   let style = document.getElementById("dynamic-print-page");
   if (!style) {
     style = document.createElement("style");
@@ -2489,7 +2499,7 @@ async function _monoPrintDataURLs(urls) {
   return out;
 }
 
-async function _openPrintOverlay(titleText, dataURLs) {
+async function _openPrintOverlay(titleText, dataURLs, pageSize) {
   const ov = document.getElementById("print-overlay");
   const body = document.getElementById("print-overlay-body");
   if (!ov || !body) return;
@@ -2504,7 +2514,7 @@ async function _openPrintOverlay(titleText, dataURLs) {
     ? im.decode().catch(() => {})
     : new Promise(r => { im.onload = r; im.onerror = r; if (im.complete) r(); }));
   Promise.all(waits).then(() => {
-    _setPrintPageGeometry(imgs[0]);  // 向き判定は先頭画像の実寸で
+    _setPrintPageGeometry(imgs[0], pageSize);  // 向き判定は先頭画像の実寸で（pageSize 指定があればそれを優先）
     requestAnimationFrame(() => {
       try { window.print(); } catch (e) { console.warn("print err", e); }
       // 印刷ダイアログ閉じた後の cleanup は次回印刷時 _resetPrintOverlay で自動
