@@ -1,0 +1,82 @@
+{
+ "id": "理科確認テスト計算理科L⑤　その1",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "1（てこ）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "1（てこ）-①",
+      "label": "①"
+     },
+     {
+      "id": "1（てこ）-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "2（滑車）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "2（滑車）-①A",
+      "label": "①A"
+     },
+     {
+      "id": "2（滑車）-①B",
+      "label": "①B"
+     },
+     {
+      "id": "2（滑車）-②A",
+      "label": "②A"
+     },
+     {
+      "id": "2（滑車）-②B",
+      "label": "②B"
+     }
+    ]
+   },
+   {
+    "id": "3（浮力）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "3（浮力）-浮力",
+      "label": "浮力"
+     },
+     {
+      "id": "3（浮力）-体積",
+      "label": "体積"
+     }
+    ]
+   },
+   {
+    "id": "4（光）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "4（光）-①",
+      "label": "①"
+     },
+     {
+      "id": "4（光）-②",
+      "label": "②"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/kaki-rensei/理科確認テスト計算理科L⑤　その1/"
+}
