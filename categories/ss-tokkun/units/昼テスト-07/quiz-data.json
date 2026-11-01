@@ -1,0 +1,100 @@
+{
+ "id": "昼テスト-07",
+ "title": "SS-YomitoRIKA その④",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-01/ss-tokkun/昼テスト-07/",
+ "xyz": {
+  "label": "昼テスト",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "L",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "L-(1)速さ",
+      "label": "(1)速さ"
+     },
+     {
+      "id": "L-(1)時間",
+      "label": "(1)時間"
+     },
+     {
+      "id": "L-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "L-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "L-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "L-(5)",
+      "label": "(5)"
+     }
+    ],
+    "label": "L 斜面から飛び出す球の飛んだ距離"
+   },
+   {
+    "id": "H落下",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H落下-(1)速さ",
+      "label": "(1)速さ"
+     },
+     {
+      "id": "H落下-(1)速さの変化",
+      "label": "(1)速さの変化"
+     },
+     {
+      "id": "H落下-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "H落下-(3)",
+      "label": "(3)"
+     }
+    ],
+    "label": "H 落下運動"
+   },
+   {
+    "id": "H摩擦",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H摩擦-上向きの力",
+      "label": "上向きの力"
+     }
+    ],
+    "label": "H 摩擦力"
+   },
+   {
+    "id": "H速さ",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H速さ-図5A",
+      "label": "図5A"
+     },
+     {
+      "id": "H速さ-図5B",
+      "label": "図5B"
+     }
+    ],
+    "label": "H 加える力と速さ"
+   }
+  ]
+ }
+}
