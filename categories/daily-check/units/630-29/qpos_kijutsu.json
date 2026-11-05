@@ -1,0 +1,164 @@
+{
+ "version": 1,
+ "created": "2026-11-05 23:07",
+ "app": "rika",
+ "category": "daily-check",
+ "unit": "630-29",
+ "block": "kijutsu",
+ "method": "vision-ocr+sequence",
+ "pages": [
+  {
+   "i": 0,
+   "file": "kj9_q.jpg",
+   "W": 4266,
+   "H": 3006
+  }
+ ],
+ "daimons": {},
+ "subs": {
+  "KJ9-(1)": {
+   "page": 0,
+   "x": 0.0642,
+   "y": 0.1667,
+   "kind": "paren"
+  },
+  "KJ9-(2)": {
+   "page": 0,
+   "x": 0.0645,
+   "y": 0.2937,
+   "kind": "paren"
+  },
+  "KJ9-(3)": {
+   "page": 0,
+   "x": 0.0643,
+   "y": 0.4207,
+   "kind": "paren"
+  },
+  "KJ9-(4)": {
+   "page": 0,
+   "x": 0.0638,
+   "y": 0.5482,
+   "kind": "paren"
+  },
+  "KJ9-(5)": {
+   "page": 0,
+   "x": 0.064,
+   "y": 0.6755,
+   "kind": "paren"
+  },
+  "KJ9-(6)": {
+   "page": 0,
+   "x": 0.0639,
+   "y": 0.8022,
+   "kind": "paren"
+  },
+  "KJ9-(7)": {
+   "page": 0,
+   "x": 0.538,
+   "y": 0.1657,
+   "kind": "paren"
+  },
+  "KJ9-(8)": {
+   "page": 0,
+   "x": 0.5383,
+   "y": 0.3433,
+   "kind": "paren"
+  },
+  "KJ9-(9)": {
+   "page": 0,
+   "x": 0.5381,
+   "y": 0.5211,
+   "kind": "paren"
+  },
+  "KJ9-(10)": {
+   "page": 0,
+   "x": 0.5394,
+   "y": 0.5471,
+   "kind": "paren"
+  }
+ },
+ "failed": [],
+ "notes": {
+  "記述⑨": "complete 10/10 p0"
+ },
+ "answer": {
+  "pages": [
+   {
+    "i": 0,
+    "file": "kj9_a.jpg",
+    "W": 4266,
+    "H": 3006
+   }
+  ],
+  "daimons": {},
+  "subs": {
+   "KJ9-(1)": {
+    "page": 0,
+    "x": 0.0635,
+    "y": 0.1668,
+    "kind": "paren"
+   },
+   "KJ9-(2)": {
+    "page": 0,
+    "x": 0.0635,
+    "y": 0.2942,
+    "kind": "paren"
+   },
+   "KJ9-(3)": {
+    "page": 0,
+    "x": 0.0634,
+    "y": 0.4212,
+    "kind": "paren"
+   },
+   "KJ9-(4)": {
+    "page": 0,
+    "x": 0.0626,
+    "y": 0.5487,
+    "kind": "paren"
+   },
+   "KJ9-(5)": {
+    "page": 0,
+    "x": 0.0627,
+    "y": 0.6758,
+    "kind": "paren"
+   },
+   "KJ9-(6)": {
+    "page": 0,
+    "x": 0.0624,
+    "y": 0.8034,
+    "kind": "paren"
+   },
+   "KJ9-(7)": {
+    "page": 0,
+    "x": 0.5382,
+    "y": 0.1673,
+    "kind": "paren"
+   },
+   "KJ9-(8)": {
+    "page": 0,
+    "x": 0.5384,
+    "y": 0.3458,
+    "kind": "paren"
+   },
+   "KJ9-(9)": {
+    "page": 0,
+    "x": 0.5377,
+    "y": 0.5241,
+    "kind": "paren"
+   },
+   "KJ9-(10)": {
+    "page": 0,
+    "x": 0.5386,
+    "y": 0.5492,
+    "kind": "paren"
+   }
+  },
+  "failed": [],
+  "notes": {
+   "記述⑨": "complete 10/10 p0"
+  }
+ },
+ "answerMap": {
+  "0": 0
+ }
+}
