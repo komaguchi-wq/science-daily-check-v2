@@ -2403,7 +2403,8 @@
    "rot180": false,
    "pdf": "_scratch/science_v2_intake/630-29_A.pdf",
    "removedExpl": []
-  }
+  },
+  "kaisetsu": "kaisetsu.html"
  },
  "ds": {
   "label": "デイリーステップ",
@@ -2812,7 +2813,8 @@
    "solved_01.jpg"
   ],
   "generatedBy": "_scratch/diag/science_v2_630-29/make_tests.py",
-  "generatedAt": "2026-11-05"
+  "generatedAt": "2026-11-05",
+  "kaisetsu": "kaisetsu_dctest.html"
  },
  "cptest": {
   "label": "コアプラス+確認テスト",
@@ -3003,7 +3005,8 @@
      5
     ]
    ]
-  }
+  },
+  "kaisetsu": "kaisetsu_cptest.html"
  },
  "kijutsu": {
   "label": "記述の総復習",
@@ -3063,7 +3066,8 @@
    }
   ],
   "solvedPages": [],
-  "generatedBy": "process_kijutsu_fukushu.py"
+  "generatedBy": "process_kijutsu_fukushu.py",
+  "kaisetsu": "kaisetsu_kijutsu.html"
  },
  "reading": {
   "label": "説明文＆ポイントチェック",
