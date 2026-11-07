@@ -1,0 +1,94 @@
+{
+ "id": "理科確認テスト計算理科L⑤　その2",
+ "title": "",
+ "category": "kaki-rensei",
+ "pages": [],
+ "xyz": {
+  "label": "確認テスト",
+  "questionPages": [
+   "rs_q_01.jpg"
+  ],
+  "answerPages": [
+   "rs_a_01.jpg",
+   "rs_a_02.jpg"
+  ],
+  "solvedPages": [
+   "rs_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "1（ばね）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "1（ばね）-①",
+      "label": "①"
+     },
+     {
+      "id": "1（ばね）-②",
+      "label": "②"
+     }
+    ]
+   },
+   {
+    "id": "2（気体）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "2（気体）-①",
+      "label": "①"
+     },
+     {
+      "id": "2（気体）-②",
+      "label": "②"
+     },
+     {
+      "id": "2（気体）-③",
+      "label": "③"
+     },
+     {
+      "id": "2（気体）-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "3（中和）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "3（中和）-①",
+      "label": "①"
+     },
+     {
+      "id": "3（中和）-②",
+      "label": "②"
+     },
+     {
+      "id": "3（中和）-③",
+      "label": "③"
+     },
+     {
+      "id": "3（中和）-④",
+      "label": "④"
+     }
+    ]
+   },
+   {
+    "id": "4（燃焼）",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "4（燃焼）-①",
+      "label": "①"
+     },
+     {
+      "id": "4（燃焼）-②",
+      "label": "②"
+     }
+    ]
+   }
+  ]
+ },
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-02/kaki-rensei/理科確認テスト計算理科L⑤　その2/"
+}
