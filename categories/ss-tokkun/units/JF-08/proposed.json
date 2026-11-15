@@ -1,0 +1,31 @@
+{
+ "unit": "JF-08",
+ "source": "claude-vision",
+ "created": "2026-11-15",
+ "grades": {
+  "Ⅰ-1あ": true,
+  "Ⅰ-1い": true,
+  "Ⅰ-2の1つ目": false,
+  "Ⅰ-2の2つ目": true,
+  "Ⅰ-3": true,
+  "Ⅰ-4": false,
+  "Ⅰ-5": true,
+  "Ⅰ-6①": true,
+  "Ⅰ-6②": false,
+  "Ⅰ-7(4)": false,
+  "Ⅰ-7(6)": false,
+  "Ⅰ-7(8)": false,
+  "Ⅰ-8ア": false,
+  "Ⅰ-8イ": false,
+  "Ⅰ-8ウ": false,
+  "Ⅰ-8エ": false,
+  "Ⅱ-1問1": false,
+  "Ⅱ-1問2": true,
+  "Ⅱ-2問3": false,
+  "Ⅱ-2問4": false,
+  "Ⅲ-1問1": true,
+  "Ⅲ-1問2": false,
+  "Ⅲ-2問3": false,
+  "Ⅲ-2問4": false
+ }
+}

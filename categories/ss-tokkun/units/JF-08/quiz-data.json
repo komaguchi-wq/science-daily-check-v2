@@ -1,0 +1,135 @@
+{
+ "id": "JF-08",
+ "title": "女子学院対策",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-03/ss-tokkun/JF-08/",
+ "xyz": {
+  "label": "JF 第8回",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg",
+   "st_a_03.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "Ⅰ",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "Ⅰ-1あ",
+      "label": "1あ"
+     },
+     {
+      "id": "Ⅰ-1い",
+      "label": "1い"
+     },
+     {
+      "id": "Ⅰ-2の1つ目",
+      "label": "2の1つ目"
+     },
+     {
+      "id": "Ⅰ-2の2つ目",
+      "label": "2の2つ目"
+     },
+     {
+      "id": "Ⅰ-3",
+      "label": "3"
+     },
+     {
+      "id": "Ⅰ-4",
+      "label": "4"
+     },
+     {
+      "id": "Ⅰ-5",
+      "label": "5"
+     },
+     {
+      "id": "Ⅰ-6①",
+      "label": "6①"
+     },
+     {
+      "id": "Ⅰ-6②",
+      "label": "6②"
+     },
+     {
+      "id": "Ⅰ-7(4)",
+      "label": "7(4)"
+     },
+     {
+      "id": "Ⅰ-7(6)",
+      "label": "7(6)"
+     },
+     {
+      "id": "Ⅰ-7(8)",
+      "label": "7(8)"
+     },
+     {
+      "id": "Ⅰ-8ア",
+      "label": "8ア"
+     },
+     {
+      "id": "Ⅰ-8イ",
+      "label": "8イ"
+     },
+     {
+      "id": "Ⅰ-8ウ",
+      "label": "8ウ"
+     },
+     {
+      "id": "Ⅰ-8エ",
+      "label": "8エ"
+     }
+    ]
+   },
+   {
+    "id": "Ⅱ",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "Ⅱ-1問1",
+      "label": "1問1"
+     },
+     {
+      "id": "Ⅱ-1問2",
+      "label": "1問2"
+     },
+     {
+      "id": "Ⅱ-2問3",
+      "label": "2問3"
+     },
+     {
+      "id": "Ⅱ-2問4",
+      "label": "2問4"
+     }
+    ]
+   },
+   {
+    "id": "Ⅲ",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "Ⅲ-1問1",
+      "label": "1問1"
+     },
+     {
+      "id": "Ⅲ-1問2",
+      "label": "1問2"
+     },
+     {
+      "id": "Ⅲ-2問3",
+      "label": "2問3"
+     },
+     {
+      "id": "Ⅲ-2問4",
+      "label": "2問4"
+     }
+    ]
+   }
+  ]
+ }
+}

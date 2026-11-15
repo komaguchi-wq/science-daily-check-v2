@@ -1,0 +1,26 @@
+{
+ "unit": "サンデーチェック-08",
+ "source": "claude-vision",
+ "created": "2026-11-15",
+ "grades": {
+  "X復習-(1)①": true,
+  "X復習-(1)②": true,
+  "X復習-(1)③A": true,
+  "X復習-(1)③E": false,
+  "X復習-(2)①": true,
+  "X復習-(2)②": true,
+  "X復習-(2)③": true,
+  "X復習-(3)①": true,
+  "X復習-(3)②": true,
+  "ABC復習-(1)": true,
+  "ABC復習-(2)①": true,
+  "ABC復習-(2)②": true,
+  "ABC復習-(3)": true,
+  "ABC復習-(4)": true,
+  "ABC復習-(5)": true,
+  "ABC復習-(6)": true,
+  "ABC復習-(7)": true,
+  "ABC復習-(8)": true,
+  "ABC復習-(9)": true
+ }
+}
