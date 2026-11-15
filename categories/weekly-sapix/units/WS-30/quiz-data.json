@@ -24,7 +24,10 @@
       "xyz_a_04.jpg",
       "xyz_a_05.jpg",
       "solved_01.jpg",
-      "solved_02.jpg"
+      "solved_02.jpg",
+      "solved_2026-11-15_01.jpg",
+      "solved_2026-11-15_02.jpg",
+      "solved_2026-11-15_03.jpg"
     ],
     "daimons": [
       {
@@ -474,7 +477,10 @@
     ],
     "solvedPages": [
       "solved_01.jpg",
-      "solved_02.jpg"
+      "solved_02.jpg",
+      "solved_2026-11-15_01.jpg",
+      "solved_2026-11-15_02.jpg",
+      "solved_2026-11-15_03.jpg"
     ],
     "kaisetsu": "kaisetsu.html"
   },
