@@ -902,6 +902,9 @@ body {
 }
 #wsm-pages-inner { width: 100%; transform-origin: 0 0; }
 .wsm-page { margin-bottom: 14px; }
+/* ★2026-11-16 解答タブ1枚目の表紙（○△×＝解く優先順位）。B5縦1面・幅は他のページと同じ100%（表の○△×が読める大きさ） */
+.wsm-cover-page { border-left: 4px solid #f59e0b; padding-left: 8px; }
+.wsm-cover-page .wsm-page-label { color: #b45309; }
 .wsm-page-label {
   font-size: 12px; color: #6e6e73; font-weight: 600;
   margin-bottom: 4px; padding-left: 2px;

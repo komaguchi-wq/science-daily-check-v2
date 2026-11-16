@@ -1519,6 +1519,10 @@
       "abook_03.jpg",
       "abook_04.jpg"
     ],
+    "answerCoverPages": [
+      "cover_priority.jpg"
+    ],
+    "answerCoverBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-03/daily-check/630-23/",
     "daimons": [
       {
         "id": "確認1",

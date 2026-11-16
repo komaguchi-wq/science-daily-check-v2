@@ -3514,6 +3514,10 @@
    "solved_2026-10-14_03.jpg",
    "solved_2026-10-14_04.jpg"
   ],
+  "answerCoverPages": [
+   "cover_priority.jpg"
+  ],
+  "answerCoverBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-03/daily-check/630-18/",
   "daimons": [
    {
     "id": "確認1",

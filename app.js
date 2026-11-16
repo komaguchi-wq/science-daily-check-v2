@@ -1340,10 +1340,47 @@ function wsmPageHTML(pt, file, i, total, base) {
      </div>`;
 }
 
+// ★2026-11-16 解答タブの1枚目＝表紙（○△×＝解く優先順位）。デイリーは解答冊子の表紙裏（印刷の○△×）、
+//   Weekly は問題冊子の表紙裏（先生の指示で書く○△×）。xyz.answerCoverPages（画像は answerCoverBase か unitImagesBase）。
+//   添字は "c0" のように数字でないので、小問の印（.wsm-tboxes）や解答→問題の対応（answerPages の添字）には関わらない
+function wsmCoverFiles(xyz) {
+  const files = (xyz && Array.isArray(xyz.answerCoverPages)) ? xyz.answerCoverPages : [];
+  const base = (xyz && xyz.answerCoverBase) || unitImagesBase();
+  return files.map(f => base + f);
+}
+function wsmCoverPagesHTML(xyz) {
+  const urls = wsmCoverFiles(xyz);
+  return urls.map((u, i) => `<div class="wsm-page wsm-cover-page" data-pt="a" data-idx="c${i}" style="display:none">
+       <div class="wsm-page-label">表紙 ${i + 1} / ${urls.length}　○△× ＝ 解く優先順位（○必ず・△時間があれば・×解かなくてよい）</div>
+       <div class="wsm-imgwrap"><img src="${u}" loading="lazy" alt="表紙${i + 1}"></div>
+     </div>`).join("");
+}
+// 印刷用: 表紙（縦長）を他のページと同じ横長の紙に白地で置く（先頭画像の向きで用紙が決まるため）
+async function wsmCoverPrintDataURLs(xyz, pad) {
+  const out = [];
+  for (const u of wsmCoverFiles(xyz)) {
+    let img;
+    try { img = await loadImage(u); } catch (e) { continue; }
+    const cc = document.createElement("canvas");
+    if (pad && img.naturalHeight > img.naturalWidth) {
+      cc.width = Math.round(img.naturalHeight * 1.414); cc.height = img.naturalHeight;
+      const ctx = cc.getContext("2d");
+      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, cc.width, cc.height);
+      ctx.drawImage(img, Math.round((cc.width - img.naturalWidth) / 2), 0);
+    } else {
+      cc.width = img.naturalWidth; cc.height = img.naturalHeight;
+      cc.getContext("2d").drawImage(img, 0, 0);
+    }
+    out.push(cc.toDataURL("image/jpeg", 0.92));
+  }
+  return out;
+}
+
 function renderWsPages() {
   const xyz = wsmBlock();
   const base = unitImagesBase();
   const el = document.getElementById("wsm-pages-inner");
+  const cover = wsmCoverPagesHTML(xyz);
   if (xyz.spread) {
     // ★コアプラス等: 2ページを左右見開きで表示（印刷もB4横2面）
     const rows = [];
@@ -1353,12 +1390,13 @@ function renderWsPages() {
         const inner = grp.map(i => wsmPageHTML(pt, files[i], i, files.length, base)).join("");
         rows.push(`<div class="wsm-spread${grp.length === 1 ? " wsm-spread-single" : ""}" data-pt="${pt}"${pt === "a" ? ' style="display:none"' : ""}>${inner}</div>`);
       }
+      if (pt === "q") rows.push(cover);   // 表紙は解答の先頭
     }
     el.innerHTML = rows.join("");
   } else {
     const q = xyz.questionPages.map((p, i) => wsmPageHTML("q", p, i, xyz.questionPages.length, base)).join("");
     const a = xyz.answerPages.map((p, i) => wsmPageHTML("a", p, i, xyz.answerPages.length, base)).join("");
-    el.innerHTML = q + a;
+    el.innerHTML = q + cover + a;
   }
   // ★2026-09-14 解説（HTML断片 kaisetsu.html）: 解答タブの末尾に付ける（SS特訓 社会から）
   if (xyz.kaisetsu) {
@@ -1823,13 +1861,15 @@ async function wsmPrint() {
   // ★2026-10-03 解答の印刷にも対象の印（青丸）。問題と同じ紙面の教材（コアプラス）だけ付く
   const ids = wsmFilter && wsmFilter !== "all" ? computeWsFilterIds(wsmFilter) : null;
   if (ids) await loadWsSubRects();
+  // ★2026-11-16 表紙（○△×）を解答の1枚目に。用紙は先頭画像で決まるので、横長の紙に合わせて白地で置く（1ページ印刷が縦の教材はそのまま）
+  const coverURLs = await wsmCoverPrintDataURLs(xyz, !wsmSinglePagePaper());
   if (wsmPrintAsSpread(xyz)) {
     const urls = await composeSpreadDataURLs(xyz.answerPages, base, null, xyz.spreadGroups ? wsSpreadGroups(xyz, "a") : undefined);
     if (urls.length === 0) { alert("画像の読み込みに失敗しました"); return; }
-    _openPrintOverlay(`${currentUnit.id} ${wsmLabel()} 解答`, urls);
+    _openPrintOverlay(`${currentUnit.id} ${wsmLabel()} 解答`, coverURLs.concat(urls));
     return;
   }
-  const dataURLs = [];
+  const dataURLs = coverURLs.slice();
   for (let i = 0; i < xyz.answerPages.length; i++) {
     let img;
     try { img = await loadImage(base + xyz.answerPages[i]); } catch (e) { continue; }
