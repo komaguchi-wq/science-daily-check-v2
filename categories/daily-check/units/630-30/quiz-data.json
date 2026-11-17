@@ -3242,7 +3242,9 @@
    "kj10_q.jpg"
   ],
   "answerPages": [
-   "kj10_a.jpg"
+   "kj10_a.jpg",
+   "kj10_home_solved.jpg",
+   "kj10_solved.jpg"
   ],
   "daimons": [
    {
@@ -3293,7 +3295,10 @@
     ]
    }
   ],
-  "solvedPages": [],
+  "solvedPages": [
+   "kj10_home_solved.jpg",
+   "kj10_solved.jpg"
+  ],
   "generatedBy": "process_kijutsu_fukushu.py",
   "kaisetsu": "kaisetsu_kijutsu.html"
  },

@@ -2490,5 +2490,62 @@
    "26": 13
   },
   "xyzPrimary": true
+ },
+ {
+  "id": "630-31",
+  "title": "天体総合",
+  "subject": "6年理科 デイリーサピックス",
+  "pageCount": 26,
+  "totalRegions": 226,
+  "sectionRegions": {
+   "kakunin": 100,
+   "hatten": 10,
+   "pointcheck": 52,
+   "dailystep": 64
+  },
+  "sectionPages": {
+   "8": "kakunin",
+   "9": "kakunin",
+   "10": "kakunin",
+   "11": "kakunin",
+   "12": "kakunin",
+   "13": "kakunin",
+   "14": "kakunin",
+   "15": "hatten",
+   "16": "hatten",
+   "17": "pointcheck",
+   "18": "pointcheck",
+   "19": "pointcheck",
+   "20": "pointcheck",
+   "21": "dailystep",
+   "22": "dailystep",
+   "23": "dailystep",
+   "24": "dailystep",
+   "25": "dailystep",
+   "26": "dailystep"
+  },
+  "xyzCount": 216,
+  "pageRegionCounts": {
+   "8": 15,
+   "9": 20,
+   "10": 24,
+   "11": 19,
+   "12": 6,
+   "13": 6,
+   "14": 10,
+   "15": 6,
+   "16": 4,
+   "17": 11,
+   "18": 11,
+   "19": 19,
+   "20": 11,
+   "21": 10,
+   "22": 10,
+   "23": 12,
+   "24": 10,
+   "25": 12,
+   "26": 10
+  },
+  "xyzPrimary": true
  }
 ]
