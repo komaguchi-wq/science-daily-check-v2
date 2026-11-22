@@ -1,0 +1,79 @@
+{
+ "version": 1,
+ "created": "2026-11-22 20:26",
+ "app": "rika",
+ "category": "ss-tokkun",
+ "unit": "確認テスト-09",
+ "block": "xyz",
+ "method": "vision-ocr+sequence",
+ "pages": [
+  {
+   "i": 0,
+   "file": "st_q_01.jpg",
+   "W": 2004,
+   "H": 2342
+  }
+ ],
+ "daimons": {},
+ "subs": {
+  "M①-(1)": {
+   "page": 0,
+   "x": 0.0901,
+   "y": 0.3286,
+   "kind": "paren"
+  },
+  "M①-(2)": {
+   "page": 0,
+   "x": 0.0913,
+   "y": 0.3745,
+   "kind": "paren"
+  },
+  "M①-(3)": {
+   "page": 0,
+   "x": 0.0916,
+   "y": 0.4197,
+   "kind": "paren"
+  },
+  "M①-(4)": {
+   "page": 0,
+   "x": 0.0916,
+   "y": 0.4878,
+   "kind": "paren"
+  },
+  "M①-(5)": {
+   "page": 0,
+   "x": 0.0921,
+   "y": 0.5331,
+   "kind": "paren"
+  }
+ },
+ "failed": [],
+ "notes": {
+  "M①": "complete 5/5 p0"
+ },
+ "answer": {
+  "pages": [
+   {
+    "i": 0,
+    "file": "st_a_01.jpg",
+    "W": 2004,
+    "H": 2316
+   },
+   {
+    "i": 1,
+    "file": "st_a_02.jpg",
+    "W": 2004,
+    "H": 2340
+   }
+  ],
+  "daimons": {},
+  "subs": {},
+  "failed": [
+   "M①"
+  ],
+  "notes": {
+   "M①": "解答ページが見つからない（別紙面）"
+  }
+ },
+ "answerMap": {}
+}
