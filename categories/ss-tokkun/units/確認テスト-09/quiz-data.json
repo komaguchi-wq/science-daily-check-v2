@@ -1,0 +1,46 @@
+{
+ "id": "確認テスト-09",
+ "title": "理科確認テスト 溶解度 M①",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-03/ss-tokkun/確認テスト-09/",
+ "xyz": {
+  "label": "確認テスト M①",
+  "questionPages": [
+   "st_q_01.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "M①",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "M①-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "M①-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "M①-(3)",
+      "label": "(3)"
+     },
+     {
+      "id": "M①-(4)",
+      "label": "(4)"
+     },
+     {
+      "id": "M①-(5)",
+      "label": "(5)"
+     }
+    ],
+    "label": "M① 溶解度"
+   }
+  ]
+ }
+}

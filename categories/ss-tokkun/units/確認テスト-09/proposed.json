@@ -1,0 +1,12 @@
+{
+ "unit": "確認テスト-09",
+ "source": "claude-vision",
+ "created": "2026-11-22",
+ "grades": {
+  "M①-(1)": true,
+  "M①-(2)": true,
+  "M①-(3)": true,
+  "M①-(4)": true,
+  "M①-(5)": false
+ }
+}

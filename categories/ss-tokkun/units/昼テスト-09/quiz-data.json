@@ -1,0 +1,85 @@
+{
+ "id": "昼テスト-09",
+ "title": "SS-YomitoRIKA その⑤",
+ "category": "ss-tokkun",
+ "pages": [],
+ "imageBase": "https://komaguchi-wq.github.io/science-daily-check-v2-images-03/ss-tokkun/昼テスト-09/",
+ "xyz": {
+  "label": "昼テスト",
+  "questionPages": [
+   "st_q_01.jpg",
+   "st_q_02.jpg"
+  ],
+  "answerPages": [
+   "st_a_01.jpg",
+   "st_a_02.jpg"
+  ],
+  "daimons": [
+   {
+    "id": "L",
+    "qpage": 0,
+    "questions": [
+     {
+      "id": "L-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "L-(2)表",
+      "label": "(2)表"
+     },
+     {
+      "id": "L-(2)グラフ",
+      "label": "(2)グラフ"
+     },
+     {
+      "id": "L-(3)",
+      "label": "(3)"
+     }
+    ],
+    "label": "L 豆苗を乾燥させる"
+   },
+   {
+    "id": "H短距離",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H短距離-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "H短距離-(2)",
+      "label": "(2)"
+     },
+     {
+      "id": "H短距離-(3)",
+      "label": "(3)"
+     }
+    ],
+    "label": "H 100m走"
+   },
+   {
+    "id": "H電車",
+    "qpage": 1,
+    "questions": [
+     {
+      "id": "H電車-(1)",
+      "label": "(1)"
+     },
+     {
+      "id": "H電車-(2)①",
+      "label": "(2)①"
+     },
+     {
+      "id": "H電車-(2)②",
+      "label": "(2)②"
+     },
+     {
+      "id": "H電車-(3)",
+      "label": "(3)"
+     }
+    ],
+    "label": "H 電車の速さ"
+   }
+  ]
+ }
+}
