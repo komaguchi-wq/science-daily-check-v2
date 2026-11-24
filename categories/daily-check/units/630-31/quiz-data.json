@@ -2741,7 +2741,9 @@
    "cp_a_03.jpg",
    "solved_03.jpg",
    "solved_04.jpg",
-   "solved_05.jpg"
+   "solved_05.jpg",
+   "solved_2026-11-24_01.jpg",
+   "solved_2026-11-24_02.jpg"
   ],
   "daimons": [
    {
@@ -2915,6 +2917,12 @@
     ],
     [
      5
+    ],
+    [
+     6
+    ],
+    [
+     7
     ]
    ]
   },
