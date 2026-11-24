@@ -2547,5 +2547,58 @@
    "26": 10
   },
   "xyzPrimary": true
+ },
+ {
+  "id": "630-32",
+  "title": "化学計算総合②",
+  "subject": "6年理科 デイリーサピックス",
+  "pageCount": 22,
+  "totalRegions": 189,
+  "sectionRegions": {
+   "kakunin": 40,
+   "hatten": 20,
+   "pointcheck": 51,
+   "dailystep": 78
+  },
+  "sectionPages": {
+   "4": "kakunin",
+   "5": "kakunin",
+   "6": "kakunin",
+   "7": "kakunin",
+   "8": "kakunin",
+   "9": "hatten",
+   "10": "hatten",
+   "13": "pointcheck",
+   "14": "pointcheck",
+   "15": "pointcheck",
+   "16": "pointcheck",
+   "17": "dailystep",
+   "18": "dailystep",
+   "19": "dailystep",
+   "20": "dailystep",
+   "21": "dailystep",
+   "22": "dailystep"
+  },
+  "xyzCount": 184,
+  "pageRegionCounts": {
+   "4": 11,
+   "5": 10,
+   "6": 9,
+   "7": 1,
+   "8": 9,
+   "9": 10,
+   "10": 10,
+   "13": 7,
+   "14": 16,
+   "15": 5,
+   "16": 23,
+   "17": 10,
+   "18": 19,
+   "19": 12,
+   "20": 17,
+   "21": 10,
+   "22": 10
+  },
+  "xyzPrimary": true
  }
 ]
