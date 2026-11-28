@@ -396,7 +396,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu.html"
   },
   "wctest": {
     "label": "ウィークリーチェック（WS-31の復習）",
@@ -456,7 +457,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_wctest.html"
   },
   "chishiki20": {
     "label": "知識の20題確認テスト WS-32",
@@ -556,7 +558,8 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_chishiki20.html"
   },
   "cptest": {
     "label": "コアプラス確認テスト",
@@ -656,6 +659,7 @@
           }
         ]
       }
-    ]
+    ],
+    "kaisetsu": "kaisetsu_cptest.html"
   }
 }
